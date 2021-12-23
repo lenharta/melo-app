@@ -11,22 +11,24 @@ const variables = css`
     --white: #F3F3F3;
 
     // Font Styles
-    --barlow: 'Barlow Semi Condensed', sans-serif;
     --righteous: 'Righteous', cursive; // Logo/Various
+    --barlow: 'Barlow', sans-serif;
+    --roboto: 'Roboto Condensed', sans-serif;
 
     // Font Weights
-    --barlow-head: 400;
-    --barlow-sub: 200;
+    --barlow-light: 300;
+    --barlow-reg: 400;
+    --roboto-reg: 400;
+    --roboto-bold: 700;
 
     // Font Sizes
-    --fz-xxs: 12px;
+    --fz-xxs: 11px;
     --fz-xs: 13px;
-    --fz-sm: 14px;
-    --fz-md: 16px;
-    --fz-lg: 18px;
-    --fz-xl: 20px;
-    --fz-xxl: 22px;
-    --fz-heading: 32px;
+    --fz-sm: 16px;
+    --fz-md: 18px;
+    --fz-lg: 30px;
+    --fz-xl: 44px;
+    --fz-xxl: 54px;
   }
 `;
 

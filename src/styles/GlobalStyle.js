@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
   *:after {
     margin: 0;
     padding: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
     box-sizing: border-box;
     scroll-behavior: smooth;
     -moz-osx-font-smoothing: grayscale;
@@ -42,6 +46,43 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100%;
     min-height: 100%;
+    line-height: 1;
+  }
+
+  h1, h2 {
+    letter-spacing: -4px;
+  }
+
+  h1 {
+    font-size: var(--fz-xxl);
+    font-family: var(--barlow);
+    font-weight: var(--barlow-reg);
+  }
+
+  h2 {
+    font-size: var(--fz-xl);
+    font-family: var(--barlow);
+    font-weight: var(--barlow-light);
+  }
+
+  h3 {
+    font-size: var(--fz-xs);
+    font-family: var(--roboto);
+    font-weight: var(--roboto-bold);
+  }
+
+  p {
+    font-size: var(--fz-md);
+    font-family: var(--roboto);
+    font-weight: var(--roboto-reg);
+  }
+
+  a {
+    font-size: var(--fz-sm);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: var(--roboto);
+    font-weight: var(--roboto-reg);
   }
 `;
 

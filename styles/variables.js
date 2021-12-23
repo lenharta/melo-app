@@ -3,6 +3,12 @@ import { css } from 'styled-components'
 const variables = css`
   :root {
     // Colors
+    --green: #CBFB45;
+    --black: #151517;
+    --d-gray: #232325;
+    --gray: #3A3A3E;
+    --l-gray: #898990;
+    --white: #F3F3F3;
 
     // Font Styles
     --barlow: 'Barlow Semi Condensed', sans-serif;
@@ -25,3 +31,4 @@ const variables = css`
 `;
 
 export default variables
+

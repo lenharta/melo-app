@@ -1,16 +1,31 @@
-import React from 'react'
-import styled from 'styled-components'
-import { GlobalStyle } from './styles'
+import React, { useEffect, useState } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+import { Loader } from './components'
+import { GlobalStyle, theme } from './styles'
 
 const App = () => {
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 5000)
+  }, [])
+
   return (
     <>
-      <GlobalStyle />
-      <h1>Melo App</h1>
-      <h2>Melo App</h2>
-      <h3>Melo App</h3>
-      <p>Melo App</p>
-      <a href="#">Melo App</a>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        {loading ? (<Loader />) : (
+          <>
+            <h1>Melo</h1>
+            <h1>Melo</h1>
+            <h1>Melo</h1>
+            <h1>Melo</h1>
+          </>
+        )}
+      </ThemeProvider>
     </>
   )
 }

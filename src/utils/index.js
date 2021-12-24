@@ -32,7 +32,7 @@ export const draw = {
     opacity: 0,
   },
   visible: {
-    pathLength: 1,
+    pathLength: 1.05,
     opacity: 1,
     transition: {
       pathLength: {
@@ -41,7 +41,7 @@ export const draw = {
         delay: .5,
         bounce: 0,
       },
-      opacity: { duration: 0.01 }
+      opacity: { duration: 0.05 }
     }
   }
 }

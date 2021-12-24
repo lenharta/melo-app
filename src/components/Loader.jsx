@@ -27,7 +27,7 @@ const Loader = () => {
               cy="150"
               r="100"
               stroke="var(--green)"
-              stroke-width="2"
+              stroke-width="3"
               fill="transparent"
               variants={draw}
             />
@@ -67,7 +67,7 @@ const AnimatedLogo = styled(motion.div)`
   z-index: 100;
 
   span {
-    margin: 0 5px;
+    margin: 0 2px;
   }
 `;
 

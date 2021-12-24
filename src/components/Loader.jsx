@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { framerLogoContainer, framerLogoItem } from '../utils'
 
 
 const Loader = () => {
-  const [isMounted, setIsMounted] = useState(false)
-  const loaderFadeUp = 'loaderfadeup'
-  
   const one = <span>M</span>
   const two = <span>e</span>
   const three = <span>l</span>
@@ -16,14 +14,10 @@ const Loader = () => {
   return (
     <>
       <StyledLoader>
-        <AnimatedLogo>
-          <TransitionGroup component={null}>
+        <AnimatedLogo initial="hidden" animate="show" variants={framerLogoContainer}>
             {logoItems.map((item, i) => (
-              <CSSTransition key={i} classNames={loaderFadeUp}>
-                <div style={{ transitionDelay: `${i * 1}00ms` }}>{item}</div>
-              </CSSTransition>
+              <motion.div variants={framerLogoItem}>{item}</motion.div>
             ))}
-          </TransitionGroup>
         </AnimatedLogo>
       </StyledLoader>
     </>
@@ -35,10 +29,10 @@ const StyledLoader = styled.div`
   width: 100vw;
   height: 100vh;
   background: var(--black);
-  border: 10px solid var(--green);
+  // border: 10px solid var(--green);
 `;
 
-const AnimatedLogo = styled.div`
+const AnimatedLogo = styled(motion.div)`
   ${({ theme }) => theme.mixins.flexCenter}
   margin: 0 auto;
   color: var(--green);
@@ -51,3 +45,5 @@ const AnimatedLogo = styled.div`
 `;
 
 export default Loader
+
+// style={{ transitionDelay: `${i * 1}00ms` }}

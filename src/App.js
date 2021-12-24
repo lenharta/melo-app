@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import { Loader } from './components'
 import { GlobalStyle, theme } from './styles'
+import { Loader } from './components'
+import { loaderTimeout } from './utils'
 
 const App = () => {
   const [loading, setLoading] = useState(false)
@@ -10,7 +11,7 @@ const App = () => {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 5000)
+    }, loaderTimeout)
   }, [])
 
   return (

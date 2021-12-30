@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { draw, framerLogoContainer, framerLogoItem } from '../utils'
+import { draw, framerLogoContainer, framerLogoItem, overlayAnimation } from '../utils'
 
 
 const Loader = () => {
@@ -36,9 +36,20 @@ const Loader = () => {
 
         <AnimatedLogo initial="hidden" animate="show" variants={framerLogoContainer}>
           {logoItems.map((item, i) => (
-            <motion.div variants={framerLogoItem}>{item}</motion.div>
+            <motion.div key={i} variants={framerLogoItem}>{item}</motion.div>
           ))}
         </AnimatedLogo>
+
+        <AnimatedOverlay
+          initial="hidden"
+          animate="show"
+          variants={overlayAnimation}
+          transition={{ delay: 500, staggerChildren: 0.3, }}
+        >
+          <motion.div variants={overlayAnimation}></motion.div>
+          <motion.div variants={overlayAnimation}></motion.div>
+        </AnimatedOverlay>
+
       </StyledLoader>
     </>
   )
@@ -49,7 +60,7 @@ const StyledLoader = styled.div`
   width: 100vw;
   height: 100vh;
   background: var(--black);
-  // border: 10px solid var(--green);
+  -webkit-scroll-bar: none;
 `;
 
 const AnimatedLogoBorder = styled.div`
@@ -71,6 +82,24 @@ const AnimatedLogo = styled(motion.div)`
   }
 `;
 
-export default Loader
+const AnimatedOverlay = styled(motion.div)`
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+  div:nth-child(1) {
+    postition: absolute;
+    max-height: 100vh;
+    max-width: 100vw;
+    background: var(--green);
+  }
+  div:nth-child(2) {
+    postition: absolute;
+    max-height: 100vh;
+    max-width: 100vw;
+    background: var(--black);
+  }
+`;
 
-// style={{ transitionDelay: `${i * 1}00ms` }}
+export default Loader

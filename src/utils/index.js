@@ -25,6 +25,18 @@ export const framerLogoItem = {
   }
 }
 
+export const overlayAnimation = {
+  hidden: {
+    opacity: 0,
+    x: -1000,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+  }
+}
+
+
 // svg path draw
 export const draw = {
   hidden: {
@@ -43,24 +55,6 @@ export const draw = {
       },
       opacity: { duration: 0.05 }
     }
-  }
-}
-
-
-
-// notes
-export const framerLoaderOverlay = {
-  in: {
-    opacity: 1,
-    x: -300
-  },
-  out: {
-    opacity: 0,
-    x: 300
-  },
-  end: {
-    x: 0,
-    opacity: 1
   }
 }
 

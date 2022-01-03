@@ -1,12 +1,23 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const Navbar = () => {
+  
+
   return (
     <>
-      <h1>Navbar</h1>
+      <StyledNavbar>
+
+      </StyledNavbar>
     </>
   )
 }
+
+const StyledNavbar = styled.nav`
+  width: 100%;
+  position: fixed;
+
+`;
 
 export default Navbar
 

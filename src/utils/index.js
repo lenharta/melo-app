@@ -49,7 +49,7 @@ export const draw = {
     transition: {
       pathLength: {
         type: 'spring',
-        duration: 2,
+        duration: 3,
         delay: .5,
         bounce: 0,
       },

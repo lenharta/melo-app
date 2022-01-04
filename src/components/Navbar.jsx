@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Navbar = () => {
-  
 
   return (
     <>
       <StyledNavbar>
-
+        
       </StyledNavbar>
     </>
   )
@@ -16,7 +15,6 @@ const Navbar = () => {
 const StyledNavbar = styled.nav`
   width: 100%;
   position: fixed;
-
 `;
 
 export default Navbar

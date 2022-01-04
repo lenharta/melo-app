@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import variables from './variables'
 
+
 const GlobalStyle = createGlobalStyle`
   ${variables}
 
@@ -44,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background: ${( props ) => props.theme.body};
     width: 100%;
     min-height: 100%;
     line-height: 1;
@@ -83,6 +85,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     font-family: var(--roboto);
     font-weight: var(--roboto-reg);
+  }
+
+  button {
+    ${( props ) => props.theme.button};
   }
 `;
 

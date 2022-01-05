@@ -24,7 +24,6 @@ export const darkTheme = {
     svg {
       color: var(--green);
       transform: translateX(85%);
-      transition: ease;
     }
   `,
 }

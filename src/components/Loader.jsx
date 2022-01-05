@@ -27,7 +27,7 @@ const Loader = () => {
               cy="150"
               r="100"
               stroke="var(--green)"
-              stroke-width="3"
+              strokeWidth="3"
               fill="transparent"
               variants={draw}
             />

@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from './styles'
-import { Loader } from './components'
+import { Credentials, Loader } from './components'
 import { loaderTimeout } from './utils'
 import { lightTheme, darkTheme } from './styles/theme'
 import { FaMoon, FaSun } from 'react-icons/fa'
+import axios from 'axios'
 
 const App = () => {
   const [loading, setLoading] = useState(false)
   const [theme, setTheme] = useState('dark')
+  const spotify = Credentials()
+  const [token, setToken] = useState('')
+
+  console.log('RENDERING APP.JS');
 
   const themeToggler = () => (
     theme === 'dark' ? setTheme('light') : setTheme('dark')
@@ -19,6 +24,21 @@ const App = () => {
     setTimeout(() => {
       setLoading(false)
     }, loaderTimeout)
+  }, [])
+
+  useEffect(() => {
+    axios('https://accounts.spotify.com/api/token', {
+      headers: {
+        'Content-Type' : 'application/x-www-form-urlencoded',
+        'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)
+      },
+      data: 'grant_type=client_credentials',
+      method: 'POST'
+    })
+    .then(tokenResponse => {
+      console.log(tokenResponse.data.access_token)
+      setToken(tokenResponse.data.access_token)
+    })
   }, [])
 
   return (

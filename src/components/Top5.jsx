@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Credentials } from '../utils'
+import { Credentials } from '../spotify'
 import axios from 'axios'
 
 

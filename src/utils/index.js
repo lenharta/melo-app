@@ -2,6 +2,14 @@ export const loaderTimeout = 5000
 export const loaderDelay = 1000
 export const navbarDelay = 6000
 
+// Spotify API
+export const Credentials = () => {
+  return {
+    clientId: process.env.REACT_APP_CLIENT_ID,
+    clientSecret: process.env.REACT_APP_CLIENT_SECRET
+  }
+}
+
 // Loader Animations
 export const framerLogoContainer = {
   hidden: { opacity: 0 },

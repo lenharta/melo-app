@@ -7,21 +7,44 @@ import { lightTheme, darkTheme } from './styles/theme'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import { Route, Routes } from 'react-router-dom'
 import { Charts, Home, Result } from './pages';
+import { Credentials } from './spotify'
+import axios from 'axios'
 
 const App = () => {
   const [loading, setLoading] = useState(false)
   const [theme, setTheme] = useState('dark')
+  const spotify = Credentials()
+  const [token, setToken] = useState('')
+  const [genres, setGenres] = useState({selectedGenre: '', listOfGenresFromAPI: []})
 
   const themeToggler = () => (
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   )
-
+  
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
     }, loaderTimeout)
   }, [])
+  
+  useEffect(() => {
+    // Retrieve Token call
+    axios('https://accounts.spotify.com/api/token', {
+      'method': 'POST',
+			'headers': {
+        'Content-Type':'application/x-www-form-urlencoded',
+        'Authorization': 'Basic ' + btoa(spotify.clientId + ':' + spotify.clientSecret),
+			},
+			data: 'grant_type=client_credentials'
+      
+		}).then(tokenResponse => {
+			console.log(tokenResponse.data.access_token)
+			setToken(tokenResponse.data.access_token)
+      
+    }).catch(error => console.log(error))
+	},[spotify.clientId, spotify.clientSecret])
+
 
   return (
     <>

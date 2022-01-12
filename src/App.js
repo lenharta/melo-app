@@ -66,4 +66,3 @@ const ThemeController = styled.div`
 `;
 
 export default App
-

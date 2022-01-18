@@ -4,7 +4,10 @@ import { mixins } from '.'
 export const lightTheme = {
   mixins,
 
-  body: 'var(--white)',
+  body: css`
+    background: var(--white);
+  `,
+
   button: css`
     border: 2px solid var(--black);
     border-radius: 25px;
@@ -12,12 +15,24 @@ export const lightTheme = {
       color: var(--black);
     }
   `,
+
+  ol: css`
+    background: var(--green);
+    color: var(--d-gray);
+  `,
+
+  h1: css`
+    color: var(--d-gray);
+  `,
 }
 
 export const darkTheme = {
   mixins,
 
-  body: 'var(--black)',
+  body: css`
+    background: var(--black);
+  `,
+
   button: css`
     border: 2px solid var(--green);
     border-radius: 25px;
@@ -25,5 +40,14 @@ export const darkTheme = {
       color: var(--green);
       transform: translateX(85%);
     }
+  `,
+
+  ol: css`
+    background: var(--d-gray);
+    color: var(--green);
+  `,
+
+  h1: css`
+    color: var(--green);
   `,
 }

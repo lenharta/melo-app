@@ -42,14 +42,15 @@ const App = () => {
             </ThemeController>
 
             <Nav />
-
-            <Routes>
-              <Route path='/' element={ <Dashboard /> } />
-              <Route path='/charts' element={ <Charts /> } />
-              <Route path='/artist' element={ <Artist /> } />
-              <Route path='/album' element={ <Album /> } />
-              <Route path='/track' element={ <Track /> } />
-            </Routes>
+            <StyledMain>
+              <Routes>
+                <Route path='/' element={ <Dashboard /> } />
+                <Route path='/charts' element={ <Charts /> } />
+                <Route path='/artist' element={ <Artist /> } />
+                <Route path='/album' element={ <Album /> } />
+                <Route path='/track' element={ <Track /> } />
+              </Routes>
+            </StyledMain>
           </Router>
         </>
       )}
@@ -57,6 +58,25 @@ const App = () => {
     </>
   )
 }
+
+const StyledMain = styled.main`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 150px;
+
+  @media (max-width: 1080px) {
+    padding: 0 100px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 50px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 25px;
+  }
+`;
 
 const ThemeController = styled.div`
   position: fixed;

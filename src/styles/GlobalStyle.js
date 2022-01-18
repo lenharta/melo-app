@@ -45,13 +45,28 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${( props ) => props.theme.body};
+    ${( props ) => props.theme.body};
     width: 100%;
     min-height: 100%;
     line-height: 1;
   }
 
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 0;
+
+    @media (max-width: 768px) {
+      padding: 75px 0;
+    }
+
+    @media (max-width: 480px) {
+      padding: 50px 0;
+    }
+  }
+
   h1, h2 {
+    ${( props ) => props.theme.h1}
     letter-spacing: -4px;
   }
 
@@ -91,8 +106,8 @@ const GlobalStyle = createGlobalStyle`
     ${( props ) => props.theme.button};
   }
 
-  img {
-    width: 200px;
+  ol {
+    ${( props ) => props.theme.ol};
   }
 `;
 

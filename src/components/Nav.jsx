@@ -1,12 +1,11 @@
 import React from 'react'
 
-const Home = () => {
-
+const Nav = () => {
   return (
     <>
-    
+      
     </>
   )
 }
 
-export default Home
+export default Nav

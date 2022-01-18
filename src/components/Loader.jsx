@@ -59,6 +59,7 @@ const StyledLoader = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   width: 100vw;
   height: 100vh;
+  z-index: 99;
   background: var(--black);
   -webkit-scroll-bar: none;
 `;

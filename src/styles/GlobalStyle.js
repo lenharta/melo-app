@@ -90,6 +90,10 @@ const GlobalStyle = createGlobalStyle`
   button {
     ${( props ) => props.theme.button};
   }
+
+  img {
+    width: 200px;
+  }
 `;
 
 export default GlobalStyle

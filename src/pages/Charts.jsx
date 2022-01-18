@@ -1,11 +1,9 @@
 import React from 'react'
 
 const Charts = () => {
-  
-
   return (
     <>
-      <h1>Top Charts by Country Page</h1>
+      <h1>Charts</h1>
     </>
   )
 }

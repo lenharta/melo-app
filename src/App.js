@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from './styles'
-import { Loader } from './components'
+import { Loader, Nav } from './components'
 import { loaderTimeout } from './utils'
+import { GlobalStyle } from './styles'
+import styled, { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from './styles/theme'
 import { FaMoon, FaSun } from 'react-icons/fa'
-import { Route, Routes } from 'react-router-dom'
-import { Charts, Home, Result } from './pages';
-import axios from 'axios'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Album, Artist, Charts, Dashboard, Track } from './pages'
+
+
 
 const App = () => {
+  const isHome = window.location.pathname === '/'
   const [loading, setLoading] = useState(false)
   const [theme, setTheme] = useState('dark')
 
@@ -27,9 +29,10 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={ theme === 'dark' ? darkTheme : lightTheme }>
-        <GlobalStyle />
-        {loading ? (<Loader />) : (
-          <>
+      <GlobalStyle />
+      {loading && isHome ? (<Loader />) : (
+        <>
+          <Router>
             <ThemeController>
               <button className="theme__button" onClick={() => themeToggler()}>
                 <>
@@ -37,14 +40,19 @@ const App = () => {
                 </>
               </button>
             </ThemeController>
+
+            <Nav />
+
             <Routes>
-              <Route path='/' element={ <Home /> } />
-              <Route path='Charts' element={ <Charts /> } />
-              <Route path='Results' element={ <Result /> } />
-              {/* Import API id path for Results */}
+              <Route path='/' element={ <Dashboard /> } />
+              <Route path='/charts' element={ <Charts /> } />
+              <Route path='/artist' element={ <Artist /> } />
+              <Route path='/album' element={ <Album /> } />
+              <Route path='/track' element={ <Track /> } />
             </Routes>
-          </>
-        )}
+          </Router>
+        </>
+      )}
       </ThemeProvider>
     </>
   )

@@ -30,18 +30,18 @@ const GlobalStyle = createGlobalStyle`
 
   // Scroll Bar
   body::-webkit-scrollbar {
-    width: 11px;
+    width: 8px;
   }
 
   body::-webkit-scrollbar-track {
-    background: white;
+    background: transparent;
   }
 
   body::-webkit-scrollbar-thumb {
-    background: white;
+    background: var(--l-gray);
     opacity: 0.25;
-    border: 3px solid gray;
-    border-radius: 10px;
+    border: 1px solid var(--l-gray);
+    border-radius: 8px;
   }
 
   body {
@@ -66,18 +66,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2 {
-    ${( props ) => props.theme.h1}
-    letter-spacing: -4px;
+    letter-spacing: -1px;
   }
 
   h1 {
+    ${( props ) => props.theme.h1}
     font-size: var(--fz-xxl);
     font-family: var(--barlow);
     font-weight: var(--barlow-reg);
   }
 
   h2 {
-    font-size: var(--fz-xl);
+    ${( props ) => props.theme.h2}
+    font-size: clamp(var(--fz-xxs), 5vw, var(--fz-xl));
     font-family: var(--barlow);
     font-weight: var(--barlow-light);
   }
@@ -89,6 +90,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
+    ${( props ) => props.theme.p}
     font-size: var(--fz-md);
     font-family: var(--roboto);
     font-weight: var(--roboto-reg);

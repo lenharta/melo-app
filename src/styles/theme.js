@@ -9,6 +9,7 @@ export const lightTheme = {
   `,
 
   button: css`
+    background: var(--white);
     border: 2px solid var(--black);
     border-radius: 25px;
     svg {
@@ -17,12 +18,19 @@ export const lightTheme = {
   `,
 
   ol: css`
-    background: var(--green);
-    color: var(--d-gray);
+    background: var(--black);
   `,
 
   h1: css`
-    color: var(--d-gray);
+    color: var(--black);
+  `,
+
+  h2: css`
+    color: var(--green);
+  `,
+
+  p: css`
+    color: var(--white);
   `,
 }
 
@@ -34,6 +42,7 @@ export const darkTheme = {
   `,
 
   button: css`
+    background: var(--black);
     border: 2px solid var(--green);
     border-radius: 25px;
     svg {
@@ -44,10 +53,17 @@ export const darkTheme = {
 
   ol: css`
     background: var(--d-gray);
-    color: var(--green);
   `,
 
   h1: css`
     color: var(--green);
+  `,
+
+  h2: css`
+    color: var(--green);
+  `,
+
+  p: css`
+    color: var(--white);
   `,
 }

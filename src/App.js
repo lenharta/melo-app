@@ -80,7 +80,7 @@ const StyledMain = styled.main`
 
 const ThemeController = styled.div`
   position: fixed;
-  top: 25px;
+  bottom: 25px;
   right: 25px;
   .theme__button {
     width: 60px;

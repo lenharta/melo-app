@@ -17,14 +17,14 @@ const Charts = () => {
   return (
     <>
       <StyledChartContainer>
-        <h1>{usChart.title}</h1>
+        <h1>USA Top 100</h1>
         <StyledChart>
           <ol type='1'>
-            {usChart?.tracks?.data.map(({title, artist, album, id}, i) => (
+            {usChart?.tracks?.data.map(({title_short, artist, album, id}, i) => (
               <li key={i}>
                 <img src={album.cover_big} alt="" />
                 <div>
-                  <a id={id}><h2>{title}</h2></a>
+                  <a id={id}><h2>{title_short}</h2></a>
                   <a><p>{artist.name}</p></a>
                 </div>
               </li>
@@ -37,7 +37,7 @@ const Charts = () => {
 }
 
 const StyledChartContainer = styled.section`
-  max-width: 1000px;
+  max-width: 1200px;
 
   h1 {
     margin-bottom: 50px;
@@ -59,9 +59,21 @@ const StyledChart = styled.div`
     margin: 25px 0;
   }
 
+  h2 {
+    margin-bottom: 10px;
+  }
+
   img {
-    width: 150px;
+    width: 125px;
     border-radius: 10px;
+
+    @media (max-width: 1080px) {
+      width: 100px;
+    }
+
+    @media (max-width: 480px) {
+      width: 75px;
+    }
   }
 `;
 

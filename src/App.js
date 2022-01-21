@@ -1,63 +1,63 @@
-import { useEffect, useState } from 'react'
-import { Loader, Nav } from './components'
-import { loaderTimeout } from './utils'
-import { GlobalStyle } from './styles'
-import styled, { ThemeProvider } from 'styled-components'
-import { lightTheme, darkTheme } from './styles/theme'
-import { FaMoon, FaSun } from 'react-icons/fa'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Album, Artist, Charts, Dashboard, Track } from './pages'
-
-
+import { useEffect, useState } from "react";
+import { Loader, Nav } from "./components";
+import { loaderTimeout } from "./utils";
+import { GlobalStyle } from "./styles";
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./styles/theme";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Album, Artist, Charts, Dashboard, Track } from "./pages";
 
 const App = () => {
-  const isHome = window.location.pathname === '/'
-  const [loading, setLoading] = useState(false)
-  const [theme, setTheme] = useState('dark')
+  const isHome = window.location.pathname === "/";
+  const [loading, setLoading] = useState(false);
+  const [theme, setTheme] = useState("dark");
 
-  const themeToggler = () => (
-    theme === 'dark' ? setTheme('light') : setTheme('dark')
-  )
-  
+  const themeToggler = () =>
+    theme === "dark" ? setTheme("light") : setTheme("dark");
+
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     setTimeout(() => {
-      setLoading(false)
-    }, loaderTimeout)
-  }, [])
+      setLoading(false);
+    }, loaderTimeout);
+  }, []);
 
   return (
     <>
-      <ThemeProvider theme={ theme === 'dark' ? darkTheme : lightTheme }>
-      <GlobalStyle />
-      {loading && isHome ? (<Loader />) : (
-        <>
-          <Router>
-            <ThemeController>
-              <button className="theme__button" onClick={() => themeToggler()}>
-                <>
-                  { theme === 'dark' ? <FaMoon /> : <FaSun /> }
-                </>
-              </button>
-            </ThemeController>
+      <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        {loading && isHome ? (
+          <Loader />
+        ) : (
+          <>
+            <Router>
+              <ThemeController>
+                <button
+                  className="theme__button"
+                  onClick={() => themeToggler()}
+                >
+                  <>{theme === "dark" ? <FaMoon /> : <FaSun />}</>
+                </button>
+              </ThemeController>
 
-            <Nav />
-            <StyledMain>
-              <Routes>
-                <Route path='/' element={ <Dashboard /> } />
-                <Route path='/charts' element={ <Charts /> } />
-                <Route path='/artist' element={ <Artist /> } />
-                <Route path='/album' element={ <Album /> } />
-                <Route path='/track' element={ <Track /> } />
-              </Routes>
-            </StyledMain>
-          </Router>
-        </>
-      )}
+              <Nav />
+              <StyledMain>
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/charts" element={<Charts />} />
+                  <Route path="/artist" element={<Artist />} />
+                  <Route path="/album" element={<Album />} />
+                  <Route path="/track" element={<Track />} />
+                </Routes>
+              </StyledMain>
+            </Router>
+          </>
+        )}
       </ThemeProvider>
     </>
-  )
-}
+  );
+};
 
 const StyledMain = styled.main`
   margin: 0 auto;
@@ -93,4 +93,4 @@ const ThemeController = styled.div`
   }
 `;
 
-export default App
+export default App;

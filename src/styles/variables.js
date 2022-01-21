@@ -10,6 +10,11 @@ const variables = css`
     --l-gray: #898990;
     --white: #F3F3F3;
 
+    // light theme
+    
+    // dark theme
+
+
     // Font Styles
     --righteous: 'Righteous', cursive; // Logo/Various
     --barlow: 'Barlow', sans-serif;

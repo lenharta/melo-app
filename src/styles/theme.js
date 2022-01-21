@@ -18,7 +18,7 @@ export const lightTheme = {
   `,
 
   ol: css`
-    background: var(--black);
+    background-color: var(--l-gray);
   `,
 
   h1: css`

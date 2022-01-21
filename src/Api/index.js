@@ -1,11 +1,12 @@
-import axios from 'axios'
+import axios from "axios";
 
-export const getTopUsCharts = () => axios.get('https://deezerdevs-deezer.p.rapidapi.com/playlist/1313621735', {
-  headers: {
-    'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
-    'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com',
-  }
-});
+export const getTopUsCharts = () =>
+  axios.get("https://deezerdevs-deezer.p.rapidapi.com/playlist/1313621735", {
+    headers: {
+      "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+    },
+  });
 
 // export const getArtistData = async () => {
 //   try {
@@ -39,8 +40,6 @@ export const getTopUsCharts = () => axios.get('https://deezerdevs-deezer.p.rapid
 //     console.log(err)
 //   }
 // }
-
-
 
 // Deezer Links
 // Top 100 USA Playlist id = 1313621735

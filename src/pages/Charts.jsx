@@ -1,40 +1,46 @@
-import { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { getTopUsCharts } from '../Api'
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import { getTopUsCharts } from "../Api";
 
 const Charts = () => {
-  const [usChart, setUsChart] = useState([])
+  const [usChart, setUsChart] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await getTopUsCharts()
-      setUsChart(data)
+      const { data } = await getTopUsCharts();
+      setUsChart(data);
       console.log(data);
-    }
-    fetchData()
-  }, [])
-  
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <StyledChartContainer>
         <h1>USA Top 100</h1>
         <StyledChart>
-          <ol type='1'>
-            {usChart?.tracks?.data.map(({title_short, artist, album, id}, i) => (
-              <li key={i}>
-                <img src={album.cover_big} alt="" />
-                <div>
-                  <a id={id}><h2>{title_short}</h2></a>
-                  <a><p>{artist.name}</p></a>
-                </div>
-              </li>
-            ))}
+          <ol>
+            {usChart?.tracks?.data.map(
+              ({ title_short, artist, album, id }, i) => (
+                <li key={title_short}>
+                  <img src={album.cover_big} alt="" />
+                  <div>
+                    <a id={id}>
+                      <h2>{title_short}</h2>
+                    </a>
+                    <a>
+                      <p>{artist.name}</p>
+                    </a>
+                  </div>
+                </li>
+              )
+            )}
           </ol>
         </StyledChart>
       </StyledChartContainer>
     </>
-  )
-}
+  );
+};
 
 const StyledChartContainer = styled.section`
   max-width: 1200px;
@@ -77,4 +83,4 @@ const StyledChart = styled.div`
   }
 `;
 
-export default Charts
+export default Charts;

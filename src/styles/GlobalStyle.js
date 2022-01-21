@@ -71,6 +71,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     ${( props ) => props.theme.h1}
+    font-size: clamp(var(--fz-xs), 5vw, var(--fz-xxl));
     font-size: var(--fz-xxl);
     font-family: var(--barlow);
     font-weight: var(--barlow-reg);
@@ -99,7 +100,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     font-size: var(--fz-sm);
     cursor: pointer;
-    text-decoration: none;
+    // text-decoration: none;
     font-family: var(--roboto);
     font-weight: var(--roboto-reg);
   }

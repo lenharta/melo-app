@@ -18,7 +18,7 @@ const Nav = () => {
       <StyledNavContainer>
         <StyledNavLogo>
           <Link to="/">
-            <span>MELO</span>
+            <span>Melo</span>
           </Link>
         </StyledNavLogo>
         <StyledNavLinks>

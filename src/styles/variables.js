@@ -6,8 +6,8 @@ const variables = css`
     --green: #CBFB45;
     --black: #151517;
     --d-gray: #232325;
-    --gray: #3A3A3E;
-    --l-gray: #898990;
+    --gray: #F8F8F8;
+    --l-gray: #F0F0F0;
     --white: #F3F3F3;
 
     // light theme

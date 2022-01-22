@@ -7,10 +7,15 @@ const USCharts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await getTopUsCharts();
-      setUsChart(data);
-      console.log(data);
+      try {
+        const { data } = await getTopUsCharts();
+        setUsChart(data);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
+
     fetchData();
   }, []);
 
@@ -19,7 +24,7 @@ const USCharts = () => {
       <StyledChartContainer>
         <StyledChart>
           <h1>USA Top 100</h1>
-          <ol>
+          {/* <ol>
             {usChart?.tracks?.data.map(
               ({ title_short, artist, album, id }, i) => (
                 <li key={i}>
@@ -35,7 +40,7 @@ const USCharts = () => {
                 </li>
               )
             )}
-          </ol>
+          </ol> */}
         </StyledChart>
       </StyledChartContainer>
     </>

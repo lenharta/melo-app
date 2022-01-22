@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Loader, Nav } from "./components";
+import { Loader, Nav, ThemeSwitcher } from "./components";
 import { loaderTimeout } from "./utils";
 import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
@@ -13,7 +13,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [theme, setTheme] = useState("dark");
 
-  const themeToggler = () =>
+  const themeToggle = () =>
     theme === "dark" ? setTheme("light") : setTheme("dark");
 
   useEffect(() => {
@@ -32,14 +32,16 @@ const App = () => {
         ) : (
           <>
             <Router>
-              <ThemeController>
+              {/* <ThemeController>
                 <button
                   className="theme__button"
                   onClick={() => themeToggler()}
                 >
                   <>{theme === "dark" ? <FaMoon /> : <FaSun />}</>
                 </button>
-              </ThemeController>
+              </ThemeController> */}
+
+              <ThemeSwitcher onClick={themeToggle} />
 
               <Nav />
               <StyledMain>
@@ -77,19 +79,19 @@ const StyledMain = styled.main`
   }
 `;
 
-const ThemeController = styled.div`
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  .theme__button {
-    width: 60px;
-    svg {
-      ${({ theme }) => theme.mixins.flexCenter}
-      padding: 5px;
-      width: 30px;
-      height: 30px;
-    }
-  }
-`;
+// const ThemeController = styled.div`
+//   position: fixed;
+//   bottom: 25px;
+//   right: 25px;
+//   .theme__button {
+//     width: 60px;
+//     svg {
+//       ${({ theme }) => theme.mixins.flexCenter}
+//       padding: 5px;
+//       width: 30px;
+//       height: 30px;
+//     }
+//   }
+// `;
 
 export default App;

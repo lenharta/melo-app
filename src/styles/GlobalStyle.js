@@ -1,6 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import variables from './variables'
-
+import { createGlobalStyle } from "styled-components";
+import variables from "./variables";
 
 const GlobalStyle = createGlobalStyle`
   ${variables}
@@ -45,23 +44,27 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    ${( props ) => props.theme.body};
+    ${(props) => props.theme.body};
     width: 100%;
     min-height: 100%;
     line-height: 1;
   }
 
+  nav {
+    ${(props) => props.theme.nav}
+  }
+
   section {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 150px 0;
 
     @media (max-width: 768px) {
-      padding: 75px 0;
+      padding: 125px 0;
     }
 
     @media (max-width: 480px) {
-      padding: 50px 0;
+      padding: 100px 0;
     }
   }
 
@@ -70,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    ${( props ) => props.theme.h1}
+    ${(props) => props.theme.h1}
     font-size: clamp(var(--fz-xs), 5vw, var(--fz-xxl));
     font-size: var(--fz-xxl);
     font-family: var(--barlow);
@@ -78,7 +81,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    ${( props ) => props.theme.h2}
+    ${(props) => props.theme.h2}
     font-size: clamp(var(--fz-xxs), 5vw, var(--fz-xl));
     font-family: var(--barlow);
     font-weight: var(--barlow-light);
@@ -91,14 +94,15 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    ${( props ) => props.theme.p}
+    ${(props) => props.theme.p}
     font-size: var(--fz-md);
     font-family: var(--roboto);
     font-weight: var(--roboto-reg);
   }
 
   a {
-    font-size: var(--fz-sm);
+    ${(props) => props.theme.a}
+    font-size: var(--fz-md);
     cursor: pointer;
     // text-decoration: none;
     font-family: var(--roboto);
@@ -106,12 +110,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    ${( props ) => props.theme.button};
+    ${(props) => props.theme.button};
   }
 
   ol {
-    ${( props ) => props.theme.ol};
+    ${(props) => props.theme.ol};
   }
 `;
 
-export default GlobalStyle
+export default GlobalStyle;

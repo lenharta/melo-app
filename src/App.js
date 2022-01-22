@@ -6,7 +6,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/theme";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Album, Artist, Charts, Dashboard, Track } from "./pages";
+import { Album, Artist, USCharts, Dashboard, Track } from "./pages";
 
 const App = () => {
   const isHome = window.location.pathname === "/";
@@ -45,7 +45,7 @@ const App = () => {
               <StyledMain>
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
-                  <Route path="/charts" element={<Charts />} />
+                  <Route path="/uscharts" element={<USCharts />} />
                   <Route path="/artist" element={<Artist />} />
                   <Route path="/album" element={<Album />} />
                   <Route path="/track" element={<Track />} />
@@ -61,7 +61,6 @@ const App = () => {
 
 const StyledMain = styled.main`
   margin: 0 auto;
-  width: 100%;
   max-width: 1600px;
   padding: 0 150px;
 

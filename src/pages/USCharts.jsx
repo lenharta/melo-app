@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { getTopUsCharts } from "../Api";
 
-const Charts = () => {
+const USCharts = () => {
   const [usChart, setUsChart] = useState([]);
 
   useEffect(() => {
@@ -17,18 +17,18 @@ const Charts = () => {
   return (
     <>
       <StyledChartContainer>
-        <h1>USA Top 100</h1>
         <StyledChart>
+          <h1>USA Top 100</h1>
           <ol>
             {usChart?.tracks?.data.map(
               ({ title_short, artist, album, id }, i) => (
-                <li key={title_short}>
+                <li key={i}>
                   <img src={album.cover_big} alt="" />
                   <div>
                     <a id={id}>
                       <h2>{title_short}</h2>
                     </a>
-                    <a>
+                    <a id={artist.id}>
                       <p>{artist.name}</p>
                     </a>
                   </div>
@@ -43,17 +43,16 @@ const Charts = () => {
 };
 
 const StyledChartContainer = styled.section`
-  max-width: 1200px;
-
-  h1 {
-    margin-bottom: 50px;
-  }
+  max-width: 100%;
 `;
 
 const StyledChart = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
+  flex-direction: column;
+  width: 100%;
 
   ol {
+    width: 100%;
     border-radius: 10px;
     padding: 0 25px 0;
   }
@@ -63,6 +62,10 @@ const StyledChart = styled.div`
     width: 100%;
     text-align: right;
     margin: 25px 0;
+  }
+
+  h1 {
+    margin-bottom: 50px;
   }
 
   h2 {
@@ -83,4 +86,4 @@ const StyledChart = styled.div`
   }
 `;
 
-export default Charts;
+export default USCharts;

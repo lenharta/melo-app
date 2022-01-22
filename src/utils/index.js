@@ -1,6 +1,6 @@
-export const loaderTimeout = 5000
-export const loaderDelay = 1000
-export const navbarDelay = 6000
+export const loaderTimeout = 5000;
+export const loaderDelay = 1000;
+export const navbarDelay = 6000;
 
 // Loader Animations
 export const framerLogoContainer = {
@@ -10,20 +10,20 @@ export const framerLogoContainer = {
     transition: {
       delayChildren: 0.7,
       staggerChildren: 0.3,
-    }
-  }
-}
+    },
+  },
+};
 
 export const framerLogoItem = {
-  hidden: { 
+  hidden: {
     opacity: 0,
-    y: 300
+    y: 300,
   },
   show: {
     opacity: 1,
-    y: 0
-  }
-}
+    y: 0,
+  },
+};
 
 export const overlayAnimation = {
   hidden: {
@@ -33,9 +33,8 @@ export const overlayAnimation = {
   show: {
     opacity: 1,
     x: 0,
-  }
-}
-
+  },
+};
 
 // svg path draw
 export const draw = {
@@ -48,13 +47,19 @@ export const draw = {
     opacity: 1,
     transition: {
       pathLength: {
-        type: 'spring',
+        type: "spring",
         duration: 3,
-        delay: .5,
+        delay: 0.5,
         bounce: 0,
       },
-      opacity: { duration: 0.05 }
-    }
-  }
-}
+      opacity: { duration: 0.05 },
+    },
+  },
+};
 
+// Nav Select Transition
+export const navSpring = {
+  type: "spring",
+  stiffness: 500,
+  damping: 30,
+};

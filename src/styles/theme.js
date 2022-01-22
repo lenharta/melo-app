@@ -1,11 +1,24 @@
-import { css } from 'styled-components'
-import { mixins } from '.'
+import { css } from "styled-components";
+import { mixins } from ".";
 
 export const lightTheme = {
   mixins,
 
   body: css`
     background: var(--white);
+  `,
+
+  nav: css`
+    background-color: var(--black);
+  `,
+
+  a: css`
+    color: var(--green);
+    text-decoration: none;
+    &:hover {
+      opacity: 0.7;
+      transform: translateY(-3px);
+    }
   `,
 
   button: css`
@@ -32,13 +45,26 @@ export const lightTheme = {
   p: css`
     color: var(--white);
   `,
-}
+};
 
 export const darkTheme = {
   mixins,
 
   body: css`
     background: var(--black);
+  `,
+
+  nav: css`
+    background-color: var(--d-gray);
+  `,
+
+  a: css`
+    color: var(--green);
+    text-decoration: none;
+    &:hover {
+      opacity: 0.7;
+      transform: translateY(-3px);
+    }
   `,
 
   button: css`
@@ -66,4 +92,4 @@ export const darkTheme = {
   p: css`
     color: var(--white);
   `,
-}
+};

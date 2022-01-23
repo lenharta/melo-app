@@ -9,21 +9,17 @@
 
 <!-- Insert Screenshot -->
 
----
-
 ## **Features**
 * **Light/Dark Mode**
-* **Accessibile**
+* **Accessibility**
   * Reduced Motion
   * Keyboard Navigation
   * Semantic HTML Elements
+  * Large Touch Targets
   * ARIA
 * **Custom Loading Screen**
 * **Responsive Design**
 * **UX Utilizes Heuristic and Gestalt Principles**
-
-
----
 
 ## **Tech - Languages**
 * **JavaScript**
@@ -49,10 +45,6 @@
   * Custom 404
 * **React Icons**
 * **Framer-Motion**
-
----
-
-## **Hosted With Netlify**
 
 
 

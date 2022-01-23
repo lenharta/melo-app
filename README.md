@@ -9,12 +9,12 @@
 ## **Features**
 * **Light/Dark Mode**
 * **Accessibility**
->  * Reduced Motion
->  * Keyboard Navigation
->  * ARIA
->  * Semantic HTML Elements
->  * Large Touch Targets
->  * Dark Mode for Light Sensitivity
+  >* Reduced Motion
+  >* Keyboard Navigation
+  >* ARIA
+  >* Semantic HTML Elements
+  >* Large Touch Targets
+  >* Dark Mode for Light Sensitivity
 * **Custom Loading Screen**
 * **Scroll Progess Bar**
 * **Responsive Design**
@@ -58,8 +58,8 @@
 * **[Styled-Components](https://styled-components.com/)**
   * GlobalStyles
   * Theming Functions
-  >  * Interpolations to styled component's template literal based on its props
-  >  * Custom functions for responsive design
+    >* Interpolations to styled component's template literal based on its props
+    >* Custom functions for responsive design
   * CSS Variables
 * **Axios**
 * **React Router DOM**

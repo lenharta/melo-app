@@ -30,7 +30,6 @@ const App = () => {
         ) : (
           <>
             <Router>
-
               <Nav />
               <ProgressBar />
 

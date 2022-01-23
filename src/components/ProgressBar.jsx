@@ -19,7 +19,7 @@ const ProgressBar = () => {
     <>
       <StyledProgressContainer>
         <motion.svg height="5" width={xRange}>
-          <motion.line 
+          <motion.line
             style={{ pathLength, scaleX: -1 }}
             x1={xRange}
             y1="0"
@@ -40,7 +40,7 @@ const StyledProgressContainer = styled(motion.div)`
   left: 0;
   right: 0;
   width: 100%;
-  ${(props) => props.theme.progressbar};
+  ${(props) => props.theme.progressBar};
 `;
 
 export default ProgressBar;

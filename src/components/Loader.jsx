@@ -1,15 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
-import { draw, framerLogoContainer, framerLogoItem, overlayAnimation } from '../utils'
-
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import {
+  draw,
+  framerLogoContainer,
+  framerLogoItem,
+  overlayAnimation,
+} from "../utils";
 
 const Loader = () => {
-  const one = <span>M</span>
-  const two = <span>e</span>
-  const three = <span>l</span>
-  const four = <span>o</span>
-  const logoItems = [one, two, three, four]
+  const one = <span>M</span>;
+  const two = <span>e</span>;
+  const three = <span>l</span>;
+  const four = <span>o</span>;
+  const logoItems = [one, two, three, four];
 
   return (
     <>
@@ -26,16 +30,22 @@ const Loader = () => {
               cx="150"
               cy="150"
               r="100"
-              strokeWidth="3"
+              strokeWidth="5"
               fill="transparent"
               variants={draw}
             />
           </motion.svg>
         </AnimatedLogoBorder>
 
-        <AnimatedLogo initial="hidden" animate="show" variants={framerLogoContainer}>
+        <AnimatedLogo
+          initial="hidden"
+          animate="show"
+          variants={framerLogoContainer}
+        >
           {logoItems.map((item, i) => (
-            <motion.div key={i} variants={framerLogoItem}>{item}</motion.div>
+            <motion.div key={i} variants={framerLogoItem}>
+              {item}
+            </motion.div>
           ))}
         </AnimatedLogo>
 
@@ -43,16 +53,15 @@ const Loader = () => {
           initial="hidden"
           animate="show"
           variants={overlayAnimation}
-          transition={{ delay: 500, staggerChildren: 0.3, }}
+          transition={{ delay: 500, staggerChildren: 0.3 }}
         >
           <motion.div variants={overlayAnimation}></motion.div>
           <motion.div variants={overlayAnimation}></motion.div>
         </AnimatedOverlay>
-
       </StyledLoader>
     </>
-  )
-}
+  );
+};
 
 const StyledLoader = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
@@ -86,7 +95,7 @@ const AnimatedOverlay = styled(motion.div)`
   position: absolute;
   top: 0;
   right: 0;
-  
+
   div:nth-child(1) {
     position: absolute;
     max-height: 100vh;
@@ -99,4 +108,4 @@ const AnimatedOverlay = styled(motion.div)`
   }
 `;
 
-export default Loader
+export default Loader;

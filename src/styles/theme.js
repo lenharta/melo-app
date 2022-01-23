@@ -8,6 +8,15 @@ export const darkTheme = {
     background: var(--d-green);
   `,
 
+  scrollbarThumb: css`
+    border: 2px solid var(--l-green-tint);
+    background: var(--l-green);
+  `,
+
+  scrollbarTrack: css`
+    background: var(--l-green-tint);
+  `,
+
   loader: css`
     color: var(--l-green);
     background-color: var(--d-green);
@@ -17,10 +26,11 @@ export const darkTheme = {
   `,
 
   nav: css`
-    background-color: var(--d-green);
+    background-color: var(--d-green-tint);
+    backdrop-filter: blur(10px);
   `,
 
-  progressbar: css`
+  progressBar: css`
     svg {
       stroke: var(--l-green);
     }
@@ -35,7 +45,7 @@ export const darkTheme = {
     }
   `,
 
-  button: css`
+  themeButton: css`
     background: var(--l-green-tint);
     border: 2px solid var(--l-green);
     border-radius: 25px;
@@ -68,6 +78,15 @@ export const lightTheme = {
     background: var(--white);
   `,
 
+  scrollbarThumb: css`
+    border: 2px solid var(--l-teal);
+    background: var(--teal);
+  `,
+
+  scrollbarTrack: css`
+    background: var(--l-teal);
+  `,
+
   loader: css`
     color: var(--teal);
     background-color: var(--white);
@@ -77,12 +96,11 @@ export const lightTheme = {
   `,
 
   nav: css`
-    background: var(--nav-bg-light);
+    // background: var(--gray);
     backdrop-filter: blur(10px);
-    border-bottom: solid 1px var(--gray-tint);
   `,
 
-  progressbar: css`
+  progressBar: css`
     svg {
       stroke: var(--teal);
     }
@@ -97,7 +115,7 @@ export const lightTheme = {
     }
   `,
 
-  button: css`
+  themeButton: css`
     background: var(--l-teal-tint);
     border: 2px solid var(--teal);
     border-radius: 25px;

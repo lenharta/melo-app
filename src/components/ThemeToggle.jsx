@@ -4,13 +4,9 @@ import { motion } from "framer-motion";
 import { spring } from "../utils";
 
 const ThemeToggle = ({ theme, toggleTheme }) => {
-  
   return (
     <>
-      <StyledSwitch
-        isSwitched={theme}
-        onClick={toggleTheme}
-      >
+      <StyledSwitch isSwitched={theme} onClick={toggleTheme}>
         <StyledHandle layout transition={spring} />
       </StyledSwitch>
     </>
@@ -19,9 +15,10 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
 
 const StyledSwitch = styled.button`
   ${({ theme }) => theme.mixins.flexCenter};
+  ${(props) => props.theme.themeButton};
   justify-content: flex-start;
   ${(props) =>
-    props.isSwitched === 'dark'
+    props.isSwitched === "dark"
       ? css`
           justify-content: flex-end;
         `

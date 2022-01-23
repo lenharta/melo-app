@@ -60,12 +60,6 @@ const StyledNavLinks = styled.div`
       padding: 15px;
     }
   }
-
-  .outline {
-    position: absolute;
-    border: 10px solid var(--green);
-    border-radius: 50%;
-  }
 `;
 
 export default Nav;

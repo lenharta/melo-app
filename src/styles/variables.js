@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from "styled-components";
 
 const variables = css`
   :root {
@@ -19,9 +19,9 @@ const variables = css`
     --l-teal-tint: rgba(162, 196, 196, 0.4);
 
     // Font Styles
-    --righteous: 'Righteous', cursive; // Logo/Various
-    --barlow: 'Barlow', sans-serif;
-    --roboto: 'Roboto Condensed', sans-serif;
+    --righteous: "Righteous", cursive; // Logo/Various
+    --barlow: "Barlow", sans-serif;
+    --roboto: "Roboto Condensed", sans-serif;
 
     // Font Weights
     --barlow-light: 300;
@@ -43,15 +43,12 @@ const variables = css`
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     // Gradients
-    --nav-bg-light: linear-gradient(180deg, var(--l-teal-tint) 0%, transparent 100%);
+    --nav-bg-light: linear-gradient(
+      180deg,
+      var(--l-teal-tint) 0%,
+      transparent 100%
+    );
   }
 `;
 
-export default variables
-
-// --black: #151517;
-//     --d-gray: #232325;
-//     --gray: #F8F8F8;
-//     --l-gray: #F0F0F0;
-//     --white: #F3F3F3;
-
+export default variables;

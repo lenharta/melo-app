@@ -67,5 +67,5 @@ export const spring = {
 // Progress Bar
 export const progress = {
   stiffness: 1000,
-  damping: 30,
+  damping: 10,
 };

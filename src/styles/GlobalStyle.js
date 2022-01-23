@@ -29,17 +29,15 @@ const GlobalStyle = createGlobalStyle`
 
   // Scroll Bar
   body::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
 
   body::-webkit-scrollbar-track {
-    background: transparent;
+    ${(props) => props.theme.scrollbarTrack};
   }
 
   body::-webkit-scrollbar-thumb {
-    background: var(--gray);
-    opacity: 0.25;
-    border: 1px solid var(--gray);
+    ${(props) => props.theme.scrollbarThumb};
     border-radius: 8px;
   }
 

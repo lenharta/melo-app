@@ -7,42 +7,42 @@
 <!-- Insert Screenshot -->
 
 ## **Features**
-> * **Light/Dark Mode**
-> * **Accessibility**
->   * Reduced Motion
->   * Keyboard Navigation
->   * ARIA
->   * Semantic HTML Elements
->   * Large Touch Targets
->   * Dark Mode for Light Sensitivity
-> * **Custom Loading Screen**
-> * **Responsive Design**
-> * **UX Utilizes Heuristic and Gestalt Principles**
+* **Light/Dark Mode**
+* **Accessibility**
+> * Reduced Motion
+> * Keyboard Navigation
+> * ARIA
+> * Semantic HTML Elements
+> * Large Touch Targets
+> * Dark Mode for Light Sensitivity
+* **Custom Loading Screen**
+* **Responsive Design**
+* **UX Utilizes Heuristic and Gestalt Principles**
 
 ## **Tech - Languages**
-> * **JavaScript**
-> * **HTML5**
-> * **CSS**
-> * **JSX**
+* **JavaScript**
+* **HTML5**
+* **CSS**
+* **JSX**
 
 ## **Tech - Libraries/Frameworks**
-> * **ReactJS**
->   * useState <!-- utilize Code Snip -->
->   * useEffect <!-- utilize Code Snip -->
->   * Functional Components
-> * **Styled-Components**
->   * GlobalStyles
->   * Custom Theme Objects
->   * CSS Variables
-> * **Axios** <!-- Async Code Snip/ best practices -->
-> * **React Router DOM**
->   * Route History
->   * Navigation
->   * Nested Routes
->   * Path URLs
->   * Custom 404
-> * **React Icons**
-> * **Framer-Motion**
+* **ReactJS**
+  * useState <!-- utilize Code Snip -->
+  * useEffect <!-- utilize Code Snip -->
+  * Functional Components
+* **Styled-Components**
+  * GlobalStyles
+  * Custom Theme Objects
+  * CSS Variables
+* **Axios** <!-- Async Code Snip/ best practices -->
+* **React Router DOM**
+  * Route History
+  * Navigation
+  * Nested Routes
+  * Path URLs
+  * Custom 404
+* **React Icons**
+* **Framer-Motion**
 
 
 

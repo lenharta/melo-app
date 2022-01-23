@@ -1,19 +1,25 @@
 import { css } from "styled-components";
 import { mixins } from ".";
 
-export const lightTheme = {
+export const darkTheme = {
   mixins,
 
   body: css`
-    background: var(--white);
+    background: var(--d-green);
   `,
 
   nav: css`
-    background-color: var(--black);
+    background-color: var(--d-green);
+  `,
+
+  progressbar: css`
+    svg {
+      stroke: var(--l-green);
+    }
   `,
 
   a: css`
-    color: var(--green);
+    color: var(--l-green);
     text-decoration: none;
     &:hover {
       opacity: 0.7;
@@ -22,20 +28,20 @@ export const lightTheme = {
   `,
 
   button: css`
-    background: var(--white);
-    border: 2px solid var(--black);
+    background: var(--l-green-tint);
+    border: 2px solid var(--l-green);
     border-radius: 25px;
-    svg {
-      color: var(--black);
+    div {
+      background: var(--l-green);
     }
   `,
 
   ol: css`
-    background-color: var(--l-gray);
+    background-color: var(--gray);
   `,
 
   h1: css`
-    color: var(--black);
+    color: var(--l-green);
   `,
 
   h2: css`
@@ -47,38 +53,45 @@ export const lightTheme = {
   `,
 };
 
-export const darkTheme = {
+export const lightTheme = {
   mixins,
 
   body: css`
-    background: var(--black);
+    background: var(--white);
   `,
 
   nav: css`
-    background-color: var(--d-gray);
+    background: var(--nav-bg-light);
+    backdrop-filter: blur(10px);
+    border-bottom: solid 1px var(--gray-tint);
+  `,
+
+  progressbar: css`
+    svg {
+      stroke: var(--teal);
+    }
   `,
 
   a: css`
-    color: var(--green);
+    color: var(--teal);
     text-decoration: none;
     &:hover {
-      opacity: 0.7;
+      color: var(--teal-tint);
       transform: translateY(-3px);
     }
   `,
 
   button: css`
-    background: var(--black);
-    border: 2px solid var(--green);
+    background: var(--l-teal-tint);
+    border: 2px solid var(--teal);
     border-radius: 25px;
-    svg {
-      color: var(--green);
-      transform: translateX(85%);
+    div {
+      background: var(--teal);
     }
   `,
 
   ol: css`
-    background: var(--d-gray);
+    background: var(--gray);
   `,
 
   h1: css`

@@ -58,8 +58,14 @@ export const draw = {
 };
 
 // Nav Select Transition
-export const navSpring = {
+export const spring = {
   type: "spring",
   stiffness: 500,
+  damping: 30,
+};
+
+// Progress Bar
+export const progress = {
+  stiffness: 1000,
   damping: 30,
 };

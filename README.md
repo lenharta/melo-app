@@ -1,5 +1,5 @@
-# **Melo Music App** - *Discover Artists, Albums, Top Charts, and more*
-## **Check out [Melo](url) today, hosted by [Netlify](https://www.netlify.com/)**
+# **Melo** - *Discover Top Artists, Albums, Charts, and more*
+> ## **Check out [Melo](url) today, hosted by [Netlify](https://www.netlify.com/)**
 
 ## **Project Description**
 > Melo is a effortless and useful way to search through music artists, tracks, albums, charts, and more. Utilizing the [Deezer Music Streaming](https://www.deezer.com/us/) API with more than 30 million tracks available, Melo helps its users discover new music from artists they haven't heard and dive deep into playlists of their favorite!

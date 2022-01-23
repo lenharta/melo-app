@@ -9,12 +9,12 @@
 ## **Features**
 > * **Light/Dark Mode**
 > * **Accessibility**
->>  * Reduced Motion
->>  * Keyboard Navigation
->>  * ARIA
->>  * Semantic HTML Elements
->>  * Large Touch Targets
->>  * Dark Mode for Light Sensitivity
+>   * Reduced Motion
+>   * Keyboard Navigation
+>   * ARIA
+>   * Semantic HTML Elements
+>   * Large Touch Targets
+>   * Dark Mode for Light Sensitivity
 > * **Custom Loading Screen**
 > * **Responsive Design**
 > * **UX Utilizes Heuristic and Gestalt Principles**
@@ -27,20 +27,20 @@
 
 ## **Tech - Libraries/Frameworks**
 > * **ReactJS**
->>  * useState <!-- utilize Code Snip -->
->>  * useEffect <!-- utilize Code Snip -->
->>  * Functional Components
+>   * useState <!-- utilize Code Snip -->
+>   * useEffect <!-- utilize Code Snip -->
+>   * Functional Components
 > * **Styled-Components**
->>  * GlobalStyles
->>  * Custom Theme Objects
->>  * CSS Variables
+>   * GlobalStyles
+>   * Custom Theme Objects
+>   * CSS Variables
 > * **Axios** <!-- Async Code Snip/ best practices -->
 > * **React Router DOM**
->>  * Route History
->>  * Navigation
->>  * Nested Routes
->>  * Path URLs
->>  * Custom 404
+>   * Route History
+>   * Navigation
+>   * Nested Routes
+>   * Path URLs
+>   * Custom 404
 > * **React Icons**
 > * **Framer-Motion**
 

@@ -16,6 +16,7 @@
 >  * Large Touch Targets
 >  * Dark Mode for Light Sensitivity
 * **Custom Loading Screen**
+* **Scroll Progess Bar**
 * **Responsive Design**
 * **UX Utilizes Heuristic and Gestalt Principles**
 
@@ -27,21 +28,31 @@
 
 ## **Tech - Libraries/Frameworks**
 * **ReactJS**
-  * useState <!-- utilize Code Snip -->
+  * useState
+    ```jsx
+      const [themeOn, setThemeOn] = useState(true);
+      const toggleSwitch = () => setThemeOn(!themeOn);
+
+      if (themeOn === true) {
+        props.setTheme('dark')
+      } else {
+        props.setTheme('light')
+      }
+    ```
   * useEffect 
     ```jsx
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const { data } = await getTopUsCharts();
-          setUsChart(data);
-        } catch (error) {
-          console.log(error);
-        }
-      };
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const { data } = await getTopUsCharts();
+            setUsChart(data);
+          } catch (error) {
+            console.log(error);
+          }
+        };
 
-      fetchData();
-    }, []);
+        fetchData();
+      }, []);
     ```
   * Functional Components
 * **[Styled-Components](https://styled-components.com/)**

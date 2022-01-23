@@ -1,4 +1,4 @@
-# **Melo** - *Discover Top Artists, Albums, Charts, and more*
+# **Melo** - #### *Discover Top Artists, Albums, Charts, and more*
 > **Vist [Melo](url) - *hosted by [Netlify](https://www.netlify.com/)***
 
 ## **Project Description**
@@ -9,12 +9,12 @@
 ## **Features**
 * **Light/Dark Mode**
 * **Accessibility**
-> * Reduced Motion
-> * Keyboard Navigation
-> * ARIA
-> * Semantic HTML Elements
-> * Large Touch Targets
-> * Dark Mode for Light Sensitivity
+>  * Reduced Motion
+>  * Keyboard Navigation
+>  * ARIA
+>  * Semantic HTML Elements
+>  * Large Touch Targets
+>  * Dark Mode for Light Sensitivity
 * **Custom Loading Screen**
 * **Responsive Design**
 * **UX Utilizes Heuristic and Gestalt Principles**
@@ -28,21 +28,38 @@
 ## **Tech - Libraries/Frameworks**
 * **ReactJS**
   * useState <!-- utilize Code Snip -->
-  * useEffect <!-- utilize Code Snip -->
+  * useEffect 
+    ```jsx
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const { data } = await getTopUsCharts();
+          setUsChart(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      fetchData();
+    }, []);
+    ```
   * Functional Components
-* **Styled-Components**
+* **[Styled-Components](https://styled-components.com/)**
   * GlobalStyles
-  * Custom Theme Objects
+  * Theming Functions
+>   * Interpolations to styled component's template literal based on its props
+>   * Custom functions for responsive design
   * CSS Variables
-* **Axios** <!-- Async Code Snip/ best practices -->
+* **Axios**
 * **React Router DOM**
   * Route History
   * Navigation
+  * Custom 404
   * Nested Routes
   * Path URLs
-  * Custom 404
 * **React Icons**
 * **Framer-Motion**
+* **NodeJS - Package Manager**
 
 
 

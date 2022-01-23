@@ -1,14 +1,15 @@
 # **Melo**
 #### ***Discover Top Artists, Albums, Charts, and more***
-> **Vist [Melo](url) - *hosted by [Netlify](https://www.netlify.com/)***
+> **Visit [Melo](url) - *hosted by [Netlify](https://www.netlify.com/)***
 
 ## **Project Description**
-> Melo is a effortless and useful way to search through music artists, tracks, albums, charts, and more. Utilizing the [Deezer Music Streaming](https://www.deezer.com/us/) API with more than 30 million tracks available, Melo helps its users discover new music from artists they haven't heard and dive deep into playlists of their favorite!
+> Melo is a effortless and useful way to discover music from new tracks, albums, artists, top charts, and more. Utilizing the [Deezer Music Streaming API](https://www.deezer.com/us/) with more than 30 million tracks available. Melo helps its users search for new music, dive deep into curated playlists, and learn more about their favorite artists!
 
 <!-- Insert Screenshot -->
 
 ## **Features**
 * **Light/Dark Mode**
+* **Filtered Search Criteria**
 * **Accessibility**
   >* Reduced Motion
   >* Keyboard Navigation
@@ -17,9 +18,10 @@
   >* Large Touch Targets
   >* Dark Mode for Light Sensitivity
 * **Custom Loading Screen**
+* **Custom 404 Page**
 * **Scroll Progess Bar**
 * **Responsive Design**
-* **UX Utilizes Heuristic and Gestalt Principles**
+* **Utilizes UX Heuristic and Gestalt Principles**
 
 ## **Tech - Languages**
 * **JavaScript**

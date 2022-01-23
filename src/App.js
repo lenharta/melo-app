@@ -10,9 +10,9 @@ import { Album, Artist, USCharts, Dashboard, Track } from "./pages";
 const App = () => {
   const isHome = window.location.pathname === "/";
   const [loading, setLoading] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState("dark");
 
-  useEffect(() => {  
+  useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -21,26 +21,18 @@ const App = () => {
 
   return (
     <>
-      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
         <GlobalStyle />
         {loading && isHome ? (
           <Loader />
         ) : (
           <>
             <Router>
-              {/* <ThemeController>
-                <button
-                  className="theme__button"
-                  onClick={() => themeToggler()}
-                >
-                  <>{theme === "dark" ? <FaMoon /> : <FaSun />}</>
-                </button>
-              </ThemeController> */}
-              
               <ThemeSwitcher theme={theme} setTheme={setTheme} />
 
               <Nav />
-                <ProgressBar />
+              <ProgressBar />
+              
               <StyledMain>
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
@@ -75,20 +67,5 @@ const StyledMain = styled.main`
     padding: 0 25px;
   }
 `;
-
-// const ThemeController = styled.div`
-//   position: fixed;
-//   bottom: 25px;
-//   right: 25px;
-//   .theme__button {
-//     width: 60px;
-//     svg {
-//       ${({ theme }) => theme.mixins.flexCenter}
-//       padding: 5px;
-//       width: 30px;
-//       height: 30px;
-//     }
-//   }
-// `;
 
 export default App;

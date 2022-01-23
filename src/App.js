@@ -1,22 +1,18 @@
 import { useEffect, useState } from "react";
-import { Loader, Nav, ThemeSwitcher } from "./components";
+import { Loader, Nav, ProgressBar, ThemeSwitcher } from "./components";
 import { loaderTimeout } from "./utils";
 import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/theme";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Album, Artist, USCharts, Dashboard, Track } from "./pages";
 
 const App = () => {
   const isHome = window.location.pathname === "/";
   const [loading, setLoading] = useState(false);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState('dark');
 
-  const themeToggle = () =>
-    theme === "dark" ? setTheme("light") : setTheme("dark");
-
-  useEffect(() => {
+  useEffect(() => {  
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -25,7 +21,7 @@ const App = () => {
 
   return (
     <>
-      <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
         <GlobalStyle />
         {loading && isHome ? (
           <Loader />
@@ -40,10 +36,11 @@ const App = () => {
                   <>{theme === "dark" ? <FaMoon /> : <FaSun />}</>
                 </button>
               </ThemeController> */}
-
-              <ThemeSwitcher onClick={themeToggle} />
+              
+              <ThemeSwitcher theme={theme} setTheme={setTheme} />
 
               <Nav />
+                <ProgressBar />
               <StyledMain>
                 <Routes>
                   <Route path="/" element={<Dashboard />} />

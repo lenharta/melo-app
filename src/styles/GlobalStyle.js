@@ -37,9 +37,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body::-webkit-scrollbar-thumb {
-    background: var(--l-gray);
+    background: var(--gray);
     opacity: 0.25;
-    border: 1px solid var(--l-gray);
+    border: 1px solid var(--gray);
     border-radius: 8px;
   }
 
@@ -106,7 +106,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     // text-decoration: none;
     font-family: var(--roboto);
-    font-weight: var(--roboto-reg);
+    font-weight: var(--roboto-bold);
   }
 
   button {

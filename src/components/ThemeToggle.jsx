@@ -1,23 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import { spring } from "../utils";
 
-const ThemeToggle = (props) => {
-  const [themeOn, setThemeOn] = useState(true);
-  const toggleSwitch = () => setThemeOn(!themeOn);
-
-  if (themeOn === true) {
-    props.setTheme('dark')
-  } else {
-    props.setTheme('light')
-  }
-
+const ThemeToggle = ({ theme, toggleTheme }) => {
+  
   return (
     <>
       <StyledSwitch
-        isSwitched={themeOn}
-        onClick={() => toggleSwitch()}
+        isSwitched={theme}
+        onClick={toggleTheme}
       >
         <StyledHandle layout transition={spring} />
       </StyledSwitch>
@@ -29,7 +21,7 @@ const StyledSwitch = styled.button`
   ${({ theme }) => theme.mixins.flexCenter};
   justify-content: flex-start;
   ${(props) =>
-    props.isSwitched === true
+    props.isSwitched === 'dark'
       ? css`
           justify-content: flex-end;
         `

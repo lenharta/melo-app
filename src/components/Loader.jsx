@@ -26,7 +26,6 @@ const Loader = () => {
               cx="150"
               cy="150"
               r="100"
-              stroke="var(--l-green)"
               strokeWidth="3"
               fill="transparent"
               variants={draw}
@@ -57,10 +56,10 @@ const Loader = () => {
 
 const StyledLoader = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
+  ${(props) => props.theme.loader}
   width: 100vw;
   height: 100vh;
   z-index: 99;
-  background-color: var(--d-green);
   -webkit-scroll-bar: none;
 `;
 
@@ -73,7 +72,6 @@ const AnimatedLogoBorder = styled.div`
 const AnimatedLogo = styled(motion.div)`
   ${({ theme }) => theme.mixins.flexCenter}
   margin: 0 auto;
-  color: var(--l-green);
   font-size: var(--fz-xxl);
   font-family: var(--righteous);
   z-index: 100;
@@ -93,13 +91,11 @@ const AnimatedOverlay = styled(motion.div)`
     position: absolute;
     max-height: 100vh;
     max-width: 100vw;
-    background: var(--l-green);
   }
   div:nth-child(2) {
     position: absolute;
     max-height: 100vh;
     max-width: 100vw;
-    background: var(--d-green);
   }
 `;
 

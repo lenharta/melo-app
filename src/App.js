@@ -6,11 +6,12 @@ import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Album, Artist, USCharts, Dashboard, Track } from "./pages";
+import { useDarkMode } from "./utils/useDarkTheme";
 
 const App = () => {
   const isHome = window.location.pathname === "/";
   const [loading, setLoading] = useState(false);
-  const [theme, setTheme] = useState("dark");
+  const [theme, toggleTheme] = useDarkMode();
 
   useEffect(() => {
     setLoading(true);
@@ -23,16 +24,16 @@ const App = () => {
     <>
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
         <GlobalStyle />
+        <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
         {loading && isHome ? (
           <Loader />
         ) : (
           <>
             <Router>
-              <ThemeSwitcher theme={theme} setTheme={setTheme} />
 
               <Nav />
               <ProgressBar />
-              
+
               <StyledMain>
                 <Routes>
                   <Route path="/" element={<Dashboard />} />

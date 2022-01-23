@@ -8,6 +8,14 @@ export const darkTheme = {
     background: var(--d-green);
   `,
 
+  loader: css`
+    color: var(--l-green);
+    background-color: var(--d-green);
+    svg {
+      stroke: var(--l-green);
+    }
+  `,
+
   nav: css`
     background-color: var(--d-green);
   `,
@@ -58,6 +66,14 @@ export const lightTheme = {
 
   body: css`
     background: var(--white);
+  `,
+
+  loader: css`
+    color: var(--teal);
+    background-color: var(--white);
+    svg {
+      stroke: var(--teal);
+    }
   `,
 
   nav: css`

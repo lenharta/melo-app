@@ -58,8 +58,8 @@
 * **[Styled-Components](https://styled-components.com/)**
   * GlobalStyles
   * Theming Functions
->   * Interpolations to styled component's template literal based on its props
->   * Custom functions for responsive design
+  >  * Interpolations to styled component's template literal based on its props
+  >  * Custom functions for responsive design
   * CSS Variables
 * **Axios**
 * **React Router DOM**
@@ -70,6 +70,7 @@
   * Path URLs
 * **React Icons**
 * **Framer-Motion**
+* **Webpack**
 * **NodeJS - Package Manager**
 
 

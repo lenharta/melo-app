@@ -1,4 +1,5 @@
-# **Melo** - #### *Discover Top Artists, Albums, Charts, and more*
+# **Melo**
+#### ***Discover Top Artists, Albums, Charts, and more***
 > **Vist [Melo](url) - *hosted by [Netlify](https://www.netlify.com/)***
 
 ## **Project Description**

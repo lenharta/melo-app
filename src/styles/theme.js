@@ -24,7 +24,7 @@ export const darkTheme = {
     }
   `,
 
-  nav: css`
+  header: css`
     background-color: var(--d-green-tint);
     backdrop-filter: blur(10px);
   `,
@@ -44,6 +44,10 @@ export const darkTheme = {
         transform: translateY(-3px);
       }
     }
+  `,
+
+  navSelectedLink: css`
+    background: var(--l-green-tint);
   `,
 
   themeButton: css`
@@ -95,7 +99,7 @@ export const lightTheme = {
     }
   `,
 
-  nav: css`
+  header: css`
     // background: var(--gray);
     backdrop-filter: blur(10px);
   `,
@@ -115,6 +119,10 @@ export const lightTheme = {
         transform: translateY(-3px);
       }
     }
+  `,
+
+  navSelectedLink: css`
+    background: var(--teal-tint);
   `,
 
   themeButton: css`

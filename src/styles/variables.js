@@ -9,6 +9,8 @@ const variables = css`
     --green-tint: rgba(61, 88, 87, 0.4);
     --l-green: rgb(203, 251, 185);
     --l-green-tint: rgb(203, 251, 185, 0.4);
+    --slate-green: rgb(127, 148, 136);
+    --slate-green-tint: rgba(127, 148, 136, 0.4);
     --black: rgb(21, 21, 23);
     --gray: rgb(182, 183, 187);
     --gray-tint: rgba(182, 183, 187, 0.4);
@@ -54,3 +56,16 @@ const variables = css`
 `;
 
 export default variables;
+
+// Color HEX Reference
+// Dark Green             - #1B201F
+// Green                  - #3D5857
+// Light Green            - #CBFBB9
+// Slate Green            - #7F9488
+// Black                  - #151517
+// Gray                   - #B6B7BB
+// Slate Gray             - #708090
+// White                  - #F0F4F5
+// Teal                   - #6F9495
+// Light Teal             - #A2C4C4
+

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Loader, Nav, ThemeSwitcher } from "./components";
+import { Loader, Nav, ProgressBar, ThemeSwitcher } from "./components";
 import { loaderTimeout } from "./utils";
 import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
@@ -31,7 +31,7 @@ const App = () => {
           <>
             <Router>
               <Nav />
-
+              <ProgressBar />
               <StyledMain>
                 <Routes>
                   <Route path="/" element={<Dashboard />} />

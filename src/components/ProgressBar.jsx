@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
   motion,
@@ -7,24 +7,23 @@ import {
   useSpring,
 } from "framer-motion";
 import { progress } from "../utils";
+import { useWidthSize } from "../utils/hooks/useWidthSize";
 
 const ProgressBar = () => {
-  // const [widthResize, setWidthResize] = useState('')
+  const width = useWidthSize();
+  // console.log(width);
   const { scrollYProgress } = useViewportScroll();
-  const xRange = window.innerWidth;
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const pathLength = useSpring(yRange, { progress });
 
   return (
     <>
       <StyledProgressContainer>
-        <motion.svg height="5" width={xRange}>
+        <motion.svg height="5" width={width}>
           <motion.line
-            style={{ pathLength, scaleX: -1 }}
-            x1={xRange}
-            y1="0"
-            x2="0"
-            y2="0"
+            style={{ pathLength, scaleX: 1, x: 0 }}
+            x1="0"
+            x2="100%"
             strokeWidth="5"
             strokeDasharray="0 1"
           />
@@ -38,8 +37,6 @@ const StyledProgressContainer = styled(motion.div)`
   position: fixed;
   top: 90px;
   left: 0;
-  right: 0;
-  width: 100%;
   ${(props) => props.theme.progressBar};
 `;
 

@@ -12,6 +12,8 @@ const variables = css`
     --black: rgb(21, 21, 23);
     --gray: rgb(182, 183, 187);
     --gray-tint: rgba(182, 183, 187, 0.4);
+    --slate-gray: rgb(112, 128, 144);
+    --slate-gray-tint: rgba(112, 128, 144, 0.4);
     --white: rgb(240, 244, 245);
     --teal: rgb(111, 148, 149);
     --teal-tint: rgb(111, 148, 149, 0.4);

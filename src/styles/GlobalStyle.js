@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
   // Scroll Bar
   body::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
 
   body::-webkit-scrollbar-track {
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 
   body::-webkit-scrollbar-thumb {
     ${(props) => props.theme.scrollbarThumb};
-    border-radius: 8px;
+    border-radius: 5px;
   }
 
   body {

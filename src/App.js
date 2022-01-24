@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Loader, Nav, ProgressBar, ThemeSwitcher } from "./components";
+import { Loader, Nav, ThemeSwitcher } from "./components";
 import { loaderTimeout } from "./utils";
 import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Album, Artist, USCharts, Dashboard, Track } from "./pages";
-import { useDarkMode } from "./utils/useDarkTheme";
+import { useDarkMode } from "./utils/hooks/useDarkTheme";
 
 const App = () => {
   const isHome = window.location.pathname === "/";
@@ -31,7 +31,6 @@ const App = () => {
           <>
             <Router>
               <Nav />
-              <ProgressBar />
 
               <StyledMain>
                 <Routes>

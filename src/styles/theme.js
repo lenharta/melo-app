@@ -9,7 +9,6 @@ export const darkTheme = {
   `,
 
   scrollbarThumb: css`
-    border: 2px solid var(--l-green-tint);
     background: var(--l-green);
   `,
 
@@ -36,12 +35,14 @@ export const darkTheme = {
     }
   `,
 
-  a: css`
-    color: var(--l-green);
-    text-decoration: none;
-    &:hover {
-      opacity: 0.7;
-      transform: translateY(-3px);
+  navLinks: css`
+    a {
+      color: var(--l-green);
+      text-decoration: none;
+      &:hover {
+        color: var(--l-green-tint);
+        transform: translateY(-3px);
+      }
     }
   `,
 
@@ -79,12 +80,11 @@ export const lightTheme = {
   `,
 
   scrollbarThumb: css`
-    border: 2px solid var(--l-teal);
     background: var(--teal);
   `,
 
   scrollbarTrack: css`
-    background: var(--l-teal);
+    background: var(--l-teal-tint);
   `,
 
   loader: css`
@@ -106,12 +106,14 @@ export const lightTheme = {
     }
   `,
 
-  a: css`
-    color: var(--teal);
-    text-decoration: none;
-    &:hover {
-      color: var(--teal-tint);
-      transform: translateY(-3px);
+  navLinks: css`
+    a {
+      color: var(--teal);
+      text-decoration: none;
+      &:hover {
+        color: var(--slate-gray-tint);
+        transform: translateY(-3px);
+      }
     }
   `,
 
@@ -129,7 +131,7 @@ export const lightTheme = {
   `,
 
   h1: css`
-    color: var(--green);
+    color: var(--teal);
   `,
 
   h2: css`

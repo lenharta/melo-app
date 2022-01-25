@@ -3,6 +3,24 @@ export const loaderDelay = 1000;
 export const navbarDelay = 6000;
 
 // Loader Animations
+export const loaderContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      ease: "easeInQuad",
+      duration: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      ease: "easeOutQuad",
+      duration: 0.5,
+    },
+  },
+};
+
 export const framerLogoContainer = {
   hidden: { opacity: 0 },
   show: {

@@ -5,10 +5,10 @@ import {
   draw,
   framerLogoContainer,
   framerLogoItem,
-  overlayAnimation,
+  loaderContainer,
 } from "../utils";
 
-const Loader = () => {
+const Loader = ({ setLoading }) => {
   const one = <span>M</span>;
   const two = <span>e</span>;
   const three = <span>l</span>;
@@ -25,14 +25,14 @@ const Loader = () => {
             viewbow="0 0 300 300"
             initial="hidden"
             animate="visible"
-          >
+            >
             <motion.circle
+              variants={draw}
               cx="150"
               cy="150"
               r="100"
               strokeWidth="5"
               fill="transparent"
-              variants={draw}
             />
           </motion.svg>
         </AnimatedLogoBorder>
@@ -48,22 +48,12 @@ const Loader = () => {
             </motion.div>
           ))}
         </AnimatedLogo>
-
-        <AnimatedOverlay
-          initial="hidden"
-          animate="show"
-          variants={overlayAnimation}
-          transition={{ delay: 500, staggerChildren: 0.3 }}
-        >
-          <motion.div variants={overlayAnimation}></motion.div>
-          <motion.div variants={overlayAnimation}></motion.div>
-        </AnimatedOverlay>
       </StyledLoader>
     </>
   );
 };
 
-const StyledLoader = styled.div`
+const StyledLoader = styled(motion.div)`
   ${({ theme }) => theme.mixins.flexCenter}
   ${(props) => props.theme.loader}
   width: 100vw;
@@ -87,24 +77,6 @@ const AnimatedLogo = styled(motion.div)`
 
   span {
     margin: 0 2px;
-  }
-`;
-
-const AnimatedOverlay = styled(motion.div)`
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  div:nth-child(1) {
-    position: absolute;
-    max-height: 100vh;
-    max-width: 100vw;
-  }
-  div:nth-child(2) {
-    position: absolute;
-    max-height: 100vh;
-    max-width: 100vw;
   }
 `;
 

@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 import { spring } from "../utils";
 
 const Nav = () => {
-  const [selected, setSelected] = useState([0]);
-  
   const one = <Link to="/">Dashboard</Link>;
   const two = <Link to="/uscharts">US Top 100</Link>;
-  const three = <Link to="/uscharts">US Top 100</Link>;
-  const navItems = [one, two, three];
-
+  const navItems = [one, two];
+  const [selected, setSelected] = useState(navItems[0]);
 
   return (
     <>
@@ -23,11 +20,13 @@ const Nav = () => {
             </Link>
           </StyledNavLogo>
           <StyledNavLinks>
-            {navItems.map((item) => (
-              <li key={item} >
+            {navItems.map((item, i) => (
+              <StyledNavList key={item} onClick={() => setSelected(i)}>
                 {item}
-                <Outline/>
-              </li>
+                {i === selected ? (
+                  <Outline layoutId="outline" transition={spring} />
+                ) : null}
+              </StyledNavList>
             ))}
           </StyledNavLinks>
         </StyledNavContainer>
@@ -36,6 +35,21 @@ const Nav = () => {
   );
 };
 
+// const NavLink = ({ item, isSelected }) => {
+//   return (
+//       <>
+//         {item}
+//         {isSelected && (
+//           <Outline
+//             layoutId="outline"
+//             transition={spring}
+//           />
+//         )}
+//       </>
+//   );
+// };
+
+// Nav Styles
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexCenter}
   ${(props) => props.theme.header};
@@ -71,30 +85,35 @@ const StyledNavLogo = styled.div`
   }
 `;
 
-const StyledNavLinks = styled.ul`
+const StyledNavLinks = styled(motion.ul)`
   ${({ theme }) => theme.mixins.flexCenter}
+  ${(props) => props.theme.navList};
+  padding: 6px;
+  border-radius: 30px;
   flex-direction: row;
-  transform: translateX(20px);
   list-style-type: none;
   justify-content: flex-end;
-  li {
-    ${(props) => props.theme.navLinks};
-    position: relative;
-    padding: 10px 0;
-    a {
-      padding: 20px;
-      cursor: pointer;
-    }
+`;
+
+// NavLink Styles
+const StyledNavList = styled(motion.li)`
+  ${(props) => props.theme.navLinks};
+  height: 100%;
+  position: relative;
+  padding: 10px 0;
+  a {
+    padding: 20px;
+    cursor: pointer;
   }
 `;
 
 const Outline = styled(motion.div)`
   ${(props) => props.theme.navSelectedLink}
   position: absolute;
-  border-radius: 10px;
+  border-radius: 20px;
   z-index: -1;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 `;

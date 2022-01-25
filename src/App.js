@@ -3,6 +3,7 @@ import { Loader, Nav, ProgressBar, ThemeSwitcher } from "./components";
 import { loaderTimeout } from "./utils";
 import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
+import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import { lightTheme, darkTheme } from "./styles/theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Album, Artist, USCharts, Dashboard, Track } from "./pages";
@@ -22,29 +23,31 @@ const App = () => {
 
   return (
     <>
-      <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
-        <GlobalStyle />
-        <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
-        {loading && isHome ? (
-          <Loader />
-        ) : (
-          <>
-            <Router>
-              <Nav />
-              <ProgressBar />
-              <StyledMain>
-                <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/uscharts" element={<USCharts />} />
-                  <Route path="/artist" element={<Artist />} />
-                  <Route path="/album" element={<Album />} />
-                  <Route path="/track" element={<Track />} />
-                </Routes>
-              </StyledMain>
-            </Router>
-          </>
-        )}
-      </ThemeProvider>
+      <AnimatePresence>
+        <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+          <GlobalStyle />
+          <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
+          {loading && isHome ? (
+            <Loader />
+          ) : (
+            <>
+              <Router>
+                <Nav />
+                <ProgressBar />
+                <StyledMain>
+                  <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/uscharts" element={<USCharts />} />
+                    <Route path="/artist" element={<Artist />} />
+                    <Route path="/album" element={<Album />} />
+                    <Route path="/track" element={<Track />} />
+                  </Routes>
+                </StyledMain>
+              </Router>
+            </>
+          )}
+        </ThemeProvider>
+      </AnimatePresence>
     </>
   );
 };

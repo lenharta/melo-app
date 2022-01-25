@@ -1,72 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 
 
 const Dashboard = () => {
 
   return (
     <>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
-      <h1>.</h1>
+      <StyledDashboardContainer>
+        <h1>Dashboard</h1>
+      </StyledDashboardContainer>
     </>
   )
 }
+
+const StyledDashboardContainer = styled.section``;
 
 export default Dashboard

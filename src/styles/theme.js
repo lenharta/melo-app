@@ -35,6 +35,10 @@ export const darkTheme = {
     }
   `,
 
+  navList: css`
+    background-color: var(--slate-green-tint);
+  `,
+
   navLinks: css`
     a {
       color: var(--l-green);
@@ -51,7 +55,7 @@ export const darkTheme = {
   `,
 
   themeButton: css`
-    background: var(--l-green-tint);
+    background: var(--slate-green-tint);
     border: 2px solid var(--l-green);
     border-radius: 25px;
     div {
@@ -110,12 +114,16 @@ export const lightTheme = {
     }
   `,
 
+  navList: css`
+    background-color: var(--l-teal-tint);
+  `,
+
   navLinks: css`
     a {
       color: var(--teal);
       text-decoration: none;
       &:hover {
-        color: var(--slate-gray-tint);
+        color: var(--teal-tint);
         transform: translateY(-3px);
       }
     }

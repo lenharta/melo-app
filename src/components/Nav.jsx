@@ -1,29 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { spring } from "../utils";
+import { isHome, spring } from "../utils";
+
+const navLinkData = [
+  {
+    id: 0,
+    title: "Dasboard",
+    path: "/",
+  },
+  {
+    id: 1,
+    title: "Top Charts",
+    path: "/charts",
+  },
+];
 
 const Nav = () => {
-  const one = <Link to="/">Dashboard</Link>;
-  const two = <Link to="/uscharts">US Top 100</Link>;
-  const navItems = [one, two];
-  const [selected, setSelected] = useState(navItems[0]);
+  const [selected, setSelected] = useState(navLinkData[0]);
 
   return (
     <>
       <StyledHeader>
         <StyledNavContainer>
           <StyledNavLogo>
-            <Link to="/">
-              <span>Melo</span>
-            </Link>
+            <span>Melo</span>
           </StyledNavLogo>
           <StyledNavLinks>
-            {navItems.map((item, i) => (
-              <StyledNavList key={item} onClick={() => setSelected(i)}>
-                {item}
-                {i === selected ? (
+            {navLinkData.map(({ id, title, path }) => (
+              <StyledNavList key={id} onClick={() => setSelected(id)}>
+                <Link to={path}>{title}</Link>
+                {id === selected ? (
                   <Outline layoutId="outline" transition={spring} />
                 ) : null}
               </StyledNavList>
@@ -34,20 +42,6 @@ const Nav = () => {
     </>
   );
 };
-
-// const NavLink = ({ item, isSelected }) => {
-//   return (
-//       <>
-//         {item}
-//         {isSelected && (
-//           <Outline
-//             layoutId="outline"
-//             transition={spring}
-//           />
-//         )}
-//       </>
-//   );
-// };
 
 // Nav Styles
 const StyledHeader = styled.header`
@@ -78,9 +72,9 @@ const StyledNavContainer = styled.nav`
 `;
 
 const StyledNavLogo = styled.div`
-  ${(props) => props.theme.navLinks};
+  ${(props) => props.theme.navLogo};
   span {
-    font-size: var(--fz-lg);
+    font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl));
     font-family: var(--righteous);
   }
 `;
@@ -93,6 +87,11 @@ const StyledNavLinks = styled(motion.ul)`
   flex-direction: row;
   list-style-type: none;
   justify-content: flex-end;
+  overflow: hidden;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 // NavLink Styles

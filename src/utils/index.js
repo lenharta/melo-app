@@ -1,6 +1,7 @@
 export const loaderTimeout = 5000;
 export const loaderDelay = 1000;
 export const navbarDelay = 6000;
+export const isHome = window.location.pathname === "/";
 
 // Loader Animations
 export const loaderContainer = {

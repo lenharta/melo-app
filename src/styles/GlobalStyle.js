@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
   // Scroll Bar
   body::-webkit-scrollbar {
+    display: none;
     width: 8px;
   }
 

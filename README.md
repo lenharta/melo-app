@@ -25,10 +25,10 @@
 * **⚖️ Heuristic and Gestalt UX Principles**
 
 ## **Tech - Languages**
-* ### **JavaScript**
-* ### **HTML5**
-* ### **CSS**
-* ### **JSX**
+* **JavaScript**
+* **HTML5**
+* **CSS**
+* **JSX**
 
 ## **Tech - Libraries/Frameworks**
 * **ReactJS**

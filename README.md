@@ -9,6 +9,7 @@
 
 ## **Features**
 * **🌙 Light/Dark Mode**
+* **🎧 Audio Previews**
 * **🔎 Filtered Search Criteria**        
 * **♿ Accessibility**
   >* Reduced Motion
@@ -19,8 +20,8 @@
   >* Dark Mode for Light Sensitivity
 * **⚙️ Custom Loader**
 * **🚩 Custom 404 Page**
-* **🔃 Scroll Progess Bar**
-* **🤳🏻  Responsive Design**
+* **🔃 Scroll-Progess Bar**
+* **🤸 Responsive Design**
 * **⚖️ Heuristic and Gestalt UX Principles**
 
 ## **Tech - Languages**
@@ -33,7 +34,33 @@
 * **ReactJS**
   * ES6+ Best Practices
   * useState Hook
-    ```jsx
+  * Functional Components
+* **Styled-Components**
+  * GlobalStyles
+  * Theming Functions
+    >* Interpolations to styled component's template literal based on its props
+    >* Custom functions for responsive design
+  * CSS Variables
+* **Axios**
+  * Asynchronous Requests
+  * Request Functions in ./api
+* **React Router DOM V6**
+  * Navigation
+  * Route History
+  * Custom 404 Page
+  * Nested Routes
+* **React Icons**
+* **Framer-Motion**
+  * Custom Animation Variant Functions
+  * Hooks Used
+    >* useViewportScroll
+    >* useTransform
+    >* useSpring
+* **Webpack**
+* **NodeJS - Package Manager**
+
+    <!-- useEffect -->
+    <!-- ```jsx
       const [themeOn, setThemeOn] = useState(true);
       const toggleSwitch = () => setThemeOn(!themeOn);
 
@@ -57,20 +84,10 @@
 
         fetchData();
       }, []);
-    ```
-  * Functional Components
-* **Styled-Components**
-  * GlobalStyles
-  * Theming Functions
-    >* Interpolations to styled component's template literal based on its props
-    >* Custom functions for responsive design
-  * CSS Variables
-* **Axios**
-  * Asynchronous Requests
-  * Request Functions in ./api
-* **React Router DOM V6**
-  * Navigation
-    ```jsx
+    ``` -->
+
+    <!-- ES6+ Best Practices -->
+    <!-- ```jsx
     const Nav = () => {
       const one = <Link to="/">Dashboard</Link>;
       const two = <Link to="/uscharts">US Top 100</Link>;
@@ -96,19 +113,4 @@
         </>
       );
     };
-    ```
-  * Route History
-  * Custom 404 Page
-  * Nested Routes
-* **React Icons**
-* **Framer-Motion**
-  * Custom Animation Variant Functions
-  * Hooks Used
-    >* useViewportScroll
-    >* useTransform
-    >* useSpring
-* **Webpack**
-* **NodeJS - Package Manager**
-
-
-
+    ``` -->

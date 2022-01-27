@@ -20,7 +20,7 @@
 * **⚙️ Custom Loader**
 * **🚩 Custom 404 Page**
 * **🔃 Scroll Progess Bar**
-* **🤳🏻 Responsive Design**
+* **🤳🏻  Responsive Design**
 * **⚖️ Heuristic and Gestalt UX Principles**
 
 ## **Tech - Languages**

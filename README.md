@@ -8,20 +8,20 @@
 <!-- Insert Screenshot -->
 
 ## **Features**
-* **Light/Dark Mode**
-* **Filtered Search Criteria**
-* **Accessibility**
+* **🌙 Light/Dark Mode**
+* **🔎 Filtered Search Criteria**        
+* **♿ Accessibility**
   >* Reduced Motion
   >* Keyboard Navigation
   >* ARIA
   >* Semantic HTML Elements
   >* Large Touch Targets
   >* Dark Mode for Light Sensitivity
-* **Custom Loading Screen**
-* **Custom 404 Page**
-* **Scroll Progess Bar**
-* **Responsive Design**
-* **Utilizes UX Heuristic and Gestalt Principles**
+* **⚙️ Custom Loader**
+* **🚩 Custom 404 Page**
+* **🔃 Scroll Progess Bar**
+* **🤳🏻 Responsive Design**
+* **⚖️ Heuristic and Gestalt UX Principles**
 
 ## **Tech - Languages**
 * **JavaScript**

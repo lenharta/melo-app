@@ -67,16 +67,24 @@ export const darkTheme = {
     }
   `,
 
+  track: css``,
+
+  tracklist: css``,
+
   h1: css`
     color: var(--l-green);
   `,
 
-  h2: css`
+  h3: css`
     color: var(--green);
   `,
 
+  h2: css`
+    color: var(--l-green);
+  `,
+
   p: css`
-    color: var(--white);
+    color: var(--slate-green);
   `,
 };
 
@@ -128,7 +136,7 @@ export const lightTheme = {
       color: var(--teal);
       text-decoration: none;
       &:hover {
-        color: var(--white);
+        color: var(--teal-tint);
       }
     }
   `,

@@ -1,15 +1,19 @@
 import axios from "axios";
 
-export const getTopUsCharts = () =>
-  axios.get("https://deezerdevs-deezer.p.rapidapi.com/playlist/1313621735", {
+
+// Returns top 10 Albums, Artists, playlists, podcasts, and Tracks
+export const getChartsEditorial = () =>
+  axios.get("https://deezerdevs-deezer.p.rapidapi.com/editorial/0/charts", {
     headers: {
       "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
     },
   });
 
-export const getTopGlobalCharts = () =>
-  axios.get("https://deezerdevs-deezer.p.rapidapi.com/playlist/3155776842", {
+  // Example -- https://developers.deezer.com/api/explorer?url=artist/27
+  // Info -- https://developers.deezer.com/api/artist
+  export const getArtistPage = () =>
+  axios.get("https://deezerdevs-deezer.p.rapidapi.com/Artist", {
     headers: {
       "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -23,4 +27,5 @@ export const getTopGlobalCharts = () =>
 // bandana id = 101778542
 // crime pays id = 703804172
 
-// Genius
+// Example -- 
+// Info -- 

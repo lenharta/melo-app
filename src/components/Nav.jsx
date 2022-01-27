@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { isHome, spring } from "../utils";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
+import { navSpring } from "../utils";
 
 const navLinkData = [
   {
@@ -32,7 +32,7 @@ const Nav = () => {
               <StyledNavList key={id} onClick={() => setSelected(id)}>
                 <Link to={path}>{title}</Link>
                 {id === selected ? (
-                  <Outline layoutId="outline" transition={spring} />
+                  <Outline layoutId="outline" transition={navSpring} />
                 ) : null}
               </StyledNavList>
             ))}
@@ -109,10 +109,13 @@ const StyledNavList = styled(motion.li)`
 const Outline = styled(motion.div)`
   ${(props) => props.theme.navSelectedLink}
   position: absolute;
+  display: block;
   border-radius: 20px;
   z-index: -1;
   top: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 `;

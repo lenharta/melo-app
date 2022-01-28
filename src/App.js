@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Loader, Nav, ProgressBar, ThemeSwitcher } from "./components";
+import { Loader, Nav, ProgressBar, ThemeToggle } from "./components";
 import { isHome, loaderTimeout } from "./utils";
 import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
@@ -7,6 +7,8 @@ import { lightTheme, darkTheme } from "./styles/theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Charts, Dashboard } from "./pages";
 import { useDarkMode } from "./utils/hooks/useDarkTheme";
+
+import requests from "./api/Requests";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +25,7 @@ const App = () => {
     <>
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
         <GlobalStyle />
-        <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
+        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         {loading && isHome ? (
           <Loader />
         ) : (
@@ -34,7 +36,7 @@ const App = () => {
               <StyledMain>
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
-                  <Route path="/charts" element={<Charts />} />
+                  <Route path="/charts" element={<Charts fetchURl={requests.fetchTopUS100} />}/>
                 </Routes>
               </StyledMain>
             </Router>

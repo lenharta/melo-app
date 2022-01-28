@@ -12,15 +12,27 @@ const Track = ({
 }) => {
   return (
     <>
-      <StyledTrack key={id}>
+      <StyledTrack>
         <StyledTrackInner>
-          <h3>{position}</h3>
-          <img src={album.cover_medium} />
-          <StyledSongContent>
+          <StyledTrackPosition>
+            <h3>{position}</h3>
+          </StyledTrackPosition>
+
+          <StyledTrackImg>
+            <img src={album.cover_medium} />
+          </StyledTrackImg>
+
+          <StyledSongTitle>
             <h2>{title_short}</h2>
+          </StyledSongTitle>
+
+          <StyledExplict>
             {explicit_lyrics === true ? <MdExplicit /> : null}
-          </StyledSongContent>
+          </StyledExplict>
+
+          <StyledTrackArtist>
             <p>{artist.name}</p>
+          </StyledTrackArtist>
         </StyledTrackInner>
       </StyledTrack>
     </>
@@ -42,9 +54,17 @@ const StyledTrackInner = styled.div`
   }
 `;
 
-const StyledSongContent = styled.div`
+const StyledTrackPosition = styled.div``;
+
+const StyledTrackImg = styled.div``;
+
+const StyledSongTitle = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
   justify-content: flex-start;
 `;
+
+const StyledExplict = styled.div``;
+
+const StyledTrackArtist = styled.div``;
 
 export default Track;

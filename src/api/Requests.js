@@ -1,5 +1,5 @@
 const requests = {
-  fetchTopUS100: `https://deezerdevs-deezer.p.rapidapi.com/playlist/1313621735/tracks?`,
+  fetchTopUS: "/playlist/1313621735",
 };
 
 export default requests;

@@ -26,7 +26,7 @@ export const darkTheme = {
 
   header: css`
     background-color: var(--d-green-tint);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
   `,
 
   progressBar: css`
@@ -112,8 +112,8 @@ export const lightTheme = {
   `,
 
   header: css`
-    // background: var(--gray);
-    backdrop-filter: blur(10px);
+    background: var(--white-tint);
+    backdrop-filter: blur(30px);
   `,
 
   progressBar: css`

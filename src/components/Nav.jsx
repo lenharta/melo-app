@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { motion, useAnimation, useMotionValue } from "framer-motion";
-import { navSpring } from "../utils";
+import { motion } from "framer-motion";
+import { isHome, navSpring } from "../utils";
 
 const navLinkData = [
   {
@@ -19,6 +19,10 @@ const navLinkData = [
 
 const Nav = () => {
   const [selected, setSelected] = useState(navLinkData[0]);
+
+  // useEffect(() => {
+  //   {isHome ? setSelected(0) : null}
+  // }, [])
 
   return (
     <>

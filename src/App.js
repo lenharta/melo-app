@@ -4,11 +4,9 @@ import { isHome, loaderTimeout } from "./utils";
 import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/theme";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Charts, Dashboard } from "./pages";
 import { useDarkMode } from "./utils/hooks/useDarkTheme";
-
-import requests from "./api/Requests";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -30,16 +28,14 @@ const App = () => {
           <Loader />
         ) : (
           <>
-            <Router>
-              <Nav />
-              <ProgressBar />
-              <StyledMain>
-                <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/charts" element={<Charts fetchURl={requests.fetchTopUS100} />}/>
-                </Routes>
-              </StyledMain>
-            </Router>
+            <Nav />
+            <ProgressBar />
+            <StyledMain>
+              <Routes>
+                <Route path="/" index element={<Dashboard />} />
+                <Route path="/charts" element={<Charts />}/>
+              </Routes>
+            </StyledMain>
           </>
         )}
       </ThemeProvider>

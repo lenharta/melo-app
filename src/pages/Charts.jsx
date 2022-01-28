@@ -2,29 +2,31 @@ import axios from "../api/axios";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Chart } from "../components";
+import requests from "../api/Requests";
 
-const Charts = ({ fetchURL }) => {
+const Charts = () => {
   const [chart, setChart] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const request = await axios.get(fetchURL);
-      setChart(request.data.results);
+      const request = await axios.get(requests.fetchTopUS);
+      setChart(request.data.tracks.data);
       return request;
     };
     
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     fetchData();
-  }, [fetchURL]);
-
-  console.log(setChart);
+  }, []);
+  
+  // console.log(setChart);
   
   // make tabs for editorial top 10's
   return (
     <>
       <StyledChartsContainer>
         <StyledChartsInner>
-          {chart?.data.map(
+          <h1>Charts Top 10's</h1>
+          {chart.map(
             ({ title_short, artist, album, position, explicit_lyrics, id }, i) => (
               <Chart
                 key={i}
@@ -37,7 +39,6 @@ const Charts = ({ fetchURL }) => {
               />
             )
           )}
-          <h1>Charts Top 10's</h1>
         </StyledChartsInner>
       </StyledChartsContainer>
     </>

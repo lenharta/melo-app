@@ -1,7 +1,13 @@
 import { css } from "styled-components";
 import { mixins } from ".";
 
+// ========================================================= //
+// ============== D A R K ====== T H E M E ================= //
+// ========================================================= //
+
 export const darkTheme = {
+  // =========================================================
+  //   GLOBALS
   mixins,
 
   body: css`
@@ -16,60 +22,10 @@ export const darkTheme = {
     background: var(--l-green-tint);
   `,
 
-  loader: css`
-    color: var(--l-green);
-    background-color: var(--d-green);
-    svg {
-      stroke: var(--l-green);
-    }
-  `,
-
   header: css`
     background-color: var(--d-green-tint);
     backdrop-filter: blur(30px);
   `,
-
-  progressBar: css`
-    svg {
-      stroke: var(--l-green);
-    }
-  `,
-
-  navList: css`
-    background-color: var(--slate-green-tint);
-  `,
-
-  navLogo: css`
-    color: var(--l-green);
-    text-decoration: none;
-  `,
-
-  navLinks: css`
-    a {
-      color: var(--l-green);
-      text-decoration: none;
-      &:hover {
-        color: var(--l-green-tint);
-      }
-    }
-  `,
-
-  navSelectedLink: css`
-    background: var(--l-green-tint);
-  `,
-
-  themeButton: css`
-    background: var(--slate-green-tint);
-    border: 2px solid var(--l-green);
-    border-radius: 25px;
-    div {
-      background: var(--l-green);
-    }
-  `,
-
-  track: css``,
-
-  tracklist: css``,
 
   h1: css`
     color: var(--l-green);
@@ -86,9 +42,76 @@ export const darkTheme = {
   p: css`
     color: var(--slate-green);
   `,
+
+  // =========================================================
+  //   NAVIGATION
+  progressBar: css`
+    svg {
+      stroke: var(--l-green);
+    }
+  `,
+
+  navLogo: css`
+    color: var(--l-green);
+    text-decoration: none;
+  `,
+
+  navList: css`
+    background-color: var(--slate-green-tint);
+  `,
+
+  navLinks: css`
+    a {
+      color: var(--l-green);
+      text-decoration: none;
+      &:hover {
+        color: var(--l-green-tint);
+      }
+    }
+  `,
+
+  navSelectedLink: css`
+    background: var(--l-green-tint);
+  `,
+
+  // =========================================================
+  //   COMPONENTS
+  loader: css`
+    color: var(--l-green);
+    background-color: var(--d-green);
+    svg {
+      stroke: var(--l-green);
+    }
+  `,
+
+  themeButton: css`
+    background: var(--slate-green-tint);
+    border: 2px solid var(--l-green);
+    border-radius: 25px;
+    div {
+      background: var(--l-green);
+    }
+  `,
+
+  // =========================================================
+  //   REUSED COMPONENTS
+
+  track: css`
+    svg {
+      color: var(--slate-green-tint);
+    }
+  `,
+
+  trackList: css``,
 };
 
+// ========================================================= //
+// ============= L I G H T ====== T H E M E ================ //
+// ========================================================= //
+
 export const lightTheme = {
+  // =========================================================
+  //   GLOBALS
   mixins,
 
   body: css`
@@ -103,55 +126,9 @@ export const lightTheme = {
     background: var(--l-teal-tint);
   `,
 
-  loader: css`
-    color: var(--teal);
-    background-color: var(--white);
-    svg {
-      stroke: var(--teal);
-    }
-  `,
-
   header: css`
     background: var(--white-tint);
     backdrop-filter: blur(30px);
-  `,
-
-  progressBar: css`
-    svg {
-      stroke: var(--teal);
-    }
-  `,
-
-  navList: css`
-    background-color: var(--l-teal-tint);
-  `,
-
-  navLogo: css`
-    color: var(--teal);
-    text-decoration: none;
-  `,
-
-  navLinks: css`
-    a {
-      color: var(--teal);
-      text-decoration: none;
-      &:hover {
-        color: var(--teal-tint);
-      }
-    }
-  `,
-
-  navSelectedLink: css`
-    background: var(--teal-tint);
-  `,
-
-  themeButton: css`
-    background: var(--l-teal-tint);
-    border: 2px solid var(--teal);
-    border-radius: 25px;
-    div {
-      background: var(--teal);
-    }
   `,
 
   ol: css`
@@ -169,4 +146,65 @@ export const lightTheme = {
   p: css`
     color: var(--white);
   `,
+
+  // =========================================================
+  //   NAVIGATION
+  progressBar: css`
+    svg {
+      stroke: var(--teal);
+    }
+  `,
+
+  navLogo: css`
+    color: var(--teal);
+    text-decoration: none;
+  `,
+
+  navList: css`
+    background-color: var(--l-teal-tint);
+  `,
+
+  navLinks: css`
+    a {
+      color: var(--teal);
+      text-decoration: none;
+      &:hover {
+        color: var(--teal-tint);
+      }
+    }
+  `,
+
+  navSelectedLink: css`
+    background: var(--teal-tint);
+  `,
+
+  // =========================================================
+  //   COMPONENTS
+  loader: css`
+    color: var(--teal);
+    background-color: var(--white);
+    svg {
+      stroke: var(--teal);
+    }
+  `,
+
+  themeButton: css`
+    background: var(--l-teal-tint);
+    border: 2px solid var(--teal);
+    border-radius: 25px;
+    div {
+      background: var(--teal);
+    }
+  `,
+
+  // =========================================================
+  //   REUSED COMPONENTS
+
+  track: css`
+    svg {
+      color: var(--gray-tint);
+    }
+  `,
+
+  trackList: css``,
 };

@@ -34,16 +34,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body::-webkit-scrollbar-track {
-    ${(props) => props.theme.scrollbarTrack};
+    ${(props) => props.theme.scrollbarTrack}
   }
 
   body::-webkit-scrollbar-thumb {
-    ${(props) => props.theme.scrollbarThumb};
+    ${(props) => props.theme.scrollbarThumb}
     border-radius: 5px;
   }
 
   body {
-    ${(props) => props.theme.body};
+    ${(props) => props.theme.body}
     width: 100%;
     min-height: 100%;
     line-height: 1;
@@ -109,11 +109,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    ${(props) => props.theme.button};
+    ${(props) => props.theme.button}
   }
 
   ol {
-    ${(props) => props.theme.ol};
+    ${(props) => props.theme.ol}
   }
 `;
 

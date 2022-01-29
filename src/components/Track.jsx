@@ -2,22 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import { MdExplicit } from "react-icons/md";
 
-const Track = ({ title_short, artist, album, position, explicit_lyrics }) => {
+const Track = ({ title_short, artist, album, explicit_lyrics, id }) => {
   return (
     <>
-      <StyledTrack >
+      <StyledTrack>
         <StyledTrackInner>
-          <StyledTrackPosition>
-            <h3>{position}</h3>
-          </StyledTrackPosition>
-
-          <StyledTrackImg>
+          <StyledImg>
             <img src={album.cover_medium} />
-          </StyledTrackImg>
+          </StyledImg>
 
-          <StyledSongTitle>
+          <StyledSong>
             <h2>{title_short}</h2>
-          </StyledSongTitle>
+          </StyledSong>
 
           <StyledExplict>
             {explicit_lyrics === true ? <MdExplicit /> : null}
@@ -33,11 +29,13 @@ const Track = ({ title_short, artist, album, position, explicit_lyrics }) => {
 };
 
 const StyledTrack = styled.li`
-  ${({ theme }) => theme.mixins.flexEven};
+  ${(props) => props.theme.track}
+  margin: 0 auto;
   width: 100%;
 `;
+
 const StyledTrackInner = styled.div`
-  ${({ theme }) => theme.mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter}
   justify-content: flex-start;
   width: 100%;
 
@@ -47,17 +45,25 @@ const StyledTrackInner = styled.div`
   }
 `;
 
-const StyledTrackPosition = styled.div``;
-
-const StyledTrackImg = styled.div``;
-
-const StyledSongTitle = styled.div`
-  ${({ theme }) => theme.mixins.flexCenter};
+const StyledImg = styled.div`
   justify-content: flex-start;
+  flex: 1;
 `;
 
-const StyledExplict = styled.div``;
+const StyledSong = styled.div`
+  // flex-wrap: nowrap;
+  justify-content: flex-start;
+  flex: 3;
+  text-overflow: clip;
+`;
 
-const StyledTrackArtist = styled.div``;
+const StyledExplict = styled.div`
+  flex: 1;
+`;
+
+const StyledTrackArtist = styled.div`
+text-align: right;
+  flex: 1;
+`;
 
 export default Track;

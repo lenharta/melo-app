@@ -5,4 +5,3 @@ export { default as ProgressBar } from "./ProgressBar";
 export { default as ThemeToggle } from "./ThemeToggle";
 export { default as Track } from "./Track";
 export { default as TrackList } from "./TrackList";
-export { default as Chart } from "./Chart";

@@ -2,20 +2,9 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const Dashboard = () => {
-  useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const { data } = await getChartsEditorial();
-    //     setChart(data);
-    //     console.log(data);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
-
-    window.scrollTo(0, 0);
-    // fetchData();
-  }, []);
+  // useEffect(() => {
+    
+  // }, []);
 
   return (
     <>

@@ -2,17 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { MdExplicit } from "react-icons/md";
 
-const Track = ({
-  id,
-  title_short,
-  artist,
-  album,
-  position,
-  explicit_lyrics,
-}) => {
+const Track = ({ title_short, artist, album, position, explicit_lyrics }) => {
   return (
     <>
-      <StyledTrack>
+      <StyledTrack >
         <StyledTrackInner>
           <StyledTrackPosition>
             <h3>{position}</h3>

@@ -5,7 +5,7 @@ import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/theme";
 import { Routes, Route } from "react-router-dom";
-import { Charts, Dashboard } from "./pages";
+import { Charts, Dashboard } from "./routes";
 import { useDarkMode } from "./utils/hooks/useDarkTheme";
 
 const App = () => {

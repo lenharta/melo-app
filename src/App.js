@@ -30,9 +30,10 @@ const App = () => {
           <>
             <Nav />
             <ProgressBar />
+            {!loading ? <StyledFadeContainer /> : null}
             <StyledMain>
               <Routes>
-                <Route path="/" index element={<Dashboard />} />
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/charts" element={<Charts />}/>
               </Routes>
             </StyledMain>
@@ -46,19 +47,29 @@ const App = () => {
 const StyledMain = styled.main`
   margin: 0 auto;
   max-width: 1600px;
-  padding: 0 150px;
+  margin: 0 100px;
 
   @media (max-width: 1080px) {
-    padding: 0 100px;
+    margin: 0 50px;
   }
 
   @media (max-width: 768px) {
-    padding: 0 50px;
+    margin: 0 25px;
   }
 
   @media (max-width: 480px) {
-    padding: 0 25px;
+    margin: 0px;
   }
+`;
+
+const StyledFadeContainer = styled.div`
+  ${(props) => props.theme.scrollFade}
+  position: fixed;
+  height: 150px;
+  width: 100%;
+  bottom: 0;
+  z-index: 99;
+
 `;
 
 export default App;

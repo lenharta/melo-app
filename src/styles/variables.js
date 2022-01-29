@@ -4,22 +4,23 @@ const variables = css`
   :root {
     // Colors
     --d-green: rgb(27, 32, 31);
-    --d-green-tint: rgb(27, 32, 31 0.4);
+    --d-green-tint: rgba(27, 32, 31 0.4);
     --green: rgb(61, 88, 87);
     --green-tint: rgba(61, 88, 87, 0.4);
     --l-green: rgb(203, 251, 185);
-    --l-green-tint: rgb(203, 251, 185, 0.4);
+    --l-green-tint: rgba(203, 251, 185, 0.4);
     --slate-green: rgb(127, 148, 136);
     --slate-green-tint: rgba(127, 148, 136, 0.4);
     --black: rgb(21, 21, 23);
+    --black-tint: rgba(21, 21, 23, 0.1);
     --gray: rgb(182, 183, 187);
     --gray-tint: rgba(182, 183, 187, 0.4);
     --slate-gray: rgb(112, 128, 144);
     --slate-gray-tint: rgba(112, 128, 144, 0.4);
     --white: rgb(240, 244, 245);
-    --white-tint: rgb(240, 244, 245, 0.4);
+    --white-tint: rgba(240, 244, 245, 0.4);
     --teal: rgb(111, 148, 149);
-    --teal-tint: rgb(111, 148, 149, 0.4);
+    --teal-tint: rgba(111, 148, 149, 0.4);
     --l-teal: rgb(162, 196, 196);
     --l-teal-tint: rgba(162, 196, 196, 0.4);
 
@@ -42,6 +43,7 @@ const variables = css`
     --fz-lg: 30px;
     --fz-xl: 44px;
     --fz-xxl: 54px;
+    --fz-nav: 22px;
 
     // Transitions
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);

@@ -23,16 +23,65 @@ const Charts = () => {
     <>
       <StyledChartsContainer>
         <StyledChartsInner>
-          <h1>US Top 100</h1>
-          <TrackList charts={charts} />
+          <StyledChartsTracks>
+            <TrackList charts={charts} />
+          </StyledChartsTracks>
         </StyledChartsInner>
       </StyledChartsContainer>
     </>
   );
 };
 
-const StyledChartsContainer = styled.section``;
+const StyledChartsContainer = styled.section`
+  ${(props) => props.theme.chartsSection}
+  width: 100%;
+  border-radius: 30px;
+  padding: 5px;
+`;
 
-const StyledChartsInner = styled.div``;
+const StyledChartsInner = styled.div`
+  ${(props) => props.theme.chartsInner}
+  border-radius: 30px;
+  padding: 75px auto;
+
+  @media (max-width: 768px) {
+    padding: 50px auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 25px auto;
+  }
+  
+`;
+
+const StyledChartsTracks = styled.div`
+width: 100%;
+padding: 75px auto;
+
+  @media (max-width: 768px) {
+    padding: 50px auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 25px auto;
+  }
+
+  /* @media (max-width: 1080px) {
+    padding: 100px;
+  } */
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0px;
+  }
+
+  img {
+    max-width: 75px;
+    border-radius: 10%;
+  }
+`;
 
 export default Charts;

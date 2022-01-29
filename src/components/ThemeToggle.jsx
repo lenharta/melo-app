@@ -3,15 +3,19 @@ import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import { spring } from "../utils";
 
-const ThemeToggle = ({ theme, toggleTheme }) => {
+const ThemeToggle = ({ loading, theme, toggleTheme }) => {
+  
   return (
     <>
       <StyledSwitch isSwitched={theme} onClick={toggleTheme}>
+    {/* {loading ? (<StyledFadeContainer />) : null} */}
         <StyledHandle layout transition={spring} />
       </StyledSwitch>
     </>
   );
 };
+
+
 
 const StyledSwitch = styled.button`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -27,8 +31,8 @@ const StyledSwitch = styled.button`
   bottom: 30px;
   right: 30px;
   z-index: 100;
-  width: 70px;
-  height: 40px;
+  width: 90px;
+  height: 55px;
   padding: 5px;
   border-radius: 50px;
   cursor: pointer;
@@ -36,9 +40,9 @@ const StyledSwitch = styled.button`
 
 const StyledHandle = styled(motion.div)`
   ${({ theme }) => theme.mixins.flexCenter};
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
 `;
 
 export default ThemeToggle;

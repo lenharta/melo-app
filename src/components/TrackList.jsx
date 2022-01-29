@@ -17,13 +17,11 @@ const TrackList = ({ charts }) => {
 };
 
 const StyledTrackList = styled.ul`
-  ${(props) => props.theme.trackList}
+  margin: 0 auto;
+  ${(props) => props.theme.trackList};
   width: 100%;
-  list-style-type: none;
 `;
 
-const StyledTrackListInner = styled.div`
-
-`;
+const StyledTrackListInner = styled.div``;
 
 export default TrackList;

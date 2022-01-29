@@ -35,6 +35,7 @@ const ProgressBar = () => {
 
 const StyledProgressContainer = styled(motion.div)`
   position: fixed;
+  z-index: 101;
   top: 90px;
   left: 0;
   ${(props) => props.theme.progressBar};

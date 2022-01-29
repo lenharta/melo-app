@@ -57,21 +57,22 @@ export const darkTheme = {
   `,
 
   navList: css`
-    background-color: var(--slate-green-tint);
+    background-color: var(--l-green-tint);
+    // border: 5px solid var(--slate-green-tint);
   `,
 
   navLinks: css`
     a {
-      color: var(--l-green);
+      color: var(--d-green);
       text-decoration: none;
       &:hover {
-        color: var(--l-green-tint);
+        color: var(--d-green);
       }
     }
   `,
 
   navSelectedLink: css`
-    background: var(--l-green-tint);
+    background: var(--slate-green-tint);
   `,
 
   // =========================================================
@@ -87,10 +88,14 @@ export const darkTheme = {
   themeButton: css`
     background: var(--slate-green-tint);
     border: 2px solid var(--l-green);
-    border-radius: 25px;
+    border-radius: 50%;
     div {
       background: var(--l-green);
     }
+  `,
+
+  scrollFade: css`
+    background: linear-gradient(0deg, var(--d-green) 0%, transparent 100%);
   `,
 
   // =========================================================
@@ -131,20 +136,16 @@ export const lightTheme = {
     backdrop-filter: blur(30px);
   `,
 
-  ol: css`
-    background: var(--gray);
-  `,
-
   h1: css`
     color: var(--teal);
   `,
 
   h2: css`
-    color: var(--green);
+    color: var(--teal);
   `,
 
   p: css`
-    color: var(--white);
+    color: var(--slate-gray);
   `,
 
   // =========================================================
@@ -162,14 +163,16 @@ export const lightTheme = {
 
   navList: css`
     background-color: var(--l-teal-tint);
+    // border: 5px solid var(--l-teal-tint);
   `,
 
   navLinks: css`
     a {
       color: var(--teal);
       text-decoration: none;
-      &:hover {
+      &:hover &:active {
         color: var(--teal-tint);
+        border: dashed 3px var(--black);
       }
     }
   `,
@@ -197,12 +200,26 @@ export const lightTheme = {
     }
   `,
 
+  scrollFade: css`
+    background: linear-gradient(180deg, transparent 0%, var(--teal-tint) 100%);
+    // backdrop-filter: ;
+  `,
+
+  chartsSection: css`
+    background: linear-gradient(90deg, var(--teal-tint) 0%, var(--l-teal-tint) 100%);
+  `,
+
+  chartsInner: css`
+    background: var(--white-tint);
+    backdrop-filter: blur(20px);
+  `,
+
   // =========================================================
   //   REUSED COMPONENTS
 
   track: css`
     svg {
-      color: var(--gray-tint);
+      color: var(--slate-gray);
     }
   `,
 

@@ -51,19 +51,32 @@ const GlobalStyle = createGlobalStyle`
 
   nav {
     ${(props) => props.theme.nav}
+    width: 100%;
+    margin: 0 125px;
+
+  @media (max-width: 1080px) {
+    margin: 0 100px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 50px;
+  }
+
+  @media (max-width: 480px) {
+    margin: 0 25px;
+  }
   }
 
   section {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 150px 0;
+    margin: 150px auto;
 
     @media (max-width: 768px) {
-      padding: 125px 0;
+      margin: 125px 0;
     }
 
     @media (max-width: 480px) {
-      padding: 100px 0;
+      margin: 100px 0;
     }
   }
 
@@ -101,7 +114,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     ${(props) => props.theme.a}
-    font-size: var(--fz-md);
+    font-size: clamp(var(--fz-sm), 5vw, var(--fz-nav));
     cursor: pointer;
     // text-decoration: none;
     font-family: var(--roboto);

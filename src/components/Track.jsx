@@ -30,35 +30,35 @@ const Track = ({ title_short, artist, album, explicit_lyrics, id }) => {
 
 const StyledTrack = styled.li`
   ${(props) => props.theme.track}
+  ${({ theme }) => theme.mixins.flexCenter}
   margin: 0 auto;
   width: 100%;
+  
 `;
 
 const StyledTrackInner = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
-  justify-content: flex-start;
   width: 100%;
-
-  img {
-    max-width: 100px;
-    border-radius: 10%;
-  }
 `;
 
 const StyledImg = styled.div`
-  justify-content: flex-start;
+  
   flex: 1;
 `;
 
 const StyledSong = styled.div`
   // flex-wrap: nowrap;
-  justify-content: flex-start;
+  margin-left: 20px;
   flex: 3;
   text-overflow: clip;
 `;
 
 const StyledExplict = styled.div`
   flex: 1;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const StyledTrackArtist = styled.div`

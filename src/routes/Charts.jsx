@@ -6,15 +6,17 @@ import requests from "../api/Requests";
 
 const Charts = () => {
   const [charts, setCharts] = useState([]);
+  const [titled, setTitled] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const request = await axios.get(requests.fetchTopUS);
-      setCharts(request.data?.tracks?.data);
+      setCharts(request.data.tracks.data);
+      // setTitled(request.data);
       return request;
     };
 
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     fetchData();
   }, []);
 
@@ -22,11 +24,13 @@ const Charts = () => {
   return (
     <>
       <StyledChartsContainer>
-        <StyledChartsInner>
-          <StyledChartsTracks>
-            <TrackList charts={charts} />
-          </StyledChartsTracks>
-        </StyledChartsInner>
+        <ChartsHeader>
+          <h1>Charts</h1>
+        </ChartsHeader>
+
+        <StyledChartsTracks>
+          <TrackList charts={charts} />
+        </StyledChartsTracks>
       </StyledChartsContainer>
     </>
   );
@@ -34,54 +38,17 @@ const Charts = () => {
 
 const StyledChartsContainer = styled.section`
   ${(props) => props.theme.chartsSection}
-  width: 100%;
-  border-radius: 30px;
-  padding: 5px;
-`;
 
-const StyledChartsInner = styled.div`
-  ${(props) => props.theme.chartsInner}
-  border-radius: 30px;
-  padding: 75px auto;
-
-  @media (max-width: 768px) {
-    padding: 50px auto;
-  }
-
-  @media (max-width: 480px) {
-    padding: 25px auto;
-  }
-  
 `;
 
 const StyledChartsTracks = styled.div`
-width: 100%;
-padding: 75px auto;
+  width: 60%;
 
-  @media (max-width: 768px) {
-    padding: 50px auto;
-  }
-
-  @media (max-width: 480px) {
-    padding: 25px auto;
-  }
-
-  /* @media (max-width: 1080px) {
-    padding: 100px;
-  } */
-
-  @media (max-width: 768px) {
-    padding: 15px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 0px;
-  }
-
-  img {
-    max-width: 75px;
-    border-radius: 10%;
+  @media (max-width: 1080px) {
+    width: 100%;
   }
 `;
+
+const ChartsHeader = styled.div``;
 
 export default Charts;

@@ -19,14 +19,6 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scrollbar-width: thin;
-    scrollbar-color: gray;
-  }
-
   // Scroll Bar
   body::-webkit-scrollbar {
     display: none;
@@ -44,44 +36,13 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     ${(props) => props.theme.body}
-    width: 100%;
-    min-height: 100%;
+    width: 100vw;
     line-height: 1;
-  }
-
-  nav {
-    ${(props) => props.theme.nav}
-    width: 100%;
-    margin: 0 125px;
-
-  @media (max-width: 1080px) {
-    margin: 0 100px;
-  }
-
-  @media (max-width: 768px) {
-    margin: 0 50px;
-  }
-
-  @media (max-width: 480px) {
-    margin: 0 25px;
-  }
-  }
-
-  section {
-    max-width: 1200px;
-    margin: 150px auto;
-
-    @media (max-width: 768px) {
-      margin: 125px 0;
-    }
-
-    @media (max-width: 480px) {
-      margin: 100px 0;
-    }
-  }
-
-  h1, h2 {
-    letter-spacing: -1px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: gray;
   }
 
   h1 {
@@ -116,17 +77,9 @@ const GlobalStyle = createGlobalStyle`
     ${(props) => props.theme.a}
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-nav));
     cursor: pointer;
-    // text-decoration: none;
+    text-decoration: none;
     font-family: var(--roboto);
     font-weight: var(--roboto-bold);
-  }
-
-  button {
-    ${(props) => props.theme.button}
-  }
-
-  ol {
-    ${(props) => props.theme.ol}
   }
 `;
 

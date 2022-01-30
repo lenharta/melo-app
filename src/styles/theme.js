@@ -43,6 +43,15 @@ export const darkTheme = {
     color: var(--slate-green);
   `,
 
+  cardGradient: css`
+    background: linear-gradient(
+      135deg,
+      var(--l-green-tint) 0%,
+      var(--green-tint) 50%,
+      var(--d-green-tint) 100%
+    );
+  `,
+
   // =========================================================
   //   NAVIGATION
   progressBar: css`
@@ -53,20 +62,22 @@ export const darkTheme = {
 
   navLogo: css`
     color: var(--l-green);
-    text-decoration: none;
   `,
 
   navList: css`
-    background-color: var(--l-green-tint);
-    // border: 5px solid var(--slate-green-tint);
+    background-color: var(--slate-green-tint);
+    border: 3px solid var(--l-green-tint);
   `,
 
   navLinks: css`
     a {
-      color: var(--d-green);
-      text-decoration: none;
+      color: var(--l-green);
+      &:active,
       &:hover {
-        color: var(--d-green);
+        color: var(--l-green);
+      }
+      &:focus-visible {
+        border: dashed 3px var(--l-green);
       }
     }
   `,
@@ -88,7 +99,9 @@ export const darkTheme = {
   themeButton: css`
     background: var(--slate-green-tint);
     border: 2px solid var(--l-green);
-    border-radius: 50%;
+    &:focus-visible {
+      border: dashed 3px var(--l-green);
+    }
     div {
       background: var(--l-green);
     }
@@ -102,8 +115,12 @@ export const darkTheme = {
   //   REUSED COMPONENTS
 
   track: css`
+    border-bottom: solid 1px var(--slate-green-tint);
+    &:last-of-type {
+      border-bottom: none;
+    }
     svg {
-      color: var(--slate-green-tint);
+      color: var(--slate-green);
     }
   `,
 
@@ -136,6 +153,8 @@ export const lightTheme = {
     backdrop-filter: blur(30px);
   `,
 
+  nav: css``,
+
   h1: css`
     color: var(--teal);
   `,
@@ -147,6 +166,15 @@ export const lightTheme = {
   p: css`
     color: var(--slate-gray);
   `,
+
+  // cardGradient: css`
+  //   background: linear-gradient(
+  //     135deg,
+  //     var(--teal) 0%,
+  //     var(--teal-tint) 50%,
+  //     var(--slate-gray) 100%
+  //   );
+  // `,
 
   // =========================================================
   //   NAVIGATION
@@ -163,15 +191,18 @@ export const lightTheme = {
 
   navList: css`
     background-color: var(--l-teal-tint);
-    // border: 5px solid var(--l-teal-tint);
+    border: 3px solid var(--teal-tint);
   `,
 
   navLinks: css`
     a {
       color: var(--teal);
       text-decoration: none;
-      &:hover &:active {
-        color: var(--teal-tint);
+      &:active,
+      &:hover {
+        color: var(--white);
+      }
+      &:focus-visible {
         border: dashed 3px var(--black);
       }
     }
@@ -195,22 +226,20 @@ export const lightTheme = {
     background: var(--l-teal-tint);
     border: 2px solid var(--teal);
     border-radius: 25px;
+    &:focus-visible {
+      border: dashed 3px var(--black);
+    }
     div {
       background: var(--teal);
     }
   `,
 
   scrollFade: css`
-    background: linear-gradient(180deg, transparent 0%, var(--teal-tint) 100%);
+    // background: linear-gradient(180deg, transparent 0%, var(--teal-tint) 100%);
     // backdrop-filter: ;
   `,
 
   chartsSection: css`
-    background: linear-gradient(90deg, var(--teal-tint) 0%, var(--l-teal-tint) 100%);
-  `,
-
-  chartsInner: css`
-    background: var(--white-tint);
     backdrop-filter: blur(20px);
   `,
 

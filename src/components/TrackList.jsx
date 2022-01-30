@@ -6,22 +6,29 @@ const TrackList = ({ charts }) => {
   return (
     <>
       <StyledTrackList>
-        <StyledTrackListInner>
-          {charts.map((data) => {
-            return <Track key={data.id} {...data} />;
-          })}
-        </StyledTrackListInner>
+        {charts.map((data) => {
+          return <Track key={data.id} {...data} />;
+        })}
+        {/* <StyledFadeContainer /> */}
       </StyledTrackList>
     </>
   );
 };
 
 const StyledTrackList = styled.ul`
-  margin: 0 auto;
-  ${(props) => props.theme.trackList};
+  ${(props) => props.theme.trackList}
+  ${(props) => props.theme.cardGradient}
   width: 100%;
+  height: 100%;
 `;
 
-const StyledTrackListInner = styled.div``;
+const StyledFadeContainer = styled.div`
+  ${(props) => props.theme.scrollFade}
+  position: fixed;
+  height: 150px;
+  width: 100%;
+  bottom: 0;
+  z-index: 99;
+`;
 
 export default TrackList;

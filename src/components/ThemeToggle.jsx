@@ -8,7 +8,6 @@ const ThemeToggle = ({ loading, theme, toggleTheme }) => {
   return (
     <>
       <StyledSwitch isSwitched={theme} onClick={toggleTheme}>
-    {/* {loading ? (<StyledFadeContainer />) : null} */}
         <StyledHandle layout transition={spring} />
       </StyledSwitch>
     </>
@@ -23,25 +22,31 @@ const StyledSwitch = styled.button`
   justify-content: flex-start;
   ${(props) =>
     props.isSwitched === "dark"
-      ? css`
+    ? css`
           justify-content: flex-end;
-        `
+          `
       : null};
   position: fixed;
+  border-radius: 50%;
   bottom: 30px;
   right: 30px;
-  z-index: 100;
+  z-index: 110;
   width: 90px;
-  height: 55px;
+  height: 50px;
   padding: 5px;
   border-radius: 50px;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    width: 70px;
+    height: 40px;
+  }
 `;
 
 const StyledHandle = styled(motion.div)`
   ${({ theme }) => theme.mixins.flexCenter};
-  width: 40px;
-  height: 40px;
+  width: 50%;
+  height: 100%;
   border-radius: 40px;
 `;
 

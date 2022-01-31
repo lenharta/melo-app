@@ -30,6 +30,8 @@ const StyledTrack = styled.li`
   ${({ theme }) => theme.mixins.flexCenter}
   padding: 10px 0;
   width: 100%;
+  
+
 `;
 
 const StyledTrackInner = styled.div`
@@ -37,6 +39,7 @@ const StyledTrackInner = styled.div`
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
   width: 100%;
+  
 
   @media (max-width: 480px) {
     grid-template-columns: repeat(8, 1fr);
@@ -50,7 +53,7 @@ const StyledImg = styled.img`
   margin-right: 20px;
   width: 100px;
   height: 100px;
-  
+
   @media (max-width: 768px) {
     width: 80px;
     height: 80px;
@@ -62,14 +65,21 @@ const StyledImg = styled.img`
 const StyledSong = styled.div`
   grid-area: 1 / 2 / span 1 / span 4;
   margin: auto 0;
-  padding: 5px 0;
+  h2 {
+    padding: 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
-  background-clip: text;
+    background-clip: text;
+  }
+
+  p { 
+    padding: 10px 0;
+  }
 
   @media (max-width: 480px) {
-    grid-area: 1 / 2 / span 1 / span 5;
+    grid-area: 1 / 2 / span 1 / span 6;
   }
 `;
 
@@ -92,13 +102,13 @@ const StyledTrackArtist = styled.div`
   text-align: right;
   margin: auto 0;
   padding: 5px 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 
   @media (max-width: 480px) {
     grid-area: 2 / 2 / span 1 / span 4;
     text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 `;
 

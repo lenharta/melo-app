@@ -91,7 +91,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     ${(props) => props.theme.h1}
-    font-size: clamp(var(--fz-xs), 5vw, var(--fz-xxl));
+    font-size: clamp(var(--fz-lg), 5vw, var(--fz-xxl));
     font-size: var(--fz-xxl);
     font-family: var(--barlow);
     font-weight: var(--barlow-reg);
@@ -99,9 +99,9 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     ${(props) => props.theme.h2}
-    font-size: clamp(var(--fz-xxs), 5vw, var(--fz-xl));
-    font-family: var(--barlow);
-    font-weight: var(--barlow-light);
+    font-size: clamp(var(--fz-nav), 5vw, var(--fz-lg));
+    font-family: var(--righteous);
+    font-weight: 100;
   }
 
   h3 {
@@ -112,9 +112,9 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     ${(props) => props.theme.p}
-    font-size: var(--fz-md);
+    font-size: clamp(var(--fz-xxs), 5vw, var(--fz-md));
     font-family: var(--roboto);
-    font-weight: var(--roboto-reg);
+    font-weight: var(--roboto-light);
   }
 
   a {
@@ -133,6 +133,13 @@ const GlobalStyle = createGlobalStyle`
     ${(props) => props.theme.header__divider}
     width: 100%;
     height: 3px;
+  }
+
+  .header__title {
+    ${(props) => props.theme.header__title}
+    font-size: clamp(var(--fz-nav), 5vw, var(--fz-xxl));
+    font-family: var(--righteous);
+    font-weight: 100;
   }
 `;
 

@@ -149,7 +149,7 @@ export const lightTheme = {
   mixins,
 
   body: css`
-    background: var(--white);
+    background: var(--off-white);
   `,
 
   scrollbarThumb: css`
@@ -161,18 +161,18 @@ export const lightTheme = {
   `,
 
   header: css`
-    background: var(--white-tint);
+    background: var(--off-white-tint);
     backdrop-filter: blur(30px);
   `,
 
   nav: css``,
 
   h1: css`
-    color: var(--teal);
+    color: var(--black);
   `,
 
   h2: css`
-    color: var(--slate-gray);
+    color: var(--black);
   `,
 
   p: css`
@@ -196,16 +196,23 @@ export const lightTheme = {
     background: linear-gradient(135deg, var(--teal) 0%, var(--teal-tint) 100%);
   `,
 
+  header__title: css`
+    background-image: linear-gradient(135deg, var(--teal) 0%, var(--off-white-tint) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-attachment: fixed;
+  `,
+
   // =========================================================
   //   NAVIGATION
   progressBar: css`
     svg {
-      stroke: var(--teal);
+      stroke: var(--black);
     }
   `,
 
   navLogo: css`
-    color: var(--teal);
+    color: var(--black);
     text-decoration: none;
   `,
 
@@ -266,14 +273,14 @@ export const lightTheme = {
   //   REUSED COMPONENTS
 
   track: css`
-    border-bottom: solid 1px var(--slate-gray-tint);
+    border-bottom: solid 1px var(--l-teal);
     &:last-of-type {
       border-bottom: none;
     }
     
 
     svg {
-      color: var(--slate-gray);
+      color: var(--l-teal);
     }
   `,
 

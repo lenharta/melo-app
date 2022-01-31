@@ -24,6 +24,14 @@ const variables = css`
     --l-teal: rgb(162, 196, 196);
     --l-teal-tint: rgba(162, 196, 196, 0.4);
 
+    // New Light Theme
+    /* --blue: rgb();
+    --light-blue: rgb();
+    --dark-blue: rgb();
+    --dark-blue: rgb();
+    --dark-blue: rgb(); */
+    --off-white: rgb(242, 243, 244);
+    --off-white-tint: rgb(242, 243, 244, 0.4);
     // Font Styles
     --righteous: "Righteous", cursive; // Logo/Various
     --barlow: "Barlow", sans-serif;

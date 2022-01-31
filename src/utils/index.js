@@ -87,7 +87,12 @@ export const navSpring = {
   type: "spring",
   stiffness: 500,
   damping: 30,
-}
+};
+
+export const navVariant = {
+  x: 0,
+  y: 0,
+};
 
 // Progress Bar
 export const progress = {

@@ -10,10 +10,9 @@ const Charts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const request = await axios.get(requests.fetchTopUS);
-      setCharts(request.data.tracks.data);
-      // setTitled(request.data);
-      return request;
+      const response = await axios.get(requests.fetchTopUS);
+      setCharts(response.data.tracks.data);
+      return response;
     };
 
     window.scrollTo(0, 0);
@@ -26,11 +25,22 @@ const Charts = () => {
       <StyledChartsContainer>
         <ChartsHeader>
           <h1>Charts</h1>
+          <div className="header__divider" />
         </ChartsHeader>
 
-        <StyledChartsTracks>
-          <TrackList charts={charts} />
-        </StyledChartsTracks>
+        <ChartsContent>
+          <StyledChartsTracks>
+            <TrackList charts={charts} />
+          </StyledChartsTracks>
+          <StyledChartInfo>
+            {titled.map(({ title, picture }) => {
+              <>
+                <img src={picture} />
+                <h1>{title}</h1>
+              </>;
+            })}
+          </StyledChartInfo>
+        </ChartsContent>
       </StyledChartsContainer>
     </>
   );
@@ -38,8 +48,19 @@ const Charts = () => {
 
 const StyledChartsContainer = styled.section`
   ${(props) => props.theme.chartsSection}
-
 `;
+
+const ChartsHeader = styled.div`
+  margin: 50px 0px;
+  ${({ theme }) => theme.mixins.flexCenter}
+  align-items: flex-start;
+  flex-direction: column;
+  h1 {
+    margin-bottom: 10px;
+  }
+`;
+
+const ChartsContent = styled.div``;
 
 const StyledChartsTracks = styled.div`
   width: 60%;
@@ -49,6 +70,6 @@ const StyledChartsTracks = styled.div`
   }
 `;
 
-const ChartsHeader = styled.div``;
+const StyledChartInfo = styled.div``;
 
 export default Charts;

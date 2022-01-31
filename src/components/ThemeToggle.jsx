@@ -8,7 +8,7 @@ const ThemeToggle = ({ loading, theme, toggleTheme }) => {
   return (
     <>
       <StyledSwitch isSwitched={theme} onClick={toggleTheme}>
-        <StyledHandle layout transition={spring} />
+        <StyledHandle transition={spring} />
       </StyledSwitch>
     </>
   );

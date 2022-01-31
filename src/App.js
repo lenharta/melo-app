@@ -32,8 +32,8 @@ const App = () => {
             <ProgressBar />
             <StyledMain>
               <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/charts" element={<Charts />}/>
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="charts" element={<Charts />} />
               </Routes>
             </StyledMain>
           </>
@@ -43,23 +43,6 @@ const App = () => {
   );
 };
 
-const StyledMain = styled.main`
-  margin: 100px auto 0;
-  padding: 0 100px;
-
-  @media (max-width: 1080px) {
-    padding: 0 50px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0 25px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 0px 10px;
-  }
-`;
-
-
+const StyledMain = styled.main``;
 
 export default App;

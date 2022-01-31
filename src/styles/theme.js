@@ -125,6 +125,18 @@ export const darkTheme = {
   `,
 
   trackList: css``,
+
+  // =========================================================
+  //   GLOBAL CLASSES
+
+  header__divider: css`
+    background: linear-gradient(
+      135deg,
+      var(--l-green) 0%,
+      var(--green) 50%,
+      var(--slate-green-tint) 100%
+    );
+  `,
 };
 
 // ========================================================= //
@@ -160,13 +172,14 @@ export const lightTheme = {
   `,
 
   h2: css`
-    color: var(--teal);
+    color: var(--slate-gray);
   `,
 
   p: css`
     color: var(--slate-gray);
   `,
 
+  // Tested in Tracklist
   // cardGradient: css`
   //   background: linear-gradient(
   //     135deg,
@@ -175,6 +188,13 @@ export const lightTheme = {
   //     var(--slate-gray) 100%
   //   );
   // `,
+
+  // =========================================================
+  //   GLOBAL CLASSES
+
+  header__divider: css`
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-tint) 100%);
+  `,
 
   // =========================================================
   //   NAVIGATION
@@ -191,16 +211,15 @@ export const lightTheme = {
 
   navList: css`
     background-color: var(--l-teal-tint);
-    border: 3px solid var(--teal-tint);
+    border: 2px solid var(--teal-tint);
   `,
 
   navLinks: css`
     a {
-      color: var(--teal);
+      color: var(--slate-gray);
       text-decoration: none;
-      &:active,
-      &:hover {
-        color: var(--white);
+      &:active {
+        color: var(--gray-tint);
       }
       &:focus-visible {
         border: dashed 3px var(--black);
@@ -240,13 +259,19 @@ export const lightTheme = {
   `,
 
   chartsSection: css`
-    backdrop-filter: blur(20px);
+    // backdrop-filter: blur(20px);
   `,
 
   // =========================================================
   //   REUSED COMPONENTS
 
   track: css`
+    border-bottom: solid 1px var(--slate-gray-tint);
+    &:last-of-type {
+      border-bottom: none;
+    }
+    
+
     svg {
       color: var(--slate-gray);
     }

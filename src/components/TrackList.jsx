@@ -17,7 +17,7 @@ const TrackList = ({ charts }) => {
 
 const StyledTrackList = styled.ul`
   ${(props) => props.theme.trackList}
-  ${(props) => props.theme.cardGradient}
+  /* ${(props) => props.theme.cardGradient} */
   width: 100%;
   height: 100%;
 `;

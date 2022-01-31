@@ -36,13 +36,57 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     ${(props) => props.theme.body}
-    width: 100vw;
+    width: 100%;
+    height: 100%;
     line-height: 1;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scrollbar-width: thin;
     scrollbar-color: gray;
+  }
+
+  main {
+    margin: 100px auto;
+    padding: 0 100px;
+
+    @media (max-width: 1080px) {
+      padding: 0 50px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 25px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0px 10px;
+    }
+  }
+
+  header {
+    margin: 0 auto;
+    padding: 0 100px;
+
+    @media (max-width: 1080px) {
+      padding: 0 50px;
+    }
+    @media (max-width: 768px) {
+      padding: 0 25px;
+    }
+    @media (max-width: 480px) {
+      padding: 0 10px;
+    }
+  }
+
+  section {
+    margin: 0 auto;
+    padding: 50px 0;
+    @media (max-width: 768px) {
+      padding: 25px 0;
+    }
+    @media (max-width: 480px) {
+      padding: 0px 0;
+    }
   }
 
   h1 {
@@ -80,6 +124,15 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     font-family: var(--roboto);
     font-weight: var(--roboto-bold);
+  }
+
+  // =========================================================
+  //   GLOBAL CLASSES
+
+  .header__divider {
+    ${(props) => props.theme.header__divider}
+    width: 100%;
+    height: 3px;
   }
 `;
 

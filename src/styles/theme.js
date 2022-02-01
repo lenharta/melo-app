@@ -27,8 +27,26 @@ export const darkTheme = {
     backdrop-filter: blur(30px);
   `,
 
+  form: css`
+    background: transparent;
+    select {
+      height: 300px;
+    }
+  `,
+
+  select: css`
+    border: solid 2px var(--l-green);
+    color: var(--l-green);
+    background: linear-gradient(
+      to left,
+      var(--d-green) 0%,
+      var(--slate-green-tint) 100%
+    );
+  `,
+
   h1: css`
     color: var(--l-green);
+    letter-spacing: 5px;
   `,
 
   h3: css`
@@ -45,7 +63,7 @@ export const darkTheme = {
 
   cardGradient: css`
     background: linear-gradient(
-      135deg,
+      90deg,
       var(--l-green-tint) 0%,
       var(--green-tint) 50%,
       var(--d-green-tint) 100%
@@ -83,7 +101,8 @@ export const darkTheme = {
   `,
 
   navSelectedLink: css`
-    background: var(--slate-green-tint);
+    border: 2px solid var(--l-green);
+    background: transparent;
   `,
 
   // =========================================================
@@ -102,7 +121,7 @@ export const darkTheme = {
     &:focus-visible {
       border: dashed 3px var(--l-green);
     }
-    div {
+    .handle__Color {
       background: var(--l-green);
     }
   `,
@@ -129,13 +148,18 @@ export const darkTheme = {
   // =========================================================
   //   GLOBAL CLASSES
 
-  header__divider: css`
+  header__title: css`
     background: linear-gradient(
-      135deg,
-      var(--l-green) 0%,
-      var(--green) 50%,
-      var(--slate-green-tint) 100%
+      to left,
+      var(--l-green-tint) 0%,
+      var(--d-green) 100%
     );
+    border-left: solid 5px var(--l-green);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    h1 {
+      color: var(--l-green);
+    }
   `,
 };
 
@@ -161,22 +185,35 @@ export const lightTheme = {
   `,
 
   header: css`
-    background: var(--off-white-tint);
+    background: var(--white-tint);
     backdrop-filter: blur(30px);
   `,
 
   nav: css``,
 
   h1: css`
-    color: var(--black);
+    color: var(--coral);
   `,
 
   h2: css`
-    color: var(--black);
+    color: var(--coral);
   `,
 
   p: css`
-    color: var(--slate-gray);
+    color: var(--black);
+  `,
+
+  select: css`
+    border: solid 2px var(--coral);
+    color: var(--black);
+    background: linear-gradient(
+      to right,
+      var(--gray-tint) 0%,
+      var(--off-white) 100%
+    );
+    &:focus-visible {
+      border: dashed 3px var(--black);
+    }
   `,
 
   // Tested in Tracklist
@@ -192,42 +229,47 @@ export const lightTheme = {
   // =========================================================
   //   GLOBAL CLASSES
 
-  header__divider: css`
-    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-tint) 100%);
-  `,
-
   header__title: css`
-    background-image: linear-gradient(135deg, var(--teal) 0%, var(--off-white-tint) 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-attachment: fixed;
+    background: linear-gradient(
+      to left,
+      var(--gray-tint) 0%,
+      var(--off-white) 100%
+    );
+    /* border-bottom: solid 2px var(--coral); */
+    border-left: solid 5px var(--coral);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   `,
 
   // =========================================================
   //   NAVIGATION
   progressBar: css`
     svg {
-      stroke: var(--black);
+      stroke: var(--coral);
     }
   `,
 
   navLogo: css`
-    color: var(--black);
-    text-decoration: none;
+    color: var(--coral);
+    font-size: clamp(var(--fz-nav), 5vw, var(--fz-lg));
+    font-family: var(--righteous);
   `,
 
   navList: css`
-    background-color: var(--l-teal-tint);
-    border: 2px solid var(--teal-tint);
+    background-color: transparent;
+    border: 2px solid var(--coral);
   `,
 
   navLinks: css`
     a {
-      color: var(--slate-gray);
+      color: var(--coral);
       text-decoration: none;
+      font-family: var(--roboto);
+      font-weight: var(--roboto-reg);
       &:active {
-        color: var(--gray-tint);
+        color: var(--white);
       }
+
       &:focus-visible {
         border: dashed 3px var(--black);
       }
@@ -235,7 +277,8 @@ export const lightTheme = {
   `,
 
   navSelectedLink: css`
-    background: var(--teal-tint);
+    background: transparent;
+    border: 2px solid var(--coral);
   `,
 
   // =========================================================
@@ -249,38 +292,27 @@ export const lightTheme = {
   `,
 
   themeButton: css`
-    background: var(--l-teal-tint);
-    border: 2px solid var(--teal);
-    border-radius: 25px;
+    background: transparent;
+    border: 2px solid var(--coral); 
     &:focus-visible {
       border: dashed 3px var(--black);
     }
-    div {
-      background: var(--teal);
+    .handle__Color {
+      background: var(--coral);
     }
-  `,
-
-  scrollFade: css`
-    // background: linear-gradient(180deg, transparent 0%, var(--teal-tint) 100%);
-    // backdrop-filter: ;
-  `,
-
-  chartsSection: css`
-    // backdrop-filter: blur(20px);
   `,
 
   // =========================================================
   //   REUSED COMPONENTS
 
   track: css`
-    border-bottom: solid 1px var(--l-teal);
+    border-bottom: solid 2px var(--gray-tint);
+    svg {
+      color: var(--coral);
+    }
+
     &:last-of-type {
       border-bottom: none;
-    }
-    
-
-    svg {
-      color: var(--l-teal);
     }
   `,
 

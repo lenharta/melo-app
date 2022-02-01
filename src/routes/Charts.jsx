@@ -12,8 +12,8 @@ const Charts = () => {
     const fetchData = async () => {
       const response = await axios.get(requests.fetchTopUS);
       setCharts(response.data.tracks.data);
-      // console.log(response.data);
       setTitled(response.data);
+      // console.log(response.data);
       return response;
     };
 
@@ -21,26 +21,27 @@ const Charts = () => {
     fetchData();
   }, []);
 
-  console.log(titled);
   // make tabs for editorial top 10's
   return (
     <>
       <StyledChartsContainer>
-        <ChartsHeader>
-          <h1 className="header__title">CHARTS</h1>
-          <div className="header__divider" />
-        </ChartsHeader>
-
         <ChartsContent>
+          <ChartsHeader className="header__title">
+            <h1>CHARTS</h1>
+          </ChartsHeader>
           <StyledChartInfo>
-            <img src={titled.picture_big} />
-            <h1>{titled.title}</h1>
-            <div className="header__divider" />
+            <img src={titled.picture_medium} />
+
+            <StyledSelectMenuContainer>
+              <select>
+                <option value={titled.title}>{titled.title}</option>
+              </select>
+            </StyledSelectMenuContainer>
           </StyledChartInfo>
-          <StyledChartsTracks>
-            <TrackList charts={charts} />
-          </StyledChartsTracks>
         </ChartsContent>
+        <StyledChartsTracks>
+          <TrackList charts={charts} />
+        </StyledChartsTracks>
       </StyledChartsContainer>
     </>
   );
@@ -48,89 +49,87 @@ const Charts = () => {
 
 const StyledChartsContainer = styled.section`
   ${(props) => props.theme.chartsSection}
+  ${({ theme }) => theme.mixins.flexCenter}
+  flex-direction: column;
   width: 100%;
 `;
 
 const ChartsHeader = styled.div`
-  margin: 50px 0px;
-  ${({ theme }) => theme.mixins.flexCenter}
-  align-items: flex-start;
-  flex-direction: column;
-  h1 {
-    margin-bottom: 10px;
-  }
-
+  padding: 20px 0px;
+  margin: 5px 0px;
   @media (max-width: 1080px) {
-    display: none;
+    ${({ theme }) => theme.mixins.flexCenter}
+    justify-content: flex-start;
+    width: 100%;
+
+    h1 {
+      font-family: var(--barlow);
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+    padding: 15px 0;
   }
 `;
 
 const ChartsContent = styled.div`
-  ${({ theme }) => theme.mixins.flexBetween}
-  position: relative;
-  flex-direction: row;
-  align-items: flex-start;
   width: 100%;
-
-  @media (max-width: 1080px) {
-    ${({ theme }) => theme.mixins.flexCenter}
-    flex-direction: column;
-  }
-`;
-
-const StyledChartsTracks = styled.div`
-  width: 65%;
-
-  @media (max-width: 1080px) {
-    width: 100%;
-  }
+  flex-direction: row;
 `;
 
 const StyledChartInfo = styled.div`
-  width: 25%;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  @media (max-width: 1080px) {
-    ${({ theme }) => theme.mixins.flexCenter}
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    position: relative;
-    margin: 25px 0px;
+  ${({ theme }) => theme.mixins.flexBetween}
+  padding: 60px 0;
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+  }
+  @media (max-width: 480px) {
+    padding: 20px 0;
   }
 
-  h1 {
-    position: fixed;
-    margin-top: 40px;
-    @media (max-width: 1080px) {
-      position: relative;
-      margin-bottom: 40px;
-      width: 100%;
-    }
-  }
   img {
-    position: fixed;
-    width: 200px;
-    height: 200px;
-    margin-top: 150px;
+    width: 150px;
+    height: 150px;
     border-radius: 20px;
+    margin-right: 20px;
+
     @media (max-width: 1080px) {
-      position: relative;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      width: 150px;
-      height: 150px;
+      border-radius: 10px;
+      width: 100px;
+      height: 100px;
     }
+
     @media (max-width: 768px) {
       width: 80px;
       height: 80px;
     }
   }
+`;
 
-  div {
-    @media (min-width: 1080px) {
-      display: none;
+const StyledChartsTracks = styled.div`
+  width: 100%;
+`;
+
+const StyledSelectMenuContainer = styled.div`
+  ${({ theme }) => theme.mixins.flexCenter}
+  justify-content: flex-end;
+  width: 100%;
+
+  @media (max-width: 1080px) {
+  }
+
+  select {
+    padding: 10px 20px;
+    width: 50%;
+    @media (max-width: 1080px) {
+      width: 75%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 `;

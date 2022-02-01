@@ -32,7 +32,7 @@ const App = () => {
             <ProgressBar />
             <StyledMain>
               <Routes>
-                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="/" element={<Dashboard />} />
                 <Route path="charts" element={<Charts />} />
               </Routes>
             </StyledMain>
@@ -43,6 +43,8 @@ const App = () => {
   );
 };
 
-const StyledMain = styled.main``;
+const StyledMain = styled.main`
+  max-width: 1600px;
+`;
 
 export default App;

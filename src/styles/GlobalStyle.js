@@ -53,11 +53,9 @@ const GlobalStyle = createGlobalStyle`
     @media (max-width: 1080px) {
       padding: 0 50px;
     }
-
     @media (max-width: 768px) {
       padding: 0 25px;
     }
-
     @media (max-width: 480px) {
       padding: 0px 10px;
     }
@@ -81,18 +79,18 @@ const GlobalStyle = createGlobalStyle`
   section {
     margin: 0 auto;
     padding: 50px 0;
+
     @media (max-width: 768px) {
       padding: 25px 0;
     }
     @media (max-width: 480px) {
-      padding: 0px 0;
+      padding: 0px;
     }
   }
 
   h1 {
     ${(props) => props.theme.h1}
     font-size: clamp(var(--fz-lg), 5vw, var(--fz-xxl));
-    font-size: var(--fz-xxl);
     font-family: var(--barlow);
     font-weight: var(--barlow-reg);
   }
@@ -100,8 +98,8 @@ const GlobalStyle = createGlobalStyle`
   h2 {
     ${(props) => props.theme.h2}
     font-size: clamp(var(--fz-nav), 5vw, var(--fz-lg));
-    font-family: var(--righteous);
-    font-weight: 100;
+    font-weight: var(--roboto-reg);
+    font-family: var(--roboto);
   }
 
   h3 {
@@ -126,21 +124,35 @@ const GlobalStyle = createGlobalStyle`
     font-weight: var(--roboto-bold);
   }
 
+  select {
+    ${(props) => props.theme.select}
+    border-radius: 10px;
+    font-family: var(--roboto);
+    font-weight: 100;
+  }
+
   // =========================================================
   //   GLOBAL CLASSES
 
-  .header__divider {
-    ${(props) => props.theme.header__divider}
-    width: 100%;
-    height: 3px;
-  }
-
   .header__title {
     ${(props) => props.theme.header__title}
-    font-size: clamp(var(--fz-nav), 5vw, var(--fz-xxl));
-    font-family: var(--righteous);
-    font-weight: 100;
+    h1 {
+      font-size: clamp(var(--fz-nav), 5vw, var(--fz-xxl));
+      font-weight: 600;
+      letter-spacing: 5px;
+      margin-left: 20px;
+    }
   }
 `;
 
 export default GlobalStyle;
+
+// @media (max-width: 1080px) {
+
+// }
+// @media (max-width: 768px) {
+
+// }
+// @media (max-width: 480px) {
+
+// }

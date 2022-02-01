@@ -25,11 +25,11 @@ const variables = css`
     --l-teal-tint: rgba(162, 196, 196, 0.4);
 
     // New Light Theme
-    /* --blue: rgb();
-    --light-blue: rgb();
-    --dark-blue: rgb();
-    --dark-blue: rgb();
-    --dark-blue: rgb(); */
+    --coral: rgb(240, 93, 94);
+    --coral-tint: rgba(240, 93, 94, 0.4);
+    /* --dark-blue: rgb(); */
+    /* --dark-blue: rgb(); */
+    /* --dark-blue: rgb(); */
     --off-white: rgb(242, 243, 244);
     --off-white-tint: rgb(242, 243, 244, 0.4);
     // Font Styles

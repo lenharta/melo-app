@@ -7,13 +7,15 @@ import { navSpring, navVariant } from "../utils";
 const navLinkData = [
   {
     id: 1,
-    title: "Dashboard",
-    path: "/dashboard",
+    title: "DASHBOARD",
+    path: "/",
+    aria: "Home/Dasboard"
   },
   {
     id: 2,
-    title: "Top Charts",
+    title: "CHARTS",
     path: "/charts",
+    aria: "Top Charts"
   },
 ];
 const Nav = () => {
@@ -31,9 +33,9 @@ const Nav = () => {
             <span>Melo</span>
           </StyledNavLogo>
           <StyledNavLinks>
-            {navLinkData.map(({title, path}, id) => (
+            {navLinkData.map(({title, path, aria}, id) => (
               <StyledNavList key={id} onClick={() => setSelected(id)}>
-                <Link to={path}>{title}</Link>
+                <Link aria-label={aria} to={path}>{title}</Link>
                 {id  === selected ? (
                   <Outline layoutId="outline" transition={navSpring} variants={navVariant}  />
                 ) : null}
@@ -68,8 +70,9 @@ const StyledNavLogo = styled.div`
   ${(props) => props.theme.navLogo};
   justify-content: flex-start;
   span {
-    font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl));
+    font-size: clamp(var(--fz-xl), 5vw, var(--fz-xxl));
     font-family: var(--righteous);
+    letter-spacing: 2px;
   }
 `;
 

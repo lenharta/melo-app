@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { MdExplicit } from "react-icons/md";
 
-const Track = ({ title_short, artist, album, explicit_lyrics, id }) => {
+const Track = ({ title_short, artist, album, explicit_lyrics, id }, i) => {
   return (
     <>
-      <StyledTrack aria-label={title_short}>
+      <StyledTrack aria-label={title_short} key={i}>
         <StyledTrackInner>
           <StyledImg src={album.cover_medium} alt={album.title} />
 
@@ -30,8 +30,22 @@ const StyledTrack = styled.li`
   ${({ theme }) => theme.mixins.flexCenter}
   padding: 10px 0;
   width: 100%;
-  
 
+  li:before {
+    content: counters(index, ".", decimal-leading-zero);
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    min-width: 50px;
+    padding-right: 12px;
+    font-variant-numeric: tabular-nums;
+    align-self: flex-start;
+    background-image: linear-gradient(to bottom, aquamarine, orangered);
+    background-attachment: fixed;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 const StyledTrackInner = styled.div`
@@ -39,7 +53,6 @@ const StyledTrackInner = styled.div`
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
   width: 100%;
-  
 
   @media (max-width: 480px) {
     grid-template-columns: repeat(8, 1fr);
@@ -69,12 +82,12 @@ const StyledSong = styled.div`
     padding: 5px 0;
     text-overflow: ellipsis;
     overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     background-clip: text;
   }
 
-  p { 
+  p {
     padding: 10px 0;
   }
 

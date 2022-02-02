@@ -22,7 +22,7 @@ export const darkTheme = {
     background: var(--l-green-tint);
   `,
 
-  header: css`
+  styledHeader: css`
     background-color: var(--d-green-tint);
     backdrop-filter: blur(30px);
   `,
@@ -119,8 +119,9 @@ export const darkTheme = {
   `,
 
   themeButton: css`
-    background: var(--slate-green-tint);
+    background: var(--d-green-tint);
     border: 2px solid var(--l-green);
+    backdrop-filter: blur(30px);
     &:focus-visible {
       border: dashed 3px var(--l-green);
     }
@@ -131,6 +132,10 @@ export const darkTheme = {
 
   scrollFade: css`
     background: linear-gradient(0deg, var(--d-green) 0%, transparent 100%);
+  `,
+
+  sectionBorder: css`
+    border-right: solid 5px var(--l-green);
   `,
 
   // =========================================================
@@ -165,6 +170,7 @@ export const darkTheme = {
       var(--d-green) 100%
     );
     border-left: solid 5px var(--l-green);
+    border-bottom: solid 5px var(--l-green);
     h1 {
       color: var(--l-green);
     }
@@ -192,8 +198,8 @@ export const lightTheme = {
     background: var(--l-teal-tint);
   `,
 
-  header: css`
-    background: var(--white-tint);
+  styledHeader: css`
+    background: var(--off-white-tint);
     backdrop-filter: blur(30px);
   `,
 
@@ -244,8 +250,9 @@ export const lightTheme = {
       var(--off-white) 100%
     );
     border-left: solid 5px var(--coral);
+    border-bottom: solid 5px var(--coral);
     h1 {
-      color: var(--coral)
+      color: var(--coral);
     }
   `,
 
@@ -301,7 +308,7 @@ export const lightTheme = {
 
   themeButton: css`
     background: var(--off-white-tint);
-    border: 2px solid var(--coral);
+    border: 5px solid var(--coral);
     backdrop-filter: blur(30px);
     &:focus-visible {
       border: dashed 3px var(--black);
@@ -309,6 +316,10 @@ export const lightTheme = {
     .handle__Color {
       background: var(--coral);
     }
+  `,
+
+  sectionBorder: css`
+    border-right: solid 5px var(--coral);
   `,
 
   // =========================================================

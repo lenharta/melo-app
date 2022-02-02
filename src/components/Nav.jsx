@@ -9,17 +9,17 @@ const navLinkData = [
     id: 1,
     title: "DASHBOARD",
     path: "/",
-    aria: "/Dasboard"
+    aria: "/Dasboard",
   },
   {
     id: 2,
     title: "CHARTS",
     path: "/charts",
-    aria: "Top Charts"
+    aria: "Top Charts",
   },
 ];
 const Nav = () => {
-  const [selected, setSelected] = useState(true);
+  const [selected, setSelected] = useState([]);
 
   // useEffect(() => {
   //   setSelected()
@@ -28,90 +28,137 @@ const Nav = () => {
   return (
     <>
       <StyledHeader>
+        <StyledNav>
+          <StyledLogo>
+            <span>Melo</span>
+          </StyledLogo>
+          {navLinkData.map(({ title, path, aria }, id) => (
+            <StyledNavLinks key={id} onClick={() => setSelected(id)}>
+              <li>
+                <Link aria-label={aria} to={path}>
+                  {title}
+                </Link>
+
+                {id === selected ? (
+                  <Outline layoutId="outline" transition={navSpring} />
+                ) : null}
+              </li>
+            </StyledNavLinks>
+          ))}
+        </StyledNav>
+      </StyledHeader>
+
+      {/* <StyledHeader>
         <StyledNavContainer>
           <StyledNavLogo>
             <span>Melo</span>
           </StyledNavLogo>
           <StyledNavLinks>
-            {navLinkData.map(({title, path, aria}, id) => (
+            {navLinkData.map(({ title, path, aria }, id) => (
               <StyledNavList key={id} onClick={() => setSelected(id)}>
-                <Link aria-label={aria} to={path}>{title}</Link>
-                {id  === selected ? (
-                  <Outline layoutId="outline" transition={navSpring} variants={navVariant}  />
+                <Link aria-label={aria} to={path}>
+                  {title}
+                </Link>
+                {id === selected ? (
+                  <Outline
+                    layoutId="outline"
+                    transition={navSpring}
+                    variants={navVariant}
+                  />
                 ) : null}
               </StyledNavList>
             ))}
           </StyledNavLinks>
         </StyledNavContainer>
-      </StyledHeader>
+      </StyledHeader> */}
     </>
   );
 };
 
 // Nav Styles
 const StyledHeader = styled.header`
-  ${(props) => props.theme.header}
+  ${(props) => props.theme.styledHeader}
   ${({ theme }) => theme.mixins.flexCenter}
-  position: fixed;
-  top: 0;
-  z-index: 100;
+  margin: 0 auto;
   width: 100%;
   height: 100px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
 `;
 
-const StyledNavContainer = styled.nav`
+const StyledNav = styled.nav`
   ${(props) => props.theme.nav}
   ${({ theme }) => theme.mixins.flexBetween}
   width: 100%;
-  overflow: hidden;
+  max-width: 1600px;
+  padding: 0 100px;
+
+  @media (max-width: 1080px) {
+    padding: 0 50px;
+  }
+  @media (max-width: 768px) {
+    padding: 0 25px;
+  }
+  @media (max-width: 480px) {
+    padding: 0px 10px;
+  }
 `;
 
-const StyledNavLogo = styled.div`
+const StyledLogo = styled.div`
   ${(props) => props.theme.navLogo};
-  justify-content: flex-start;
+
   span {
     font-size: clamp(var(--fz-xl), 5vw, var(--fz-xxl));
     font-family: var(--righteous);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 575px) {
   }
 `;
 
 const StyledNavLinks = styled(motion.ul)`
+  ${({ theme }) => theme.mixins.flexEven}
   ${(props) => props.theme.navList};
-  ${({ theme }) => theme.mixins.flexCenter}
+  ${(props) => props.theme.navLinks};
   list-style-type: none;
-  border-radius: 50px;
-  overflow: hidden;
-  justify-content: flex-end;
 
+  li {
+    a {
+    }
+  }
+
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  // !!
   @media (max-width: 575px) {
     display: none;
   }
 `;
 
-// NavLink Styles
-const StyledNavList = styled(motion.li)`
-  ${(props) => props.theme.navLinks};
-  position: relative;
-  margin: 3px;  
-  padding: 10px 0px;
-  
-  a {
-    padding: 6px 30px;
-    border-radius: 50px;
-  }
-`;
-
 const Outline = styled(motion.div)`
   ${(props) => props.theme.navSelectedLink}
-  ${({ theme }) => theme.mixins.flexCenter}
-  text-align: center;
-  position: absolute;
-  border-radius: 50px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 42px;
+
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
 `;
 
 export default Nav;

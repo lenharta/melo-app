@@ -57,34 +57,21 @@ const GlobalStyle = createGlobalStyle`
       padding: 0 25px;
     }
     @media (max-width: 480px) {
-      padding: 0px 10px;
-    }
-  }
-
-  header {
-    margin: 0 auto;
-    padding: 0 100px;
-
-    @media (max-width: 1080px) {
-      padding: 0 50px;
-    }
-    @media (max-width: 768px) {
-      padding: 0 25px;
-    }
-    @media (max-width: 480px) {
       padding: 0 10px;
     }
   }
 
   section {
-    margin: 0 auto;
-    padding: 50px 0;
+    padding: 100px 0;
 
+    @media (max-width: 1080px) {
+      padding: 50px 0;
+    }
     @media (max-width: 768px) {
       padding: 25px 0;
     }
     @media (max-width: 480px) {
-      padding: 0px;
+      padding: 10px 0;
     }
   }
 
@@ -137,7 +124,7 @@ const GlobalStyle = createGlobalStyle`
   .header__title {
     ${(props) => props.theme.header__title}
     border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    /* border-bottom-right-radius: 10px; */
     h1 {
       font-size: clamp(var(--fz-nav), 5vw, var(--fz-xxl));
       font-weight: 600;

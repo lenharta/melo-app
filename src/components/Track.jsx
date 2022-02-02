@@ -3,15 +3,26 @@ import styled from "styled-components";
 import { MdExplicit } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Track = (
-  { title_short, artist, album, explicit_lyrics, preview, id }
-) => {
+const Track = ({
+  title_short,
+  artist,
+  album,
+  explicit_lyrics,
+  preview,
+  id,
+}) => {
   return (
     <>
-      <StyledTrack aria-label={"Song Title: " + title_short + " Song Artist: " + artist.name}>
-        <Link to="#" aria-label={"Play " + title_short + " Song Artist: " + artist.name}>
+      <StyledTrack
+        aria-label={
+          "Song Title: " + title_short + " Song Artist: " + artist.name
+        }
+      >
+        <Link
+          to="#"
+          aria-label={"Play " + title_short + " Song Artist: " + artist.name}
+        >
           <StyledTrackInner>
-            
             <StyledImg src={album.cover_medium} alt={album.title} />
 
             <StyledSong>
@@ -35,20 +46,28 @@ const StyledTrack = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
   margin: 10px 0;
-
   width: 100%;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+  &:last-child {
+    margin-bottom: 0px;
+  }
 
   a {
     height: 100%;
     padding: 15px;
     width: 100%;
     border-radius: 15px;
+
     @media (max-width: 1080px) {
+      padding: 10px;
     }
     @media (max-width: 768px) {
+      padding: 5px;
     }
     @media (max-width: 480px) {
-      padding: 5px;
     }
   }
 `;
@@ -92,7 +111,7 @@ const StyledSong = styled.div`
     background-clip: text;
 
     @media (max-width: 480px) {
-      padding: 10px 0 5px; 
+      padding: 5px 0;
     }
   }
 

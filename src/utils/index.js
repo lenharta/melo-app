@@ -79,7 +79,7 @@ export const draw = {
 // Nav Select Transition
 export const spring = {
   type: "spring",
-  stiffness: 500,
+  stiffness: 0,
   damping: 30,
 };
 

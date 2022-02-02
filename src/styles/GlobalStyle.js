@@ -136,6 +136,8 @@ const GlobalStyle = createGlobalStyle`
 
   .header__title {
     ${(props) => props.theme.header__title}
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     h1 {
       font-size: clamp(var(--fz-nav), 5vw, var(--fz-xxl));
       font-weight: 600;
@@ -148,11 +150,8 @@ const GlobalStyle = createGlobalStyle`
 export default GlobalStyle;
 
 // @media (max-width: 1080px) {
-
 // }
 // @media (max-width: 768px) {
-
 // }
 // @media (max-width: 480px) {
-
 // }

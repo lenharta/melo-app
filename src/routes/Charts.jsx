@@ -8,12 +8,14 @@ const Charts = () => {
   const [charts, setCharts] = useState([]);
   const [titled, setTitled] = useState([]);
 
+  // const info = titled
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(requests.fetchTopUS);
       setCharts(response.data.tracks.data);
       setTitled(response.data);
-      // console.log(response.data);
+      console.log(response.data);
       return response;
     };
 
@@ -21,26 +23,30 @@ const Charts = () => {
     fetchData();
   }, []);
 
+
   // make tabs for editorial top 10's
   return (
     <>
       <StyledChartsContainer>
-        <ChartsContent>
-          <ChartsHeader className="header__title">
-            <h1>CHARTS</h1>
-          </ChartsHeader>
-          <StyledChartInfo>
-            <img src={titled.picture_medium} />
+        <ChartsHeader className="header__title">
+          <h1>CHARTS</h1>
+        </ChartsHeader>
+        {titled.data?.map(({ picture_medium, title }, i) => {
+          <ChartsContent>
+            <StyledChartInfo key={i}>
+              <img src={picture_medium} />
 
-            <StyledSelectMenuContainer>
-              <select>
-                <option value={titled.title}>{titled.title}</option>
-              </select>
-            </StyledSelectMenuContainer>
-          </StyledChartInfo>
-        </ChartsContent>
+              <StyledSelectMenuContainer>
+                <select>
+                  <option>{title}</option>
+                </select>
+              </StyledSelectMenuContainer>
+            </StyledChartInfo>
+            ;
+          </ChartsContent>;
+        })}
         <StyledChartsTracks>
-          <TrackList charts={charts} />
+          <TrackList charts={charts} id={titled.id} />
         </StyledChartsTracks>
       </StyledChartsContainer>
     </>
@@ -49,24 +55,13 @@ const Charts = () => {
 
 const StyledChartsContainer = styled.section`
   ${(props) => props.theme.chartsSection}
-  ${({ theme }) => theme.mixins.flexCenter}
-  flex-direction: column;
-  width: 100%;
 `;
 
 const ChartsHeader = styled.div`
   padding: 20px 0px;
   margin: 5px 0px;
-  @media (max-width: 1080px) {
-    ${({ theme }) => theme.mixins.flexCenter}
-    justify-content: flex-start;
-    width: 100%;
 
-    h1 {
-      font-family: var(--barlow);
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
+  @media (max-width: 1080px) {
   }
   @media (max-width: 768px) {
   }
@@ -75,22 +70,9 @@ const ChartsHeader = styled.div`
   }
 `;
 
-const ChartsContent = styled.div`
-  width: 100%;
-  flex-direction: row;
-`;
+const ChartsContent = styled.div``;
 
 const StyledChartInfo = styled.div`
-  ${({ theme }) => theme.mixins.flexBetween}
-  padding: 60px 0;
-
-  @media (max-width: 768px) {
-    padding: 40px 0;
-  }
-  @media (max-width: 480px) {
-    padding: 20px 0;
-  }
-
   img {
     width: 150px;
     height: 150px;
@@ -108,29 +90,41 @@ const StyledChartInfo = styled.div`
       height: 80px;
     }
   }
-`;
-
-const StyledChartsTracks = styled.div`
-  width: 100%;
-`;
-
-const StyledSelectMenuContainer = styled.div`
-  ${({ theme }) => theme.mixins.flexCenter}
-  justify-content: flex-end;
-  width: 100%;
 
   @media (max-width: 1080px) {
   }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
+`;
 
+const StyledChartsTracks = styled.div`
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
+`;
+
+const StyledSelectMenuContainer = styled.div`
   select {
     padding: 10px 20px;
-    width: 50%;
+
     @media (max-width: 1080px) {
-      width: 75%;
     }
     @media (max-width: 768px) {
-      width: 100%;
     }
+    @media (max-width: 480px) {
+    }
+  }
+
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
   }
 `;
 

@@ -9,7 +9,7 @@ const navLinkData = [
     id: 1,
     title: "DASHBOARD",
     path: "/",
-    aria: "Home/Dasboard"
+    aria: "/Dasboard"
   },
   {
     id: 2,

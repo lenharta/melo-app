@@ -35,13 +35,16 @@ export const darkTheme = {
   `,
 
   select: css`
-    border: solid 2px var(--l-green);
+    border: solid 2px var(--slate-green-tint);
     color: var(--l-green);
     background: linear-gradient(
-      to left,
+      to right,
       var(--d-green) 0%,
-      var(--slate-green-tint) 100%
+      var(--black-tint) 100%
     );
+    li::after {
+      content: "";
+    }
   `,
 
   h1: css`
@@ -134,9 +137,16 @@ export const darkTheme = {
   //   REUSED COMPONENTS
 
   track: css`
-    border-bottom: solid 1px var(--slate-green-tint);
-    &:last-of-type {
-      border-bottom: none;
+    a {
+      border: solid 2px var(--slate-green-tint);
+      &:hover,
+      &:focus {
+        background: var(--slate-green-tint);
+        transform: scale(1.01);
+      }
+      &:focus-visible {
+        border: dashed 3px var(--black);
+      }
     }
     svg {
       color: var(--slate-green);
@@ -155,8 +165,6 @@ export const darkTheme = {
       var(--d-green) 100%
     );
     border-left: solid 5px var(--l-green);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
     h1 {
       color: var(--l-green);
     }
@@ -235,10 +243,10 @@ export const lightTheme = {
       var(--gray-tint) 0%,
       var(--off-white) 100%
     );
-    /* border-bottom: solid 2px var(--coral); */
     border-left: solid 5px var(--coral);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    h1 {
+      color: var(--coral)
+    }
   `,
 
   // =========================================================
@@ -292,8 +300,9 @@ export const lightTheme = {
   `,
 
   themeButton: css`
-    background: transparent;
-    border: 2px solid var(--coral); 
+    background: var(--off-white-tint);
+    border: 2px solid var(--coral);
+    backdrop-filter: blur(30px);
     &:focus-visible {
       border: dashed 3px var(--black);
     }
@@ -306,13 +315,18 @@ export const lightTheme = {
   //   REUSED COMPONENTS
 
   track: css`
-    border-bottom: solid 2px var(--gray-tint);
+    a {
+      border: solid 2px var(--gray-tint);
+      &:hover {
+        background: var(--gray-tint);
+        transform: scale(1.01);
+      }
+      &:focus-visible {
+        border: dashed 3px var(--black);
+      }
+    }
     svg {
       color: var(--coral);
-    }
-
-    &:last-of-type {
-      border-bottom: none;
     }
   `,
 

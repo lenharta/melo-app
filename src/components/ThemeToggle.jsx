@@ -7,68 +7,72 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
   return (
     <>
       <StyledSwitch onClick={toggleTheme}>
-        <HandleContainer layout isSwitched={theme} transition={spring}>
-          <StyledHandle className="handle__Color" />
+        <HandleContainer layout isSwitched={theme}>
+          <StyledHandle className="handle__Color" transition={spring} />
         </HandleContainer>
       </StyledSwitch>
     </>
   );
 };
-
-const StyledSwitch = styled.button`
+const HandleContainer = styled.button`
   ${(props) => props.theme.themeButton};
-  ${({ theme }) => theme.mixins.flexCenter};
-  flex-direction: column;
   position: fixed;
+  width: 140px;
+  height: 80px;
+  right: 100px;
   bottom: 30px;
-  right: 30px;
-  width: 110px;
-  height: 60px;
-  border-radius: 50px;
   cursor: pointer;
+  padding: 5px;
+  border-radius: 50px;
 
   @media (max-width: 1080px) {
-    width: 100px;
-    height: 55px;
+    right: 50px;
+  }
+  @media (max-width: 768px) {
+    width: 120px;
+    height: 60px;
+    right: 25px;
   }
   @media (max-width: 480px) {
-    width: 90px;
-    height: 50px;
+    right: 10px;
   }
 `;
 
-const HandleContainer = styled.div`
-  ${({ theme }) => theme.mixins.flexCenter};
+const StyledSwitch = styled.div`
+  ${({ theme }) => theme.mixins.flexCenter}
   width: 100%;
   height: 100%;
-  background: none;
-  padding: 5px;
-  justify-content: flex-start;
-  ${(props) => props.isSwitched === "dark"
-    ? css`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* ${(props) =>
+    props.isSwitched === "dark"
+      ? css`
           justify-content: flex-end;
-          `
-      : null};
+        `
+      : null}; */
+
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
 `;
 
 const StyledHandle = styled(motion.div)`
-  flex-direction: row;
-  width: 50%;
-  height: 100%;
-  border-radius: 50%;
-
-  /* width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  border-radius: 40px;
 
   @media (max-width: 1080px) {
-    width: 40px;
-    height: 40px;
+  }
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
   }
   @media (max-width: 480px) {
-    width: 40px;
-    height: 40px;
-  } */
+  }
 `;
 
 export default ThemeToggle;

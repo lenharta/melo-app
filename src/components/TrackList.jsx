@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Track } from "../components";
 
-const TrackList = ({ charts, id }) => {
+const TrackList = ({ charts, id}) => {
   return (
     <>
       <StyledTrackList id={id}>
-        {charts.map((data) => {
-          return <Track key={data.id} {...data} />;
+        {charts.map((data, i) => {
+          return <Track key={i} {...data} />;
         })}
         {/* <StyledFadeContainer /> */}
       </StyledTrackList>
@@ -15,9 +15,8 @@ const TrackList = ({ charts, id }) => {
   );
 };
 
-const StyledTrackList = styled.ol`
+const StyledTrackList = styled.ul`
   ${(props) => props.theme.trackList}
-  /* counter-reset: index; */
   width: 100%;
 `;
 

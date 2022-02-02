@@ -1,25 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 import { MdExplicit } from "react-icons/md";
+import { Link } from "react-router-dom";
 
-const Track = ({ title_short, artist, album, explicit_lyrics, id }, i) => {
+const Track = (
+  { title_short, artist, album, explicit_lyrics, preview, id }
+) => {
   return (
     <>
-      <StyledTrack aria-label={title_short} key={i}>
-        <StyledTrackInner>
-          <StyledImg src={album.cover_medium} alt={album.title} />
+      <StyledTrack aria-label={"Song Title: " + title_short + " Song Artist: " + artist.name}>
+        <Link to="#" aria-label={"Play " + title_short + " Song Artist: " + artist.name}>
+          <StyledTrackInner>
+            
+            <StyledImg src={album.cover_medium} alt={album.title} />
 
-          <StyledSong>
-            <h2>{title_short}</h2>
-          </StyledSong>
-          <StyledExplicit>
-            {explicit_lyrics === true ? <MdExplicit /> : null}
-          </StyledExplicit>
+            <StyledSong>
+              <h2>{title_short}</h2>
+            </StyledSong>
+            <StyledExplicit>
+              {explicit_lyrics === true ? <MdExplicit /> : null}
+            </StyledExplicit>
 
-          <StyledTrackArtist>
-            <p>{artist.name}</p>
-          </StyledTrackArtist>
-        </StyledTrackInner>
+            <StyledTrackArtist>
+              <p>{artist.name}</p>
+            </StyledTrackArtist>
+          </StyledTrackInner>
+        </Link>
       </StyledTrack>
     </>
   );
@@ -28,23 +34,22 @@ const Track = ({ title_short, artist, album, explicit_lyrics, id }, i) => {
 const StyledTrack = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
-  padding: 10px 0;
+  margin: 10px 0;
+
   width: 100%;
 
-  li:before {
-    content: counters(index, ".", decimal-leading-zero);
-    font-size: 1.5rem;
-    text-align: right;
-    font-weight: bold;
-    min-width: 50px;
-    padding-right: 12px;
-    font-variant-numeric: tabular-nums;
-    align-self: flex-start;
-    background-image: linear-gradient(to bottom, aquamarine, orangered);
-    background-attachment: fixed;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  a {
+    height: 100%;
+    padding: 15px;
+    width: 100%;
+    border-radius: 15px;
+    @media (max-width: 1080px) {
+    }
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 480px) {
+      padding: 5px;
+    }
   }
 `;
 
@@ -52,7 +57,7 @@ const StyledTrackInner = styled.div`
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
-  width: 100%;
+  margin: 0 auto;
 
   @media (max-width: 480px) {
     grid-template-columns: repeat(8, 1fr);
@@ -79,16 +84,20 @@ const StyledSong = styled.div`
   grid-area: 1 / 2 / span 1 / span 4;
   margin: auto 0;
   h2 {
-    padding: 5px 0;
+    padding: 5px 0px;
     text-overflow: ellipsis;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     background-clip: text;
+
+    @media (max-width: 480px) {
+      padding: 10px 0 5px; 
+    }
   }
 
   p {
-    padding: 10px 0;
+    padding: 5px 0;
   }
 
   @media (max-width: 480px) {
@@ -107,6 +116,7 @@ const StyledExplicit = styled.div`
 
   @media (max-width: 480px) {
     grid-area: 1 / 8 / span 2 / span 2;
+    margin: auto 0px;
   }
 `;
 
@@ -117,7 +127,7 @@ const StyledTrackArtist = styled.div`
   padding: 5px 0;
 
   @media (max-width: 480px) {
-    grid-area: 2 / 2 / span 1 / span 4;
+    grid-area: 2 / 2 / span 1 / span 6;
     text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;

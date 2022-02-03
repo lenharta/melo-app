@@ -31,10 +31,13 @@ const Charts = () => {
           <h1>CHARTS</h1>
         </ChartsHeader>
 
-        <ChartsContent>
-          <StyledChartInfo key={titled.id}>
-            <StyledSelectMenuContainer>
-              <img src={titled.picture_medium} />
+        <ChartsContent className="section__border_right">
+          <StyledChartInfo
+            key={titled.id}
+            className="card__background_aside section__border_noRight"
+          >
+            <StyledSelectMenuContainer className="section__image">
+              <img src={titled.picture_xl} />
               <select>
                 <option>{titled.title}</option>
               </select>
@@ -54,25 +57,14 @@ const StyledChartsContainer = styled.section`
   ${({ theme }) => theme.mixins.flexCenter}
   flex-direction: column;
   width: 100%;
-  position: relative;
 `;
 
 const ChartsHeader = styled.div`
-  width: 100%;
-  padding: 50px 0px;
-
-  @media (max-width: 1080px) {
-  }
-  @media (max-width: 768px) {
-    padding: 25px 0px;
-  }
-  @media (max-width: 480px) {
-  }
+  // Custom Class
 `;
 
 const ChartsContent = styled.div`
-  ${(props) => props.theme.sectionBorder};
-
+  position: relative;
   width: 100%;
   display: grid;
   padding: 100px 0;
@@ -80,15 +72,16 @@ const ChartsContent = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
 
-  @media (max-width: 1080px) {
-    grid-template-columns: auto;
+  @media (max-width: 1600px) {
     padding: 50px 0;
   }
+  @media (max-width: 1080px) {
+    grid-template-columns: auto;
+    padding: 0px;
+  }
   @media (max-width: 768px) {
-    padding: 25px 0;
   }
   @media (max-width: 480px) {
-    padding: 10px 0;
   }
 `;
 
@@ -106,72 +99,66 @@ const StyledChartsTracks = styled.div`
 `;
 
 const StyledChartInfo = styled.div`
-  /* grid-area: 1 / 4 / span 1 / span 1; */
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  
-  img {
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
-  margin-bottom: 25px;
+  grid-area: 1 / 4 / span 1 / span 1;
+  margin: 0px 0px 0px 30px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 
-    
-    @media (max-width: 1080px) {
-      border-radius: 10px;
-      width: 100px;
-      height: 100px;
-    }
-    
-    @media (max-width: 768px) {
-      width: 80px;
-      height: 80px;
-    }
-  }
-  
   @media (max-width: 1080px) {
     grid-area: 1 / 1 / span 1 / span 1;
     width: 100%;
-    padding: 5px;
+    margin: 0 auto;
+    border: none;
   }
   @media (max-width: 768px) {
-    margin-bottom: 25px;
   }
   @media (max-width: 480px) {
   }
 `;
 
 const StyledSelectMenuContainer = styled.div`
-  ${({ theme }) => theme.mixins.flexCenter}
-  flex-direction: column;
+    ${({ theme }) => theme.mixins.flexCenter}
+    flex-direction: column;
+
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 200px;
+  margin: 0 auto;
+  width: 250px;
+  
+  @media (max-width: 1600px) {
+    width: 200px;
+  }
+  @media (max-width: 1080px) {
+    ${({ theme }) => theme.mixins.flexCenter}
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
+  @media (max-width: 480px) {
+  }
 
   select {
+    padding: 15px 0px;
+    text-align: center;
     width: 100%;
-    padding: 10px 20px;
-
     @media (max-width: 1080px) {
-      ${({ theme }) => theme.mixins.flexBetween}
-      flex-direction: row;
-      margin-left: 20px;
+      justify-content: center;
+      
+      width: 60%;
     }
     @media (max-width: 768px) {
+    padding: 10px 0px;
+
     }
     @media (max-width: 480px) {
     }
-  }
-
-  @media (max-width: 1080px) {
-    flex-direction: row;
-    width: 75%;
-  }
-  @media (max-width: 768px) {
-    width: 75%;
-  }
-  @media (max-width: 480px) {
-    width: 100%;
   }
 `;
 

@@ -24,7 +24,7 @@ const ProgressBar = () => {
             style={{ pathLength, scaleX: 1, x: 0 }}
             x1="0"
             x2="100%"
-            strokeWidth="5"
+            strokeWidth="10"
             strokeDasharray="0 1"
           />
         </motion.svg>

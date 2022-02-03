@@ -7,7 +7,7 @@ import { mixins } from ".";
 
 export const darkTheme = {
   // =========================================================
-  //   GLOBALS
+  //   GLOBALS STYLES
   mixins,
 
   body: css`
@@ -35,16 +35,9 @@ export const darkTheme = {
   `,
 
   select: css`
-    border: solid 2px var(--slate-green-tint);
+    border: solid 3px var(--l-green);
     color: var(--l-green);
-    background: linear-gradient(
-      to right,
-      var(--d-green) 0%,
-      var(--black-tint) 100%
-    );
-    li::after {
-      content: "";
-    }
+    background: var(--d-green);
   `,
 
   h1: css`
@@ -82,6 +75,9 @@ export const darkTheme = {
   `,
 
   navLogo: css`
+    font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl));
+    font-family: var(--righteous);
+    letter-spacing: 1px;
     color: var(--l-green);
   `,
 
@@ -119,9 +115,9 @@ export const darkTheme = {
   `,
 
   themeButton: css`
-    background: var(--d-green-tint);
-    border: 2px solid var(--l-green);
-    backdrop-filter: blur(30px);
+    background: var(--d-green);
+    border: 5px solid var(--l-green);
+    /* backdrop-filter: blur(30px); */
     &:focus-visible {
       border: dashed 3px var(--l-green);
     }
@@ -129,17 +125,6 @@ export const darkTheme = {
       background: var(--l-green);
     }
   `,
-
-  scrollFade: css`
-    background: linear-gradient(0deg, var(--d-green) 0%, transparent 100%);
-  `,
-
-  sectionBorder: css`
-    border-right: solid 5px var(--l-green);
-  `,
-
-  // =========================================================
-  //   REUSED COMPONENTS
 
   track: css`
     a {
@@ -169,11 +154,50 @@ export const darkTheme = {
       var(--l-green-tint) 0%,
       var(--d-green) 100%
     );
-    border-left: solid 5px var(--l-green);
-    border-bottom: solid 5px var(--l-green);
+    border-left: solid 4px var(--l-green);
+    border-bottom: solid 4px var(--l-green);
+    border-top: solid 4px var(--l-green);
+    border-right: solid 4px var(--l-green);
     h1 {
       color: var(--l-green);
     }
+  `,
+
+  card__background: css`
+    background: var(--l-green-tint);
+
+    @media (max-width: 1080px) {
+      border: none;
+      background: transparent;
+    }
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 480px) {
+    }
+  `,
+
+  card__background_aside: css`
+    background: var(--l-green-tint);
+    @media (max-width: 1080px) {
+      border: none;
+      background: transparent;
+    }
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 480px) {
+    }
+  `,
+
+  section__border: css`
+    border-color: var(--l-green);
+  `,
+
+  section__border_right: css`
+    border-right-color: var(--l-green);
+  `,
+
+  section__border_noRight: css`
+    border-color: var(--l-green);
   `,
 };
 
@@ -218,41 +242,36 @@ export const lightTheme = {
   `,
 
   select: css`
-    border: solid 2px var(--coral);
-    color: var(--black);
-    background: linear-gradient(
-      to right,
-      var(--gray-tint) 0%,
-      var(--off-white) 100%
-    );
-    &:focus-visible {
-      border: dashed 3px var(--black);
-    }
+    border: solid 3px var(--coral);
+    color: var(--coral);
+    background: var(--off-white);
   `,
-
-  // Tested in Tracklist
-  // cardGradient: css`
-  //   background: linear-gradient(
-  //     135deg,
-  //     var(--teal) 0%,
-  //     var(--teal-tint) 50%,
-  //     var(--slate-gray) 100%
-  //   );
-  // `,
 
   // =========================================================
   //   GLOBAL CLASSES
 
   header__title: css`
-    background: linear-gradient(
-      to left,
-      var(--gray-tint) 0%,
-      var(--off-white) 100%
-    );
-    border-left: solid 5px var(--coral);
-    border-bottom: solid 5px var(--coral);
+    border: solid 4px var(--coral);
+    background: var(--coral);
     h1 {
-      color: var(--coral);
+      color: var(--off-white);
+    }
+  `,
+
+  card__background_aside: css`
+    background: var(--coral);
+    /* background: linear-gradient(
+      to left,
+      var(--coral) 0%,
+      var(--off-white) 100%
+      ); */
+    @media (max-width: 1080px) {
+      border: none;
+      background: transparent;
+    }
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 480px) {
     }
   `,
 
@@ -265,26 +284,27 @@ export const lightTheme = {
   `,
 
   navLogo: css`
-    color: var(--coral);
-    font-size: clamp(var(--fz-nav), 5vw, var(--fz-lg));
+    font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl));
     font-family: var(--righteous);
+    letter-spacing: 1px;
+    color: var(--coral);
   `,
 
   navList: css`
     background-color: transparent;
     border: 2px solid var(--coral);
-  `,
+    font-family: var(--righteous);
+    font-weight: 200;
 
-  navLinks: css`
     a {
-      color: var(--coral);
+      font-size: clamp(var(--fz-sm), 5vw, var(--fz-nav));
       text-decoration: none;
-      font-family: var(--roboto);
-      font-weight: var(--roboto-reg);
+      cursor: pointer;
+      color: var(--coral);
+
       &:active {
         color: var(--white);
       }
-
       &:focus-visible {
         border: dashed 3px var(--black);
       }
@@ -299,17 +319,17 @@ export const lightTheme = {
   // =========================================================
   //   COMPONENTS
   loader: css`
-    color: var(--teal);
-    background-color: var(--white);
+    color: var(--coral);
+    background-color: var(--off-white);
     svg {
-      stroke: var(--teal);
+      stroke: var(--coral);
     }
   `,
 
   themeButton: css`
     background: var(--off-white-tint);
     border: 5px solid var(--coral);
-    backdrop-filter: blur(30px);
+    /* backdrop-filter: blur(30px); */
     &:focus-visible {
       border: dashed 3px var(--black);
     }
@@ -318,8 +338,20 @@ export const lightTheme = {
     }
   `,
 
-  sectionBorder: css`
-    border-right: solid 5px var(--coral);
+  section__border: css`
+    border-color: var(--coral);
+  `,
+
+  section__border_right: css`
+    border-right-color: var(--coral);
+  `,
+
+  section__border_noRight: css`
+    border-color: var(--coral);
+  `,
+
+  section__image: css`
+    border: 2px solid var(--coral);
   `,
 
   // =========================================================
@@ -343,3 +375,9 @@ export const lightTheme = {
 
   trackList: css``,
 };
+
+// background: linear-gradient(
+//   to left,
+//   var(--gray-tint) 0%,
+//   var(--off-white) 100%
+// );

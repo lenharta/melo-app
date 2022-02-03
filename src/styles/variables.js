@@ -25,13 +25,15 @@ const variables = css`
     --l-teal-tint: rgba(162, 196, 196, 0.4);
 
     // New Light Theme
-    --coral: rgb(240, 93, 94);
-    --coral-tint: rgba(240, 93, 94, 0.4);
+    /* --coral: rgb(240, 93, 94); */
+    /* --coral-tint: rgb(240, 93, 94); */
+    --coral: rgb(239, 99, 81);
+    --coral-tint: rgba(239, 99, 81, 0.4);
     /* --dark-blue: rgb(); */
     /* --dark-blue: rgb(); */
     /* --dark-blue: rgb(); */
-    --off-white: rgb(242, 243, 244);
-    --off-white-tint: rgb(242, 243, 244, 0.4);
+    --off-white: rgb(234, 226, 219);
+    --off-white-tint: rgba(234, 226, 219, 0.4);
     // Font Styles
     --righteous: "Righteous", cursive; // Logo/Various
     --barlow: "Barlow", sans-serif;
@@ -80,3 +82,14 @@ export default variables;
 // Teal                   - #6F9495
 // Light Teal             - #A2C4C4
 
+// Coral (Primary)        - #F05D5E
+// NEW Coral (Primary)    - rgb(255, 104, 107)
+
+
+// Almond                 - #F7E0CC 
+// Almond                 - rgb(247, 224, 204) 
+// Almond                 - rgb(247, 224, 204, 0.4)
+
+// linen                  - #EAE2DB
+// linen                  - rgb(234, 226, 219)
+// linen                  - rgba(234, 226, 219, 0.4)

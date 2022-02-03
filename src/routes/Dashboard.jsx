@@ -10,7 +10,9 @@ const Dashboard = () => {
     <>
       <StyledDashboardContainer>
         <StyledDashboardInner>
-          <h1>Dashboard</h1>
+        <ChartsHeader className="header__title">
+          <h1>DASHBOARD</h1>
+        </ChartsHeader>
         </StyledDashboardInner>
       </StyledDashboardContainer>
     </>
@@ -20,5 +22,9 @@ const Dashboard = () => {
 const StyledDashboardContainer = styled.section``;
 
 const StyledDashboardInner = styled.div``;
+
+const ChartsHeader = styled.div`
+  // Custom Class
+`;
 
 export default Dashboard;

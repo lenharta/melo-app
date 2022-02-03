@@ -18,20 +18,18 @@ const navLinkData = [
     aria: "Top Charts",
   },
 ];
+
 const Nav = () => {
   const [selected, setSelected] = useState([]);
-
-  // useEffect(() => {
-  //   setSelected()
-  // }, []);
 
   return (
     <>
       <StyledHeader>
         <StyledNav>
-          <StyledLogo>
+          <StyledLogoContainer>
             <span>Melo</span>
-          </StyledLogo>
+          </StyledLogoContainer>
+
           {navLinkData.map(({ title, path, aria }, id) => (
             <StyledNavLinks key={id} onClick={() => setSelected(id)}>
               <li>
@@ -112,13 +110,9 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledLogo = styled.div`
-  ${(props) => props.theme.navLogo};
-
+const StyledLogoContainer = styled.div`
   span {
-    font-size: clamp(var(--fz-xl), 5vw, var(--fz-xxl));
-    font-family: var(--righteous);
-    letter-spacing: 1px;
+    ${(props) => props.theme.navLogo};
   }
 
   @media (max-width: 1080px) {

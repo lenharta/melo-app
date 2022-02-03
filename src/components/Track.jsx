@@ -20,7 +20,9 @@ const Track = ({
       >
         <Link
           to="#"
-          aria-label={"Play " + title_short + " Song Artist: " + artist.name}
+          aria-label={
+            "Play " + title_short + " Song Artist: " + artist.name
+          }
         >
           <StyledTrackInner>
             <StyledImg src={album.cover_medium} alt={album.title} />
@@ -46,7 +48,9 @@ const StyledTrack = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
   margin: 10px 0;
-  width: 100%;
+  /* width: 100%; */
+  list-style-type: none;
+
 
   &:first-child {
     margin-top: 0px;
@@ -57,15 +61,17 @@ const StyledTrack = styled.li`
 
   a {
     height: 100%;
-    padding: 15px;
+    padding: 10px;
     width: 100%;
     border-radius: 15px;
 
     @media (max-width: 1080px) {
-      padding: 10px;
+      /* padding: 5px; */
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
     @media (max-width: 768px) {
-      padding: 5px;
+      /* padding: 5px; */
     }
     @media (max-width: 480px) {
     }
@@ -125,8 +131,8 @@ const StyledSong = styled.div`
 `;
 
 const StyledExplicit = styled.div`
-  grid-area: 1 / 6 / span 1 / span 1;
-  margin: auto 0 auto 20px;
+  grid-area: 1 / 6 / span 1 / span 0.5;
+  margin: auto auto;
   text-align: center;
   svg {
     width: 20px;
@@ -134,8 +140,8 @@ const StyledExplicit = styled.div`
   }
 
   @media (max-width: 480px) {
-    grid-area: 1 / 8 / span 2 / span 2;
-    margin: auto 0px;
+    grid-area: 1 / 8 / span 2 / span 1;
+    margin: auto auto;
   }
 `;
 
@@ -144,6 +150,11 @@ const StyledTrackArtist = styled.div`
   text-align: right;
   margin: auto 0;
   padding: 5px 0;
+
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
 
   @media (max-width: 480px) {
     grid-area: 2 / 2 / span 1 / span 6;

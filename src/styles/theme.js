@@ -82,26 +82,35 @@ export const darkTheme = {
   `,
 
   navList: css`
-    background-color: var(--slate-green-tint);
-    border: 3px solid var(--l-green-tint);
-  `,
+    background-color: transparent;
+    /* border: 2px solid var(--l-green); */
+    font-family: var(--righteous);
+    font-weight: 200;
 
-  navLinks: css`
-    a {
-      color: var(--l-green);
-      &:active,
-      &:hover {
+    li {
+      a {
+        font-size: clamp(var(--fz-sm), 5vw, var(--fz-nav));
+        text-decoration: none;
+        cursor: pointer;
         color: var(--l-green);
-      }
-      &:focus-visible {
-        border: dashed 3px var(--l-green);
+
+        &:active,
+        &:hover {
+          color: var(--l-green);
+        }
+        &:focus-visible {
+          border: dashed 3px var(--l-green);
+          color: var(--slate-green-tint);
+        }
       }
     }
   `,
 
+  navLinks: css``,
+
   navSelectedLink: css`
     border: 2px solid var(--l-green);
-    background: transparent;
+    background-color: var(--l-green-tint);
   `,
 
   // =========================================================
@@ -292,7 +301,6 @@ export const lightTheme = {
 
   navList: css`
     background-color: transparent;
-    border: 2px solid var(--coral);
     font-family: var(--righteous);
     font-weight: 200;
 
@@ -312,7 +320,7 @@ export const lightTheme = {
   `,
 
   navSelectedLink: css`
-    background: transparent;
+    background: var(--coral-tint);
     border: 2px solid var(--coral);
   `,
 
@@ -351,7 +359,7 @@ export const lightTheme = {
   `,
 
   section__image: css`
-    border: 2px solid var(--coral);
+    border: 2px solid var(--off-white);
   `,
 
   // =========================================================

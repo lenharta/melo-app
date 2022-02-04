@@ -30,19 +30,20 @@ const Nav = () => {
             <span>Melo</span>
           </StyledLogoContainer>
 
-          {navLinkData.map(({ title, path, aria }, id) => (
-            <StyledNavLinks key={id} onClick={() => setSelected(id)}>
-              <li>
-                <Link aria-label={aria} to={path}>
-                  {title}
-                </Link>
-
-                {id === selected ? (
-                  <Outline layoutId="outline" transition={navSpring} />
-                ) : null}
-              </li>
-            </StyledNavLinks>
-          ))}
+          <StyledNavLinks>
+            {navLinkData.map(({ title, path, aria }, id) => (
+              <LayoutGroup>
+                <motion.li key={id} onClick={() => setSelected(id)}>
+                  <Link aria-label={aria} to={path}>
+                    {title}
+                    {id === selected ? (
+                      <Outline layoutId="outline" transition={navSpring} />
+                    ) : null}
+                  </Link>
+                </motion.li>
+              </LayoutGroup>
+            ))}
+          </StyledNavLinks>
         </StyledNav>
       </StyledHeader>
 
@@ -75,14 +76,12 @@ const Nav = () => {
 
 // Nav Styles
 const StyledHeader = styled.header`
-  ${(props) => props.theme.styledHeader}
   ${({ theme }) => theme.mixins.flexCenter}
-  margin: 0 auto;
+  ${(props) => props.theme.styledHeader}
+  position: fixed;
   width: 100%;
   height: 100px;
-  position: fixed;
   z-index: 100;
-  top: 0;
 
   @media (max-width: 1080px) {
   }
@@ -93,10 +92,13 @@ const StyledHeader = styled.header`
 `;
 
 const StyledNav = styled.nav`
-  ${(props) => props.theme.nav}
   ${({ theme }) => theme.mixins.flexBetween}
-  width: 100%;
   max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  height: 50px;
+  top: 25px;
   padding: 0 100px;
 
   @media (max-width: 1080px) {
@@ -123,14 +125,22 @@ const StyledLogoContainer = styled.div`
   }
 `;
 
-const StyledNavLinks = styled(motion.ul)`
-  ${({ theme }) => theme.mixins.flexEven}
+const StyledNavLinks = styled.ul`
+  ${({ theme }) => theme.mixins.flexBetween}
   ${(props) => props.theme.navList};
-  ${(props) => props.theme.navLinks};
+  justify-content: flex-end;
+  height: 100%;
   list-style-type: none;
 
   li {
+    ${({ theme }) => theme.mixins.flexCenter}
+    position: relative;
+    text-align: center;
+    height: 100%;
+    /* margin: 0 10px; */
     a {
+      height: 100%;
+      padding: 12.5px 25px;
     }
   }
 
@@ -146,6 +156,12 @@ const StyledNavLinks = styled(motion.ul)`
 
 const Outline = styled(motion.div)`
   ${(props) => props.theme.navSelectedLink}
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 25px;
 
   @media (max-width: 1080px) {
   }
@@ -156,3 +172,6 @@ const Outline = styled(motion.div)`
 `;
 
 export default Nav;
+
+/* ${({ theme }) => theme.mixins.flexCenter} */
+/* ${({ theme }) => theme.mixins.flexBetween} */

@@ -117,15 +117,15 @@ const StyledChartInfo = styled.div`
 `;
 
 const StyledSelectMenuContainer = styled.div`
-    ${({ theme }) => theme.mixins.flexCenter}
-    flex-direction: column;
+  ${({ theme }) => theme.mixins.flexCenter}
+  flex-direction: column;
 
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 200px;
   margin: 0 auto;
   width: 250px;
-  
+
   @media (max-width: 1600px) {
     width: 200px;
   }
@@ -150,12 +150,11 @@ const StyledSelectMenuContainer = styled.div`
     width: 100%;
     @media (max-width: 1080px) {
       justify-content: center;
-      
+
       width: 60%;
     }
     @media (max-width: 768px) {
-    padding: 10px 0px;
-
+      padding: 10px 0px;
     }
     @media (max-width: 480px) {
     }

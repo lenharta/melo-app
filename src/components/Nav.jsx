@@ -7,15 +7,21 @@ import { navSpring, navVariant } from "../utils";
 const navLinkData = [
   {
     id: 1,
-    title: "DASHBOARD",
+    title: "Dashboard",
     path: "/",
     aria: "/Dasboard",
   },
   {
     id: 2,
-    title: "CHARTS",
+    title: "Charts",
     path: "/charts",
     aria: "Top Charts",
+  },
+  {
+    id: 3,
+    title: "Artists",
+    path: "/#",
+    aria: "Artists",
   },
 ];
 
@@ -30,9 +36,9 @@ const Nav = () => {
             <span>Melo</span>
           </StyledLogoContainer>
 
+            <LayoutGroup>
           <StyledNavLinks>
             {navLinkData.map(({ title, path, aria }, id) => (
-              <LayoutGroup>
                 <motion.li key={id} onClick={() => setSelected(id)}>
                   <Link aria-label={aria} to={path}>
                     {title}
@@ -41,9 +47,9 @@ const Nav = () => {
                     ) : null}
                   </Link>
                 </motion.li>
-              </LayoutGroup>
             ))}
           </StyledNavLinks>
+            </LayoutGroup>
         </StyledNav>
       </StyledHeader>
 

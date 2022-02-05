@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { TrackList } from "../components";
 import requests from "../api/Requests";
+import { motion } from "framer-motion";
+import { spring } from "../utils";
 
 const Charts = () => {
   const [charts, setCharts] = useState([]);
@@ -19,7 +21,7 @@ const Charts = () => {
       return response;
     };
 
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     fetchData();
   }, []);
 
@@ -28,15 +30,14 @@ const Charts = () => {
     <>
       <StyledChartsContainer>
         <ChartsHeader className="header__title">
-          <h1>CHARTS</h1>
+          <h1>{titled.title}</h1>
         </ChartsHeader>
 
-        <ChartsContent className="section__border_right">
+        <ChartsContent>
           <StyledChartInfo
             key={titled.id}
-            className="card__background_aside section__border_noRight"
           >
-            <StyledSelectMenuContainer className="section__image">
+            <StyledSelectMenuContainer transition={spring} className="section__image">
               <img src={titled.picture_xl} />
               <select>
                 <option>{titled.title}</option>
@@ -100,9 +101,8 @@ const StyledChartsTracks = styled.div`
 
 const StyledChartInfo = styled.div`
   grid-area: 1 / 4 / span 1 / span 1;
-  margin: 0px 0px 0px 30px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+  margin: 0px 0px 0px 15px;
+  border-radius: 25px;
 
   @media (max-width: 1080px) {
     grid-area: 1 / 1 / span 1 / span 1;
@@ -116,14 +116,14 @@ const StyledChartInfo = styled.div`
   }
 `;
 
-const StyledSelectMenuContainer = styled.div`
+const StyledSelectMenuContainer = styled(motion.div)`
   ${({ theme }) => theme.mixins.flexCenter}
   flex-direction: column;
 
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 200px;
-  margin: 0 auto;
+  margin: 5px auto;
   width: 250px;
 
   @media (max-width: 1600px) {
@@ -135,8 +135,6 @@ const StyledSelectMenuContainer = styled.div`
     width: 100%;
     justify-content: space-between;
     flex-direction: row;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
   }
   @media (max-width: 768px) {
     justify-content: space-between;
@@ -146,6 +144,7 @@ const StyledSelectMenuContainer = styled.div`
 
   select {
     padding: 15px 0px;
+    margin: 5px;
     text-align: center;
     width: 100%;
     @media (max-width: 1080px) {

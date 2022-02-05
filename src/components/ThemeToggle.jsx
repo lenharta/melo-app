@@ -28,20 +28,20 @@ const HandleContainer = styled(motion.button)`
   cursor: pointer;
   padding: 5px;
   border-radius: 50px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
   z-index: 100;
-
+  
   ${(props) =>
     props.isswitched === "dark"
       ? css`
           justify-content: flex-end;
-        `
+          `
       : null};
 
-  @media (min-width: 1600px) {
+@media (min-width: 1600px) {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
   }

@@ -63,12 +63,12 @@ const StyledTrack = styled.li`
     height: 100%;
     padding: 10px;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 20px;
 
     @media (max-width: 1080px) {
       /* padding: 5px; */
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
+      /* border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px; */
     }
     @media (max-width: 768px) {
       /* padding: 5px; */
@@ -147,7 +147,7 @@ const StyledExplicit = styled.div`
 
 const StyledTrackArtist = styled.div`
   grid-area: 1 / 7 / span 1 / span 2;
-  text-align: right;
+  text-align: center;
   margin: auto 0;
   padding: 5px 0;
 

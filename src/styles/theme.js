@@ -85,22 +85,24 @@ export const darkTheme = {
     background-color: transparent;
     /* border: 2px solid var(--l-green); */
     font-family: var(--righteous);
-    font-weight: 200;
-
+    font-weight: 500;
     li {
       a {
-        font-size: clamp(var(--fz-sm), 5vw, var(--fz-nav));
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
         text-decoration: none;
         cursor: pointer;
         color: var(--l-green);
-
-        &:active,
         &:hover {
+          color: var(--slate-green);
+        }
+        &:active {
           color: var(--l-green);
         }
         &:focus-visible {
           border: dashed 3px var(--l-green);
-          color: var(--slate-green-tint);
+          color: var(--l-green);
         }
       }
     }
@@ -109,8 +111,8 @@ export const darkTheme = {
   navLinks: css``,
 
   navSelectedLink: css`
-    border: 2px solid var(--l-green);
-    background-color: var(--l-green-tint);
+    /* border: 2px solid var(--l-green); */
+    background-color: var(--slate-green-tint);
   `,
 
   // =========================================================
@@ -125,7 +127,7 @@ export const darkTheme = {
 
   themeButton: css`
     background: var(--d-green);
-    border: 5px solid var(--l-green);
+    border: 4px solid var(--l-green);
     /* backdrop-filter: blur(30px); */
     &:focus-visible {
       border: dashed 3px var(--l-green);
@@ -144,7 +146,7 @@ export const darkTheme = {
         transform: scale(1.01);
       }
       &:focus-visible {
-        border: dashed 3px var(--black);
+        border: dashed 4px var(--black);
       }
     }
     svg {
@@ -154,21 +156,28 @@ export const darkTheme = {
 
   trackList: css``,
 
+  section__image: css`
+    border: 4px solid var(--slate-green-tint);
+  `,
+
   // =========================================================
   //   GLOBAL CLASSES
 
   header__title: css`
-    background: linear-gradient(
+    /* background: linear-gradient(
       to left,
       var(--l-green-tint) 0%,
       var(--d-green) 100%
+    ); */
+    background: linear-gradient(
+      to right,
+      var(--l-green) 0%,
+      var(--d-green) 100%
     );
-    border-left: solid 4px var(--l-green);
-    border-bottom: solid 4px var(--l-green);
-    border-top: solid 4px var(--l-green);
-    border-right: solid 4px var(--l-green);
+    /* border: solid 4px var(--l-green); */
+    
     h1 {
-      color: var(--l-green);
+      color: var(--d-green);
     }
   `,
 
@@ -186,7 +195,12 @@ export const darkTheme = {
   `,
 
   card__background_aside: css`
-    background: var(--l-green-tint);
+    /* background: var(--l-green-tint); */
+    background: linear-gradient(
+      to top,
+      var(--slate-green-tint) 0%,
+      var(--d-green) 100%
+    );
     @media (max-width: 1080px) {
       border: none;
       background: transparent;
@@ -251,29 +265,27 @@ export const lightTheme = {
   `,
 
   select: css`
-    border: solid 3px var(--coral);
+    border: solid 4px var(--off-white);
     color: var(--coral);
     background: var(--off-white);
+    font-size: var(--fz-md);
   `,
 
   // =========================================================
   //   GLOBAL CLASSES
 
   header__title: css`
-    border: solid 4px var(--coral);
-    background: var(--coral);
+    /* border: solid 4px var(--coral); */
     h1 {
       color: var(--off-white);
     }
+    background: linear-gradient(to left, var(--tan) 0%, var(--coral) 100%);
   `,
 
   card__background_aside: css`
-    background: var(--coral);
-    /* background: linear-gradient(
-      to left,
-      var(--coral) 0%,
-      var(--off-white) 100%
-      ); */
+    /* background: var(--coral); */
+    border: solid 4px var(--coral);
+    background: linear-gradient(to bottom, var(--coral) 0%, var(--tan) 100%);
     @media (max-width: 1080px) {
       border: none;
       background: transparent;
@@ -301,17 +313,24 @@ export const lightTheme = {
 
   navList: css`
     background-color: transparent;
+    /* border: 2px solid var(--coral); */
     font-family: var(--righteous);
-    font-weight: 200;
-
+    font-weight: 500;
     a {
-      font-size: clamp(var(--fz-sm), 5vw, var(--fz-nav));
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
       text-decoration: none;
+      /* font-family: var(--barlow);
+      font-weight: var(--barlow-bold); */
       cursor: pointer;
       color: var(--coral);
 
       &:active {
         color: var(--white);
+      }
+      &:focus {
+        color: var(--black);
       }
       &:focus-visible {
         border: dashed 3px var(--black);
@@ -320,8 +339,10 @@ export const lightTheme = {
   `,
 
   navSelectedLink: css`
-    background: var(--coral-tint);
-    border: 2px solid var(--coral);
+    /* background: var(--coral-tint); */
+    /* border: 2px solid var(--coral); */
+    background: linear-gradient(to left, var(--coral) 0%, var(--tan) 100%);
+    z-index: -25;
   `,
 
   // =========================================================
@@ -335,11 +356,11 @@ export const lightTheme = {
   `,
 
   themeButton: css`
-    background: var(--off-white-tint);
-    border: 5px solid var(--coral);
+    background: var(--off-white);
+    border: 4px solid var(--coral);
     /* backdrop-filter: blur(30px); */
     &:focus-visible {
-      border: dashed 3px var(--black);
+      border: dashed 4px var(--black);
     }
     .handle__Color {
       background: var(--coral);
@@ -359,7 +380,7 @@ export const lightTheme = {
   `,
 
   section__image: css`
-    border: 2px solid var(--off-white);
+    border: 4px solid var(--gray-tint);
   `,
 
   // =========================================================

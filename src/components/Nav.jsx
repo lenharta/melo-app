@@ -26,7 +26,7 @@ const navLinkData = [
 ];
 
 const Nav = () => {
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState({});
 
   return (
     <>

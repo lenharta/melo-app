@@ -123,7 +123,7 @@ const StyledSelectMenuContainer = styled(motion.div)`
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 200px;
-  margin: 5px auto;
+  margin: 0px auto;
   width: 250px;
 
   @media (max-width: 1600px) {
@@ -133,6 +133,7 @@ const StyledSelectMenuContainer = styled(motion.div)`
     ${({ theme }) => theme.mixins.flexCenter}
     flex-direction: column;
     width: 100%;
+    padding: 10px;
     justify-content: space-between;
     flex-direction: row;
   }

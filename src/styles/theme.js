@@ -35,7 +35,7 @@ export const darkTheme = {
   `,
 
   select: css`
-    border: solid 3px var(--l-green);
+    border: solid 3px var(--slate-green-tint);
     color: var(--l-green);
     background: var(--d-green);
   `,
@@ -175,7 +175,7 @@ export const darkTheme = {
       var(--d-green) 100%
     );
     /* border: solid 4px var(--l-green); */
-    
+
     h1 {
       color: var(--d-green);
     }
@@ -265,7 +265,7 @@ export const lightTheme = {
   `,
 
   select: css`
-    border: solid 4px var(--off-white);
+    border: solid 3px var(--gray-tint);
     color: var(--coral);
     background: var(--off-white);
     font-size: var(--fz-md);
@@ -325,12 +325,15 @@ export const lightTheme = {
       font-weight: var(--barlow-bold); */
       cursor: pointer;
       color: var(--coral);
+      /* &: {
+        color: var(--off-white);
+      } */
 
       &:active {
-        color: var(--white);
+        color: var(--off-white);
       }
       &:focus {
-        color: var(--black);
+        color: var(--off-white);
       }
       &:focus-visible {
         border: dashed 3px var(--black);
@@ -339,9 +342,10 @@ export const lightTheme = {
   `,
 
   navSelectedLink: css`
-    /* background: var(--coral-tint); */
+    z-index: -25;
+    background: var(--coral);
     /* border: 2px solid var(--coral); */
-    background: linear-gradient(to left, var(--coral) 0%, var(--tan) 100%);
+    /* background: linear-gradient(to left, var(--coral) 0%, var(--tan) 100%); */
     z-index: -25;
   `,
 

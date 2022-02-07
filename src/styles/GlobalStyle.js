@@ -66,6 +66,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   section {
+    ${({ theme }) => theme.mixins.flexCenter}
+    flex-direction: column;
+    width: 100%;
     padding: 25px 0;
 
     @media (max-width: 1600px) {
@@ -79,7 +82,6 @@ const GlobalStyle = createGlobalStyle`
       padding: 0px 0;
     }
     @media (max-width: 480px) {
-      padding: 10px 0;
     }
   }
   
@@ -182,7 +184,14 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+
+  .gradient__font {
+    ${(props) => props.theme.gradient__font}
+    display: inline-block;
+  }
 `;
+
+
 
 export default GlobalStyle;
 

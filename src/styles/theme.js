@@ -177,7 +177,7 @@ export const lightTheme = {
   `,
 
   select: css`
-    border: var(--sm-border);
+    border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
     background: var(--primary-color);
     font-size: var(--fz-sm-4);
@@ -276,6 +276,18 @@ export const lightTheme = {
     border: var(--md-border);
   `,
 
+  gradient__font: css`
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @supports (-webkit-linear-gradient: none) or (-webkit-text-fill-color: none) and (-webkit-background-clip: none) {
+      background: var(--w-accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  `,
+
   // =========================================================
   //   REUSED COMPONENTS
 
@@ -283,18 +295,42 @@ export const lightTheme = {
     a {
       border-bottom: var(--sm-border);
       &:hover {
-        background: var(--third-color-tint);
+        border-radius: var(--default-md-radius);
+        background: var(--secondary-color);
         transform: scale(1.01);
+        h3 {
+          color: var(--primary-color);
+        }
+        svg {
+          color: var(--primary-color);
+        }
+        h2 {
+          color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+          border-radius: var(--default-sm-radius);
+        }
       }
       &:focus-visible {
-        border: var(--focus-border);
-        border-radius: var(--default-radius) ;     
-        background: var(--third-color-tint);
+        border-radius: var(--default-md-radius);
+        background: var(--secondary-color);
+        h3 {
+          color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+          border-radius: var(--default-sm-radius);
+        }
       }
     }
 
     h2 {
       color: var(--secondary-color);
+      /* -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--third-color);
+      @supports (-webkit-text-stroke-width: none) or (-webkit-text-stroke-color: none) {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var(--third-color); */
+      }
     }
     h3 {
       color: var(--secondary-color);
@@ -304,6 +340,8 @@ export const lightTheme = {
       color: var(--secondary-color);
     }
   `,
+  // var(--w-accent-gradient)
+  // var(--accent-gradient)
 };
 
 // background: linear-gradient(

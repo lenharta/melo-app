@@ -55,9 +55,7 @@ const Charts = () => {
 };
 
 const StyledChartsContainer = styled.section`
-  ${({ theme }) => theme.mixins.flexCenter}
-  flex-direction: column;
-  width: 100%;
+  // Custom Class
 `;
 
 const ChartsHeader = styled.div`
@@ -125,6 +123,11 @@ const StyledSelectMenuContainer = styled(motion.div)`
   top: 200px;
   margin: 0px auto;
   width: 250px;
+  select {
+    padding: 15px 0px;
+    text-align: center;
+    width: 100%;
+  }
 
   @media (max-width: 1600px) {
     width: 200px;
@@ -133,30 +136,24 @@ const StyledSelectMenuContainer = styled(motion.div)`
     ${({ theme }) => theme.mixins.flexCenter}
     flex-direction: column;
     width: 100%;
-    padding: 10px;
+    padding: 0px 10px;
+    margin: 25px 0px;
+
     justify-content: space-between;
     flex-direction: row;
-  }
-  @media (max-width: 768px) {
-    justify-content: space-between;
-  }
-  @media (max-width: 480px) {
-  }
-
-  select {
-    padding: 15px 0px;
-    text-align: center;
-    width: 100%;
-    @media (max-width: 1080px) {
+    select {
       justify-content: center;
       margin-left: 20px;
-      /* width: 60%; */
     }
-    @media (max-width: 768px) {
+  }
+  @media (max-width: 768px) {
+    padding: 0px 5px;
+    justify-content: space-between;
+    select {
       padding: 10px 0px;
     }
-    @media (max-width: 480px) {
-    }
+  }
+  @media (max-width: 480px) {
   }
 `;
 

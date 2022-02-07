@@ -57,9 +57,9 @@ const StyledTrack = styled.li`
 
   a {
     height: 100%;
-    padding: 15px 10px;
+    padding: 10px 10px;
     width: 100%;
-
+    
     @media (max-width: 1080px) {
       /* padding: 5px; */
       
@@ -67,7 +67,8 @@ const StyledTrack = styled.li`
       border-bottom-right-radius: 0px; */
     }
     @media (max-width: 768px) {
-      padding: 10px 15px;
+      /* border-radius: var(--default-m-radius); */
+      padding: 5px 5px;
       /* padding: 5px; */
     }
     @media (max-width: 480px) {
@@ -93,7 +94,7 @@ const StyledImg = styled.img`
   margin-right: 20px;
   width: 125px;
   height: 125px;
-  
+
   @media (max-width: 1600px) {
     border-radius: 15px;
     width: 100px;
@@ -124,18 +125,31 @@ const StyledSong = styled.div`
   margin: auto 0;
   text-decoration-color: none;
   text-decoration: none;
+  width: 95%;
 
   h2 {
+    width: 95%;
     padding: 5px 0px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     background-clip: text;
-    /* text-decoration-color: none;
-    text-decoration: none; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @supports (-webkit-background-clip: none) {
+      -webkit-background-clip: text;
+    }
     @media (max-width: 480px) {
-      padding: 5px 0;
+      padding: 2px 0;
+    }
+  }
+
+  h3 {
+    width: 95%;
+    background-clip: text;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @supports (-webkit-background-clip: none) {
+      -webkit-background-clip: text;
     }
   }
 

@@ -41,7 +41,7 @@ const variables = css`
     --secondary-color: rgb(5, 4, 6);
     --secondary-color-tint: rgba(5, 4, 6, 0.4);
     --third-color: rgb(161, 163, 165);
-    --third-color-tint: rgba(161, 163, 165, 0.4);
+    --third-color-tint: rgba(161, 163, 165, 0.2);
         // Borders
         --sm-border: solid 2px rgba(161, 163, 165, 0.4);
         --md-border: solid 4px rgba(161, 163, 165, 0.4);
@@ -54,7 +54,7 @@ const variables = css`
     --d-secondary-color: rgb(229, 229, 229);
     --d-secondary-color-tint: rgba(229, 229, 229, 0.4);
     --d-third-color: rgb(161, 163, 165);
-    --d-third-color-tint: rgba(161, 163, 165, 0.4);
+    --d-third-color-tint: rgba(161, 163, 165, 0.2);
         // Borders
         --d-sm-border: solid 2px rgba(161, 163, 165, 0.4);
         --d-md-border: solid 4px rgba(161, 163, 165, 0.4);
@@ -73,7 +73,8 @@ const variables = css`
 
     // Globals
       // General
-      --default-radius: 20px;
+      --default-md-radius: 20px;
+      --default-sm-radius: 10px;
       --filter: blur(30px);
 
       // Letter-Spacing
@@ -83,7 +84,8 @@ const variables = css`
       --let-space-xl: 8px;
 
       // Gradients
-      --accent-gradient: linear-gradient(to left, var(--gold) 20%, var(--coral) 40%, var(--purple) 60%, var(--slate-blue) 80%, var(--light-blue) 100%);
+      --accent-gradient: linear-gradient(to left, var(--coral) 16.5%, var(--purple) 33%, var(--slate-blue) 66%, var(--light-blue) 100%);
+      --w-accent-gradient: -webkit-linear-gradient(to left, var(--coral) 16.5%, var(--purple) 33%, var(--slate-blue) 66%, var(--light-blue) 100%);
       
       // Transitions
       --easing: cubic-bezier(0.645, 0.045, 0.355, 1);

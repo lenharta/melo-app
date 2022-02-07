@@ -17,12 +17,12 @@ const navLinkData = [
     path: "/charts",
     aria: "Top Charts",
   },
-  {
-    id: 3,
-    title: "Artists",
-    path: "/#",
-    aria: "Artists",
-  },
+  // {
+  //   id: 3,
+  //   title: "Artists",
+  //   path: "/#",
+  //   aria: "Artists",
+  // },
 ];
 
 const Nav = () => {
@@ -52,30 +52,6 @@ const Nav = () => {
             </LayoutGroup>
         </StyledNav>
       </StyledHeader>
-
-      {/* <StyledHeader>
-        <StyledNavContainer>
-          <StyledNavLogo>
-            <span>Melo</span>
-          </StyledNavLogo>
-          <StyledNavLinks>
-            {navLinkData.map(({ title, path, aria }, id) => (
-              <StyledNavList key={id} onClick={() => setSelected(id)}>
-                <Link aria-label={aria} to={path}>
-                  {title}
-                </Link>
-                {id === selected ? (
-                  <Outline
-                    layoutId="outline"
-                    transition={navSpring}
-                    variants={navVariant}
-                  />
-                ) : null}
-              </StyledNavList>
-            ))}
-          </StyledNavLinks>
-        </StyledNavContainer>
-      </StyledHeader> */}
     </>
   );
 };
@@ -119,10 +95,8 @@ const StyledNav = styled.nav`
 `;
 
 const StyledLogoContainer = styled.div`
-  span {
-    ${(props) => props.theme.navLogo};
-  }
-
+  ${(props) => props.theme.navLogo};
+  
   @media (max-width: 1080px) {
   }
   @media (max-width: 768px) {
@@ -163,6 +137,7 @@ const StyledNavLinks = styled.ul`
 const Outline = styled(motion.div)`
   ${(props) => props.theme.navSelectedLink}
   position: absolute;
+  height: 85%;
   top: 0;
   bottom: 0;
   right: 0;

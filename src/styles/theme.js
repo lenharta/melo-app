@@ -7,220 +7,142 @@ import { mixins } from ".";
 
 export const darkTheme = {
   // =========================================================
-  //   GLOBALS STYLES
+  //   GLOBALS
   mixins,
 
   body: css`
-    background: var(--d-green);
+    background: var(--d-primary-color);
   `,
 
   scrollbarThumb: css`
-    background: var(--l-green);
+    background: var(--d-secondary-color);
   `,
 
   scrollbarTrack: css`
-    background: var(--l-green-tint);
+    background: var(--d-third-color);
   `,
 
   styledHeader: css`
-    background-color: var(--d-green-tint);
+    background: var(--d-primary-color-tint);
     backdrop-filter: blur(30px);
   `,
 
-  form: css`
-    background: transparent;
-    select {
-      height: 300px;
-    }
-  `,
-
   select: css`
-    border: solid 3px var(--slate-green-tint);
-    color: var(--l-green);
-    background: var(--d-green);
-  `,
-
-  h1: css`
-    color: var(--l-green);
-    letter-spacing: 5px;
-  `,
-
-  h3: css`
-    color: var(--green);
-  `,
-
-  h2: css`
-    color: var(--l-green);
-  `,
-
-  p: css`
-    color: var(--slate-green);
-  `,
-
-  cardGradient: css`
-    background: linear-gradient(
-      90deg,
-      var(--l-green-tint) 0%,
-      var(--green-tint) 50%,
-      var(--d-green-tint) 100%
-    );
-  `,
-
-  // =========================================================
-  //   NAVIGATION
-  progressBar: css`
-    svg {
-      stroke: var(--l-green);
-    }
-  `,
-
-  navLogo: css`
-    font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl));
-    font-family: var(--righteous);
-    letter-spacing: 1px;
-    color: var(--l-green);
-  `,
-
-  navList: css`
-    background-color: transparent;
-    /* border: 2px solid var(--l-green); */
-    font-family: var(--righteous);
-    font-weight: 500;
-    li {
-      a {
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-        text-decoration: none;
-        cursor: pointer;
-        color: var(--l-green);
-        &:hover {
-          color: var(--slate-green);
-        }
-        &:active {
-          color: var(--l-green);
-        }
-        &:focus-visible {
-          border: dashed 3px var(--l-green);
-          color: var(--l-green);
-        }
-      }
-    }
-  `,
-
-  navLinks: css``,
-
-  navSelectedLink: css`
-    /* border: 2px solid var(--l-green); */
-    background-color: var(--slate-green-tint);
-  `,
-
-  // =========================================================
-  //   COMPONENTS
-  loader: css`
-    color: var(--l-green);
-    background-color: var(--d-green);
-    svg {
-      stroke: var(--l-green);
-    }
-  `,
-
-  themeButton: css`
-    background: var(--d-green);
-    border: 4px solid var(--l-green);
-    /* backdrop-filter: blur(30px); */
-    &:focus-visible {
-      border: dashed 3px var(--l-green);
-    }
-    .handle__Color {
-      background: var(--l-green);
-    }
-  `,
-
-  track: css`
-    a {
-      border: solid 2px var(--slate-green-tint);
-      &:hover,
-      &:focus {
-        background: var(--slate-green-tint);
-        transform: scale(1.01);
-      }
-      &:focus-visible {
-        border: dashed 4px var(--black);
-      }
-    }
-    svg {
-      color: var(--slate-green);
-    }
-  `,
-
-  trackList: css``,
-
-  section__image: css`
-    border: 4px solid var(--slate-green-tint);
+    border: var(--d-sm-border);
+    color: var(--d-secondary-color);
+    background: var(--d-primary-color);
+    font-size: var(--fz-sm-4);
   `,
 
   // =========================================================
   //   GLOBAL CLASSES
 
   header__title: css`
-    /* background: linear-gradient(
-      to left,
-      var(--l-green-tint) 0%,
-      var(--d-green) 100%
-    ); */
-    background: linear-gradient(
-      to right,
-      var(--l-green) 0%,
-      var(--d-green) 100%
-    );
-    /* border: solid 4px var(--l-green); */
-
     h1 {
-      color: var(--d-green);
+      color: var(--d-primary-color);
     }
   `,
 
-  card__background: css`
-    background: var(--l-green-tint);
-
-    @media (max-width: 1080px) {
-      border: none;
-      background: transparent;
-    }
-    @media (max-width: 768px) {
-    }
-    @media (max-width: 480px) {
+  // =========================================================
+  //   NAVIGATION
+  progressBar: css`
+    svg {
+      stroke: var(--d-secondary-color);
     }
   `,
 
-  card__background_aside: css`
-    /* background: var(--l-green-tint); */
-    background: linear-gradient(
-      to top,
-      var(--slate-green-tint) 0%,
-      var(--d-green) 100%
-    );
-    @media (max-width: 1080px) {
-      border: none;
-      background: transparent;
-    }
-    @media (max-width: 768px) {
-    }
-    @media (max-width: 480px) {
+  navLogo: css`
+    color: var(--d-secondary-color);
+    font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
+    font-family: var(--logo-font);
+    font-weight: var(--fw-800);
+    letter-spacing: var(--let-space-sm);
+  `,
+
+  navList: css`
+    a {
+      color: var(--d-secondary-color);
+      font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
+      font-family: var(--secondary-font);
+      font-weight: var(--fw-800);
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: var(--let-space-md);
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        color: var(--d-third-color);
+      }
+      &:focus {
+        color: var(--d-secondary-color);
+      }
+      &:focus-visible {
+        border: var(--d-focus-border);
+      }
     }
   `,
 
-  section__border: css`
-    border-color: var(--l-green);
+  navSelectedLink: css`
+    border: solid 2px var(--d-secondary-color);
+    z-index: -25;
   `,
 
-  section__border_right: css`
-    border-right-color: var(--l-green);
+  // =========================================================
+  //   COMPONENTS
+  loader: css`
+    color: var(--secondary-color);
+    background: var(--primary-color);
+
+    svg {
+      stroke: var(--secondary-color);
+    }
+
+    span {
+      font-size: var(--fz-lg-4);
+      font-family: var(--logo-font);
+      font-weight: var(--fw-800);
+      letter-spacing: var(--let-space-sm);
+    }
   `,
 
-  section__border_noRight: css`
-    border-color: var(--l-green);
+  themeButton: css`
+    background: var(--d-third-color-tint);
+    // Custom Border
+    border: 3px solid var(--d-secondary-color);
+    backdrop-filter: var(--filter);
+
+    &:focus-visible {
+      border: var(--d-focus-border);
+    }
+    .handle__Color {
+      background: var(--d-secondary-color);
+    }
+  `,
+
+  section__image: css`
+    border: var(--d-md-border);
+  `,
+
+  // =========================================================
+  //   REUSED COMPONENTS
+
+  track: css`
+    a {
+      border: var(--d-sm-border);
+      &:hover {
+        background: var(--d-third-color-tint);
+        transform: scale(1.01);
+      }
+      &:focus-visible {
+        border: var(--d-focus-border);
+      }
+    }
+
+    svg {
+      color: var(--d-secondary-color);
+    }
   `,
 };
 
@@ -234,65 +156,39 @@ export const lightTheme = {
   mixins,
 
   body: css`
-    background: var(--off-white);
+    background: var(--primary-color);
   `,
 
   scrollbarThumb: css`
-    background: var(--teal);
+    background: var(--secondary-color);
   `,
 
   scrollbarTrack: css`
-    background: var(--l-teal-tint);
+    background: var(--third-color);
   `,
 
   styledHeader: css`
-    background: var(--off-white-tint);
+    background: var(--primary-color-tint);
     backdrop-filter: blur(30px);
   `,
 
-  nav: css``,
-
-  h1: css`
-    color: var(--coral);
-  `,
-
-  h2: css`
-    color: var(--coral);
-  `,
-
-  p: css`
-    color: var(--black);
+  img: css`
+    border: var(--sm-border);
   `,
 
   select: css`
-    border: solid 3px var(--gray-tint);
-    color: var(--coral);
-    background: var(--off-white);
-    font-size: var(--fz-md);
+    border: var(--sm-border);
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    font-size: var(--fz-sm-4);
   `,
 
   // =========================================================
   //   GLOBAL CLASSES
 
   header__title: css`
-    /* border: solid 4px var(--coral); */
     h1 {
-      color: var(--off-white);
-    }
-    background: linear-gradient(to left, var(--tan) 0%, var(--coral) 100%);
-  `,
-
-  card__background_aside: css`
-    /* background: var(--coral); */
-    border: solid 4px var(--coral);
-    background: linear-gradient(to bottom, var(--coral) 0%, var(--tan) 100%);
-    @media (max-width: 1080px) {
-      border: none;
-      background: transparent;
-    }
-    @media (max-width: 768px) {
-    }
-    @media (max-width: 480px) {
+      color: var(--primary-color);
     }
   `,
 
@@ -300,91 +196,84 @@ export const lightTheme = {
   //   NAVIGATION
   progressBar: css`
     svg {
-      stroke: var(--coral);
+      stroke: var(--secondary-color);
     }
   `,
 
   navLogo: css`
-    font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl));
-    font-family: var(--righteous);
-    letter-spacing: 1px;
-    color: var(--coral);
+    span {
+      color: var(--secondary-color);
+      font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
+      font-family: var(--logo-font);
+      font-weight: var(--fw-800);
+      letter-spacing: var(--let-space-sm);
+    }
   `,
 
   navList: css`
-    background-color: transparent;
-    /* border: 2px solid var(--coral); */
-    font-family: var(--righteous);
-    font-weight: 500;
     a {
+      color: var(--secondary-color);
+      font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
+      font-family: var(--secondary-font);
+      font-weight: var(--fw-800);
       text-transform: uppercase;
-      letter-spacing: 5px;
-      font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+      text-align: center;
       text-decoration: none;
-      /* font-family: var(--barlow);
-      font-weight: var(--barlow-bold); */
+      letter-spacing: var(--let-space-md);
       cursor: pointer;
-      color: var(--coral);
-      /* &: {
-        color: var(--off-white);
-      } */
 
+      &:hover,
       &:active {
-        color: var(--off-white);
+        color: var(--third-color);
       }
       &:focus {
-        color: var(--off-white);
+        color: var(--secondary-color);
       }
       &:focus-visible {
-        border: dashed 3px var(--black);
+        border: var(--focus-border);
       }
     }
   `,
 
   navSelectedLink: css`
-    z-index: -25;
-    background: var(--coral);
-    /* border: 2px solid var(--coral); */
-    /* background: linear-gradient(to left, var(--coral) 0%, var(--tan) 100%); */
+    border: solid 2px var(--secondary-color);
     z-index: -25;
   `,
 
   // =========================================================
   //   COMPONENTS
   loader: css`
-    color: var(--coral);
-    background-color: var(--off-white);
+    color: var(--secondary-color);
+    background: var(--primary-color);
+
     svg {
-      stroke: var(--coral);
+      stroke: var(--secondary-color);
+    }
+
+    span {
+      font-size: var(--fz-lg-4);
+      font-family: var(--logo-font);
+      font-weight: var(--fw-800);
+      letter-spacing: var(--let-space-sm);
     }
   `,
 
   themeButton: css`
-    background: var(--off-white);
-    border: 4px solid var(--coral);
-    /* backdrop-filter: blur(30px); */
+    background: var(--primary-color-tint);
+    // Custom Border
+    border: 3px solid var(--secondary-color);
+    backdrop-filter: var(--filter);
+
     &:focus-visible {
-      border: dashed 4px var(--black);
+      border: var(--focus-border);
     }
     .handle__Color {
-      background: var(--coral);
+      background: var(--secondary-color);
     }
-  `,
-
-  section__border: css`
-    border-color: var(--coral);
-  `,
-
-  section__border_right: css`
-    border-right-color: var(--coral);
-  `,
-
-  section__border_noRight: css`
-    border-color: var(--coral);
   `,
 
   section__image: css`
-    border: 4px solid var(--gray-tint);
+    border: var(--md-border);
   `,
 
   // =========================================================
@@ -392,21 +281,29 @@ export const lightTheme = {
 
   track: css`
     a {
-      border: solid 2px var(--gray-tint);
+      border-bottom: var(--sm-border);
       &:hover {
-        background: var(--gray-tint);
+        background: var(--third-color-tint);
         transform: scale(1.01);
       }
       &:focus-visible {
-        border: dashed 3px var(--black);
+        border: var(--focus-border);
+        border-radius: var(--default-radius) ;     
+        background: var(--third-color-tint);
       }
     }
+
+    h2 {
+      color: var(--secondary-color);
+    }
+    h3 {
+      color: var(--secondary-color);
+      opacity: 0.6;
+    }
     svg {
-      color: var(--coral);
+      color: var(--secondary-color);
     }
   `,
-
-  trackList: css``,
 };
 
 // background: linear-gradient(

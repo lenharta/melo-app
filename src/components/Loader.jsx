@@ -71,8 +71,6 @@ const AnimatedLogoBorder = styled.div`
 const AnimatedLogo = styled(motion.div)`
   ${({ theme }) => theme.mixins.flexCenter}
   margin: 0 auto;
-  font-size: var(--fz-xxl);
-  font-family: var(--righteous);
   z-index: 100;
 
   span {

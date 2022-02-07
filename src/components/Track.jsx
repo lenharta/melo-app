@@ -20,23 +20,21 @@ const Track = ({
       >
         <Link
           to="#"
-          aria-label={
-            "Play " + title_short + " Song Artist: " + artist.name
-          }
+          aria-label={"Play " + title_short + " Song Artist: " + artist.name}
         >
           <StyledTrackInner>
             <StyledImg src={album.cover_medium} alt={album.title} />
 
             <StyledSong>
               <h2>{title_short}</h2>
+              <h3>{artist.name}</h3>
             </StyledSong>
             <StyledExplicit>
               {explicit_lyrics === true ? <MdExplicit /> : null}
             </StyledExplicit>
 
-            <StyledTrackArtist>
-              <p>{artist.name}</p>
-            </StyledTrackArtist>
+            {/* <StyledTrackArtist>
+            </StyledTrackArtist> */}
           </StyledTrackInner>
         </Link>
       </StyledTrack>
@@ -47,10 +45,8 @@ const Track = ({
 const StyledTrack = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
-  margin: 10px 0;
-  /* width: 100%; */
+  width: 100%;
   list-style-type: none;
-
 
   &:first-child {
     margin-top: 0px;
@@ -61,16 +57,17 @@ const StyledTrack = styled.li`
 
   a {
     height: 100%;
-    padding: 10px;
+    padding: 15px 10px;
     width: 100%;
-    border-radius: 20px;
 
     @media (max-width: 1080px) {
       /* padding: 5px; */
+      
       /* border-top-right-radius: 0px;
       border-bottom-right-radius: 0px; */
     }
     @media (max-width: 768px) {
+      padding: 10px 15px;
       /* padding: 5px; */
     }
     @media (max-width: 480px) {
@@ -92,22 +89,42 @@ const StyledTrackInner = styled.div`
 
 const StyledImg = styled.img`
   grid-area: 1 / 1 / span 1 / span 1;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-right: 20px;
-  width: 100px;
-  height: 100px;
-
+  width: 125px;
+  height: 125px;
+  
+  @media (max-width: 1600px) {
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+  }
+  @media (max-width: 1080px) {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+  }
   @media (max-width: 768px) {
+    grid-area: 1 / 1 / span 2 / span 1;
+    margin-right: 20px;
+    border-radius: 10px;
     width: 80px;
     height: 80px;
-    margin-right: 20px;
-    grid-area: 1 / 1 / span 2 / span 1;
+  }
+  @media (max-width: 480px) {
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
   }
 `;
 
 const StyledSong = styled.div`
+  ${(props) => props.theme.track}
   grid-area: 1 / 2 / span 1 / span 4;
   margin: auto 0;
+  text-decoration-color: none;
+  text-decoration: none;
+
   h2 {
     padding: 5px 0px;
     text-overflow: ellipsis;
@@ -115,7 +132,8 @@ const StyledSong = styled.div`
     text-overflow: ellipsis;
     white-space: nowrap;
     background-clip: text;
-
+    /* text-decoration-color: none;
+    text-decoration: none; */
     @media (max-width: 480px) {
       padding: 5px 0;
     }
@@ -126,7 +144,7 @@ const StyledSong = styled.div`
   }
 
   @media (max-width: 480px) {
-    grid-area: 1 / 2 / span 1 / span 6;
+    grid-area: 1 / 2 / span 2 / span 6;
   }
 `;
 
@@ -145,24 +163,25 @@ const StyledExplicit = styled.div`
   }
 `;
 
-const StyledTrackArtist = styled.div`
-  grid-area: 1 / 7 / span 1 / span 2;
-  text-align: center;
-  margin: auto 0;
-  padding: 5px 0;
+// const StyledTrackArtist = styled.div`
+//   grid-area: 1 / 7 / span 1 / span 2;
+//   text-align: right;
+//   margin: auto 0;
+//   padding: 5px 0;
+//   width: 100%;
 
-  @media (max-width: 1080px) {
-  }
-  @media (max-width: 768px) {
-  }
+//   @media (max-width: 1080px) {
+//   }
+//   @media (max-width: 768px) {
+//   }
 
-  @media (max-width: 480px) {
-    grid-area: 2 / 2 / span 1 / span 6;
-    text-align: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-`;
+//   @media (max-width: 480px) {
+//     grid-area: 2 / 2 / span 1 / span 6;
+//     text-align: left;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     overflow: hidden;
+//   }
+// `;
 
 export default Track;

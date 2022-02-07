@@ -2,123 +2,119 @@ import { css } from "styled-components";
 
 const variables = css`
   :root {
-    // Colors
-    --d-green: rgb(27, 32, 31);
-    --d-green-tint: rgba(27, 32, 31 0.4);
-    --green: rgb(61, 88, 87);
-    --green-tint: rgba(61, 88, 87, 0.4);
-    --l-green: rgb(203, 251, 185);
-    --l-green-tint: rgba(203, 251, 185, 0.4);
-    --slate-green: rgb(127, 148, 136);
-    --slate-green-tint: rgba(127, 148, 136, 0.4);
-    --black: rgb(21, 21, 23);
-    --black-tint: rgba(21, 21, 23, 0.1);
-    --gray: rgb(182, 183, 187);
-    --gray-tint: rgba(182, 183, 187, 0.4);
-    --slate-gray: rgb(112, 128, 144);
-    --slate-gray-tint: rgba(112, 128, 144, 0.4);
-    --white: rgb(240, 244, 245);
-    --white-tint: rgba(240, 244, 245, 0.4);
-    --teal: rgb(111, 148, 149);
-    --teal-tint: rgba(111, 148, 149, 0.4);
-    --l-teal: rgb(162, 196, 196);
-    --l-teal-tint: rgba(162, 196, 196, 0.4);
+    // Fonts
+    --logo-font: 'Righteous', cursive;             // (400)
+    --primary-font: 'Poppins', sans-serif;         // (100-900)
+    --secondary-font: 'Quicksand', sans-serif;     // (300-700)
+      // Weights
+      --fw-100: 100;
+      --fw-200: 200;
+      --fw-300: 300;
+      --fw-400: 400;
+      --fw-600: 600;
+      --fw-700: 700;
+      --fw-800: 800;
+      --fw-900: 900;
+      // Sizes
+      --fz-sm-1: 10px;
+      --fz-sm-2: 12px;
+      --fz-sm-3: 14px;
+      --fz-sm-4: 18px;
+          --fz-md-1: 20px;
+          --fz-md-2: 22px;
+          --fz-md-3: 24px;
+          --fz-md-4: 26px;
+              --fz-lg-1: 30px;
+              --fz-lg-2: 34px;
+              --fz-lg-3: 38px;
+              --fz-lg-4: 42px;
+                  --fz-xl-1: 46px;
+                  --fz-xl-2: 50px;
+                  --fz-xl-3: 54px;
+                  --fz-xl-4: 58px;
 
-    // New Light Theme
-    /* --coral: rgb(240, 93, 94); */
-    /* --coral-tint: rgb(240, 93, 94); */
-    --coral: rgb(239, 99, 81);
-    --coral-tint: rgba(239, 99, 81, 0.4);
+// ===================================================
 
-    --tan: rgb(255, 219, 158);
-    --tan-tint: rgba(255, 219, 158, 0.4);
-    /* --dark-blue: rgb(); */
-    /* --dark-blue: rgb(); */
-    /* --dark-blue: rgb(); */
-    --off-white: rgb(234, 226, 219);
-    --off-white-tint: rgba(234, 226, 219, 0.4);
-    // Font Styles
-    --righteous: "Righteous", cursive; // Logo/Various
-    --barlow: "Barlow", sans-serif;
-    --roboto: "Roboto Condensed", sans-serif;
+    // Light Theme Colors
+    --primary-color: rgb(229, 229, 229);
+    --primary-color-tint: rgba(229, 229, 229, 0.4);
+    --secondary-color: rgb(5, 4, 6);
+    --secondary-color-tint: rgba(5, 4, 6, 0.4);
+    --third-color: rgb(161, 163, 165);
+    --third-color-tint: rgba(161, 163, 165, 0.4);
+        // Borders
+        --sm-border: solid 2px rgba(161, 163, 165, 0.4);
+        --md-border: solid 4px rgba(161, 163, 165, 0.4);
+        --lg-border: solid 6px rgba(161, 163, 165, 0.4);
+        --focus-border: dashed 4px rgb(5, 4, 6);
 
-    // Font Weights
-    --barlow-light: 300;
-    --barlow-reg: 400;
-    --roboto-reg: 400;
-    --roboto-bold: 700;
+    // Dark Theme Colors
+    --d-primary-color: rgb(5, 4, 6);
+    --d-primary-color-tint: rgba(5, 4, 6, 0.4);
+    --d-secondary-color: rgb(229, 229, 229);
+    --d-secondary-color-tint: rgba(229, 229, 229, 0.4);
+    --d-third-color: rgb(161, 163, 165);
+    --d-third-color-tint: rgba(161, 163, 165, 0.4);
+        // Borders
+        --d-sm-border: solid 2px rgba(161, 163, 165, 0.4);
+        --d-md-border: solid 4px rgba(161, 163, 165, 0.4);
+        --d-lg-border: solid 6px rgba(161, 163, 165, 0.4);
+        --d-focus-border: dashed 4px rgb(161, 163, 165, 1);
+      
+    // Global Colors
+    --gold: rgb(218, 199, 176);
+    --slate-blue: rgb(180, 189, 203);
+    --light-blue: rgb(186, 216, 241);
+    --coral: rgb(211, 184, 184);
+    --olive: rgb(190, 197, 191);
+    --purple: rgb(184, 187, 211);
 
-    // Font Sizes
-    --fz-xxs: 11px;
-    --fz-xs: 13px;
-    --fz-sm: 16px;
-    --fz-md: 18px;
-    --fz-lg: 30px;
-    --fz-xl: 44px;
-    --fz-xxl: 54px;
-    --fz-nav: 22px;
+// ===================================================
 
-    // Transitions
-    --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
-    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    // Globals
+      // General
+      --default-radius: 20px;
+      --filter: blur(30px);
 
-    // Gradients
-    --nav-bg-light: linear-gradient(
-      180deg,
-      var(--l-teal-tint) 0%,
-      transparent 100%
-    );
+      // Letter-Spacing
+      --let-space-sm: 2px;
+      --let-space-md: 4px;
+      --let-space-lg: 6px;
+      --let-space-xl: 8px;
+
+      // Gradients
+      --accent-gradient: linear-gradient(to left, var(--gold) 20%, var(--coral) 40%, var(--purple) 60%, var(--slate-blue) 80%, var(--light-blue) 100%);
+      
+      // Transitions
+      --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+      --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// ===================================================
   }
 `;
 
 export default variables;
 
-// Color HEX Reference
-// Dark Green             - #1B201F
-// Green                  - #3D5857
-// Light Green            - #CBFBB9
-// Slate Green            - #7F9488
-// Black                  - #151517
-// Gray                   - #B6B7BB
-// Slate Gray             - #708090
-// White                   - #F0F4F5
-// Teal                   - #6F9495
-// Light Teal             - #A2C4C4
+// Color Reference
+  // White        #E5E5E5 / rgb(229, 229, 229)
+  // Black        #050406 / rgb(5, 4, 6)
+  // Gray         #A1A3A5 / rgb(161, 163, 165)
+  // Slate Blue   #B4BDCB / rgb(180, 189, 203)
+  // light Blue   #BAD8F1 / rgb(186, 216, 241)
+  // Olive Green  #BEC5BF / rgb(190, 197, 191)
+  // Coral        #D3B8B8 / rgb(211, 184, 184)
+  // Purple       #B8BBD3 / rgb(184, 187, 211)
+  // Gold         #CFA97A / rgb(218, 199, 176)
+  
 
-// OlD Coral (Primary)    - #F05D5E
+    
 
-// NEW Coral (Primary)    - rgb(255, 104, 107)
-// NEW Coral (Primary)    - #EF6351
+    
 
-// Almond                 - #F7E0CC
-// Almond                 - rgb(247, 224, 204)
-// Almond                 - rgb(247, 224, 204, 0.4)
+      
 
-// linen                  - #EAE2DB
-// linen                  - rgb(234, 226, 219)
-// linen                  - rgba(234, 226, 219, 0.4)
+      
 
-// Coral Waves - <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,700 C 0,700 0,175 0,175 C 30.83268669904855,133.29686268746048 61.6653733980971,91.59372537492098 109,109 C 156.3346266019029,126.40627462507902 220.1711931066601,202.92196118777656 273,222 C 325.8288068933399,241.07803881222344 367.64985417526236,202.71842987397272 409,172 C 450.35014582473764,141.28157012602728 491.22939019229034,118.20431931633254 531,140 C 570.7706098077097,161.79568068366746 609.4325850555763,228.4642928606971 656,231 C 702.5674149444237,233.5357071393029 757.0402695854044,171.93850924087909 802,170 C 846.9597304145956,168.06149075912091 882.4063366028062,225.78167017578653 926,228 C 969.5936633971938,230.21832982421347 1021.3343840033715,176.93481005597474 1057,153 C 1092.6656159966285,129.06518994402526 1112.2561273837077,134.4790896003145 1156,158 C 1199.7438726162923,181.5209103996855 1267.641106461798,223.14883154276728 1319,229 C 1370.358893538202,234.85116845723272 1405.179446769101,204.92558422861634 1440,175 C 1440,175 1440,700 1440,700 Z" stroke="none" stroke-width="0" fill="#ef635166" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><path d="M 0,700 C 0,700 0,350 0,350 C 46.707342944012865,324.27741584752766 93.41468588802573,298.5548316950554 130,285 C 166.58531411197427,271.4451683049446 193.04859939191,270.05808906730607 237,288 C 280.95140060809,305.94191093269393 342.3909165443344,343.2128120357204 395,372 C 447.6090834556656,400.7871879642796 491.3877344307524,421.09066278981226 537,401 C 582.6122655692476,380.90933721018774 630.0581457326564,320.4245368050305 674,292 C 717.9418542673436,263.5754631949695 758.3796826386221,267.21118999006586 799,288 C 839.6203173613779,308.78881000993414 880.4231237128555,346.7307032347061 928,348 C 975.5768762871445,349.2692967652939 1029.9278225099563,313.86599707110975 1064,314 C 1098.0721774900437,314.13400292889025 1111.8655862473195,349.80530848085505 1157,348 C 1202.1344137526805,346.19469151914495 1278.6098325007658,306.91276900546995 1331,301 C 1383.3901674992342,295.08723099453005 1411.695083749617,322.543615497265 1440,350 C 1440,350 1440,700 1440,700 Z" stroke="none" stroke-width="0" fill="#ef635188" class="transition-all duration-300 ease-in-out delay-150 path-1"></path><path d="M 0,700 C 0,700 0,525 0,525 C 42.874665098925306,536.7013133965743 85.74933019785061,548.4026267931484 133,562 C 180.2506698021494,575.5973732068516 231.8773443075229,591.0908062239804 274,580 C 316.1226556924771,568.9091937760196 348.7412925720579,531.23414831093 386,529 C 423.2587074279421,526.76585168907 465.15748540424534,559.9726005323001 511,567 C 556.8425145957547,574.0273994676999 606.6287658109609,554.8754495598696 657,538 C 707.3712341890391,521.1245504401304 758.3274513519112,506.52560122822155 802,490 C 845.6725486480888,473.47439877177845 882.0614287813938,455.02214552724445 919,462 C 955.9385712186062,468.97785447275555 993.4268335225131,501.3858166628005 1037,526 C 1080.573166477487,550.6141833371995 1130.231237128554,567.4345878215537 1173,561 C 1215.768762871446,554.5654121784463 1251.64821796327,524.8758320509846 1295,515 C 1338.35178203673,505.1241679490153 1389.1758910183648,515.0620839745077 1440,525 C 1440,525 1440,700 1440,700 Z" stroke="none" stroke-width="0" fill="#ef6351ff" class="transition-all duration-300 ease-in-out delay-150 path-2"></path></svg>
-
-// Tan - rgb(255, 219, 158), rgba(255, 219, 158, 0.4), #FFDB9E
-
-
-// neuralink color reference
-// Tan = #D5B795
-// Slate Blue = #B4BDCB
-// Baby Blue = #BAD8F1
-// Olive Green = #BEC5BF
-// Coral = #D3B8B8
-// Purple = #B8BBD3
-// Gold = #CFA97A
-
-// New Light Theme
-  // 
-
-// New Dark Theme
-  // Fonts
-    // --Logo: (Logo Font)
-    // --Primary: (Section, Artists, Genres, Tabs)
-    // --Secondary: (Song)
-      // Weights
-      // --font-100: 
+      
+        
+        

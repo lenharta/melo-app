@@ -145,13 +145,12 @@ const StyledSelectMenuContainer = styled(motion.div)`
 
   select {
     padding: 15px 0px;
-    margin: 5px;
     text-align: center;
     width: 100%;
     @media (max-width: 1080px) {
       justify-content: center;
-
-      width: 60%;
+      margin-left: 20px;
+      /* width: 60%; */
     }
     @media (max-width: 768px) {
       padding: 10px 0px;

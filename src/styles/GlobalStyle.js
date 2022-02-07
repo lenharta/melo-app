@@ -82,45 +82,62 @@ const GlobalStyle = createGlobalStyle`
       padding: 10px 0;
     }
   }
-
-  h1 {
-    ${(props) => props.theme.h1}
-    font-size: clamp(var(--fz-lg), 5vw, var(--fz-xxl));
-    font-family: var(--barlow);
-    font-weight: var(--barlow-reg);
-  }
-
-  h2 {
-    ${(props) => props.theme.h2}
-    font-size: clamp(var(--fz-nav), 5vw, var(--fz-lg));
-    font-weight: var(--roboto-reg);
-    font-family: var(--roboto);
-  }
-
-  h3 {
-    font-size: var(--fz-xs);
-    font-family: var(--roboto);
-    font-weight: var(--roboto-bold);
-  }
-
-  p {
-    ${(props) => props.theme.p}
-    font-size: clamp(var(--fz-xxs), 5vw, var(--fz-md));
-    font-family: var(--roboto);
-    font-weight: var(--roboto-light);
-  }
   
   a {
     text-decoration: none;
+    text-decoration-color: none;
+    font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
+    font-family: var(--secondary-font);
+    font-weight: var(--fw-800);
   }
+
+  h1 {
+    font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
+    font-family: var(--primary-font);
+    font-weight: var(--fw-800);
+  }
+  
+  h2 {
+    font-size: clamp(var(--fz-sm-4), 5vw, var(--fz-lg-1));
+    font-family: var(--primary-font);
+    font-weight: var(--fw-900);
+  }
+  
+  h3 {
+    font-size: clamp(var(--fz-sm-4), 2vw, var(--fz-md-4));
+    font-family: var(--secondary-font);
+    font-weight: var(--fw-500);
+  }
+
+  h4 {
+    // add styles here
+  }
+
+  h5 {
+    // add styles here
+  }
+
+  p {
+    font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-md-2));
+    font-family: var(--secondary-font);
+    font-weight: var(--fw-800);
+  }
+
+  img {
+    ${(props) => props.theme.img}
+  }
+
+
   
   select {
     ${(props) => props.theme.select}
     border-radius: 10px;
-    font-family: var(--roboto);
-    font-weight: 1000;
+    font-family: var(--secondary-font);
+    font-size: var(--fz-sm-3);
+    font-weight: var(--fw-600);
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
+    cursor: pointer;
   }
 
   // =========================================================
@@ -128,66 +145,9 @@ const GlobalStyle = createGlobalStyle`
 
   .header__title {
     ${(props) => props.theme.header__title}
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    /* border-top-left-radius: 20px; */
-    width: 100%;
-    padding: 35px 0px;
-
-    @media (max-width: 1600px) {
-    padding: 25px 0;
-  }
-    
-    @media (max-width: 1080px) {
-    }
-    @media (max-width: 768px) {
-      padding: 15px 0px;
-    }
-    @media (max-width: 480px) {
-    }
-
-    h1 {
-      font-size: clamp(var(--fz-nav), 5vw, var(--fz-xxl));
-      font-weight: 800;
-      letter-spacing: 5px;
-      margin-left: 20px;
-      font-family: var(--righteous);
-      /* font-family: var(--barlow); */
-      /* font-weight: var(--barlow-light); */
-    /* font-weight: var(--roboto-bold); */
-    }
+    // need to edit
   }
 
-  .section__border {
-    border-width: 5px;
-    border-style: solid;
-    ${(props) => props.theme.section__border};
-  }
-
-  .section__border_right {
-    ${(props) => props.theme.section__border_right};
-    border-right-width: 5px;
-    border-right-style: solid;
-  }
-
-  .section__border_noRight {
-    ${(props) => props.theme.section__border_noRight};
-    border-width: 5px;
-    border-style: solid;
-    border-right-style: hidden;
-
-    @media (max-width: 1080px) {
-      border: none;
-    }
-    @media (max-width: 768px) {
-    }
-    @media (max-width: 480px) {
-    }
-  }
-  
-  
-  
-  
   .section__image {
     img {
       ${(props) => props.theme.section__image};
@@ -220,32 +180,6 @@ const GlobalStyle = createGlobalStyle`
         width: 60px;
         height: 60px;
       }
-    }
-  }
-  
-  // may change into new styled component
-  /* .card__background {
-    ${(props) => props.theme.card__background};
-    padding: 35px 20px;
-
-    @media (max-width: 768px) {
-      padding: 25px 5px;
-    }
-    @media (max-width: 480px) {
-      padding: 20px;
-    }
-  } */
-
-  .card__background_aside {
-    ${(props) => props.theme.card__background_aside};
-    padding: 35px 20px;
-
-    @media (max-width: 1080px) {
-      padding: 30px 15px;
-      /* padding: 0px; */
-    }
-    @media (max-width: 480px) {
-      /* padding: 20px; */
     }
   }
 `;

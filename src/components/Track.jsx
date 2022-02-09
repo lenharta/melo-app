@@ -31,7 +31,7 @@ const Track = ({
     setRandomColor(randomize);
     // console.log(randomColor);
   }, []);
-  
+
   return (
     <>
       <StyledTrackContainer
@@ -46,10 +46,11 @@ const Track = ({
         >
           <StyledTrackInner>
             <StyledTrackNumber>
+              <h1>{1 * 2}</h1>
             </StyledTrackNumber>
-            <StyledTrackImg>
+            {/* <StyledTrackImg> */}
               <img src={album.cover_medium} alt={album.title} />
-            </StyledTrackImg>
+            {/* </StyledTrackImg> */}
 
             <StyledTrackSong>
               <h2>{title_short}</h2>
@@ -74,40 +75,55 @@ const Track = ({
 const StyledTrackContainer = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
-  height: 150px;
-  width: 100%;
   list-style-type: none;
-
+  height: 110px;
+  width: 100%;
+  
   @media (max-width: 1600px) {
     border-radius: 15px;
-    height: 130px;
+    height: 100px;
   }
   @media (max-width: 1080px) {
     border-radius: 10px;
-    height: 110px;
-  }
-  @media (max-width: 768px) {
     height: 90px;
   }
-  @media (max-width: 480px) {
-    height: 80px;
+  @media (max-width: 768px) {
+    /* height: 80px; */
   }
-
+  @media (max-width: 480px) {
+    /* height: 80px; */
+  }
+  
   // Router Link
   a {
     width: 100%;
     height: 100%;
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       background: ${(props) => props.randomColor};
     }
-    
+  }
+  
+  img {
+    grid-area: b;
+    align-self: center;
+    justify-self: center;
+    border-radius: 20px;
+    height: 95px;
+    width: 95px;
+    /* max-height: 100px; */
+    /* max-width: 100px; */
     @media (max-width: 1600px) {
+      border-radius: 15px;
+      height: 85px;
+      width: 85px;
     }
     @media (max-width: 1080px) {
-      /* padding: 10px; */
+      border-radius: 10px;
+      height: 75px;
+      width: 75px;
     }
     @media (max-width: 768px) {
-      /* padding: 5px; */
     }
     @media (max-width: 480px) {
     }
@@ -115,76 +131,55 @@ const StyledTrackContainer = styled.li`
   `;
 
 const StyledTrackInner = styled.div`
-  display: grid;
-  height: 100%;
   width: 97%;
-  align-items: center;
-  justify-items: center;
-  grid-template-columns: repeat(10, 1fr);
-  /* grid-auto-rows: repeat(1, 1fr); */
+  height: 100%;
+  display: grid;
   grid-column-gap: 5px;
-  /* grid-template-areas: "a b c c c d e e e f"; */
   grid-template-areas:
-  "a b c c c c c c e f"
-  "a b d d d d d d e f";
-
-  @media (max-width: 768px) {
-    grid-auto-rows: 1fr;
-  }
-  @media (max-width: 480px) {
-  }
-`;
+  "a b b c c c c c c c e f"
+  "a b b d d d d d d d e f";
+  grid-template-columns: repeat(12, 1fr);
+  `;
 
 const StyledTrackNumber = styled.div`
   ${(props) => props.theme.trackNumber}
-  height: 100%;
-  width: 100%;
   grid-area: a;
-
-`;
-
-const StyledTrackImg = styled.div`
-  grid-area: b;
-  height: 120px;
-  width: 120px;
-  img {
-    border-radius: 20px;
-    height: 100%;
+  justify-self: end;
+  text-align: center;
+  vertical-align: center;
+  align-self: start;
+  height: 80px;
+  width: 80px;
+  
+  @media (max-width: 1600px) {
+    height: 70px;
+    width: 70px;
+  }
+  @media (max-width: 1080px) {
+    height: 60px;
+    width: 60px;
+  }
+  @media (max-width: 768px) {
+    height: 50px;
+    width: 50px;
+  }
+  
+  h1 {
+    height: 80px;
+    width: 80px;
+  
     @media (max-width: 1600px) {
-      border-radius: 15px;
-      height: 100px;
-      width: 100px;
+      height: 70px;
+      width: 70px;
     }
     @media (max-width: 1080px) {
-      border-radius: 10px;
-      height: 90px;
-      width: 90px;
-    }
-    @media (max-width: 768px) {
-      height: 80px;
-      width: 80px;
-    }
-    @media (max-width: 480px) {
       height: 60px;
       width: 60px;
     }
-  }
-
-  @media (max-width: 1600px) {
-    height: 100px;
-    width: 100px;
-  }
-  @media (max-width: 1080px) {
-    height: 90px;
-    width: 90px;
-  }
-  @media (max-width: 768px) {
-    height: 80px;
-    width: 80px;
-  }
-  @media (max-width: 480px) {
-    height: 60px;
-    width: 60px;
+    @media (max-width: 768px) {
+      height: 50px;
+      width: 50px;
+    }
   }
 `;
 
@@ -193,7 +188,7 @@ const StyledTrackSong = styled.div`
   align-self: end;
   justify-self: start;
   width: 98%;
-
+  
   h2 {
     width: 98%;
     height: 40%;
@@ -225,7 +220,7 @@ const StyledTrackSong = styled.div`
       line-height: 1.2;
     }
   }
-`;
+  `;
 
 const StyledTrackArtist = styled.div`
   grid-area: d;
@@ -289,8 +284,8 @@ const StyledTrackPlay = styled.div`
   justify-self: center;
   align-self: center;
   svg {
-    justify-self: center;
-    align-self: center;
+    /* justify-self: center;
+    align-self: center; */
     width: 70px;
     height: 70px;
 

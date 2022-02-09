@@ -134,12 +134,12 @@ const StyledSelectMenuContainer = styled(motion.div)`
   }
   @media (max-width: 1080px) {
     ${({ theme }) => theme.mixins.flexCenter}
+    justify-content: space-between;
     flex-direction: column;
     width: 100%;
     padding: 0px 10px;
     margin: 25px 0px;
 
-    justify-content: space-between;
     flex-direction: row;
     select {
       justify-content: center;
@@ -147,8 +147,8 @@ const StyledSelectMenuContainer = styled(motion.div)`
     }
   }
   @media (max-width: 768px) {
-    padding: 0px 5px;
     justify-content: space-between;
+    padding: 0px 5px;
     select {
       padding: 10px 0px;
     }

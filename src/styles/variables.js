@@ -69,6 +69,16 @@ const variables = css`
     --olive: rgb(190, 197, 191);
     --purple: rgb(184, 187, 211);
 
+      // Acent Colors (maybe dark)
+      --accent-pink: rgba(247, 37, 133, 1);
+      --accent-pink-tint: rgba(247, 37, 133, 0.4);
+      --accent-purple: rgba(86, 11, 173, 1);
+      --accent-purple-tint: rgba(86, 11, 173, 0.4);
+      --accent-d-blue: rgba(63, 55, 201, 1);
+      --accent-d-blue-tint: rgba(63, 55, 201, 0.4);
+      --accent-cyan: rgba(76, 201, 240, 1);
+      --accent-cyan-tint: rgba(76, 201, 240, 0.4);
+
 // ===================================================
 
     // Globals
@@ -85,13 +95,13 @@ const variables = css`
       --let-space-xl: 8px;
 
       // Gradients
-      --accent-gradient: linear-gradient(to left, var(--coral) 16.5%, var(--purple) 33%, var(--gold) 66%, var(--slate-blue) 100%);
-      --w-accent-gradient: -webkit-linear-gradient(to left, var(--coral) 16.5%, var(--purple) 33%, var(--gold) 66%, var(--slate-blue) 100%);
+      --d-accent-gradient: linear-gradient(to right, var(--accent-pink) 0%, var(--accent-purple) 33.3%, var(--accent-d-blue) 66.6%, var(--accent-cyan) 100%);
+      --accent-gradient: linear-gradient(to right, var(--accent-pink-tint) 0%, var(--accent-purple-tint) 33.3%, var(--accent-d-blue-tint) 66.6%, var(--accent-cyan-tint) 100%);
       
       // Transitions
       --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
       --d-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-      --transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 
 // ===================================================
   }
@@ -112,6 +122,14 @@ export default variables;
   // Gold         #CFA97A / rgb(218, 199, 176)
   
 
+  // @media (max-width: 1600px) {
+  // }
+  // @media (max-width: 1080px) {
+  // }
+  // @media (max-width: 768px) {
+  // }
+  // @media (max-width: 480px) {
+  // }
     
 
     

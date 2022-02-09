@@ -151,7 +151,7 @@ export const darkTheme = {
         /* @supports (-webkit-background: none) or (-webkit-linear-gradient: none) {
           -webkit-background: var(--w-accent-gradient);
         } */
-
+        
         @media (max-width: 768px) {
           border-radius: var(--default-sm-radius);
         }
@@ -169,7 +169,7 @@ export const darkTheme = {
         svg {
           color: var(--d-primary-color);
         }
-
+        
         /* @supports (-webkit-background: none) and (-webkit-linear-gradient: none) {
           -webkit-background: var(--w-accent-gradient);
         } */
@@ -178,7 +178,7 @@ export const darkTheme = {
         }
       }
     }
-
+    
     h2 {
       color: var(--d-secondary-color);
     }
@@ -200,53 +200,53 @@ export const lightTheme = {
   // =========================================================
   //   GLOBALS
   mixins,
-
+  
   body: css`
     background: var(--primary-color);
-  `,
+    `,
 
-  scrollbarThumb: css`
+scrollbarThumb: css`
     background: var(--secondary-color);
-  `,
+    `,
 
-  scrollbarTrack: css`
+scrollbarTrack: css`
     background: var(--third-color);
-  `,
+    `,
 
-  styledHeader: css`
+styledHeader: css`
     background: var(--primary-color-tint);
     backdrop-filter: blur(30px);
-  `,
+    `,
 
-  img: css`
+img: css`
     border: var(--sm-border);
-  `,
+    `,
 
-  select: css`
+select: css`
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
     background: var(--primary-color);
     font-size: var(--fz-sm-4);
-  `,
+    `,
 
-  // =========================================================
-  //   GLOBAL CLASSES
+// =========================================================
+//   GLOBAL CLASSES
 
-  header__title: css`
+header__title: css`
     h1 {
       color: var(--primary-color);
     }
-  `,
+    `,
 
-  // =========================================================
-  //   NAVIGATION
-  progressBar: css`
+// =========================================================
+//   NAVIGATION
+progressBar: css`
     svg {
       stroke: var(--secondary-color);
     }
-  `,
+    `,
 
-  navLogo: css`
+navLogo: css`
     span {
       color: var(--secondary-color);
       font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
@@ -254,9 +254,9 @@ export const lightTheme = {
       font-weight: var(--fw-800);
       letter-spacing: var(--let-space-sm);
     }
-  `,
+    `,
 
-  navList: css`
+navList: css`
     a {
       color: var(--secondary-color);
       font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
@@ -267,7 +267,7 @@ export const lightTheme = {
       text-decoration: none;
       letter-spacing: var(--let-space-md);
       cursor: pointer;
-
+      
       &:hover,
       &:active {
         color: var(--third-color);
@@ -279,73 +279,77 @@ export const lightTheme = {
         border: var(--focus-border);
       }
     }
-  `,
+    `,
 
   navSelectedLink: css`
     border: solid 2px var(--secondary-color);
     z-index: -25;
-  `,
+    `,
 
-  // =========================================================
+// =========================================================
   //   COMPONENTS
   loader: css`
     color: var(--secondary-color);
     background: var(--primary-color);
-
+    
     svg {
       stroke: var(--secondary-color);
     }
-
+    
     span {
       font-size: var(--fz-lg-4);
       font-family: var(--logo-font);
       font-weight: var(--fw-800);
       letter-spacing: var(--let-space-sm);
     }
-  `,
+    `,
 
-  themeButton: css`
+themeButton: css`
     background: var(--primary-color-tint);
     // Custom Border
     border: 3px solid var(--secondary-color);
     backdrop-filter: var(--filter);
-
+    
     &:focus-visible {
       border: var(--focus-border);
     }
     .handle__Color {
       background: var(--secondary-color);
     }
-  `,
+    `,
 
-  section__image: css`
+section__image: css`
     border: var(--md-border);
-  `,
+    `,
 
-  // gradient__font: css`
+// gradient__font: css`
   //   background: var(--accent-gradient);
   //   -webkit-background-clip: text;
   //   -webkit-text-fill-color: transparent;
-
+  
   //   @supports (-webkit-linear-gradient: none) {
-  //     background: var(--w-accent-gradient);
-  //     -webkit-background-clip: text;
-  //     -webkit-text-fill-color: transparent;
-  //   }
-  // `,
-
-  // =========================================================
-  //   REUSED COMPONENTS
-  trackNumber: css`
-      font-size: var(--fz-lg-4);
-      /* font-family: var(--logo-font); */
-      font-weight: var(--fw-800);
-      color: var(--secondary-color)
-  `,
-
-  track: css`
+    //     background: var(--w-accent-gradient);
+    //     -webkit-background-clip: text;
+    //     -webkit-text-fill-color: transparent;
+    //   }
+    // `,
+    
+    // =========================================================
+    //   REUSED COMPONENTS
+    trackNumber: css`
+      h1 {
+        font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
+        font-family: var(--logo-font);
+        font-weight: var(--fw-700);
+        color: var(--secondary-color);
+        text
+      }
+      `,
+      
+      track: css`
       a {
         border-bottom: var(--sm-border);
+        
         
         &:hover {
           transition: var(--transition);
@@ -362,11 +366,11 @@ export const lightTheme = {
           svg {
             color: var(--secondary-color);
           }
-
+          
           /* @supports (-webkit-background: none) or (-webkit-linear-gradient: none) {
             -webkit-background: var(--w-accent-gradient);
           } */
-
+          
           @media (max-width: 768px) {
             border-radius: var(--default-sm-radius);
           }
@@ -410,7 +414,10 @@ export const lightTheme = {
 };
 
 // background: linear-gradient(
-//   to left,
-//   var(--gray-tint) 0%,
-//   var(--off-white) 100%
-// );
+  //   to left,
+  //   var(--gray-tint) 0%,
+  //   var(--off-white) 100%
+  // );
+  
+  /* background: var(--d-accent-gradient); */
+  /* background: var(--accent-gradient); */

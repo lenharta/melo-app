@@ -7,7 +7,8 @@ export const useNumberedList = () => {
     const result = [];
 
     for (let i = 0; i < count; i++) {
-      result.push(i + 1);
+      result.push([i]);
+        
         setNumbered(result);
         console.log(numbered);
       // result.push(setNumbered[i]);

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Track } from "../components";
 
-const TrackList = ({ charts, id}) => {
+const TrackList = ({ charts, id }) => {
+
+  // useEffect(() => {
+    
+  // }, []);
+  
   return (
     <>
       <StyledTrackList id={id}>

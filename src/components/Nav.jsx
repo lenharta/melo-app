@@ -115,12 +115,10 @@ const StyledNavLinks = styled.ul`
   li {
     ${({ theme }) => theme.mixins.flexCenter}
     position: relative;
-    text-align: center;
     height: 100%;
-    /* margin: 0 10px; */
     a {
-      height: 100%;
-      padding: 12.5px 25px;
+      padding: 10px 20px;
+      text-position: end;
     }
   }
 
@@ -137,7 +135,8 @@ const StyledNavLinks = styled.ul`
 const Outline = styled(motion.div)`
   ${(props) => props.theme.navSelectedLink}
   position: absolute;
-  height: 85%;
+  height: 80%;
+  margin: auto 0px;
   top: 0;
   bottom: 0;
   right: 0;

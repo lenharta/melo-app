@@ -1,6 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { MdExplicit } from "react-icons/md";
+import React, { useEffect, useState } from "react";
+import styled, { css } from "styled-components";
+import {
+  MdExplicit,
+  MdPlayDisabled,
+  MdPauseCircleOutline,
+  MdPlayCircleOutline,
+} from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Track = ({
@@ -11,9 +16,26 @@ const Track = ({
   preview,
   id,
 }) => {
+  const colors = [
+    "#CFA97A",
+    "#B8BBD3",
+    "#D3B8B8",
+    "#BEC5BF",
+    "#BAD8F1",
+    "#B4BDCB",
+  ];
+  const [randomColor, setRandomColor] = useState("");
+  const randomize = colors[Math.floor(Math.random() * colors.length)];
+
+  useEffect(() => {
+    setRandomColor(randomize);
+    // console.log(randomColor);
+  }, []);
+  
   return (
     <>
-      <StyledTrack
+      <StyledTrackContainer
+        randomColor={randomColor}
         aria-label={
           "Song Title: " + title_short + " Song Artist: " + artist.name
         }
@@ -23,179 +45,268 @@ const Track = ({
           aria-label={"Play " + title_short + " Song Artist: " + artist.name}
         >
           <StyledTrackInner>
-            <StyledImg src={album.cover_medium} alt={album.title} />
+            <StyledTrackNumber>
+            </StyledTrackNumber>
+            <StyledTrackImg>
+              <img src={album.cover_medium} alt={album.title} />
+            </StyledTrackImg>
 
-            <StyledSong>
+            <StyledTrackSong>
               <h2>{title_short}</h2>
+            </StyledTrackSong>
+            <StyledTrackArtist>
               <h3>{artist.name}</h3>
-            </StyledSong>
-            <StyledExplicit>
+            </StyledTrackArtist>
+            <StyledTrackExplicit>
               {explicit_lyrics === true ? <MdExplicit /> : null}
-            </StyledExplicit>
+            </StyledTrackExplicit>
 
-            {/* <StyledTrackArtist>
-            </StyledTrackArtist> */}
+            <StyledTrackPlay>
+              <MdPlayCircleOutline />
+            </StyledTrackPlay>
           </StyledTrackInner>
         </Link>
-      </StyledTrack>
+      </StyledTrackContainer>
     </>
   );
 };
 
-const StyledTrack = styled.li`
+const StyledTrackContainer = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
+  height: 150px;
   width: 100%;
   list-style-type: none;
 
-  &:first-child {
-    margin-top: 0px;
-  }
-  &:last-child {
-    margin-bottom: 0px;
-  }
-
-  a {
-    height: 100%;
-    padding: 10px 10px;
-    width: 100%;
-    
-    @media (max-width: 1080px) {
-      /* padding: 5px; */
-      
-      /* border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px; */
-    }
-    @media (max-width: 768px) {
-      /* border-radius: var(--default-m-radius); */
-      padding: 5px 5px;
-      /* padding: 5px; */
-    }
-    @media (max-width: 480px) {
-    }
-  }
-`;
-
-const StyledTrackInner = styled.div`
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 1fr;
-  margin: 0 auto;
-
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-`;
-
-const StyledImg = styled.img`
-  grid-area: 1 / 1 / span 1 / span 1;
-  border-radius: 20px;
-  margin-right: 20px;
-  width: 125px;
-  height: 125px;
-
   @media (max-width: 1600px) {
     border-radius: 15px;
-    width: 100px;
-    height: 100px;
+    height: 130px;
   }
   @media (max-width: 1080px) {
     border-radius: 10px;
-    width: 100px;
-    height: 100px;
+    height: 110px;
   }
   @media (max-width: 768px) {
-    grid-area: 1 / 1 / span 2 / span 1;
-    margin-right: 20px;
-    border-radius: 10px;
-    width: 80px;
+    height: 90px;
+  }
+  @media (max-width: 480px) {
     height: 80px;
   }
-  @media (max-width: 480px) {
-    border-radius: 10px;
-    width: 60px;
-    height: 60px;
-  }
-`;
 
-const StyledSong = styled.div`
-  ${(props) => props.theme.track}
-  grid-area: 1 / 2 / span 1 / span 4;
-  margin: auto 0;
-  text-decoration-color: none;
-  text-decoration: none;
-  width: 95%;
-
-  h2 {
-    width: 95%;
-    padding: 5px 0px;
-    background-clip: text;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    @supports (-webkit-background-clip: none) {
-      -webkit-background-clip: text;
+  // Router Link
+  a {
+    width: 100%;
+    height: 100%;
+    &:hover, &:focus-visible {
+      background: ${(props) => props.randomColor};
+    }
+    
+    @media (max-width: 1600px) {
+    }
+    @media (max-width: 1080px) {
+      /* padding: 10px; */
+    }
+    @media (max-width: 768px) {
+      /* padding: 5px; */
     }
     @media (max-width: 480px) {
-      padding: 2px 0;
+    }
+  }
+  `;
+
+const StyledTrackInner = styled.div`
+  display: grid;
+  height: 100%;
+  width: 97%;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(10, 1fr);
+  /* grid-auto-rows: repeat(1, 1fr); */
+  grid-column-gap: 5px;
+  /* grid-template-areas: "a b c c c d e e e f"; */
+  grid-template-areas:
+  "a b c c c c c c e f"
+  "a b d d d d d d e f";
+
+  @media (max-width: 768px) {
+    grid-auto-rows: 1fr;
+  }
+  @media (max-width: 480px) {
+  }
+`;
+
+const StyledTrackNumber = styled.div`
+  ${(props) => props.theme.trackNumber}
+  height: 100%;
+  width: 100%;
+  grid-area: a;
+
+`;
+
+const StyledTrackImg = styled.div`
+  grid-area: b;
+  height: 120px;
+  width: 120px;
+  img {
+    border-radius: 20px;
+    height: 100%;
+    @media (max-width: 1600px) {
+      border-radius: 15px;
+      height: 100px;
+      width: 100px;
+    }
+    @media (max-width: 1080px) {
+      border-radius: 10px;
+      height: 90px;
+      width: 90px;
+    }
+    @media (max-width: 768px) {
+      height: 80px;
+      width: 80px;
+    }
+    @media (max-width: 480px) {
+      height: 60px;
+      width: 60px;
     }
   }
 
-  h3 {
-    width: 95%;
-    background-clip: text;
-    overflow: hidden;
-    white-space: nowrap;
+  @media (max-width: 1600px) {
+    height: 100px;
+    width: 100px;
+  }
+  @media (max-width: 1080px) {
+    height: 90px;
+    width: 90px;
+  }
+  @media (max-width: 768px) {
+    height: 80px;
+    width: 80px;
+  }
+  @media (max-width: 480px) {
+    height: 60px;
+    width: 60px;
+  }
+`;
+
+const StyledTrackSong = styled.div`
+  grid-area: c;
+  align-self: end;
+  justify-self: start;
+  width: 98%;
+
+  h2 {
+    width: 98%;
+    height: 40%;
+    line-height: 1.4;
+    margin-left: 20px;
+    text-decoration: none;
+    text-decoration-color: none;
     text-overflow: ellipsis;
+    background-clip: text;
+    white-space: nowrap;
+    overflow: hidden;
+    
     @supports (-webkit-background-clip: none) {
       -webkit-background-clip: text;
     }
-  }
-
-  p {
-    padding: 5px 0;
-  }
-
-  @media (max-width: 480px) {
-    grid-area: 1 / 2 / span 2 / span 6;
+    
+    @media (max-width: 1600px) {
+      line-height: 1.3;
+      margin-left: 20px;
+    }
+    @media (max-width: 1080px) {
+      line-height: 1.3;
+      margin-left: 15px;
+    }
+    @media (max-width: 768px) {
+      margin-left: 10px;
+    }
+    @media (max-width: 480px) {
+      line-height: 1.2;
+    }
   }
 `;
 
-const StyledExplicit = styled.div`
-  grid-area: 1 / 6 / span 1 / span 0.5;
-  margin: auto auto;
-  text-align: center;
+const StyledTrackArtist = styled.div`
+  grid-area: d;
+  align-self: start;
+  justify-self: start;
+  margin-right: 15px;
+  width: 98%;
+
+  h3 {
+    width: 98%;
+    height: 60%;
+    line-height: 1.2;
+    margin-left: 25px;
+    text-decoration: none;
+    text-decoration-color: none;
+    text-overflow: ellipsis;
+    background-clip: text;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @supports (-webkit-background-clip: none) {
+      -webkit-background-clip: text;
+    }
+
+    @media (max-width: 1600px) {
+      margin-left: 20px;
+    }
+    @media (max-width: 1080px) {
+      margin-left: 15px;
+    }
+    @media (max-width: 768px) {
+      margin-left: 10px;
+    }
+    @media (max-width: 480px) {
+    }
+  }
+`;
+const StyledTrackExplicit = styled.div`
+  grid-area: e;
+  justify-self: center;
+  align-self: center;
   svg {
-    width: 20px;
-    height: 20px;
-  }
+    justify-self: center;
+    align-self: center;
+    width: 30px;
+    height: 30px;
 
-  @media (max-width: 480px) {
-    grid-area: 1 / 8 / span 2 / span 1;
-    margin: auto auto;
+    @media (max-width: 768px) {
+      width: 25px;
+      height: 25px;
+    }
+    @media (max-width: 480px) {
+      width: 20px;
+      height: 20px;
+    }
   }
 `;
 
-// const StyledTrackArtist = styled.div`
-//   grid-area: 1 / 7 / span 1 / span 2;
-//   text-align: right;
-//   margin: auto 0;
-//   padding: 5px 0;
-//   width: 100%;
+const StyledTrackPlay = styled.div`
+  grid-area: f;
+  justify-self: center;
+  align-self: center;
+  svg {
+    justify-self: center;
+    align-self: center;
+    width: 70px;
+    height: 70px;
 
-//   @media (max-width: 1080px) {
-//   }
-//   @media (max-width: 768px) {
-//   }
-
-//   @media (max-width: 480px) {
-//     grid-area: 2 / 2 / span 1 / span 6;
-//     text-align: left;
-//     text-overflow: ellipsis;
-//     white-space: nowrap;
-//     overflow: hidden;
-//   }
-// `;
+    @media (max-width: 1600px) {
+      width: 60px;
+      height: 60px;
+    }
+    @media (max-width: 768px) {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 480px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+`;
 
 export default Track;

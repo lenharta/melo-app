@@ -73,7 +73,8 @@ const variables = css`
 
     // Globals
       // General
-      --default-md-radius: 20px;
+      --default-lg-radius: 20px;
+      --default-md-radius: 15px;
       --default-sm-radius: 10px;
       --filter: blur(30px);
 
@@ -84,12 +85,13 @@ const variables = css`
       --let-space-xl: 8px;
 
       // Gradients
-      --accent-gradient: linear-gradient(to left, var(--coral) 16.5%, var(--purple) 33%, var(--slate-blue) 66%, var(--light-blue) 100%);
-      --w-accent-gradient: -webkit-linear-gradient(to left, var(--coral) 16.5%, var(--purple) 33%, var(--slate-blue) 66%, var(--light-blue) 100%);
+      --accent-gradient: linear-gradient(to left, var(--coral) 16.5%, var(--purple) 33%, var(--gold) 66%, var(--slate-blue) 100%);
+      --w-accent-gradient: -webkit-linear-gradient(to left, var(--coral) 16.5%, var(--purple) 33%, var(--gold) 66%, var(--slate-blue) 100%);
       
       // Transitions
       --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
-      --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --d-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 
 // ===================================================
   }
@@ -101,6 +103,7 @@ export default variables;
   // White        #E5E5E5 / rgb(229, 229, 229)
   // Black        #050406 / rgb(5, 4, 6)
   // Gray         #A1A3A5 / rgb(161, 163, 165)
+
   // Slate Blue   #B4BDCB / rgb(180, 189, 203)
   // light Blue   #BAD8F1 / rgb(186, 216, 241)
   // Olive Green  #BEC5BF / rgb(190, 197, 191)

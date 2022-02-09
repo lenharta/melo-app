@@ -100,7 +100,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   h2 {
-    font-size: clamp(var(--fz-sm-4), 5vw, var(--fz-lg-1));
+    font-size: clamp(var(--fz-md-1), 5vw, var(--fz-lg-2));
     font-family: var(--primary-font);
     font-weight: var(--fw-900);
   }

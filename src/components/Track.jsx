@@ -94,7 +94,7 @@ const Container = styled.li`
 
   // Router Link
   a {
-    padding: 0 15px;
+    /* padding: 0 15px; */
     width: 100%;
     height: 100%;
     &:hover,
@@ -106,9 +106,9 @@ const Container = styled.li`
     @media (max-width: 1080px) {
     }
     @media (max-width: 768px) {
+      /* padding: 0 10px; */
     }
     @media (max-width: 480px) {
-      padding: 0 10px;
     }
   }
 
@@ -142,10 +142,21 @@ const Inner = styled.div`
   grid-template-areas:
     "a b b b b b b b b b d e"
     "a c c c c c c c c c d e";
-  grid-column-gap: 5px;
+  column-gap: 5px;
   display: grid;
   height: 100%;
   width: 100%;
+  padding: 0px 14px;
+
+  @media (max-width: 1600px) {
+  }
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+    padding: 0 7.5px;
+  }
 
   /* @media (max-width: 480px) {
     grid-template-areas:

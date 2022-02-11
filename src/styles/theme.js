@@ -63,14 +63,14 @@ export const darkTheme = {
     letter-spacing: var(--let-space-sm);
     font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
 
-    background-image: var(--text-gradient);
     color: var(--d-secondary-color);
+    /* background-image: var(--text-gradient);
 
     @supports (-webkit-text-fill-color: transparent) or
       (-webkit-background-clip: none) {
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
-    }
+    } */
   `,
 
   navList: css`
@@ -99,8 +99,16 @@ export const darkTheme = {
   `,
 
   navSelectedLink: css`
-    border: solid 2px var(--d-secondary-color);
-    z-index: -25;
+    /* border: solid 2px var(--d-secondary-color); */
+    /* border-width: 4px; */
+    /* border-color: transparent; */
+    /* border-style: solid; */
+    /* border-image: var(--accent-gradient) 1; */
+    /* border-radius: var(--md-radius); */
+    background: var(--d-background-gradient) padding-box,
+    var(--accent-gradient) border-box;
+    border: 3px solid;
+    /* z-index: -25; */
   `,
 
   // =========================================================
@@ -196,13 +204,13 @@ export const darkTheme = {
       }
       &:focus-visible {
         h2 {
-          color: var(--d-secondary-color);
+          color: var(--d-primary-color);
         }
         h3 {
-          color: var(--d-secondary-color);
+          color: var(--d-primary-color);
         }
         svg {
-          color: var(--d-secondary-color);
+          color: var(--d-primary-color);
         }
       }
     }
@@ -258,9 +266,8 @@ export const lightTheme = {
   // =========================================================
   //   NAVIGATION
   progressBar: css`
-
     svg {
-      /* stroke: var(--secondary-color); */
+      stroke: var(--secondary-color);
     }
   `,
 
@@ -270,15 +277,15 @@ export const lightTheme = {
       font-family: var(--logo-font);
       letter-spacing: var(--let-space-sm);
       font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
-
-      background-image: var(--text-gradient);
       color: var(--secondary-color);
+
+      /* background-image: var(--text-gradient);
 
       @supports (-webkit-text-fill-color: transparent) or
         (-webkit-background-clip: none) {
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-      }
+      } */
     }
   `,
 
@@ -315,7 +322,7 @@ export const lightTheme = {
     /* border-image-width: 100px; */
     /* border-image-repeat: cover; */
     /* background-clip: content-box; */
-    /* background: var(--d-accent-gradient); */
+    /* background: var(--text-gradient); */
     z-index: -25;
   `,
 
@@ -362,14 +369,14 @@ export const lightTheme = {
     font-family: var(--primary-font);
     font-weight: var(--fw-700);
     /* border-radius: var(--sm-radius); */
-    background-image: var(--text-gradient);
     color: var(--secondary-color);
+    /* background-image: var(--text-gradient);
 
     @supports (-webkit-text-fill-color: transparent) or
       (-webkit-background-clip: none) {
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
-    }
+    } */
   `,
 
   track: css`

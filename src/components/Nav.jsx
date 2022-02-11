@@ -47,6 +47,7 @@ const Nav = () => {
             {navLinkData.map(({ title, path, aria }, id) => (
                 <motion.li key={id} onClick={() => setSelected(id)}>
                   <Link aria-label={aria} to={path}>
+                    
                     {title}
                     {id === selected ? (
                       <Outline layoutId="outline" transition={navSpring} />
@@ -88,7 +89,7 @@ const StyledNav = styled.nav`
   height: 50px;
   top: 25px;
   padding: 0 100px;
-
+  
   @media (max-width: 1080px) {
     padding: 0 50px;
   }
@@ -96,6 +97,7 @@ const StyledNav = styled.nav`
     padding: 0 25px;
   }
   @media (max-width: 480px) {
+    ${({ theme }) => theme.mixins.flexCenter}
     padding: 0px 10px;
   }
 `;

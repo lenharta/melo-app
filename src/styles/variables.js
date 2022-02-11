@@ -122,21 +122,30 @@ const variables = css`
         var(--purple) 50%,
         var(--light-blue) 100%
         );
-
+        
     // Background Gradients
-    --accent-gradient: linear-gradient(
+    /* --accent-gradient: linear-gradient(
       to right,
       var(--accent-pink-tint) 0%,
       var(--accent-purple-tint) 33.3%,
       var(--accent-d-blue-tint) 66.6%,
       var(--accent-cyan-tint) 100%
-    );
-    --d-accent-gradient: linear-gradient(
+    ); */
+    --accent-gradient: linear-gradient(
       to right,
       var(--accent-pink) 0%,
-      var(--accent-purple) 33.3%,
-      var(--accent-d-blue) 66.6%,
       var(--accent-cyan) 100%
+    );
+
+    --d-background-gradient: linear-gradient(
+      to right,
+      var(--d-primary-color) 0%,
+      var(--d-primary-color) 100%,
+    );
+    --background-gradient: linear-gradient(
+      to right,
+      var(--primary-color) 0%,
+      var(--primary-color) 100%,
     );
 
     // Transitions

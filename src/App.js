@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Loader, Nav, ProgressBar, ThemeToggle } from "./components";
+import { Loader, Nav, Playlist, ProgressBar, ThemeToggle } from "./components";
 import { isHome, loaderTimeout } from "./utils";
 import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
@@ -34,6 +34,8 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="charts" element={<Charts />} />
+                {/* Construction page */}
+                <Route path="playlist" element={<Playlist />} />
               </Routes>
             </StyledMain>
           </>

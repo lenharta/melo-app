@@ -17,8 +17,14 @@ const navLinkData = [
     path: "/charts",
     aria: "Top Charts",
   },
+  {
+    id: 3,
+    title: "Playlist",
+    path: "/playlist",
+    aria: "Playlist",
+  },
   // {
-  //   id: 3,
+  //   id: 4,
   //   title: "Artists",
   //   path: "/#",
   //   aria: "Artists",
@@ -118,7 +124,6 @@ const StyledNavLinks = styled.ul`
     height: 100%;
     a {
       padding: 10px 20px;
-      text-position: end;
     }
   }
 

@@ -1,23 +1,20 @@
 import { useEffect, useState } from "react";
 
-export const useNumberedList = () => {
-  const [numbered, setNumbered] = useState([]);
+// export const useNumberedList = ({ countEnd }) => {
+//   const result = [];
+  
+//   useEffect(() => {
+//     for (let i = 1; i < countEnd; i++) {
+//       result.push("0" + i)
+//     }
 
-  const generateNumber = (count) => {
-    const result = [];
+//     // console.log(result);
+//     return result;
+//   }, [])
+// };
 
-    for (let i = 0; i < count; i++) {
-      result.push([i]);
-        
-        setNumbered(result);
-        console.log(numbered);
-      // result.push(setNumbered[i]);
-      // return result;
-    }
-  };
-  // useEffect((result) => {
-  // }, []);
-  return [numbered, generateNumber,]
-};
+// export const useNumberedList
 
-// var myArray = generateNumber(10);
+
+// countStart
+// countEnd

@@ -39,14 +39,18 @@ const Charts = () => {
           >
             <StyledSelectMenuContainer transition={spring} className="section__image">
               <img src={titled.picture_xl} />
-              <select>
+              {/* <select>
                 <option>{titled.title}</option>
-              </select>
+              </select> */}
             </StyledSelectMenuContainer>
           </StyledChartInfo>
 
           <StyledChartsTracks>
-            <TrackList charts={charts} id={titled.id} />
+            <TrackList 
+              charts={charts} 
+              id={titled.id}
+              countEnd={100}
+            />
           </StyledChartsTracks>
         </ChartsContent>
       </StyledChartsContainer>

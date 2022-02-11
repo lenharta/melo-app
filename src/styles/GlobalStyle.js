@@ -128,8 +128,6 @@ const GlobalStyle = createGlobalStyle`
   img {
     ${(props) => props.theme.img}
   }
-
-
   
   select {
     ${(props) => props.theme.select}
@@ -150,6 +148,7 @@ const GlobalStyle = createGlobalStyle`
     // need to edit
   }
 
+  // change to variables
   .section__image {
     img {
       ${(props) => props.theme.section__image};

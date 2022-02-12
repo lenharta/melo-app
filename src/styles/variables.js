@@ -60,7 +60,7 @@ const variables = css`
     --d-sm-border: solid 2px rgba(161, 163, 165, 0.4);
     --d-md-border: solid 4px rgba(161, 163, 165, 0.4);
     --d-lg-border: solid 6px rgba(161, 163, 165, 0.4);
-    --d-focus-border: dashed 4px rgb(161, 163, 165, 1);
+    --d-focus-border: dashed 4px rgba(229, 229, 229, 1);
     --border-gradient: linear-gradient(
       to left,
       var(--accent-pink) 0%,
@@ -110,17 +110,18 @@ const variables = css`
     --let-space-xl: 8px;
 
     // Text Gradients
-    --text-gradient: linear-gradient(
+    /* --text-gradient: linear-gradient(
       to left,
       var(--accent-pink) 0%,
       var(--accent-purple) 50%,
       var(--accent-cyan) 100%
-      );
-      --d-text-gradient: linear-gradient(
+      ); */
+      --text-gradient: linear-gradient(
         to right,
-        var(--coral) 0%,
-        var(--purple) 50%,
-        var(--light-blue) 100%
+        var(--light-blue) 0%,
+        var(--purple) 25%,
+        var(--coral) 50%,
+        var(--gold) 100%
         );
         
     // Background Gradients

@@ -43,25 +43,24 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    max-width: 1600px;
+    max-width: 1800px;
     margin: 0px auto;
     padding: 0 100px;
-    padding-top: 150px;
+    margin-top: 125px;
 
     @media (max-width: 1600px) {
-      padding-top: 130px;
+      margin-top: 100px;
     }
     @media (max-width: 1080px) {
       padding: 0 50px;
-      padding-top: 120px;
     }
     @media (max-width: 768px) {
       padding: 0 25px;
-      padding-top: 110px;
+      margin-top: 90px;
     }
     @media (max-width: 480px) {
       padding: 0 10px;
-      padding-top: 100px;
+      margin-top: 80px;
     }
   }
 

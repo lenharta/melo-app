@@ -61,21 +61,26 @@ export const darkTheme = {
     font-weight: var(--fw-800);
     font-family: var(--logo-font);
     letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
+    font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-4));
 
     color: var(--d-secondary-color);
-    /* background-image: var(--text-gradient);
+    background-image: var(--text-gradient);
 
     @supports (-webkit-text-fill-color: transparent) or
       (-webkit-background-clip: none) {
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
-    } */
+    }
   `,
 
   navList: css`
+    background-image: var(--text-gradient);
+    border: var(--sm-border) solid var(--d-third-color-tint);
+    background-repeat: none;
+    background-size: cover;
+
     a {
-      color: var(--d-secondary-color);
+      color: var(--d-primary-color);
       font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
       font-family: var(--secondary-font);
       font-weight: var(--fw-800);
@@ -86,11 +91,11 @@ export const darkTheme = {
       cursor: pointer;
 
       &:hover,
-      &:active {
-        color: var(--d-third-color);
-      }
       &:focus {
-        color: var(--d-secondary-color);
+        color: var(--d-primary-color);
+      }
+      &:active {
+        color: var(--d-primary-color-tint);
       }
       &:focus-visible {
         border: var(--d-focus-border);
@@ -99,15 +104,17 @@ export const darkTheme = {
   `,
 
   navSelectedLink: css`
-    /* border: solid 2px var(--d-secondary-color); */
+    /* border: var(--d-md-border); */
+    /* border-color: var(--d-secondary-color); */
     /* border-width: 4px; */
+    background: var(--d-secondary-color);
     /* border-color: transparent; */
     /* border-style: solid; */
     /* border-image: var(--accent-gradient) 1; */
     /* border-radius: var(--md-radius); */
-    background: var(--d-background-gradient) padding-box,
-    var(--accent-gradient) border-box;
-    border: 3px solid;
+    /* background-image: var(--d-background-gradient) padding-box,
+      var(--accent-gradient) border-box;
+    border: 3px solid; */
     /* z-index: -25; */
   `,
 
@@ -272,50 +279,53 @@ export const lightTheme = {
   `,
 
   navLogo: css`
-    span {
-      font-weight: var(--fw-800);
-      font-family: var(--logo-font);
-      letter-spacing: var(--let-space-sm);
-      font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
-      color: var(--secondary-color);
+    font-weight: var(--fw-800);
+    font-family: var(--logo-font);
+    letter-spacing: var(--let-space-sm);
+    font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-4));
 
-      /* background-image: var(--text-gradient);
-
-      @supports (-webkit-text-fill-color: transparent) or
-        (-webkit-background-clip: none) {
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-      } */
-    }
+    color: var(--secondary-color);
   `,
 
   navList: css`
+    background-image: var(--text-gradient);
     a {
-      color: var(--secondary-color);
       font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
       font-family: var(--secondary-font);
       font-weight: var(--fw-800);
+
       text-transform: uppercase;
       text-align: center;
       text-decoration: none;
       letter-spacing: var(--let-space-md);
       cursor: pointer;
 
-      &:hover,
-      &:active {
-        color: var(--third-color);
+      &:hover {
+        color: var(--secondary-color-tint);
       }
-      &:focus {
-        color: var(--secondary-color);
+      &:active {
+        color: var(--primary-color);
       }
       &:focus-visible {
         border: var(--focus-border);
       }
     }
+
+    svg {
+      ${(props) =>
+        props.highlighted === "true"
+          ? css`
+              color: var(--primary-color);
+            `
+          : css`
+              color: var(--secondary-color);
+            `}
+    }
   `,
 
   navSelectedLink: css`
-    border: solid 3px var(--secondary-color);
+    /* border: var(--d-md-border); */
+    background: var(--secondary-color-tint);
     /* border: solid; */
     /* border-image: var(--d-accent-gradient); */
     /* border-image: var(--text-gradient); */
@@ -323,7 +333,6 @@ export const lightTheme = {
     /* border-image-repeat: cover; */
     /* background-clip: content-box; */
     /* background: var(--text-gradient); */
-    z-index: -25;
   `,
 
   // =========================================================

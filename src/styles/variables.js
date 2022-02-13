@@ -39,7 +39,7 @@ const variables = css`
     --primary-color: rgb(229, 229, 229);
     --primary-color-tint: rgba(229, 229, 229, 0.4);
     --secondary-color: rgb(5, 4, 6);
-    --secondary-color-tint: rgba(5, 4, 6, 0.4);
+    --secondary-color-tint: rgba(5, 4, 6, 0.65);
     --third-color: rgb(161, 163, 165);
     --third-color-tint: rgba(161, 163, 165, 0.2);
     // Borders
@@ -47,6 +47,7 @@ const variables = css`
     --md-border: solid 4px rgba(161, 163, 165, 0.4);
     --lg-border: solid 6px rgba(161, 163, 165, 0.4);
     --focus-border: dashed 4px rgb(5, 4, 6);
+    --d-focus-border: dashed 4px rgb(229, 229, 229);
 
     // Dark Theme Colors
     --d-primary-color: rgb(5, 4, 6);

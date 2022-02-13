@@ -44,22 +44,21 @@ const ProgressBar = () => {
 };
 
 const StyledProgressContainer = styled(motion.div)`
+  ${(props) => props.theme.progressBar};
   ${({ theme }) => theme.mixins.flexCenter}
-  top: 125px;
+  top: 100px;
   position: fixed;
   z-index: 160;
   left: 0;
-  ${(props) => props.theme.progressBar};
   @media (max-width: 1600px) {
-    top: 100px;
+    top: 90px;
   }
   @media (max-width: 1080px) {
   }
   @media (max-width: 768px) {
-    top: 90px;
+    top: 80px;
   }
   @media (max-width: 480px) {
-    top: 80px;
   }
 
   /* .progress__shape {

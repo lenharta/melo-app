@@ -6,14 +6,14 @@ import { navSpring, navVariant } from "../utils";
 import { MdHome, MdSearch, MdInsertChart } from "react-icons/md";
 
 const navLinkData = [
-  {
-    id: 1,
-    title: "Playlist",
-    path: "/playlist",
-    aria: "Playlist",
-    // will remove and replace with search component
-    icon: <MdSearch />,
-  },
+  // {
+  //   id: 1,
+  //   title: "Playlist",
+  //   path: "/playlist",
+  //   aria: "Playlist",
+  //   // will remove and replace with search component
+  //   icon: <MdSearch />,
+  // },
   {
     id: 2,
     title: "Dashboard",
@@ -31,8 +31,7 @@ const navLinkData = [
 ];
 
 const Nav = () => {
-  const [selected, setSelected] = useState(1);
-  const [highlighted, setHighlighted] = useState();
+  const [selected, setSelected] = useState(0);
 
   return (
     <>
@@ -45,17 +44,17 @@ const Nav = () => {
           <NavBar>
             <NavLinks>
               <LayoutGroup>
-              {navLinkData.map(({ title, path, aria, icon }, i) => (
-                <motion.li key={i} onClick={() => setSelected(i) && setHighlighted("true")}>
+                {navLinkData.map(({ title, path, aria, icon }, i) => (
+                  <motion.li key={i} onClick={() => setSelected(i)}>
                     <Link aria-label={aria} to={path}>
                       {icon}
                       {/* {title} */}
                     </Link>
                     {i === selected ? (
-                      <Outline layoutId="outline" transition={navSpring} highlighted={highlighted}/>
+                      <Outline layoutId="outline" transition={navSpring} />
                     ) : null}
-                </motion.li>
-              ))}
+                  </motion.li>
+                ))}
               </LayoutGroup>
             </NavLinks>
           </NavBar>
@@ -72,19 +71,18 @@ const Header = styled.header`
   position: fixed;
   width: 100%;
   top: 0;
-  height: 125px;
+  height: 100px;
   z-index: 150;
 
   @media (max-width: 1600px) {
-    height: 100px;
+    height: 90px;
   }
   @media (max-width: 1080px) {
   }
   @media (max-width: 768px) {
-    height: 90px;
+    height: 80px;
   }
   @media (max-width: 480px) {
-    height: 80px;
   }
 `;
 
@@ -171,7 +169,7 @@ const NavLinks = styled.ul`
     /* margin: 10px; */
     z-index: 153;
     /* background-color: blue; */
-    
+
     @media (max-width: 1600px) {
       width: 100px;
     }
@@ -181,12 +179,12 @@ const NavLinks = styled.ul`
     }
     @media (max-width: 480px) {
     }
-    
+
     svg {
       z-index: 155;
       width: 45px;
       height: 45px;
-      
+
       @media (max-width: 1600px) {
         width: 40px;
         height: 40px;
@@ -202,7 +200,7 @@ const NavLinks = styled.ul`
       @media (max-width: 480px) {
       }
     }
-    
+
     a {
       z-index: 156;
       padding: 20px;
@@ -220,13 +218,13 @@ const NavLinks = styled.ul`
 
 const Outline = styled(motion.div)`
   ${(props) => props.theme.navSelectedLink}
-  ${({ theme }) => theme.mixins.flexCenter}
   z-index: 154;
+  display: block;
   position: absolute;
   height: 75px;
   width: 75px;
   border-radius: 100px;
-  
+
   @media (max-width: 1600px) {
     height: 65px;
     width: 65px;

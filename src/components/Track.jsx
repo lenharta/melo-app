@@ -45,24 +45,23 @@ const Track = ({
           aria-label={"Play " + title_short + " Song Artist: " + artist.name}
         >
           <Inner>
-            {/* <h1>001</h1> */}
-            {/* <StyledTrackImg> */}
             <img src={album.cover_medium} alt={album.title} />
-            {/* </StyledTrackImg> */}
 
-            <SongName>
+            <SongTitle>
               <h2>{title_short}</h2>
-            </SongName>
-            <ArtistName>
-              <h3>{artist.name}</h3>
-            </ArtistName>
-            <ExplicitSymbol>
-              {explicit_lyrics === true ? <MdExplicit /> : null}
-            </ExplicitSymbol>
+            </SongTitle>
 
-            <PlaySymbol>
+            <Artist>
+              <h3>{artist.name}</h3>
+            </Artist>
+
+            <Explicit>
+              {explicit_lyrics === true ? <MdExplicit /> : null}
+            </Explicit>
+
+            <PlayPause>
               <MdPlayCircleOutline />
-            </PlaySymbol>
+            </PlayPause>
           </Inner>
         </Link>
       </Container>
@@ -74,15 +73,13 @@ const Container = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
   list-style-type: none;
-  border-radius: 15px;
   height: 115px;
   width: 100%;
-
+  
   @media (max-width: 1600px) {
     height: 105px;
   }
   @media (max-width: 1080px) {
-    border-radius: 10px;
     height: 95px;
   }
   @media (max-width: 768px) {
@@ -91,22 +88,27 @@ const Container = styled.li`
   @media (max-width: 480px) {
     height: 85px;
   }
-
+  
   // Router Link
-  a {
-    /* padding: 0 15px; */
+  a { 
+    border-radius: 0px;
+    padding: 0 10px;
     width: 100%;
     height: 100%;
     &:hover,
     &:focus-visible {
       background: ${(props) => props.randomColor};
+      border-radius: 15px;
+      @media (max-width: 1080px) {
+        border-radius: 10px;
+      }
     }
     @media (max-width: 1600px) {
     }
     @media (max-width: 1080px) {
     }
     @media (max-width: 768px) {
-      /* padding: 0 10px; */
+      padding: 0 7.5px;
     }
     @media (max-width: 480px) {
     }
@@ -127,12 +129,14 @@ const Container = styled.li`
     }
     @media (max-width: 1080px) {
       border-radius: 10px;
-      height: 70px;
-      width: 70px;
+      height: 75px;
+      width: 75px;
     }
     @media (max-width: 768px) {
     }
     @media (max-width: 480px) {
+      height: 70px;
+      width: 70px;
     }
   }
 `;
@@ -146,7 +150,6 @@ const Inner = styled.div`
   display: grid;
   height: 100%;
   width: 100%;
-  padding: 0px 14px;
 
   @media (max-width: 1600px) {
   }
@@ -155,7 +158,6 @@ const Inner = styled.div`
   @media (max-width: 768px) {
   }
   @media (max-width: 480px) {
-    padding: 0 7.5px;
   }
 
   /* @media (max-width: 480px) {
@@ -206,7 +208,7 @@ const Inner = styled.div`
 //   }
 // `;
 
-const SongName = styled.div`
+const SongTitle = styled.div`
   grid-area: b;
   align-self: end;
   justify-self: start;
@@ -245,7 +247,7 @@ const SongName = styled.div`
   }
 `;
 
-const ArtistName = styled.div`
+const Artist = styled.div`
   grid-area: c;
   align-self: start;
   justify-self: start;
@@ -280,7 +282,7 @@ const ArtistName = styled.div`
     }
   }
 `;
-const ExplicitSymbol = styled.div`
+const Explicit = styled.div`
   grid-area: d;
   justify-self: center;
   align-self: center;
@@ -313,7 +315,7 @@ const ExplicitSymbol = styled.div`
   }
 `;
 
-const PlaySymbol = styled.div`
+const PlayPause = styled.div`
   grid-area: e;
   justify-self: right;
   align-self: center;

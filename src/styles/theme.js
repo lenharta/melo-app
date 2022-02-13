@@ -75,47 +75,43 @@ export const darkTheme = {
 
   navList: css`
     background-image: var(--text-gradient);
-    border: var(--sm-border) solid var(--d-third-color-tint);
-    background-repeat: none;
-    background-size: cover;
-
+    border-radius: 0px;
     a {
-      color: var(--d-primary-color);
       font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
-      font-family: var(--secondary-font);
+      font-family: var(--d-secondary-font);
       font-weight: var(--fw-800);
+
       text-transform: uppercase;
       text-align: center;
       text-decoration: none;
       letter-spacing: var(--let-space-md);
       cursor: pointer;
 
-      &:hover,
-      &:focus {
-        color: var(--d-primary-color);
+      &:hover {
+        color: var(--d-secondary-color-tint);
       }
       &:active {
-        color: var(--d-primary-color-tint);
+        color: var(--d-primary-color);
       }
       &:focus-visible {
         border: var(--d-focus-border);
       }
     }
+
+    svg {
+      color: var(--d-primary-color);
+      path {
+        &:nth-child(2) {
+          stroke: var(--d-primary-color-tint);
+          stroke-width: 0.5px;
+          stroke-linejoin: round;
+        }
+      }
+    }
   `,
 
   navSelectedLink: css`
-    /* border: var(--d-md-border); */
-    /* border-color: var(--d-secondary-color); */
-    /* border-width: 4px; */
     background: var(--d-secondary-color);
-    /* border-color: transparent; */
-    /* border-style: solid; */
-    /* border-image: var(--accent-gradient) 1; */
-    /* border-radius: var(--md-radius); */
-    /* background-image: var(--d-background-gradient) padding-box,
-      var(--accent-gradient) border-box;
-    border: 3px solid; */
-    /* z-index: -25; */
   `,
 
   // =========================================================
@@ -139,14 +135,14 @@ export const darkTheme = {
   themeButton: css`
     background: var(--d-third-color-tint);
     // Custom Border
-    border: 3px solid var(--d-secondary-color);
+    border: 3px solid transparent;
     backdrop-filter: var(--filter);
 
     &:focus-visible {
       border: var(--d-focus-border);
     }
     .handle__Color {
-      background: var(--d-secondary-color);
+      background-image: var(--text-gradient);
     }
   `,
 
@@ -246,8 +242,12 @@ export const lightTheme = {
   `,
 
   styledHeader: css`
-    background: var(--primary-color-tint);
+    background: var(--secondary-color-tint);
     backdrop-filter: blur(30px);
+
+    @supports (-webkit-backdrop-filter: transparent) {
+      -webkit-backdrop-filter: transparent;
+    }
   `,
 
   img: css`
@@ -285,6 +285,13 @@ export const lightTheme = {
     font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-4));
 
     color: var(--secondary-color);
+    background-image: var(--text-gradient);
+
+    @supports (-webkit-text-fill-color: transparent) or
+      (-webkit-background-clip: none) {
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
   `,
 
   navList: css`
@@ -312,27 +319,19 @@ export const lightTheme = {
     }
 
     svg {
-      ${(props) =>
-        props.highlighted === "true"
-          ? css`
-              color: var(--primary-color);
-            `
-          : css`
-              color: var(--secondary-color);
-            `}
+      color: var(--secondary-color);
+      path {
+        &:nth-child(2) {
+          stroke: var(--secondary-color-tint);
+          stroke-width: 0.5px;
+          stroke-linejoin: round;
+        }
+      }
     }
   `,
 
   navSelectedLink: css`
-    /* border: var(--d-md-border); */
-    background: var(--secondary-color-tint);
-    /* border: solid; */
-    /* border-image: var(--d-accent-gradient); */
-    /* border-image: var(--text-gradient); */
-    /* border-image-width: 100px; */
-    /* border-image-repeat: cover; */
-    /* background-clip: content-box; */
-    /* background: var(--text-gradient); */
+    background: var(--primary-color);
   `,
 
   // =========================================================
@@ -354,16 +353,29 @@ export const lightTheme = {
   `,
 
   themeButton: css`
-    background: var(--primary-color-tint);
+    /* background: var(--third-color); */
     // Custom Border
-    border: 3px solid var(--secondary-color);
+    border: 4px solid transparent;
+    background: var(--secondary-color-tint);
     backdrop-filter: var(--filter);
-
+    background-position: 100%;
+    /* background-clip: padding-box; */
+    /* backdrop-filter: var(--filter); */
+    
+    /* &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      border-radius: inherit;
+      background: var(--text-gradient);
+    } */
+    
     &:focus-visible {
       border: var(--focus-border);
     }
     .handle__Color {
-      background: var(--secondary-color);
+    /* border: 4px solid var(--secondary-color); */
+      background-image: var(--text-gradient);
     }
   `,
 

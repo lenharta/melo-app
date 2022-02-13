@@ -28,137 +28,130 @@ const Charts = () => {
   // make tabs for editorial top 10's
   return (
     <>
-      <StyledChartsContainer>
-        <ChartsHeader className="header__title">
+      <Container>
+        <ChartsTitle className="header__title">
           <h1>{titled.title}</h1>
-        </ChartsHeader>
+        </ChartsTitle>
 
-        <ChartsContent>
-          <StyledChartInfo
+        <Inner>
+          {/* <ChartInfo
             key={titled.id}
           >
-            <StyledSelectMenuContainer transition={spring} className="section__image">
+            <ChartSelect transition={spring} className="section__image">
               <img src={titled.picture_xl} />
-              {/* <select>
+              <select>
                 <option>{titled.title}</option>
-              </select> */}
-            </StyledSelectMenuContainer>
-          </StyledChartInfo>
+              </select>
+            </ChartSelect>
+          </ChartInfo> */}
 
-          <StyledChartsTracks>
-            <TrackList 
-              charts={charts} 
-              id={titled.id}
-              countEnd={100}
-            />
-          </StyledChartsTracks>
-        </ChartsContent>
-      </StyledChartsContainer>
+          <ChartTracks>
+            <TrackList charts={charts} id={titled.id} countEnd={100} />
+          </ChartTracks>
+        </Inner>
+      </Container>
     </>
   );
 };
 
-const StyledChartsContainer = styled.section`
+const Container = styled.section`
   // Custom Class
 `;
 
-const ChartsHeader = styled.div`
-  // Custom Class
-`;
-
-const ChartsContent = styled.div`
-  position: relative;
-  width: 100%;
-  display: grid;
-  padding: 100px 0;
-
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-
-  @media (max-width: 1600px) {
-    padding: 50px 0;
-  }
-  @media (max-width: 1080px) {
-    grid-template-columns: auto;
-    padding: 0px;
-  }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 480px) {
-  }
-`;
-
-const StyledChartsTracks = styled.div`
-  grid-area: 1 / 1 / span 1 / span 3;
-
-  @media (max-width: 1080px) {
-    grid-area: 2 / 1 / span 1 / span 1;
-    width: 100%;
-  }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 480px) {
-  }
-`;
-
-const StyledChartInfo = styled.div`
-  grid-area: 1 / 4 / span 1 / span 1;
-  margin: 0px 0px 0px 15px;
-  border-radius: 25px;
-
-  @media (max-width: 1080px) {
-    grid-area: 1 / 1 / span 1 / span 1;
-    width: 100%;
-    margin: 0 auto;
-    border: none;
-  }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 480px) {
-  }
-`;
-
-const StyledSelectMenuContainer = styled(motion.div)`
-  ${({ theme }) => theme.mixins.flexCenter}
-  flex-direction: column;
-
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 200px;
-  margin: 0px auto;
-  width: 250px;
-  select {
-    padding: 15px 0px;
-    text-align: center;
-    width: 100%;
-  }
-
-  @media (max-width: 1600px) {
-    width: 200px;
-  }
-  @media (max-width: 1080px) {
+const Inner = styled.div`
     ${({ theme }) => theme.mixins.flexCenter}
-    justify-content: space-between;
-    flex-direction: column;
     width: 100%;
-    padding: 0px 10px;
-    margin: 25px 0px;
-
-    flex-direction: row;
-    select {
-      justify-content: center;
-      margin-left: 20px;
-    }
+  /* display: grid; */
+  /* grid-template-areas: ; */
+  @media (max-width: 1600px) {
+  }
+  @media (max-width: 1080px) {
   }
   @media (max-width: 768px) {
-    justify-content: space-between;
-    padding: 0px 5px;
-    select {
-      padding: 10px 0px;
-    }
+  }
+  @media (max-width: 480px) {
+  }
+  `;
+
+const ChartsTitle = styled.div`
+  // Custom Class
+  `;
+
+const ChartTracks = styled.div`
+width: 100%;
+  @media (max-width: 1600px) {
+  }
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
+  `;
+
+const ChartsTracks = styled.div`
+  @media (max-width: 1600px) {
+  }
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
   }
   @media (max-width: 480px) {
   }
 `;
+
+const ChartSelect = styled.div`
+  @media (max-width: 1600px) {
+  }
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
+`;
+
+// const ChartSelect = styled(motion.div)`
+//   ${({ theme }) => theme.mixins.flexCenter}
+//   flex-direction: column;
+
+//   position: -webkit-sticky; /* Safari */
+//   position: sticky;
+//   top: 200px;
+//   margin: 0px auto;
+//   width: 250px;
+//   select {
+  //     padding: 15px 0px;
+  //     text-align: center;
+  //     width: 100%;
+  //   }
+  
+//   @media (max-width: 1600px) {
+//     width: 200px;
+//   }
+//   @media (max-width: 1080px) {
+//     ${({ theme }) => theme.mixins.flexCenter}
+//     justify-content: space-between;
+//     flex-direction: column;
+//     width: 100%;
+//     padding: 0px 10px;
+//     margin: 25px 0px;
+
+//     flex-direction: row;
+//     select {
+//       justify-content: center;
+//       margin-left: 20px;
+//     }
+//   }
+//   @media (max-width: 768px) {
+//     justify-content: space-between;
+//     padding: 0px 5px;
+//     select {
+//       padding: 10px 0px;
+//     }
+//   }
+//   @media (max-width: 480px) {
+//   }
+// `;
 
 export default Charts;

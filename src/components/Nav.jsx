@@ -51,7 +51,7 @@ const Nav = () => {
                       {/* {title} */}
                     </Link>
                     {i === selected ? (
-                      <Outline layoutId="outline" transition={navSpring} />
+                      <Outline layoutId="outline" transition={navSpring} style={{ x: 0 }} />
                     ) : null}
                   </motion.li>
                 ))}

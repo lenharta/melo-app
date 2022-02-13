@@ -46,8 +46,9 @@ export const darkTheme = {
   // =========================================================
   //   NAVIGATION
   progressBar: css`
+  background: var(--text-gradient);
     svg {
-      stroke: var(--d-secondary-color);
+      stroke: var(--d-primary-color);
 
       /* @supports (-webkit-text-fill-color: transparent) or
         (-webkit-background-clip: none) {
@@ -273,8 +274,9 @@ export const lightTheme = {
   // =========================================================
   //   NAVIGATION
   progressBar: css`
-    svg {
-      stroke: var(--secondary-color);
+      background-image: var(--text-gradient);
+      svg {
+        stroke: var(--secondary-color);
     }
   `,
 

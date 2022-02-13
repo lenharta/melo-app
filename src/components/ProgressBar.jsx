@@ -13,30 +13,23 @@ const ProgressBar = () => {
   const width = useWidthSize();
   // console.log(width);
   const { scrollYProgress } = useViewportScroll();
-  const yRange = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  // Switched in opposite direction for gradient
+  const yRange = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const pathLength = useSpring(yRange, { progress });
 
   return (
     <>
       <StyledProgressContainer>
         <motion.svg height="6" width={width}>
-          {/* <defs>
-            <linearGradient id="progress__gradient">
-              <stop offset="5%" stop-color="rgba(76, 201, 240, 1)" />
-              <stop offset="50%" stop-color="rgba(86, 11, 173, 1)" />
-              <stop offset="95%" stop-color="rgba(247, 37, 133, 1)" />
-            </linearGradient>
-          </defs> */}
 
           <motion.line
-            style={{ pathLength, scaleX: 1, x: 0 }}
-            x1="0"
-            x2="100%"
+            style={{ pathLength, scaleX: 1 }}
+            x1="100%"
+            x2="0"
             strokeWidth="14"
             strokeDasharray="0 1"
-            // className="progress__gradient_bg"
-            // className="progress__shape"
           />
+
         </motion.svg>
       </StyledProgressContainer>
     </>
@@ -60,13 +53,6 @@ const StyledProgressContainer = styled(motion.div)`
   }
   @media (max-width: 480px) {
   }
-
-  /* .progress__shape {
-    line {
-      fill: url(#progress__gradient);
-    }
-  } */
-  /* .progress__gradient_bg */
 `;
 
 export default ProgressBar;

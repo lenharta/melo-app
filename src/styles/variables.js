@@ -62,18 +62,6 @@ const variables = css`
     --d-md-border: solid 4px rgba(161, 163, 165, 0.4);
     --d-lg-border: solid 6px rgba(161, 163, 165, 0.4);
     --d-focus-border: dashed 4px rgba(229, 229, 229, 1);
-    --border-gradient: linear-gradient(
-      to left,
-      var(--accent-pink) 0%,
-      var(--accent-purple) 50%,
-      var(--accent-cyan) 100%
-    );
-    --d-border-gradient: linear-gradient(
-      to right,
-      var(--coral) 0%,
-      var(--purple) 50%,
-      var(--light-blue) 100%
-    );
 
     // Global Colors
     --gold: rgb(218, 199, 176);

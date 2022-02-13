@@ -218,7 +218,7 @@ const SongTitle = styled.div`
     width: 98%;
     height: 40%;
     line-height: 1.4;
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
     text-decoration-color: none;
     text-overflow: ellipsis;
@@ -231,12 +231,12 @@ const SongTitle = styled.div`
     }
 
     @media (max-width: 1600px) {
-      line-height: 1.3;
       margin-left: 20px;
+      line-height: 1.3;
     }
     @media (max-width: 1080px) {
-      line-height: 1.3;
       margin-left: 15px;
+      line-height: 1.3;
     }
     @media (max-width: 768px) {
       margin-left: 10px;
@@ -282,6 +282,7 @@ const Artist = styled.div`
     }
   }
 `;
+
 const Explicit = styled.div`
   grid-area: d;
   justify-self: center;

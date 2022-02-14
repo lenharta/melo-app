@@ -59,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
       margin-top: 90px;
     }
     @media (max-width: 480px) {
-      padding: 0px;
+      padding: 0 10px;
       margin-top: 80px;
     }
   }

@@ -13,23 +13,20 @@ const ProgressBar = () => {
   const width = useWidthSize();
   // console.log(width);
   const { scrollYProgress } = useViewportScroll();
-  // Switched in opposite direction for gradient
+  // Switched in opposite direction for gradient reveal
   const yRange = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const pathLength = useSpring(yRange, { progress });
 
   return (
     <>
       <StyledProgressContainer>
-        <motion.svg height="6" width={width}>
-
+        <motion.svg height="8" width={width}>
           <motion.line
             style={{ pathLength, scaleX: 1 }}
             x1="100%"
             x2="0"
             strokeWidth="20"
-            strokeDasharray="0 1"
           />
-
         </motion.svg>
       </StyledProgressContainer>
     </>

@@ -99,44 +99,15 @@ const variables = css`
     --let-space-xl: 8px;
 
     // Text Gradients
-    /* --text-gradient: linear-gradient(
-      to left,
-      var(--accent-pink) 0%,
-      var(--accent-purple) 50%,
-      var(--accent-cyan) 100%
-      ); */
       --text-gradient: linear-gradient(
         to right,
         var(--light-blue) 0%,
-        var(--purple) 25%,
-        var(--coral) 50%,
-        var(--gold) 100%
+        var(--slate-blue) 20%,
+        var(--purple) 40%,
+        var(--coral) 60%,
+        var(--gold) 80%,
+        var(--olive) 100%
         );
-        
-    // Background Gradients
-    /* --accent-gradient: linear-gradient(
-      to right,
-      var(--accent-pink-tint) 0%,
-      var(--accent-purple-tint) 33.3%,
-      var(--accent-d-blue-tint) 66.6%,
-      var(--accent-cyan-tint) 100%
-    ); */
-    --accent-gradient: linear-gradient(
-      to right,
-      var(--accent-pink) 0%,
-      var(--accent-cyan) 100%
-    );
-
-    --d-background-gradient: linear-gradient(
-      to right,
-      var(--d-primary-color) 0%,
-      var(--d-primary-color) 100%,
-    );
-    --background-gradient: linear-gradient(
-      to right,
-      var(--primary-color) 0%,
-      var(--primary-color) 100%,
-    );
 
     // Transitions
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);

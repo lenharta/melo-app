@@ -24,7 +24,12 @@ export const darkTheme = {
 
   styledHeader: css`
     background: var(--d-primary-color-tint);
-    backdrop-filter: blur(30px);
+    backdrop-filter: var(--filter);
+    -webkit-backdrop-filter: blur(30px);
+
+    @supports (-webkit-backdrop-filter: none) {
+      -webkit-backdrop-filter: none;
+    }
   `,
 
   select: css`
@@ -62,7 +67,7 @@ export const darkTheme = {
     font-weight: var(--fw-800);
     font-family: var(--logo-font);
     letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-4));
+    font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
 
     color: var(--d-secondary-color);
     background-image: var(--text-gradient);
@@ -118,11 +123,11 @@ export const darkTheme = {
   // =========================================================
   //   COMPONENTS
   loader: css`
-    color: var(--secondary-color);
-    background: var(--primary-color);
+    color: var(--d-secondary-color);
+    background: var(--d-primary-color);
 
     svg {
-      stroke: var(--secondary-color);
+      stroke: var(--d-secondary-color);
     }
 
     span {
@@ -143,7 +148,8 @@ export const darkTheme = {
       border: var(--d-focus-border);
     }
     .handle__Color {
-      background-image: var(--text-gradient);
+      /* background-image: var(--text-gradient); */
+      background: var(--primary-color);
     }
   `,
 
@@ -244,10 +250,11 @@ export const lightTheme = {
 
   styledHeader: css`
     background: var(--secondary-color-tint);
-    backdrop-filter: blur(30px);
+    backdrop-filter: var(--filter);
+    -webkit-backdrop-filter: blur(30px);
 
-    @supports (-webkit-backdrop-filter: transparent) {
-      -webkit-backdrop-filter: transparent;
+    @supports (-webkit-backdrop-filter: none) {
+      -webkit-backdrop-filter: none;
     }
   `,
 
@@ -284,7 +291,7 @@ export const lightTheme = {
     font-weight: var(--fw-800);
     font-family: var(--logo-font);
     letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-4));
+    font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
 
     color: var(--secondary-color);
     background-image: var(--text-gradient);
@@ -377,7 +384,8 @@ export const lightTheme = {
     }
     .handle__Color {
     /* border: 4px solid var(--secondary-color); */
-      background-image: var(--text-gradient);
+      /* background-image: var(--text-gradient); */
+      background: var(--primary-color);
     }
   `,
 

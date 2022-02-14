@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { LayoutGroup, motion } from "framer-motion";
 import { navSpring, navVariant } from "../utils";
-import { MdHome, MdSearch, MdInsertChart, MdLeaderboard, MdOutlineAlbum, MdAlbum, MdQueueMusic } from "react-icons/md";
+import { MdHome, MdSearch, MdInsertChart, MdLeaderboard, MdOutlineAlbum, MdAlbum, MdQueueMusic, MdExplore, MdMic } from "react-icons/md";
 
 const navLinkData = [
   // {
@@ -23,17 +23,17 @@ const navLinkData = [
   },
   {
     id: 2,
-    title: "Charts",
-    path: "/charts",
-    aria: "Top Charts",
-    icon: <MdLeaderboard />,
+    title: "Discover",
+    path: "/discover",
+    aria: "Discover",
+    icon: <MdExplore />,
   },
   {
     id: 3,
     title: "Charts",
     path: "/charts",
     aria: "Top Charts",
-    icon: <MdQueueMusic />,
+    icon: <MdLeaderboard />,
   },
 ];
 
@@ -237,6 +237,8 @@ const Outline = styled(motion.div)`
     width: 65px;
   }
   @media (max-width: 1080px) {
+    height: 60px;
+    width: 60px;
   }
   @media (max-width: 768px) {
     height: 55px;

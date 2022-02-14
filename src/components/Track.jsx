@@ -93,6 +93,7 @@ const Container = styled.li`
   a { 
     border-radius: 0px;
     padding: 0 10px;
+    /* padding: 0 10px; */
     width: 100%;
     height: 100%;
     &:hover,
@@ -108,9 +109,9 @@ const Container = styled.li`
     @media (max-width: 1080px) {
     }
     @media (max-width: 768px) {
-      padding: 0 7.5px;
     }
     @media (max-width: 480px) {
+      padding: 0 7.5px;
     }
   }
 
@@ -118,7 +119,7 @@ const Container = styled.li`
     grid-area: a;
     align-self: center;
     justify-self: center;
-    border-radius: 20px;
+    border-radius: 15px;
     height: 95px;
     width: 95px;
 

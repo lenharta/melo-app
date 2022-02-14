@@ -26,7 +26,7 @@ const ProgressBar = () => {
             style={{ pathLength, scaleX: 1 }}
             x1="100%"
             x2="0"
-            strokeWidth="14"
+            strokeWidth="20"
             strokeDasharray="0 1"
           />
 

@@ -39,7 +39,7 @@ const variables = css`
     --primary-color: rgb(229, 229, 229);
     --primary-color-tint: rgba(229, 229, 229, 0.4);
     --secondary-color: rgb(5, 4, 6);
-    --secondary-color-tint: rgba(5, 4, 6, 0.65);
+    --secondary-color-tint: rgba(5, 4, 6, 0.85);
     --third-color: rgb(161, 163, 165);
     --third-color-tint: rgba(161, 163, 165, 0.2);
     // Borders

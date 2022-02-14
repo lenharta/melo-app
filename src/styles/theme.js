@@ -276,7 +276,7 @@ export const lightTheme = {
   progressBar: css`
       background-image: var(--text-gradient);
       svg {
-        stroke: var(--secondary-color);
+        stroke: var(--primary-color);
     }
   `,
 

@@ -59,8 +59,8 @@ const Container = styled.section`
 `;
 
 const Inner = styled.div`
-    ${({ theme }) => theme.mixins.flexCenter}
-    width: 100%;
+  ${({ theme }) => theme.mixins.flexCenter}
+  width: 100%;
   /* display: grid; */
   /* grid-template-areas: ; */
   @media (max-width: 1600px) {
@@ -71,14 +71,14 @@ const Inner = styled.div`
   }
   @media (max-width: 480px) {
   }
-  `;
+`;
 
 const ChartsTitle = styled.div`
   // Custom Class
-  `;
+`;
 
 const ChartTracks = styled.div`
-width: 100%;
+  width: 100%;
   @media (max-width: 1600px) {
   }
   @media (max-width: 1080px) {
@@ -87,7 +87,7 @@ width: 100%;
   }
   @media (max-width: 480px) {
   }
-  `;
+`;
 
 const ChartsTracks = styled.div`
   @media (max-width: 1600px) {
@@ -121,11 +121,11 @@ const ChartSelect = styled.div`
 //   margin: 0px auto;
 //   width: 250px;
 //   select {
-  //     padding: 15px 0px;
-  //     text-align: center;
-  //     width: 100%;
-  //   }
-  
+//     padding: 15px 0px;
+//     text-align: center;
+//     width: 100%;
+//   }
+
 //   @media (max-width: 1600px) {
 //     width: 200px;
 //   }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { LayoutGroup, motion } from "framer-motion";
 import { navSpring, navVariant } from "../utils";
-import { MdHome, MdSearch, MdInsertChart } from "react-icons/md";
+import { MdHome, MdSearch, MdInsertChart, MdLeaderboard, MdOutlineAlbum, MdAlbum, MdQueueMusic } from "react-icons/md";
 
 const navLinkData = [
   // {
@@ -15,18 +15,25 @@ const navLinkData = [
   //   icon: <MdSearch />,
   // },
   {
-    id: 2,
+    id: 1,
     title: "Dashboard",
     path: "/",
-    aria: "/Dasboard",
+    aria: "Dasboard",
     icon: <MdHome />,
+  },
+  {
+    id: 2,
+    title: "Charts",
+    path: "/charts",
+    aria: "Top Charts",
+    icon: <MdLeaderboard />,
   },
   {
     id: 3,
     title: "Charts",
     path: "/charts",
     aria: "Top Charts",
-    icon: <MdInsertChart />,
+    icon: <MdQueueMusic />,
   },
 ];
 

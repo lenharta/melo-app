@@ -176,8 +176,28 @@ export const darkTheme = {
   `,
 
   trackList: css`
-    background: var(--d-primary-color-tint);
-    border-radius: var(--md-radius);
+    ul {
+      border-right: 2px solid var(--d-secondary-color);
+    }
+
+    h1 {
+      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
+      font-family: var(--primary-font);
+      font-weight: var(--fw-700);
+      color: var(--d-primary-color);
+      background-image: var(--text-gradient-btm);
+      &::after {
+        background: var(--d-third-color-tint);
+        border-top-left-radius: var(--xs-radius);
+        border-bottom-left-radius: var(--xs-radius);
+      }
+
+      @supports (-webkit-text-fill-color: transparent) or
+        (-webkit-background-clip: none) {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    }
   `,
 
   track: css`
@@ -405,11 +425,7 @@ export const lightTheme = {
   // =========================================================
   //   REUSED COMPONENTS
   TrackNumber: css`
-    font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
-    font-family: var(--primary-font);
-    font-weight: var(--fw-700);
     /* border-radius: var(--sm-radius); */
-    color: var(--secondary-color);
     /* background-image: var(--text-gradient);
     
     @supports (-webkit-text-fill-color: transparent) or
@@ -420,8 +436,28 @@ export const lightTheme = {
   `,
 
   trackList: css`
-    background: var(--third-color-tint);
-    border-radius: var(--md-radius);
+    ul {
+      border-right: 2px solid var(--secondary-color);
+    }
+
+    h1 {
+      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
+      font-family: var(--primary-font);
+      font-weight: var(--fw-700);
+      color: var(--primary-color);
+      background-image: var(--text-gradient-btm);
+      &::after {
+        background: var(--secondary-color-tint);
+        border-top-left-radius: var(--xs-radius);
+        border-bottom-left-radius: var(--xs-radius);
+      }
+
+      @supports (-webkit-text-fill-color: transparent) or
+        (-webkit-background-clip: none) {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    }
   `,
 
   track: css`

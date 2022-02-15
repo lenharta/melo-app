@@ -27,7 +27,8 @@ const Track = ({
   ];
   const [randomColor, setRandomColor] = useState("");
   const randomize = colors[Math.floor(Math.random() * colors.length)];
-
+  // console.log(trackNumbers);
+  
   useEffect(() => {
     setRandomColor(randomize);
   }, []);
@@ -73,7 +74,7 @@ const Container = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
   list-style-type: none;
-  height: 115px;
+  height: 125px;
   width: 100%;
   
   @media (max-width: 1600px) {
@@ -319,7 +320,7 @@ const Explicit = styled.div`
 
 const PlayPause = styled.div`
   grid-area: e;
-  justify-self: right;
+  justify-self: center;
   align-self: center;
   svg {
     width: 50px;

@@ -127,6 +127,10 @@ const GlobalStyle = createGlobalStyle`
   img {
     ${(props) => props.theme.img}
   }
+
+  ul {
+    list-style-type: none;
+  }
   
   select {
     ${(props) => props.theme.select}

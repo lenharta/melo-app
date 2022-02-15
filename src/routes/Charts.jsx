@@ -46,7 +46,7 @@ const Charts = () => {
           </ChartInfo> */}
 
           <ChartTracks>
-            <TrackList charts={charts} id={titled.id} countEnd={100} />
+            <TrackList charts={charts} id={titled.id} countEnd={101} />
           </ChartTracks>
         </Inner>
       </Container>

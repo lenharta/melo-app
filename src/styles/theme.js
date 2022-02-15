@@ -51,7 +51,7 @@ export const darkTheme = {
   // =========================================================
   //   NAVIGATION
   progressBar: css`
-  background: var(--text-gradient);
+    background: var(--text-gradient);
     svg {
       stroke: var(--d-primary-color);
 
@@ -157,8 +157,8 @@ export const darkTheme = {
     border: var(--d-md-border);
   `,
 
+  // REUSED COMPONENTS
   // =========================================================
-  //   REUSED COMPONENTS
   TrackNumber: css`
     font-weight: var(--fw-800);
     font-family: var(--logo-font);
@@ -173,6 +173,11 @@ export const darkTheme = {
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
     }
+  `,
+
+  trackList: css`
+    background: var(--d-primary-color-tint);
+    border-radius: var(--md-radius);
   `,
 
   track: css`
@@ -225,6 +230,10 @@ export const darkTheme = {
       }
     }
   `,
+
+  // =========================================================
+  //   ROUTES
+  chartsContainer: css``,
 };
 
 // ========================================================= //
@@ -237,7 +246,7 @@ export const lightTheme = {
   mixins,
 
   body: css`
-    background: var(--primary-color);
+    background: var(--off-white-tint);
   `,
 
   scrollbarThumb: css`
@@ -281,9 +290,9 @@ export const lightTheme = {
   // =========================================================
   //   NAVIGATION
   progressBar: css`
-      background-image: var(--text-gradient);
-      svg {
-        stroke: var(--primary-color);
+    background-image: var(--text-gradient);
+    svg {
+      stroke: var(--secondary-color);
     }
   `,
 
@@ -370,7 +379,7 @@ export const lightTheme = {
     background-position: 100%;
     /* background-clip: padding-box; */
     /* backdrop-filter: var(--filter); */
-    
+
     /* &:before {
       content: '';
       position: absolute;
@@ -378,12 +387,12 @@ export const lightTheme = {
       border-radius: inherit;
       background: var(--text-gradient);
     } */
-    
+
     &:focus-visible {
       border: var(--focus-border);
     }
     .handle__Color {
-    /* border: 4px solid var(--secondary-color); */
+      /* border: 4px solid var(--secondary-color); */
       /* background-image: var(--text-gradient); */
       background: var(--primary-color);
     }
@@ -402,12 +411,17 @@ export const lightTheme = {
     /* border-radius: var(--sm-radius); */
     color: var(--secondary-color);
     /* background-image: var(--text-gradient);
-
+    
     @supports (-webkit-text-fill-color: transparent) or
-      (-webkit-background-clip: none) {
+    (-webkit-background-clip: none) {
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
     } */
+  `,
+
+  trackList: css`
+    background: var(--third-color-tint);
+    border-radius: var(--md-radius);
   `,
 
   track: css`
@@ -460,6 +474,10 @@ export const lightTheme = {
       }
     }
   `,
+
+  // =========================================================
+  //   ROUTES
+  chartsContainer: css``,
 };
 
 // background: linear-gradient(

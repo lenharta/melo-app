@@ -30,14 +30,14 @@ const App = () => {
           <>
             <Nav />
             <ProgressBar />
-            <StyledMain>
+            <Main>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="charts" element={<Charts />} />
                 {/* Construction page */}
                 <Route path="playlist" element={<Playlist />} />
               </Routes>
-            </StyledMain>
+            </Main>
           </>
         )}
       </ThemeProvider>
@@ -45,7 +45,7 @@ const App = () => {
   );
 };
 
-const StyledMain = styled.main`
+const Main = styled.main`
   // Styles for main in Global Styles
   max-width: 1600px;
 `;

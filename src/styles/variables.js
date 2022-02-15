@@ -42,6 +42,7 @@ const variables = css`
     --secondary-color-tint: rgba(5, 4, 6, 0.85);
     --third-color: rgb(161, 163, 165);
     --third-color-tint: rgba(161, 163, 165, 0.2);
+    --third-color-tint-dark: rgba(161, 163, 165, 0.5); 
     // Borders
     --sm-border: solid 2px rgba(161, 163, 165, 0.4);
     --md-border: solid 4px rgba(161, 163, 165, 0.4);
@@ -101,6 +102,15 @@ const variables = css`
     // Text Gradients
       --text-gradient: linear-gradient(
         to right,
+        var(--light-blue) 0%,
+        var(--slate-blue) 20%,
+        var(--purple) 40%,
+        var(--coral) 60%,
+        var(--gold) 80%,
+        var(--olive) 100%
+        );
+      --text-gradient-btm: linear-gradient(
+        to bottom,
         var(--light-blue) 0%,
         var(--slate-blue) 20%,
         var(--purple) 40%,

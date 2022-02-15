@@ -37,7 +37,7 @@ const Track = ({
       <Container
         randomColor={randomColor}
         aria-label={
-          "Song Title: " + title_short + " Song Artist: " + artist.name
+          `Song Title: ${title_short}` + ", " + `Song Artist: ${artist.name}`
         }
       >
         <Link

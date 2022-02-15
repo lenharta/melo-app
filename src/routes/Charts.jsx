@@ -55,7 +55,8 @@ const Charts = () => {
 };
 
 const Container = styled.section`
-  // Custom Class
+  ${( props ) => props.theme.chartsContainer}
+  // Custom Section Class in Global Styles
 `;
 
 const Inner = styled.div`

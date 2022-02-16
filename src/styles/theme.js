@@ -51,7 +51,7 @@ export const darkTheme = {
   // =========================================================
   //   NAVIGATION
   progressBar: css`
-    background: var(--text-gradient);
+    background-image: var(--text-gradient);
     svg {
       stroke: var(--d-primary-color);
 
@@ -64,18 +64,26 @@ export const darkTheme = {
   `,
 
   navLogo: css`
-    font-weight: var(--fw-800);
-    font-family: var(--logo-font);
-    letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+    h1 {
+      font-weight: var(--fw-800);
+      font-family: var(--logo-font);
+      letter-spacing: var(--let-space-sm);
+      color: var(--d-secondary-color);
+      font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+      span {
+        font-weight: var(--fw-800);
+        font-family: var(--logo-font);
+        letter-spacing: var(--let-space-sm);
+        font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+        background-image: var(--text-gradient);
+        color: var(--d-primary-color);
 
-    color: var(--d-secondary-color);
-    background-image: var(--text-gradient);
-
-    @supports (-webkit-text-fill-color: transparent) or
-      (-webkit-background-clip: none) {
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
+        @supports (-webkit-text-fill-color: transparent) or
+          (-webkit-background-clip: none) {
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+        }
+      }
     }
   `,
 
@@ -163,7 +171,7 @@ export const darkTheme = {
     font-weight: var(--fw-800);
     font-family: var(--logo-font);
     letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-lg-1), 5vw, var(--fz-xl-1));
+    font-size: clamp(var(--fz-md-4), 5vw, var(--fz-xl-1));
 
     background-image: var(--text-gradient);
     color: var(--d-secondary-color);
@@ -176,21 +184,13 @@ export const darkTheme = {
   `,
 
   trackList: css`
-    ul {
-      border-right: 2px solid var(--d-secondary-color);
-    }
-
     h1 {
-      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
-      font-family: var(--primary-font);
       font-weight: var(--fw-700);
-      color: var(--d-primary-color);
+      font-family: var(--primary-font);
+      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
+      text-shadow: 4px 4px var(--d-secondary-color-tint);
+      color: var(--d-secondary-color);
       background-image: var(--text-gradient-btm);
-      &::after {
-        background: var(--d-third-color-tint);
-        border-top-left-radius: var(--xs-radius);
-        border-bottom-left-radius: var(--xs-radius);
-      }
 
       @supports (-webkit-text-fill-color: transparent) or
         (-webkit-background-clip: none) {
@@ -312,23 +312,31 @@ export const lightTheme = {
   progressBar: css`
     background-image: var(--text-gradient);
     svg {
-      stroke: var(--secondary-color);
+      stroke: var(--secondary-color-tint);
     }
   `,
 
   navLogo: css`
-    font-weight: var(--fw-800);
-    font-family: var(--logo-font);
-    letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+    h1 {
+      font-weight: var(--fw-800);
+      font-family: var(--logo-font);
+      letter-spacing: var(--let-space-sm);
+      color: var(--primary-color);
+      font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+      span {
+        font-weight: var(--fw-800);
+        font-family: var(--logo-font);
+        letter-spacing: var(--let-space-sm);
+        font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+        background-image: var(--text-gradient);
+        color: var(--primary-color);
 
-    color: var(--secondary-color);
-    background-image: var(--text-gradient);
-
-    @supports (-webkit-text-fill-color: transparent) or
-      (-webkit-background-clip: none) {
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
+        @supports (-webkit-text-fill-color: transparent) or
+          (-webkit-background-clip: none) {
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+        }
+      }
     }
   `,
 
@@ -391,29 +399,16 @@ export const lightTheme = {
   `,
 
   themeButton: css`
-    /* background: var(--third-color); */
     // Custom Border
     border: 4px solid transparent;
     background: var(--secondary-color-tint);
     backdrop-filter: var(--filter);
     background-position: 100%;
-    /* background-clip: padding-box; */
-    /* backdrop-filter: var(--filter); */
-
-    /* &:before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      border-radius: inherit;
-      background: var(--text-gradient);
-    } */
 
     &:focus-visible {
       border: var(--focus-border);
     }
     .handle__Color {
-      /* border: 4px solid var(--secondary-color); */
-      /* background-image: var(--text-gradient); */
       background: var(--primary-color);
     }
   `,
@@ -424,38 +419,32 @@ export const lightTheme = {
 
   // =========================================================
   //   REUSED COMPONENTS
-  TrackNumber: css`
-    /* border-radius: var(--sm-radius); */
-    /* background-image: var(--text-gradient);
-    
-    @supports (-webkit-text-fill-color: transparent) or
-    (-webkit-background-clip: none) {
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-    } */
-  `,
-
   trackList: css`
-    ul {
-      border-right: 2px solid var(--secondary-color);
-    }
-
     h1 {
-      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
-      font-family: var(--primary-font);
       font-weight: var(--fw-700);
-      color: var(--primary-color);
-      background-image: var(--text-gradient-btm);
-      &::after {
-        background: var(--secondary-color-tint);
-        border-top-left-radius: var(--xs-radius);
-        border-bottom-left-radius: var(--xs-radius);
+      font-family: var(--primary-font);
+      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
+      text-shadow: 3px 3px 1px var(--third-color-tint-2);
+      letter-spacing: var(--let-space-xs);
+      /* color: var(--primary-color); */
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--secondary-color-tint);
+
+      @media (max-width: 1600px) {
+      }
+      @media (max-width: 1080px) {
+      }
+      @media (max-width: 768px) {
+        text-shadow: 3px 3px 1px var(--secondary-color-tint);
+      }
+      @media (max-width: 480px) {
+        text-shadow: 2px 2px 1px var(--secondary-color-tint);
       }
 
-      @supports (-webkit-text-fill-color: transparent) or
-        (-webkit-background-clip: none) {
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
+      @supports (-webkit-text-stroke-width: none) or
+        (-webkit-text-stroke-color: none) {
+        -webkit-text-stroke-width: none;
+        -webkit-text-stroke-color: none;
       }
     }
   `,
@@ -465,13 +454,15 @@ export const lightTheme = {
       border-bottom: var(--sm-border);
       h2 {
         color: var(--secondary-color);
+        /* text-shadow: 2px 2px 1px var(--third-color); */
       }
       h3 {
-        color: var(--secondary-color);
-        opacity: 0.6;
+        color: var(--secondary-color-tint);
+        /* text-shadow: 2px 2px 1px var(--third-color); */
       }
       svg {
         color: var(--secondary-color);
+        filter: drop-shadow(4px 4px 1px var(--third-color));
       }
 
       // Link Overlay
@@ -482,12 +473,15 @@ export const lightTheme = {
         border-radius: var(--md-radius);
         h2 {
           color: var(--secondary-color);
+          text-shadow: none;
         }
         h3 {
           color: var(--secondary-color);
+          text-shadow: none;
         }
         svg {
           color: var(--secondary-color);
+          filter: none;
         }
 
         @media (max-width: 768px) {
@@ -500,12 +494,15 @@ export const lightTheme = {
       &:focus-visible {
         h2 {
           color: var(--secondary-color);
+          text-shadow: none;
         }
         h3 {
+          text-shadow: none;
           color: var(--secondary-color);
         }
         svg {
           color: var(--secondary-color);
+          filter: none;
         }
       }
     }

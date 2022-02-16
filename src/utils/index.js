@@ -3,6 +3,18 @@ export const loaderDelay = 1000;
 export const navbarDelay = 6000;
 export const isHome = window.location.pathname === "/";
 
+export const colors = [
+  "#005F73",
+  "#0A9396",
+  "#94D2BD",
+  "#E9D8A6",
+  "#EE9B00",
+  "#CA6702",
+  "#BB3E03",
+  "#AE2012",
+  "#9B2226"
+];
+
 // Loader Animations
 export const loaderContainer = {
   hidden: { opacity: 0 },

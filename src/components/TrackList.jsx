@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Track } from "../components";
 import { useNumberedList } from "../utils/hooks/useNumberedList";
+import { colors } from "../utils";
 
 const TrackList = ({ charts, id, countEnd }) => {
   const [count, setCount] = useState([]);
   const trackNumbers = useNumberedList(countEnd);
-  console.log(trackNumbers);
+  const [randomColor, setRandomColor] = useState([]);
+  const randomize = colors[Math.floor(Math.random() * colors.length)];
 
   useEffect(() => {
+    setRandomColor(randomize);
     setCount(trackNumbers);
   }, []);
 
@@ -16,9 +19,9 @@ const TrackList = ({ charts, id, countEnd }) => {
     <>
       <Container id={id}>
         <NumberList>
-          {count.map((number, i) => (
-            <TrackNumber key={i}>
-              <h1>{number}</h1>
+          {count.map((number) => (
+            <TrackNumber key={number} randomColor={randomColor}>
+              <h1>{number}.</h1>
             </TrackNumber>
           ))}
         </NumberList>
@@ -34,6 +37,7 @@ const TrackList = ({ charts, id, countEnd }) => {
 
 const Container = styled.div`
   ${(props) => props.theme.trackList}
+  /* background-color: yellow; */
   width: 100%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -62,21 +66,14 @@ const TrackNumber = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   justify-content: flex-start;
   height: 100%;
-  width: 100%;
-  text-align: right;
+  text-align: left;
+  
   h1 {
+    /* color: var(--primary-color); */
+    
+    color: ${(props) => props.randomColor};
     width: 100%;
-    position: relative;
-    padding: 10px;
-    &::after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: -10;
-    }
+    
     @media (max-width: 1600px) {
     }
     @media (max-width: 1080px) {
@@ -84,12 +81,18 @@ const TrackNumber = styled.div`
     @media (max-width: 768px) {
     }
     @media (max-width: 480px) {
+      justify-content: flex-end;
+      width: 90%;
     }
+    
+    /* @supports (-webkit-text-fill-color: transparent) {
+      -webkit-text-fill-color: transparent;
+    } */
   }
-`;
+  `;
 
 const TrackWrapper = styled.div`
   grid-area: b;
-`;
+  `;
 
 export default TrackList;

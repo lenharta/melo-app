@@ -7,7 +7,7 @@ import {
   MdPlayCircleOutline,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useNumberedList } from "../utils/hooks/useNumberedList";
+import { colors } from "../utils";
 
 const Track = ({
   title_short,
@@ -17,18 +17,10 @@ const Track = ({
   preview,
   id,
 }) => {
-  const colors = [
-    "#CFA97A",
-    "#B8BBD3",
-    "#D3B8B8",
-    "#BEC5BF",
-    "#BAD8F1",
-    "#B4BDCB",
-  ];
   const [randomColor, setRandomColor] = useState("");
   const randomize = colors[Math.floor(Math.random() * colors.length)];
   // console.log(trackNumbers);
-  
+
   useEffect(() => {
     setRandomColor(randomize);
   }, []);
@@ -76,7 +68,7 @@ const Container = styled.li`
   list-style-type: none;
   height: 125px;
   width: 100%;
-  
+
   @media (max-width: 1600px) {
     height: 105px;
   }
@@ -84,23 +76,22 @@ const Container = styled.li`
     height: 95px;
   }
   @media (max-width: 768px) {
-    /* height: 80px; */
   }
   @media (max-width: 480px) {
     height: 85px;
   }
-  
+
   // Router Link
-  a { 
+  a {
     border-radius: 0px;
     padding: 0 10px;
-    /* padding: 0 10px; */
     width: 100%;
     height: 100%;
     &:hover,
     &:focus-visible {
       background: ${(props) => props.randomColor};
       border-radius: 15px;
+
       @media (max-width: 1080px) {
         border-radius: 10px;
       }
@@ -162,14 +153,7 @@ const Inner = styled.div`
   @media (max-width: 480px) {
   }
 
-  /* @media (max-width: 480px) {
-    grid-template-areas:
-      "a b b b b b b b b b b e"
-      "a c c c c c c c c c c e";
-  } */
-
   h1 {
-    ${(props) => props.theme.TrackNumber}
     text-align: center;
     justify-self: center;
     align-self: center;
@@ -187,28 +171,6 @@ const Inner = styled.div`
     }
   }
 `;
-
-// const StyledTrackNumber = styled.div`
-//   ${(props) => props.theme.trackNumber}
-//   grid-area: a;
-//   justify-self: end;
-//   align-self: start;
-//   height: 50px;
-//   width: 50px;
-
-//   @media (max-width: 1600px) {
-//     height: 70px;
-//     width: 70px;
-//   }
-//   @media (max-width: 1080px) {
-//     height: 60px;
-//     width: 60px;
-//   }
-//   @media (max-width: 768px) {
-//     height: 50px;
-//     width: 50px;
-//   }
-// `;
 
 const SongTitle = styled.div`
   grid-area: b;

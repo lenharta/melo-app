@@ -59,4 +59,4 @@ export default App;
 //
 //   useEffect(() => {
 //     setRandomColor(randomize);
-//   }, []);
+//   }, []);                                                                

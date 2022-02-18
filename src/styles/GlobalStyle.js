@@ -194,7 +194,7 @@ const GlobalStyle = createGlobalStyle`
 
   .accent__line {
     ${(props) => props.theme.accent__line}
-    width: 90%;
+    width: 60%;
     height: 6px;
     border-radius: var(--md-radius);
     
@@ -202,9 +202,10 @@ const GlobalStyle = createGlobalStyle`
       height: 5px;
     }
     @media (max-width: 1080px) {
+      width: 100%;
+      height: 4px;
     }
     @media (max-width: 768px) {
-      height: 4px;
     }
     @media (max-width: 480px) {
     }

@@ -514,7 +514,7 @@ export const lightTheme = {
 //   to left,
 //   var(--gray-tint) 0%,
 //   var(--off-white) 100%
-// );
+// );                               
 
 // var(--w-accent-gradient)
 // var(--accent-gradient)

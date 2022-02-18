@@ -225,7 +225,7 @@ export default variables;
   //   (-webkit-text-stroke-color: none) {
   //    -webkit-text-stroke-width: none;
   //    -webkit-text-stroke-color: none;
-  //   }
+  //   }                                                              
 
   // TEXT GRADIENT BACKGROUND
   // background-image: var(--text-gradient-btm);

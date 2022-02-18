@@ -17,7 +17,8 @@ const TrackList = ({ tracks, id, countEnd, isNumbered }) => {
   return (
     <>
       <Container id={id}>
-        {isNumbered === true ? (
+        <Inner>
+        {numberedList === true ? (
           <NumberList>
             {count.map((number) => (
               <TrackNumber key={number}>
@@ -35,30 +36,29 @@ const TrackList = ({ tracks, id, countEnd, isNumbered }) => {
             return <Track key={i} {...data} />;
           })}
         </TrackWrapper>
+        </Inner>
       </Container>
     </>
   );
 };
 
 const Container = styled.div`
+  ${({ theme }) => theme.mixins.flexCenter}
+  flex-direction: column;
   ${(props) => props.theme.trackList}
-  grid-template-areas: "a b b b b b b b b b b b";
-  grid-template-columns: repeat(12, 1fr);
-  display: grid;
   width: 100%;
+`;
 
-  /* ${(props) =>
-    props.isNumbered === false
-      ? 'grid-template-areas: "b b b b b b b b b b b b";'
-      : null} */
+const Inner = styled.div`
+  ${({ theme }) => theme.mixins.flexCenter}
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
 `;
 
 const NumberList = styled.div`
   height: 125px;
-  width: 100%;
-  grid-area: a;
-
-  /* ${(props) => (props.isNumbered === false ? "display: none;" : null)} */
+  width: 10%;
 
   @media (max-width: 1600px) {
     height: 105px;
@@ -82,22 +82,24 @@ const TrackNumber = styled.div`
   width: 100%;
   
   h1 {
-    width: 90%;
-
+    width: 60%;
+    
     @media (max-width: 1600px) {
     }
     @media (max-width: 1080px) {
     }
     @media (max-width: 768px) {
+      width: 100%;
     }
     @media (max-width: 480px) {
-      justify-content: flex-end;
     }
   }
 `;
 
 const TrackWrapper = styled.div`
-  grid-area: b;
+  ${({ theme }) => theme.mixins.flexCenter}
+  flex-direction: column;
+  width: 100%;
 `;
 
 export default TrackList;

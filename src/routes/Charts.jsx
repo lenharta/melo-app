@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { spring } from "../utils";
 
 const Charts = () => {
-  const [charts, setCharts] = useState([]);
+  const [tracks, setTracks] = useState([]);
   const [titled, setTitled] = useState([]);
 
   // const info = titled
@@ -15,7 +15,7 @@ const Charts = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(requests.fetchTopUS);
-      setCharts(response.data.tracks.data);
+      setTracks(response.data.tracks.data);
       setTitled(response.data);
       console.log(response.data);
       return response;
@@ -46,7 +46,7 @@ const Charts = () => {
           </ChartInfo> */}
 
           <ChartTracks>
-            <TrackList charts={charts} id={titled.id} countEnd={101} />
+            <TrackList tracks={tracks} id={titled.id} isNumbered={true} countEnd={101} />
           </ChartTracks>
         </Inner>
       </Container>

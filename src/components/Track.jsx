@@ -17,18 +17,10 @@ const Track = ({
   preview,
   id,
 }) => {
-  const [randomColor, setRandomColor] = useState("");
-  const randomize = colors[Math.floor(Math.random() * colors.length)];
-  // console.log(trackNumbers);
-
-  useEffect(() => {
-    setRandomColor(randomize);
-  }, []);
 
   return (
     <>
       <Container
-        randomColor={randomColor}
         aria-label={
           `Song Title: ${title_short}` + ", " + `Song Artist: ${artist.name}`
         }

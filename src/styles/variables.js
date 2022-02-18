@@ -85,29 +85,22 @@ const variables = css`
     --accent-cyan-tint:       rgba(76, 201, 240, 0.4);
     
     // NEW ACCENT COLORS
-    --deep-blue: rgba(0, 95, 115, 1);
-    --deep-blue-tint: rgba(0, 95, 115, .05);
-    --teal: rgba(10, 147, 150, 1);
-    --teal-tint: rgba(10, 147, 150, .05);
-    --foam-green: rgba(148, 210, 189, 1);
-    --foam-green-tint: rgba(148, 210, 189, .05);
-    --tan: rgba(233, 216, 166, 1);
-    --tan-tint: rgba(233, 216, 166, .05);
-    --yellow: rgba(238, 155, 0, 1);
-    --yellow-tint: rgba(238, 155, 0, .05);
-    --orange: rgba(202, 103, 2, 1);
-    --orange-tint: rgba(202, 103, 2, .05);
-    --d-orange: rgba(187, 62, 3, 1);
-    --d-orange-tint: rgba(187, 62, 3, .05);
-    --red: rgba(174, 32, 18, 1);
-    --red-tint: rgba(174, 32, 18, .05);
-    --d-red: rgba(155, 34, 38, 1);
-    --d-red-tint: rgba(155, 34, 38, .05);
+    --orange: rgba(245, 133, 41, 1);
+    --orange-tint: rgba(245, 133, 41, 0.4);
+    --gold: rgba(254, 218, 119, 1);
+    --gold-tint: rgba(254, 218, 119, 0.4);
+    --pink: rgba(221, 42, 123, 1);
+    --pink-tint: rgba(221, 42, 123, 0.4);
+    --purple: rgba(129, 52, 175, 1);
+    --purple-tint: rgba(129, 52, 175, 0.4);
+    --blue: rgba(81, 91, 212, 1);
+    --blue-tint: rgba(81, 91, 212, 0.4);
     
     // ===================================================
 
-    // Globals
-    // General
+    // GLOBAL VARIABLES
+
+    // RADIUS
     --xl-radius: 30px;
     --lg-radius: 25px;
     --md-radius: 20px;
@@ -115,52 +108,40 @@ const variables = css`
     --xs-radius: 10px;
     --filter: blur(30px);
 
-    // Letter-Spacing
+    // LETTER-SPACING
     --let-space-xs: 1px;
     --let-space-sm: 2px;
     --let-space-md: 4px;
     --let-space-lg: 6px;
     --let-space-xl: 8px;
 
-    // Text Gradients
+      // ACCENT GRADIENTS
       --text-gradient: linear-gradient(
         to right,
-        var(--deep-blue) 0%,
-        var(--foam-green) 20%,
-        var(--tan) 40%,
-        var(--yellow) 60%,
-        var(--orange) 80%,
-        var(--red) 100%
-        );
-      --text-gradient-btm: linear-gradient(
-        to bottom,
-        var(--deep-blue) 0%,
-        var(--foam-green) 20%,
-        var(--tan) 40%,
-        var(--yellow) 60%,
-        var(--orange) 80%,
-        var(--red) 100%
-        );
+        var(--orange) 0%,
+        var(--gold) 25%,
+        var(--pink) 50%,
+        var(--purple) 75%,
+        var(--blue) 100%
+      );
 
-        // ORIGINAL ACCENT GRADIENTS
-      /* --text-gradient: linear-gradient(
-        to right,
-        var(--light-blue) 0%,
-        var(--slate-blue) 20%,
-        var(--purple) 40%,
-        var(--coral) 60%,
-        var(--gold) 80%,
-        var(--olive) 100%
-        );
       --text-gradient-btm: linear-gradient(
         to bottom,
-        var(--light-blue) 0%,
-        var(--slate-blue) 20%,
-        var(--purple) 40%,
-        var(--coral) 60%,
-        var(--gold) 80%,
-        var(--olive) 100%
-        ); */
+        var(--orange) 0%,
+        var(--gold) 25%,
+        var(--pink) 50%,
+        var(--purple) 75%,
+        var(--blue) 100%
+      );
+
+      --text-gradient-tint: linear-gradient(
+        to right,
+        var(--orange-tint) 0%,
+        var(--gold-tint) 25%,
+        var(--pink-tint) 50%,
+        var(--purple-tint) 75%,
+        var(--blue-tint) 100%
+      );
 
     // Transitions
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -173,12 +154,37 @@ const variables = css`
 
 export default variables;
 
-// COLOR REFERENCE
+// PRIMARY COLOR REFERENCE
 // White        #E5E5E5 / rgb(229, 229, 229)
 // Black        #050406 / rgb(5, 4, 6)
 // Gray         #A1A3A5 / rgb(161, 163, 165)
 
-// ORIGINAL ACCENT
+
+// ACCENT COLOR REFERENCE
+// ORANGE           #F58529
+// GOLD             #FEDA77
+// PINK             #DD2A7B
+// PURPLE           #8134AF
+// BLUE             #515BD4
+
+// --orange: rgba(245, 133, 41, 1);
+// --orange-tint: rgba(245, 133, 41, 0.4);
+
+// --gold: rgba(254, 218, 119, 1);
+// --gold-tint: rgba(254, 218, 119, 0.4);
+
+// --pink: rgba(221, 42, 123, 1)
+// --pink-tint: rgba(221, 42, 123, 0.4)
+
+// --purple: rgba(129, 52, 175, 1)
+// --purple-tint: rgba(129, 52, 175, 0.4)
+
+// --blue: rgba(81, 91, 212, 1)
+// --blue-tint: rgba(81, 91, 212, 0.4)        
+
+
+
+// ORIGINAL ACCENT REFERENCE
 // Slate Blue   #B4BDCB / rgb(180, 189, 203)
 // light Blue   #BAD8F1 / rgb(186, 216, 241)
 // Olive Green  #BEC5BF / rgb(190, 197, 191)
@@ -187,45 +193,18 @@ export default variables;
 // Gold         #CFA97A / rgb(218, 199, 176)
 
 
-// SECOND ACCENT
-// deep-blue          rgba(0, 95, 115, 1);
-// deep-blue-tint     rgba(0, 95, 115, .05);
-// teal               rgba(10, 147, 150, 1);
-// teal-tint          rgba(10, 147, 150, .05);
-// foam-green         rgba(148, 210, 189, 1);
-// foam-green-tint    rgba(148, 210, 189, .05);
-// tan                rgba(233, 216, 166, 1);
-// tan-tint           rgba(233, 216, 166, .05);
-// yellow             rgba(238, 155, 0, 1);
-// yellow-tint        rgba(238, 155, 0, .05);
-// orange             rgba(202, 103, 2, 1);
-// orange-tint        rgba(202, 103, 2, .05);
-// d-orange           rgba(187, 62, 3, 1);
-// d-orange-tint      rgba(187, 62, 3, .05);
-// red                rgba(174, 32, 18, 1);
-// red-tint           rgba(174, 32, 18, .05);
-// d-red              rgba(155, 34, 38, 1);
-// d-red-tint         rgba(155, 34, 38, .05);
-
-// Deep Blue          #005F73
-// Teal               #0A9396
-// Foam Green         #94D2BD
-// Tan                #E9D8A6
-// Yellow             #EE9B00
-// Orange             #CA6702
-// Dark Orange        #BB3E03
-// Red                #AE2012
-// Dark Red           #9B2226
-
-// THIRD ACCENT
+// THIRD ACCENT (Dark)
+// --light-blue:      #70DDFF
+// --light-green:     #99FFA7
+// --yellow:          #F8FF99
 
 
 // Color              # / rgba(, 1)
 // Color-tint         rgba(, .05)
 
 
-
 // MEDIA REFERENCE
+
 // @media (max-width: 1600px) {
 // }
 // @media (max-width: 1080px) {
@@ -234,3 +213,31 @@ export default variables;
 // }
 // @media (max-width: 480px) {
 // }
+
+
+// SUPPORTS REFERENCE
+
+  // TEXT OUTLINE
+  // -webkit-text-stroke-width: 0.5px;
+  // -webkit-text-stroke-color: var(--secondary-color-tint);
+  //
+  // @supports (-webkit-text-stroke-width: none) or
+  //   (-webkit-text-stroke-color: none) {
+  //    -webkit-text-stroke-width: none;
+  //    -webkit-text-stroke-color: none;
+  //   }
+
+  // TEXT GRADIENT BACKGROUND
+  // background-image: var(--text-gradient-btm);
+  //
+  // @supports (-webkit-text-fill-color: transparent) or
+  //  (-webkit-background-clip: none) {
+  //  -webkit-text-fill-color: transparent;
+  //  -webkit-background-clip: text;
+  // }
+
+
+// CSS REFERENCE
+
+  // text-shadow: -1px -1px 0px var(--primary-color);
+

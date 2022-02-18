@@ -151,7 +151,7 @@ const GlobalStyle = createGlobalStyle`
     // need to edit
   }
 
-  // change to variables
+  // Templates
   .section__image {
     img {
       ${(props) => props.theme.section__image};
@@ -191,12 +191,30 @@ const GlobalStyle = createGlobalStyle`
     ${(props) => props.theme.gradient__font}
     display: inline-block;
   }
+
+  .accent__line {
+    ${(props) => props.theme.accent__line}
+    width: 90%;
+    height: 6px;
+    border-radius: var(--md-radius);
+    
+    @media (max-width: 1600px) {
+      height: 5px;
+    }
+    @media (max-width: 1080px) {
+    }
+    @media (max-width: 768px) {
+      height: 4px;
+    }
+    @media (max-width: 480px) {
+    }
+  }
 `;
-
-
 
 export default GlobalStyle;
 
+// @media (max-width: 1600px) {
+// }
 // @media (max-width: 1080px) {
 // }
 // @media (max-width: 768px) {

@@ -48,6 +48,10 @@ export const darkTheme = {
     }
   `,
 
+  accent__line: css`
+    background: var(--text-gradient);
+  `,
+
   // =========================================================
   //   NAVIGATION
   progressBar: css`
@@ -69,14 +73,14 @@ export const darkTheme = {
       font-family: var(--logo-font);
       letter-spacing: var(--let-space-sm);
       color: var(--d-secondary-color);
-      font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+      font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-2));
       span {
         font-weight: var(--fw-800);
         font-family: var(--logo-font);
         letter-spacing: var(--let-space-sm);
-        font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+        font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-1));
         background-image: var(--text-gradient);
-        color: var(--d-primary-color);
+        /* color: var(--d-secondary-color); */
 
         @supports (-webkit-text-fill-color: transparent) or
           (-webkit-background-clip: none) {
@@ -167,35 +171,29 @@ export const darkTheme = {
 
   // REUSED COMPONENTS
   // =========================================================
-  TrackNumber: css`
-    font-weight: var(--fw-800);
-    font-family: var(--logo-font);
-    letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-md-4), 5vw, var(--fz-xl-1));
-
-    background-image: var(--text-gradient);
-    color: var(--d-secondary-color);
-
-    @supports (-webkit-text-fill-color: transparent) or
-      (-webkit-background-clip: none) {
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-    }
-  `,
 
   trackList: css`
     h1 {
       font-weight: var(--fw-700);
-      font-family: var(--primary-font);
-      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
-      text-shadow: 4px 4px var(--d-secondary-color-tint);
+      font-family: var(--logo-font);
+      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-2));
+      letter-spacing: var(--let-space-xs);
       color: var(--d-secondary-color);
-      background-image: var(--text-gradient-btm);
 
-      @supports (-webkit-text-fill-color: transparent) or
-        (-webkit-background-clip: none) {
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
+      @media (max-width: 1600px) {
+      }
+      @media (max-width: 1080px) {
+      }
+      @media (max-width: 768px) {
+      }
+      @media (max-width: 480px) {
+      }
+
+      span {
+        font-weight: var(--fw-800);
+        font-family: var(--logo-font);
+        letter-spacing: var(--let-space-sm);
+        color: var(--d-secondary-color);
       }
     }
   `,
@@ -216,18 +214,19 @@ export const darkTheme = {
 
       // Link Overlay
       &:hover {
+        background: var(--d-third-color-tint);
         border-bottom: none;
         transform: scale(1.01);
         transition: var(--transition);
         border-radius: var(--md-radius);
         h2 {
-          color: var(--d-primary-color);
+          color: var(--d-secondary-color);
         }
         h3 {
-          color: var(--d-primary-color);
+          color: var(--d-secondary-color);
         }
         svg {
-          color: var(--d-primary-color);
+          color: var(--d-secondary-color);
         }
 
         @media (max-width: 768px) {
@@ -239,13 +238,13 @@ export const darkTheme = {
       }
       &:focus-visible {
         h2 {
-          color: var(--d-primary-color);
+          color: var(--d-secondary-color);
         }
         h3 {
-          color: var(--d-primary-color);
+          color: var(--d-secondary-color);
         }
         svg {
-          color: var(--d-primary-color);
+          color: var(--d-secondary-color);
         }
       }
     }
@@ -307,6 +306,10 @@ export const lightTheme = {
     }
   `,
 
+  accent__line: css`
+    background: var(--text-gradient);
+  `,
+
   // =========================================================
   //   NAVIGATION
   progressBar: css`
@@ -322,12 +325,12 @@ export const lightTheme = {
       font-family: var(--logo-font);
       letter-spacing: var(--let-space-sm);
       color: var(--primary-color);
-      font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+      font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-2));
       span {
         font-weight: var(--fw-800);
         font-family: var(--logo-font);
         letter-spacing: var(--let-space-sm);
-        font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-3));
+        font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-1));
         background-image: var(--text-gradient);
         color: var(--primary-color);
 
@@ -422,29 +425,25 @@ export const lightTheme = {
   trackList: css`
     h1 {
       font-weight: var(--fw-700);
-      font-family: var(--primary-font);
-      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-4));
-      text-shadow: 3px 3px 1px var(--third-color-tint-2);
+      font-family: var(--logo-font);
+      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-2));
       letter-spacing: var(--let-space-xs);
-      /* color: var(--primary-color); */
-      -webkit-text-stroke-width: 0.5px;
-      -webkit-text-stroke-color: var(--secondary-color-tint);
+      color: var(--secondary-color);
 
       @media (max-width: 1600px) {
       }
       @media (max-width: 1080px) {
       }
       @media (max-width: 768px) {
-        text-shadow: 3px 3px 1px var(--secondary-color-tint);
       }
       @media (max-width: 480px) {
-        text-shadow: 2px 2px 1px var(--secondary-color-tint);
       }
 
-      @supports (-webkit-text-stroke-width: none) or
-        (-webkit-text-stroke-color: none) {
-        -webkit-text-stroke-width: none;
-        -webkit-text-stroke-color: none;
+      span {
+        font-weight: var(--fw-800);
+        font-family: var(--logo-font);
+        letter-spacing: var(--let-space-sm);
+        color: var(--secondary-color);
       }
     }
   `,
@@ -454,11 +453,9 @@ export const lightTheme = {
       border-bottom: var(--sm-border);
       h2 {
         color: var(--secondary-color);
-        /* text-shadow: 2px 2px 1px var(--third-color); */
       }
       h3 {
         color: var(--secondary-color-tint);
-        /* text-shadow: 2px 2px 1px var(--third-color); */
       }
       svg {
         color: var(--secondary-color);
@@ -467,17 +464,16 @@ export const lightTheme = {
 
       // Link Overlay
       &:hover {
+        background: var(--third-color-tint);
         border-bottom: none;
         transform: scale(1.01);
         transition: var(--transition);
         border-radius: var(--md-radius);
         h2 {
           color: var(--secondary-color);
-          text-shadow: none;
         }
         h3 {
           color: var(--secondary-color);
-          text-shadow: none;
         }
         svg {
           color: var(--secondary-color);
@@ -491,6 +487,7 @@ export const lightTheme = {
           border-radius: var(--xs-radius);
         }
       }
+
       &:focus-visible {
         h2 {
           color: var(--secondary-color);

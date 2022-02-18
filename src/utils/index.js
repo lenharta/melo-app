@@ -4,15 +4,11 @@ export const navbarDelay = 6000;
 export const isHome = window.location.pathname === "/";
 
 export const colors = [
-  "#005F73",
-  "#0A9396",
-  "#94D2BD",
-  "#E9D8A6",
-  "#EE9B00",
-  "#CA6702",
-  "#BB3E03",
-  "#AE2012",
-  "#9B2226"
+  "rgba(245, 133, 41, 0.4)",
+  "rgba(254, 218, 119, 0.4)",
+  "rgba(221, 42, 123, 0.4)",
+  "rgba(129, 52, 175, 0.4)",
+  "rgba(81, 91, 212, 0.4)"
 ];
 
 // Loader Animations

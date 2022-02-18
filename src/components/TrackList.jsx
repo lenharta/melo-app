@@ -4,30 +4,35 @@ import { Track } from "../components";
 import { useNumberedList } from "../utils/hooks/useNumberedList";
 import { colors } from "../utils";
 
-const TrackList = ({ charts, id, countEnd }) => {
+const TrackList = ({ tracks, id, countEnd, isNumbered }) => {
   const [count, setCount] = useState([]);
+  const [numberedList, setNumberedList] = useState(false);
   const trackNumbers = useNumberedList(countEnd);
-  const [randomColor, setRandomColor] = useState([]);
-  const randomize = colors[Math.floor(Math.random() * colors.length)];
 
   useEffect(() => {
-    setRandomColor(randomize);
     setCount(trackNumbers);
+    setNumberedList(isNumbered);
   }, []);
 
   return (
     <>
       <Container id={id}>
-        <NumberList>
-          {count.map((number) => (
-            <TrackNumber key={number} randomColor={randomColor}>
-              <h1>{number}.</h1>
-            </TrackNumber>
-          ))}
-        </NumberList>
+        {isNumbered === true ? (
+          <NumberList>
+            {count.map((number) => (
+              <TrackNumber key={number}>
+                <h1>
+                  {number}
+                  <span>.</span>
+                </h1>
+                <div className="accent__line"></div>
+              </TrackNumber>
+            ))}
+          </NumberList>
+        ) : null}
         <TrackWrapper>
-          {charts.map((data, i) => {
-            return <Track key={i} {...data} {...countEnd} />;
+          {tracks.map((data, i) => {
+            return <Track key={i} {...data} />;
           })}
         </TrackWrapper>
       </Container>
@@ -37,17 +42,23 @@ const TrackList = ({ charts, id, countEnd }) => {
 
 const Container = styled.div`
   ${(props) => props.theme.trackList}
-  /* background-color: yellow; */
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
   grid-template-areas: "a b b b b b b b b b b b";
+  grid-template-columns: repeat(12, 1fr);
+  display: grid;
+  width: 100%;
+
+  /* ${(props) =>
+    props.isNumbered === false
+      ? 'grid-template-areas: "b b b b b b b b b b b b";'
+      : null} */
 `;
 
 const NumberList = styled.div`
-  grid-area: a;
   height: 125px;
   width: 100%;
+  grid-area: a;
+
+  /* ${(props) => (props.isNumbered === false ? "display: none;" : null)} */
 
   @media (max-width: 1600px) {
     height: 105px;
@@ -64,16 +75,15 @@ const NumberList = styled.div`
 
 const TrackNumber = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
-  justify-content: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  /* text-align: center; */
   height: 100%;
-  text-align: left;
+  width: 100%;
   
   h1 {
-    /* color: var(--primary-color); */
-    
-    color: ${(props) => props.randomColor};
-    width: 100%;
-    
+    width: 90%;
+
     @media (max-width: 1600px) {
     }
     @media (max-width: 1080px) {
@@ -82,17 +92,12 @@ const TrackNumber = styled.div`
     }
     @media (max-width: 480px) {
       justify-content: flex-end;
-      width: 90%;
     }
-    
-    /* @supports (-webkit-text-fill-color: transparent) {
-      -webkit-text-fill-color: transparent;
-    } */
   }
-  `;
+`;
 
 const TrackWrapper = styled.div`
   grid-area: b;
-  `;
+`;
 
 export default TrackList;

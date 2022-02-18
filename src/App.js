@@ -51,3 +51,12 @@ const Main = styled.main`
 `;
 
 export default App;
+
+
+// RANDOM COLOR GENERATOR
+//  const [randomColor, setRandomColor] = useState("");
+//  const randomize = colors[Math.floor(Math.random() * colors.length)];
+//
+//   useEffect(() => {
+//     setRandomColor(randomize);
+//   }, []);

@@ -24,7 +24,7 @@ const navLinkData = [
   {
     id: 2,
     title: "Discover",
-    path: "/discover",
+    path: "#",
     aria: "Discover",
     icon: <MdExplore />,
   },
@@ -45,7 +45,7 @@ const Nav = () => {
       <Header>
         <Inner>
           <Logo>
-            <h1><span>Mel</span>o</h1>
+            <h1>Melo</h1>
           </Logo>
 
           <NavBar>

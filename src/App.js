@@ -50,13 +50,4 @@ const Main = styled.main`
   max-width: 1600px;
 `;
 
-export default App;
-
-
-// RANDOM COLOR GENERATOR
-//  const [randomColor, setRandomColor] = useState("");
-//  const randomize = colors[Math.floor(Math.random() * colors.length)];
-//
-//   useEffect(() => {
-//     setRandomColor(randomize);
-//   }, []);                                                                
+export default App;                                                             

@@ -24,7 +24,7 @@ const TrackList = ({ tracks, id, countEnd, isNumbered }) => {
               <TrackNumber key={number}>
                 <h1>
                   {number}
-                  <span>.</span>
+                  {/* <span>.</span> */}
                 </h1>
                 <div className="accent__line"></div>
               </TrackNumber>
@@ -47,14 +47,14 @@ const Container = styled.div`
   flex-direction: column;
   ${(props) => props.theme.trackList}
   width: 100%;
-`;
+  `;
 
 const Inner = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   align-items: flex-start;
   flex-direction: row;
   width: 100%;
-`;
+  `;
 
 const NumberList = styled.div`
   height: 125px;
@@ -76,13 +76,14 @@ const NumberList = styled.div`
 const TrackNumber = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   justify-content: flex-end;
+  align-items: flex-start;
   flex-direction: column;
   /* text-align: center; */
   height: 100%;
   width: 100%;
   
   h1 {
-    width: 60%;
+    width: 70%;
     
     @media (max-width: 1600px) {
     }
@@ -94,12 +95,12 @@ const TrackNumber = styled.div`
     @media (max-width: 480px) {
     }
   }
-`;
+  `;
 
 const TrackWrapper = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   flex-direction: column;
   width: 100%;
-`;
+  `;
 
 export default TrackList;

@@ -62,8 +62,6 @@ const Container = styled.section`
 const Inner = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   width: 100%;
-  /* display: grid; */
-  /* grid-template-areas: ; */
   @media (max-width: 1600px) {
   }
   @media (max-width: 1080px) {
@@ -75,22 +73,13 @@ const Inner = styled.div`
 `;
 
 const ChartsTitle = styled.div`
-  // Custom Class
+  // Custom Class header__title
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const ChartTracks = styled.div`
   width: 100%;
-  @media (max-width: 1600px) {
-  }
-  @media (max-width: 1080px) {
-  }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 480px) {
-  }
-`;
-
-const ChartsTracks = styled.div`
   @media (max-width: 1600px) {
   }
   @media (max-width: 1080px) {

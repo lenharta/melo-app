@@ -43,7 +43,7 @@ const variables = css`
     --secondary-color-tint-2: rgba(5, 4, 6, 0.3);
     --third-color: rgb(161, 163, 165);
     --third-color-tint: rgba(161, 163, 165, 0.2);
-    --third-color-tint-2: rgba(161, 163, 165, 0.6); 
+    --third-color-tint-2: rgba(161, 163, 165, 0.8); 
     // Borders
     --sm-border: solid 2px rgba(161, 163, 165, 0.4);
     --md-border: solid 4px rgba(161, 163, 165, 0.4);

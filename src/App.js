@@ -5,7 +5,7 @@ import { GlobalStyle } from "./styles";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/theme";
 import { Routes, Route } from "react-router-dom";
-import { Charts, Dashboard } from "./routes";
+import { Charts, Dashboard, Playlists } from "./routes";
 import { useDarkMode } from "./utils/hooks/useDarkTheme";
 
 const App = () => {
@@ -34,8 +34,18 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="charts" element={<Charts />} />
-                {/* Construction page */}
-                <Route path="playlist" element={<Playlist />} />
+
+                <Route path="playlist" element={<Playlists />}>
+                  <Route path=":playlistId" element={<Playlist />} />
+                </Route>
+
+                {/* <Route path="artist" element={<Artist />}>
+                  <Route path=":artistId" element={<Artist />} />
+                </Route>
+
+                <Route path="album" element={<Album />}>
+                  <Route path=":albumId" element={<Album />} />
+                </Route> */}
               </Routes>
             </Main>
           </>

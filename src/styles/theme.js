@@ -302,7 +302,18 @@ export const lightTheme = {
 
   header__title: css`
     h1 {
+      font-weight: var(--fw-800);
+      font-family: var(--logo-font);
+      letter-spacing: var(--let-space-sm);
+      font-size: clamp(var(--fz-xl-2), 5vw, var(--fz-xl-4));
+      background-image: var(--text-gradient);
       color: var(--primary-color);
+
+      @supports (-webkit-text-fill-color: transparent) or
+        (-webkit-background-clip: none) {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
     }
   `,
 
@@ -426,7 +437,7 @@ export const lightTheme = {
     h1 {
       font-weight: var(--fw-700);
       font-family: var(--logo-font);
-      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-2));
+      font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-lg-2));
       letter-spacing: var(--let-space-xs);
       color: var(--secondary-color);
 
@@ -464,19 +475,19 @@ export const lightTheme = {
 
       // Link Overlay
       &:hover {
-        background: var(--third-color-tint);
+        background: var(--secondary-color-tint);
         border-bottom: none;
         transform: scale(1.01);
         transition: var(--transition);
         border-radius: var(--md-radius);
         h2 {
-          color: var(--secondary-color);
+          color: var(--primary-color);
         }
         h3 {
-          color: var(--secondary-color);
+          color: var(--primary-color);
         }
         svg {
-          color: var(--secondary-color);
+          color: var(--primary-color);
           filter: none;
         }
 
@@ -489,18 +500,31 @@ export const lightTheme = {
       }
 
       &:focus-visible {
+        background: var(--secondary-color-tint);
         h2 {
-          color: var(--secondary-color);
+          color: var(--primary-color);
           text-shadow: none;
         }
         h3 {
+          color: var(--primary-color);
           text-shadow: none;
-          color: var(--secondary-color);
         }
         svg {
-          color: var(--secondary-color);
+          color: var(--primary-color);
           filter: none;
         }
+      }
+
+      @media (max-width: 1600px) {
+      }
+      @media (max-width: 1080px) {
+      }
+      @media (max-width: 768px) {
+        svg {
+          filter: drop-shadow(2px 2px 1px var(--third-color));
+        }
+      }
+      @media (max-width: 480px) {
       }
     }
   `,
@@ -514,7 +538,7 @@ export const lightTheme = {
 //   to left,
 //   var(--gray-tint) 0%,
 //   var(--off-white) 100%
-// );                               
+// );
 
 // var(--w-accent-gradient)
 // var(--accent-gradient)

@@ -148,7 +148,25 @@ const GlobalStyle = createGlobalStyle`
 
   .header__title {
     ${(props) => props.theme.header__title}
-    // need to edit
+    ${({ theme }) => theme.mixins.flexCenter}
+    justify-content: flex-start;
+    width: 100%;
+    
+    h1 {
+      margin: 15px 0px;
+    }
+    
+    @media (max-width: 1600px) {
+    }
+    @media (max-width: 1080px) {
+    }
+    @media (max-width: 768px) {
+      h1 {
+        margin: 10px 0px;
+      }
+    }
+    @media (max-width: 480px) {
+    }
   }
 
   // Templates
@@ -194,7 +212,8 @@ const GlobalStyle = createGlobalStyle`
 
   .accent__line {
     ${(props) => props.theme.accent__line}
-    width: 60%;
+    ${({ theme }) => theme.mixins.flexCenter}
+    width: 70%;
     height: 6px;
     border-radius: var(--md-radius);
     
@@ -202,10 +221,10 @@ const GlobalStyle = createGlobalStyle`
       height: 5px;
     }
     @media (max-width: 1080px) {
-      width: 100%;
-      height: 4px;
     }
     @media (max-width: 768px) {
+      width: 100%;
+      height: 4px;
     }
     @media (max-width: 480px) {
     }

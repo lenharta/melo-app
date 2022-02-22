@@ -76,7 +76,7 @@ const Container = styled.li`
   // Router Link
   a {
     border-radius: 0px;
-    padding: 0 10px;
+    padding: 10px 20px;
     width: 100%;
     height: 100%;
     &:hover,
@@ -93,9 +93,9 @@ const Container = styled.li`
     @media (max-width: 1080px) {
     }
     @media (max-width: 768px) {
+      padding: 7.5px 7.5px;
     }
     @media (max-width: 480px) {
-      padding: 0 7.5px;
     }
   }
 

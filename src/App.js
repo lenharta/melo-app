@@ -34,10 +34,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="charts" element={<Charts />} />
-
-                <Route path="playlist" element={<Playlists />}>
-                  <Route path=":playlistId" element={<Playlist />} />
-                </Route>
+                <Route path="playlist/:playlistId" element={<Playlist />} />
 
                 {/* <Route path="artist" element={<Artist />}>
                   <Route path=":artistId" element={<Artist />} />

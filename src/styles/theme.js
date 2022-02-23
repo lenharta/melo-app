@@ -43,8 +43,24 @@ export const darkTheme = {
   //   GLOBAL CLASSES
 
   header__title: css`
+    border-top-left-radius: var(--xs-radius);
+    border-top-right-radius: var(--xs-radius);
+    background-color: var(--d-primary-color-tint);
+    /* background: var(--text-gradient); */
     h1 {
-      color: var(--d-primary-color);
+      font-weight: var(--fw-800);
+      font-family: var(--secondary-font);
+      letter-spacing: var(--let-space-sm);
+      font-size: clamp(var(--fz-xl-2), 5vw, var(--fz-xl-4));
+      color: var(--d-secondary-color);
+      /* color: var(--d-primary-color); */
+      background-image: var(--text-gradient);
+
+      @supports (-webkit-text-fill-color: transparent) or
+        (-webkit-background-clip: none) {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
     }
   `,
 
@@ -165,7 +181,7 @@ export const darkTheme = {
     }
   `,
 
-  section__image: css`
+  tab__image: css`
     border: var(--d-md-border);
   `,
 
@@ -301,13 +317,16 @@ export const lightTheme = {
   //   GLOBAL CLASSES
 
   header__title: css`
+    border-top-left-radius: var(--xs-radius);
+    border-top-right-radius: var(--xs-radius);
+    background-color: var(--secondary-color-tint);
     h1 {
       font-weight: var(--fw-800);
-      font-family: var(--logo-font);
+      font-family: var(--secondary-font);
       letter-spacing: var(--let-space-sm);
       font-size: clamp(var(--fz-xl-2), 5vw, var(--fz-xl-4));
-      background-image: var(--text-gradient);
       color: var(--primary-color);
+      background-image: var(--text-gradient);
 
       @supports (-webkit-text-fill-color: transparent) or
         (-webkit-background-clip: none) {
@@ -427,7 +446,7 @@ export const lightTheme = {
     }
   `,
 
-  section__image: css`
+  tab__image: css`
     border: var(--md-border);
   `,
 

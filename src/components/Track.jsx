@@ -30,7 +30,7 @@ const Track = ({
           aria-label={"Play " + title_short + " Song Artist: " + artist.name}
         >
           <Inner>
-            <img src={album.cover_medium} alt={album.title} />
+            <img className="track__img" src={album.cover_medium} alt={album.title} />
 
             <SongTitle>
               <h2>{title_short}</h2>
@@ -103,26 +103,6 @@ const Container = styled.li`
     grid-area: a;
     align-self: center;
     justify-self: center;
-    border-radius: 15px;
-    height: 95px;
-    width: 95px;
-
-    @media (max-width: 1600px) {
-      border-radius: 15px;
-      height: 85px;
-      width: 85px;
-    }
-    @media (max-width: 1080px) {
-      border-radius: 10px;
-      height: 75px;
-      width: 75px;
-    }
-    @media (max-width: 768px) {
-    }
-    @media (max-width: 480px) {
-      height: 70px;
-      width: 70px;
-    }
   }
 `;
 

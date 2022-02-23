@@ -2,7 +2,6 @@ import axios from "../api/axios";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { TrackList } from "../components";
-import requests from "../api/Requests";
 import { motion } from "framer-motion";
 import { spring } from "../utils";
 
@@ -10,11 +9,15 @@ const Charts = () => {
   const [tracks, setTracks] = useState([]);
   const [titled, setTitled] = useState([]);
 
+  const chartRequests = {
+    fetchTopUS: "/playlist/1313621735/",
+  };
+
   // const info = titled
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(requests.fetchTopUS);
+      const response = await axios.get(chartRequests.fetchTopUS);
       setTracks(response.data.tracks.data);
       setTitled(response.data);
       console.log(response.data);
@@ -29,24 +32,26 @@ const Charts = () => {
   return (
     <>
       <Container>
-        <ChartsTitle className="header__title">
+        <ChartTitle className="header__title">
           <h1>{titled.title}</h1>
-        </ChartsTitle>
+        </ChartTitle>
+        <div className="accent__line"></div>
 
         <Inner>
-          {/* <ChartInfo
-            key={titled.id}
-          >
-            <ChartSelect transition={spring} className="section__image">
-              <img src={titled.picture_xl} />
-              <select>
-                <option>{titled.title}</option>
-              </select>
-            </ChartSelect>
-          </ChartInfo> */}
+          <ChartSelect transition={spring}>
+            <img className="tab__image" src={titled.picture_xl} />
+            {/* <Dropdown>
+              <DropItem></DropItem>
+            </Dropdown> */}
+          </ChartSelect>
 
           <ChartTracks>
-            <TrackList tracks={tracks} id={titled.id} isNumbered={true} countEnd={101} />
+            <TrackList
+              tracks={tracks}
+              id={titled.id}
+              isNumbered={true}
+              countEnd={101}
+            />
           </ChartTracks>
         </Inner>
       </Container>
@@ -55,12 +60,13 @@ const Charts = () => {
 };
 
 const Container = styled.section`
-  ${( props ) => props.theme.chartsContainer}
-  // Custom Section Class in Global Styles
+  ${(props) =>
+    props.theme.chartsContainer}// Custom Section Class in Global Styles
 `;
 
 const Inner = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
+  flex-direction: column;
   width: 100%;
   @media (max-width: 1600px) {
   }
@@ -72,10 +78,8 @@ const Inner = styled.div`
   }
 `;
 
-const ChartsTitle = styled.div`
+const ChartTitle = styled.div`
   // Custom Class header__title
-  flex-direction: column;
-  align-items: flex-start;
 `;
 
 const ChartTracks = styled.div`
@@ -91,6 +95,28 @@ const ChartTracks = styled.div`
 `;
 
 const ChartSelect = styled.div`
+  @media (max-width: 1600px) {
+  }
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
+`;
+
+const Dropdown = styled.div`
+  @media (max-width: 1600px) {
+  }
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
+`;
+
+const DropItem = styled.div`
   @media (max-width: 1600px) {
   }
   @media (max-width: 1080px) {

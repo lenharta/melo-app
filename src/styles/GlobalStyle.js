@@ -152,8 +152,10 @@ const GlobalStyle = createGlobalStyle`
     justify-content: flex-start;
     width: 100%;
     
+    
     h1 {
-      margin: 15px 0px;
+      margin: 30px 0px;
+      padding: 0px 0px 0px 30px;
     }
     
     @media (max-width: 1600px) {
@@ -162,46 +164,72 @@ const GlobalStyle = createGlobalStyle`
     }
     @media (max-width: 768px) {
       h1 {
-        margin: 10px 0px;
+        margin: 20px 0px;
+        padding: 0px 0px 0px 15px;
       }
     }
     @media (max-width: 480px) {
+      h1 {
+        margin: 10px 0px;
+        padding: 0px 0px 0px 10px;
+      }
     }
   }
 
   // Templates
-  .section__image {
-    img {
-      ${(props) => props.theme.section__image};
-      width: 250px;
-      height: 250px;
-      border-radius: 20px;
-      margin-bottom: 35px;
-      
-      @media (max-width: 1600px) {
-        border-radius: 15px;
-        margin-bottom: 25px;
-        width: 200px;
-        height: 200px;
-      }
-      
-      @media (max-width: 1080px) {
-        border-radius: 10px;
-        margin-bottom: 0px;
-        width: 100px;
-        height: 100px;
-      }
-      
-      @media (max-width: 768px) {
-        border-radius: 10px;
-        width: 80px;
-        height: 80px;
-      }
-      @media (max-width: 480px) {
-        border-radius: 10px;
-        width: 60px;
-        height: 60px;
-      }
+  .tab__image {
+    ${(props) => props.theme.tab__image};
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    
+    @media (max-width: 1600px) {
+      border-radius: 15px;
+      margin-bottom: 25px;
+      width: 150px;
+      height: 150px;
+    }
+    
+    @media (max-width: 1080px) {
+      border-radius: 10px;
+      margin-bottom: 0px;
+      width: 100px;
+      height: 100px;
+    }
+    
+    @media (max-width: 768px) {
+      border-radius: 10px;
+      width: 80px;
+      height: 80px;
+    }
+    @media (max-width: 480px) {
+      border-radius: 10px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .track__img {
+    border-radius: 15px;
+    height: 95px;
+    width: 95px;
+
+    @media (max-width: 1600px) {
+      border-radius: 15px;
+      height: 85px;
+      width: 85px;
+    }
+    @media (max-width: 1080px) {
+      border-radius: 10px;
+      height: 75px;
+      width: 75px;
+    }
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 480px) {
+      height: 70px;
+      width: 70px;
     }
   }
 
@@ -213,17 +241,15 @@ const GlobalStyle = createGlobalStyle`
   .accent__line {
     ${(props) => props.theme.accent__line}
     ${({ theme }) => theme.mixins.flexCenter}
-    width: 70%;
+    width: 100%;
     height: 6px;
-    border-radius: var(--md-radius);
-    
+
     @media (max-width: 1600px) {
       height: 5px;
     }
     @media (max-width: 1080px) {
     }
     @media (max-width: 768px) {
-      width: 100%;
       height: 4px;
     }
     @media (max-width: 480px) {

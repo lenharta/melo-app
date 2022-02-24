@@ -33,11 +33,11 @@ const Track = ({
             <img className="track__img" src={album.cover_medium} alt={album.title} />
 
             <SongTitle>
-              <h2>{title_short}</h2>
+              <h3>{title_short}</h3>
             </SongTitle>
 
             <Artist>
-              <h3>{artist.name}</h3>
+              <h5>{artist.name}</h5>
             </Artist>
 
             <Explicit>
@@ -124,24 +124,6 @@ const Inner = styled.div`
   }
   @media (max-width: 480px) {
   }
-
-  h1 {
-    text-align: center;
-    justify-self: center;
-    align-self: center;
-    height: 50px;
-    width: 70px;
-
-    @media (max-width: 1600px) {
-    }
-    @media (max-width: 1080px) {
-    }
-    @media (max-width: 768px) {
-    }
-    @media (max-width: 480px) {
-      width: 60px;
-    }
-  }
 `;
 
 const SongTitle = styled.div`
@@ -150,7 +132,7 @@ const SongTitle = styled.div`
   justify-self: start;
   width: 98%;
 
-  h2 {
+  h3 {
     width: 98%;
     height: 40%;
     line-height: 1.4;
@@ -189,7 +171,7 @@ const Artist = styled.div`
   justify-self: start;
   width: 98%;
 
-  h3 {
+  h5 {
     width: 98%;
     height: 60%;
     line-height: 1.2;

@@ -10,21 +10,25 @@ const Charts = () => {
   const [titled, setTitled] = useState([]);
 
   const chartRequests = {
-    fetchTopUS: "/playlist/1313621735/",
+    fetchTopGermany: "/playlist/1111143121/",
+    fetchTopMexico: "/playlist/1111142361/",
+    fetchTopBrazil: "/playlist/1111141961/",
+    fetchTopWorld: "/playlist/3155776842/",
+    fetchTopUk: "/playlist/1111142221/",
+    fetchTopUS: "/playlist/1313621735",
   };
 
   // const info = titled
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(chartRequests.fetchTopUS);
+      const response = await axios.get(chartRequests.fetchTopBrazil);
       setTracks(response.data.tracks.data);
       setTitled(response.data);
       console.log(response.data);
       return response;
     };
-
-    // window.scrollTo(0, 0);
+    
     fetchData();
   }, []);
 
@@ -32,18 +36,16 @@ const Charts = () => {
   return (
     <>
       <Container>
-        <ChartTitle className="header__title">
-          <h1>{titled.title}</h1>
-        </ChartTitle>
-        <div className="accent__line"></div>
-
         <Inner>
-          <ChartSelect transition={spring}>
-            <img className="tab__image" src={titled.picture_xl} />
+          <ChartsHeader transition={spring}>
+            <h1>{titled.title}</h1>
+            <img className="tab__img" src={titled.picture_xl} />
             {/* <Dropdown>
               <DropItem></DropItem>
             </Dropdown> */}
-          </ChartSelect>
+          </ChartsHeader>
+
+          <div className="accent__line"></div>
 
           <ChartTracks>
             <TrackList
@@ -68,14 +70,8 @@ const Inner = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   flex-direction: column;
   width: 100%;
-  @media (max-width: 1600px) {
-  }
-  @media (max-width: 1080px) {
-  }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 480px) {
-  }
+  height: 100%;
+  
 `;
 
 const ChartTitle = styled.div`
@@ -94,18 +90,29 @@ const ChartTracks = styled.div`
   }
 `;
 
-const ChartSelect = styled.div`
-  @media (max-width: 1600px) {
-  }
-  @media (max-width: 1080px) {
-  }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 480px) {
+const ChartsHeader = styled.div`
+  ${({ theme }) => theme.mixins.flexBetween}
+  ${(props) => props.theme.ChartsHeader}
+  align-items: flex-end;
+  width: 100%;
+  
+  h1 {
+    padding: 25px 0px;
+    
+    @media (max-width: 1600px) {
+    }
+    @media (max-width: 1080px) {
+      padding: 15px 0px;
+    }
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 480px) {
+      padding: 10px 0px;
+    }
   }
 `;
 
-const Dropdown = styled.div`
+const Dropdown = styled.select`
   @media (max-width: 1600px) {
   }
   @media (max-width: 1080px) {

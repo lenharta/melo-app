@@ -45,8 +45,8 @@ const GlobalStyle = createGlobalStyle`
   main {
     max-width: 1800px;
     margin: 0px auto;
+    margin-top: 100px;
     padding: 0 100px;
-    margin-top: 125px;
 
     @media (max-width: 1600px) {
       margin-top: 100px;
@@ -55,12 +55,11 @@ const GlobalStyle = createGlobalStyle`
       padding: 0 50px;
     }
     @media (max-width: 768px) {
-      padding: 0 25px;
       margin-top: 90px;
+      padding: 0 25px;
     }
     @media (max-width: 480px) {
-      padding: 0 10px;
-      margin-top: 80px;
+      padding: 0px;
     }
   }
 
@@ -68,160 +67,138 @@ const GlobalStyle = createGlobalStyle`
     ${({ theme }) => theme.mixins.flexCenter}
     flex-direction: column;
     width: 100%;
-    padding: 25px 0;
+    padding: 100px 0;
 
     @media (max-width: 1600px) {
-      padding: 20px 0;
+      padding: 100px 0;
     }
-
+    
     @media (max-width: 1080px) {
-      padding: 10px 0;
+      padding: 45px 0;
     }
     @media (max-width: 768px) {
-      padding: 0px 0;
+      padding: 20px 0;
     }
     @media (max-width: 480px) {
+      padding: 5px 0;
+
     }
   }
+
+  // =======================================================================================
+  //   TEXT ELEMENTS
+  // =======================================================================================
+  
+  // =========================================================
+  //  Links
   
   a {
     text-decoration: none;
     text-decoration-color: none;
-    font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
+    font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-md-4));
     font-family: var(--secondary-font);
     font-weight: var(--fw-800);
   }
 
+  // =========================================================
+  //  Headers
+
   h1 {
-    font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
-    font-family: var(--primary-font);
-    font-weight: var(--fw-800);
+    font-weight: var(--fw-500);
+    font-family: var(--secondary-font);
+    font-size: clamp(var(--fz-md-4), 5vw, var(--fz-xl-1));
+    letter-spacing: var(--let-space-xs);
   }
   
   h2 {
-    font-size: clamp(var(--fz-md-1), 5vw, var(--fz-lg-2));
-    font-family: var(--primary-font);
-    font-weight: var(--fw-900);
-  }
-  
-  h3 {
-    font-size: clamp(var(--fz-sm-4), 2vw, var(--fz-md-4));
-    font-family: var(--secondary-font);
     font-weight: var(--fw-500);
+    font-family: var(--secondary-font);
+    font-size: clamp(var(--fz-sm-2), 5vw, var(--fz-lg-3));
+    letter-spacing: var(--let-space-xs);
+  }
+
+  h3 {
+    font-weight: var(--fw-600);
+    font-family: var(--primary-font);
+    font-size: clamp(var(--fz-md-1), 5vw, var(--fz-lg-2));
   }
 
   h4 {
     // add styles here
   }
-
+  
   h5 {
-    // add styles here
+    font-size: clamp(var(--fz-sm-4), 5vw, var(--fz-md-3));
+    letter-spacing: var(--let-space-xs);
+    font-family: var(--secondary-font);
+    font-weight: var(--fw-500);
   }
+
+  // =========================================================
+  //  Regular Text
 
   p {
-    font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-md-2));
-    font-family: var(--secondary-font);
-    font-weight: var(--fw-800);
-  }
 
-  img {
-    ${(props) => props.theme.img}
   }
 
   ul {
     list-style-type: none;
   }
+
+  // For Headers with Logo Font
+  span {
+    font-weight: var(--fw-300);
+    font-family: var(--logo-font);
+    letter-spacing: var(--let-space-sm);
+    font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-2));
+  }
   
   select {
     ${(props) => props.theme.select}
-    border-radius: 10px;
-    font-family: var(--secondary-font);
-    font-size: var(--fz-sm-3);
-    font-weight: var(--fw-600);
-    text-transform: uppercase;
-    letter-spacing: 4px;
     cursor: pointer;
   }
 
+  // =======================================================================================
+  //   CLASSES
+  // =======================================================================================
+  
   // =========================================================
-  //   GLOBAL CLASSES
+  // Images
 
-  .header__title {
-    ${(props) => props.theme.header__title}
-    ${({ theme }) => theme.mixins.flexCenter}
-    justify-content: flex-start;
-    width: 100%;
-    
-    
-    h1 {
-      margin: 30px 0px;
-      padding: 0px 0px 0px 30px;
-    }
+  .tab__img {
+    ${(props) => props.theme.tab__img};
+    width: 250px;
+    height: 250px;
+    margin: 0px;
     
     @media (max-width: 1600px) {
+      width: 200px;
+      height: 200px;
     }
+    
     @media (max-width: 1080px) {
-    }
-    @media (max-width: 768px) {
-      h1 {
-        margin: 20px 0px;
-        padding: 0px 0px 0px 15px;
-      }
-    }
-    @media (max-width: 480px) {
-      h1 {
-        margin: 10px 0px;
-        padding: 0px 0px 0px 10px;
-      }
-    }
-  }
-
-  // Templates
-  .tab__image {
-    ${(props) => props.theme.tab__image};
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
-    margin-bottom: 35px;
-    
-    @media (max-width: 1600px) {
-      border-radius: 15px;
-      margin-bottom: 25px;
       width: 150px;
       height: 150px;
     }
     
-    @media (max-width: 1080px) {
-      border-radius: 10px;
-      margin-bottom: 0px;
+    @media (max-width: 768px) {
       width: 100px;
       height: 100px;
     }
-    
-    @media (max-width: 768px) {
-      border-radius: 10px;
-      width: 80px;
-      height: 80px;
-    }
     @media (max-width: 480px) {
-      border-radius: 10px;
-      width: 60px;
-      height: 60px;
     }
   }
-
+  
   .track__img {
-    border-radius: 15px;
+    ${(props) => props.theme.track__img};
     height: 95px;
     width: 95px;
-
+    
     @media (max-width: 1600px) {
-      border-radius: 15px;
       height: 85px;
       width: 85px;
     }
     @media (max-width: 1080px) {
-      border-radius: 10px;
       height: 75px;
       width: 75px;
     }
@@ -232,6 +209,9 @@ const GlobalStyle = createGlobalStyle`
       width: 70px;
     }
   }
+  
+  // =========================================================
+  // Gradients
 
   .gradient__font {
     ${(props) => props.theme.gradient__font}

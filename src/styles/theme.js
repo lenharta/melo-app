@@ -84,12 +84,8 @@ export const darkTheme = {
   `,
 
   navLogo: css`
-    h1 {
-      font-weight: var(--fw-800);
-      font-family: var(--logo-font);
-      letter-spacing: var(--let-space-sm);
+    span {
       color: var(--d-secondary-color);
-      font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-2));
       span {
         font-weight: var(--fw-800);
         font-family: var(--logo-font);
@@ -182,18 +178,14 @@ export const darkTheme = {
   `,
 
   tab__image: css`
-    border: var(--d-md-border);
+    /* border: var(--d-md-border); */
   `,
 
   // REUSED COMPONENTS
   // =========================================================
 
   trackList: css`
-    h1 {
-      font-weight: var(--fw-700);
-      font-family: var(--logo-font);
-      font-size: clamp(var(--fz-md-4), 5vw, var(--fz-lg-2));
-      letter-spacing: var(--let-space-xs);
+    h2 {
       color: var(--d-secondary-color);
 
       @media (max-width: 1600px) {
@@ -204,23 +196,16 @@ export const darkTheme = {
       }
       @media (max-width: 480px) {
       }
-
-      span {
-        font-weight: var(--fw-800);
-        font-family: var(--logo-font);
-        letter-spacing: var(--let-space-sm);
-        color: var(--d-secondary-color);
-      }
     }
   `,
 
   track: css`
     a {
       border-bottom: var(--sm-border);
-      h2 {
+      h3 {
         color: var(--d-secondary-color);
       }
-      h3 {
+      h5 {
         color: var(--d-secondary-color);
         opacity: 0.6;
       }
@@ -235,10 +220,10 @@ export const darkTheme = {
         transform: scale(1.01);
         transition: var(--transition);
         border-radius: var(--md-radius);
-        h2 {
+        h3 {
           color: var(--d-secondary-color);
         }
-        h3 {
+        h5 {
           color: var(--d-secondary-color);
         }
         svg {
@@ -253,10 +238,10 @@ export const darkTheme = {
         }
       }
       &:focus-visible {
-        h2 {
+        h3 {
           color: var(--d-secondary-color);
         }
-        h3 {
+        h5 {
           color: var(--d-secondary-color);
         }
         svg {
@@ -267,8 +252,21 @@ export const darkTheme = {
   `,
 
   // =========================================================
-  //   ROUTES
-  chartsContainer: css``,
+  //   CHARTS ROUTE
+  ChartsHeader: css`
+    /* background: var(--secondary-color-tint); */
+    h1 {
+      font-size: clamp(var(--fz-md-2), 5vw, var(--fz-xl-4));
+      color: var(--d-secondary-color);
+      background-image: var(--text-gradient);
+
+      @supports (-webkit-text-fill-color: transparent) or
+        (-webkit-background-clip: none) {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    }
+  `,
 };
 
 // ========================================================= //
@@ -302,10 +300,6 @@ export const lightTheme = {
     }
   `,
 
-  img: css`
-    border: var(--sm-border);
-  `,
-
   select: css`
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
@@ -317,28 +311,31 @@ export const lightTheme = {
   //   GLOBAL CLASSES
 
   header__title: css`
-    border-top-left-radius: var(--xs-radius);
-    border-top-right-radius: var(--xs-radius);
-    background-color: var(--secondary-color-tint);
     h1 {
-      font-weight: var(--fw-800);
+      font-weight: var(--fw-600);
       font-family: var(--secondary-font);
       letter-spacing: var(--let-space-sm);
       font-size: clamp(var(--fz-xl-2), 5vw, var(--fz-xl-4));
-      color: var(--primary-color);
-      background-image: var(--text-gradient);
+      color: var(--secondary-color-tint);
+      /* background-image: var(--text-gradient);
 
       @supports (-webkit-text-fill-color: transparent) or
         (-webkit-background-clip: none) {
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-      }
+      } */
     }
   `,
 
   accent__line: css`
     background: var(--text-gradient);
   `,
+
+  track__img: css`
+    border-radius: var(--xs-radius);
+  `,
+
+  tab__img: css``,
 
   // =========================================================
   //   NAVIGATION
@@ -350,26 +347,8 @@ export const lightTheme = {
   `,
 
   navLogo: css`
-    h1 {
-      font-weight: var(--fw-800);
-      font-family: var(--logo-font);
-      letter-spacing: var(--let-space-sm);
+    span {
       color: var(--primary-color);
-      font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-2));
-      span {
-        font-weight: var(--fw-800);
-        font-family: var(--logo-font);
-        letter-spacing: var(--let-space-sm);
-        font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-1));
-        background-image: var(--text-gradient);
-        color: var(--primary-color);
-
-        @supports (-webkit-text-fill-color: transparent) or
-          (-webkit-background-clip: none) {
-          -webkit-text-fill-color: transparent;
-          -webkit-background-clip: text;
-        }
-      }
     }
   `,
 
@@ -451,13 +430,21 @@ export const lightTheme = {
   `,
 
   // =========================================================
-  //   REUSED COMPONENTS
+  //   TRACK COMPONENT
+  // =========================================================
+  numberList: css`
+    /* background-image: var(--text-gradient);
+    background-size: cover;
+
+    @supports (-webkit-text-fill-color: transparent) or
+      (-webkit-background-clip: none) {
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    } */
+  `,
+
   trackList: css`
-    h1 {
-      font-weight: var(--fw-700);
-      font-family: var(--logo-font);
-      font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-lg-2));
-      letter-spacing: var(--let-space-xs);
+    h2 {
       color: var(--secondary-color);
 
       @media (max-width: 1600px) {
@@ -468,23 +455,16 @@ export const lightTheme = {
       }
       @media (max-width: 480px) {
       }
-
-      span {
-        font-weight: var(--fw-800);
-        font-family: var(--logo-font);
-        letter-spacing: var(--let-space-sm);
-        color: var(--secondary-color);
-      }
     }
   `,
 
   track: css`
     a {
       border-bottom: var(--sm-border);
-      h2 {
+      h3 {
         color: var(--secondary-color);
       }
-      h3 {
+      h5 {
         color: var(--secondary-color-tint);
       }
       svg {
@@ -499,32 +479,32 @@ export const lightTheme = {
         transform: scale(1.01);
         transition: var(--transition);
         border-radius: var(--md-radius);
-        h2 {
+        h3 {
           color: var(--primary-color);
         }
-        h3 {
+        h5 {
           color: var(--primary-color);
         }
         svg {
           color: var(--primary-color);
           filter: none;
         }
-
+        
         @media (max-width: 768px) {
           border-radius: var(--sm-radius);
         }
         @media (max-width: 480px) {
-          border-radius: var(--xs-radius);
+          border-radius: none;
         }
       }
 
       &:focus-visible {
         background: var(--secondary-color-tint);
-        h2 {
+        h3 {
           color: var(--primary-color);
           text-shadow: none;
         }
-        h3 {
+        h5 {
           color: var(--primary-color);
           text-shadow: none;
         }
@@ -551,6 +531,14 @@ export const lightTheme = {
   // =========================================================
   //   ROUTES
   chartsContainer: css``,
+
+  ChartsHeader: css`
+    /* background-image: var(--section-header-gradient); */
+    h1 {
+      font-size: clamp(var(--fz-sm-4), 5vw, var(--fz-xl-4));
+      color: var(--secondary-color-tint);
+    }
+  `,
 };
 
 // background: linear-gradient(

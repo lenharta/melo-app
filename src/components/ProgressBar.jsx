@@ -20,12 +20,12 @@ const ProgressBar = () => {
   return (
     <>
       <StyledProgressContainer>
-        <motion.svg height="6" width={width}>
+        <motion.svg height="8" width={width}>
           <motion.line
             style={{ pathLength, scaleX: 1 }}
             x1="100%"
             x2="0"
-            strokeWidth="14"
+            strokeWidth="16"
           />
         </motion.svg>
       </StyledProgressContainer>
@@ -39,6 +39,7 @@ const StyledProgressContainer = styled(motion.div)`
   top: 100px;
   position: fixed;
   z-index: 160;
+  height: 7px;
   left: 0;
   @media (max-width: 1600px) {
     top: 90px;

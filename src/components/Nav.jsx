@@ -45,7 +45,7 @@ const Nav = () => {
       <Header>
         <Inner>
           <Logo>
-            <h1>Melo</h1>
+            <span>Melo</span>
           </Logo>
 
           <NavBar>

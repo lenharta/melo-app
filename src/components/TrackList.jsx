@@ -22,10 +22,10 @@ const TrackList = ({ tracks, id, countEnd, isNumbered }) => {
           <NumberList>
             {count.map((number) => (
               <TrackNumber key={number}>
-                <h2>
+                <h4>
                   {number}
-                  <span>.</span>
-                </h2>
+                  .
+                </h4>
                 <div className="accent__line"></div>
               </TrackNumber>
             ))}
@@ -85,9 +85,8 @@ const TrackNumber = styled.div`
   height: 100%;
   width: 100%;
   
-  h2 {
+  h4 {
     width: 100%;
-    /* width: 70%; */
     
     @media (max-width: 1600px) {
     }

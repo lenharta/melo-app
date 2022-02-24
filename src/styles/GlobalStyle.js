@@ -19,17 +19,9 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body::-webkit-scrollbar {
-    display: none;
-    width: 8px;
-  }
-  body::-webkit-scrollbar-track {
-    ${(props) => props.theme.scrollbarTrack}
-  }
-  body::-webkit-scrollbar-thumb {
-    ${(props) => props.theme.scrollbarThumb}
-    border-radius: 5px;
-  }
+  // ==========================================================
+  //                  GLOBALS
+  // ==========================================================
   body {
     ${(props) => props.theme.body}
     width: 100%;
@@ -42,6 +34,22 @@ const GlobalStyle = createGlobalStyle`
     scrollbar-color: gray;
   }
 
+  //                  SCROLL BAR
+  // ==========================================================
+  body::-webkit-scrollbar {
+    display: none;
+    width: 8px;
+  }
+  body::-webkit-scrollbar-track {
+    ${(props) => props.theme.scrollbarTrack}
+  }
+  body::-webkit-scrollbar-thumb {
+    ${(props) => props.theme.scrollbarThumb}
+    border-radius: 5px;
+  }
+  
+  //                  CONTAINERS
+  // ==========================================================
   main {
     max-width: 1800px;
     margin: 0px auto;
@@ -59,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 0 25px;
     }
     @media (max-width: 480px) {
-      padding: 0px;
+      padding: 0px 5px;
     }
   }
 
@@ -85,85 +93,112 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  // =======================================================================================
-  //   TEXT ELEMENTS
-  // =======================================================================================
-  
-  // =========================================================
-  //  Links
-  
-  a {
-    text-decoration: none;
-    text-decoration-color: none;
-    font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-md-4));
+  //                  INPUTS & MENUS
+  // ==========================================================  
+  select {
+    ${(props) => props.theme.select}
+    font-size: clamp(var(--fz-sm-1), 4vw, var(--fz-md-2));
     font-family: var(--secondary-font);
     font-weight: var(--fw-800);
+    cursor: pointer;
   }
 
-  // =========================================================
-  //  Headers
+  //                  LINKS
+  // ==========================================================
+  a {
+    font-size: clamp(var(--fz-sm-1), 4vw, var(--fz-md-2));
+    font-family: var(--secondary-font);
+    font-weight: var(--fw-600);
+
+    text-decoration-color: none;
+    text-decoration: none;
+  }
+
+  //                  HEADERS
+  // ==========================================================
+  h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    text-decoration-color: none;
+    text-overflow: ellipsis;
+    background-clip: text;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 
   h1 {
-    font-weight: var(--fw-500);
-    font-family: var(--secondary-font);
-    font-size: clamp(var(--fz-md-4), 5vw, var(--fz-xl-1));
+    ${(props) => props.theme.h1}
+    font-size: clamp(var(--fz-md-2), 4vw, var(--fz-xxxl-2));
     letter-spacing: var(--let-space-xs);
+    font-family: var(--primary-font);
+    font-weight: var(--fw-700);
   }
   
   h2 {
-    font-weight: var(--fw-500);
-    font-family: var(--secondary-font);
-    font-size: clamp(var(--fz-sm-2), 5vw, var(--fz-lg-3));
+    ${(props) => props.theme.h2}
+    font-size: clamp(var(--fz-md-2), 4vw, var(--fz-xxxl-1));
     letter-spacing: var(--let-space-xs);
-  }
-
-  h3 {
-    font-weight: var(--fw-600);
     font-family: var(--primary-font);
-    font-size: clamp(var(--fz-md-1), 5vw, var(--fz-lg-2));
+    font-weight: var(--fw-300);
   }
-
+  
+  h3 {
+    ${(props) => props.theme.h3}
+    font-size: clamp(var(--fz-md-1), 4vw, var(--fz-xxl-2));
+    letter-spacing: var(--let-space-xs);
+    font-family: var(--primary-font);
+    font-weight: var(--fw-700);
+  }
+  
   h4 {
-    // add styles here
+    ${(props) => props.theme.h4}
+    font-size: clamp(var(--fz-md-1), 4vw, var(--fz-xxl-1));
+    font-family: var(--primary-font);
+    font-weight: var(--fw-300);
   }
   
   h5 {
-    font-size: clamp(var(--fz-sm-4), 5vw, var(--fz-md-3));
+    ${(props) => props.theme.h5}
+    font-size: clamp(var(--fz-sm-2), 4vw, var(--fz-lg-2));
     letter-spacing: var(--let-space-xs);
-    font-family: var(--secondary-font);
-    font-weight: var(--fw-500);
+    font-family: var(--primary-font);
+    font-weight: var(--fw-900);
   }
 
-  // =========================================================
-  //  Regular Text
-
+  h6 {
+    ${(props) => props.theme.h6}
+    font-size: clamp(var(--fz-sm-2), 4vw, var(--fz-lg-1));
+    letter-spacing: var(--let-space-xs);
+    font-family: var(--primary-font);
+    font-weight: var(--fw-400);
+  }
+  
+  
+  //                  TEXT ELEMENTS
+  // ==========================================================  
+  
   p {
-
+    font-size: clamp(var(--fz-sm-1), 2vw, var(--fz-md-2));
+    font-family: var(--secondary-font);
+    font-weight: var(--fw-600);
   }
-
-  ul {
-    list-style-type: none;
-  }
-
-  // For Headers with Logo Font
+  
+  // Use with H1 or H2
   span {
     font-weight: var(--fw-300);
     font-family: var(--logo-font);
     letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-lg-2), 5vw, var(--fz-xl-2));
+    font-size: clamp(var(--fz-lg-2), 4vw, var(--fz-xl-2));
   }
   
-  select {
-    ${(props) => props.theme.select}
-    cursor: pointer;
+  //                  LIST
+  // ==========================================================  
+  ul {
+    list-style-type: none;
   }
 
-  // =======================================================================================
-  //   CLASSES
-  // =======================================================================================
-  
-  // =========================================================
-  // Images
+  // ==========================================================
+  //                    CLASSES
+  // ==========================================================
 
   .tab__img {
     ${(props) => props.theme.tab__img};
@@ -191,6 +226,7 @@ const GlobalStyle = createGlobalStyle`
   
   .track__img {
     ${(props) => props.theme.track__img};
+    border-radius: var(--xs-radius);
     height: 95px;
     width: 95px;
     
@@ -209,9 +245,6 @@ const GlobalStyle = createGlobalStyle`
       width: 70px;
     }
   }
-  
-  // =========================================================
-  // Gradients
 
   .gradient__font {
     ${(props) => props.theme.gradient__font}

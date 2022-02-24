@@ -21,22 +21,20 @@ const variables = css`
 
     // Sizes
     // ===================================================
-    --fz-sm-1: 10px;
-    --fz-sm-2: 12px;
-    --fz-sm-3: 14px;
-    --fz-sm-4: 18px;
-    --fz-md-1: 20px;
-    --fz-md-2: 22px;
-    --fz-md-3: 24px;
-    --fz-md-4: 26px;
-    --fz-lg-1: 30px;
-    --fz-lg-2: 34px;
-    --fz-lg-3: 38px;
-    --fz-lg-4: 42px;
-    --fz-xl-1: 46px;
-    --fz-xl-2: 50px;
-    --fz-xl-3: 54px;
-    --fz-xl-4: 58px;
+    --fz-xs-1: 8px;
+    --fz-xs-2: 12px;
+    --fz-sm-1: 16px;
+    --fz-sm-2: 20px;
+    --fz-md-1: 24px;
+    --fz-md-2: 28px;
+    --fz-lg-1: 32px;
+    --fz-lg-2: 36px;
+    --fz-xl-1: 40px;
+    --fz-xl-2: 44px;
+    --fz-xxl-1: 48px;
+    --fz-xxl-2: 52px;
+    --fz-xxxl-1: 56px;
+    --fz-xxxl-2: 60px;
 
     // =================================================================================================
     // LIGHT THEME COLORS

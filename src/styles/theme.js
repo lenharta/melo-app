@@ -6,14 +6,17 @@ import { mixins } from ".";
 // ========================================================= //
 
 export const darkTheme = {
-  // =========================================================
-  //   GLOBALS
   mixins,
 
+  // ==========================================================
+  //                  GLOBALS
+  // ==========================================================
   body: css`
     background: var(--d-primary-color);
   `,
 
+  //                  SCROLLBAR
+  // ==========================================================
   scrollbarThumb: css`
     background: var(--d-secondary-color);
   `,
@@ -32,6 +35,9 @@ export const darkTheme = {
     }
   `,
 
+  //                  INPUTS & MENUS
+  // ==========================================================
+
   select: css`
     border: var(--d-sm-border);
     color: var(--d-secondary-color);
@@ -39,37 +45,41 @@ export const darkTheme = {
     font-size: var(--fz-sm-4);
   `,
 
-  // =========================================================
-  //   GLOBAL CLASSES
+  // ==========================================================
+  //                  GLOBAL COMPONENTS
+  // ==========================================================
 
-  header__title: css`
-    border-top-left-radius: var(--xs-radius);
-    border-top-right-radius: var(--xs-radius);
-    background-color: var(--d-primary-color-tint);
-    /* background: var(--text-gradient); */
-    h1 {
+  loader: css`
+    color: var(--d-secondary-color);
+    background: var(--d-primary-color);
+
+    svg {
+      stroke: var(--d-secondary-color);
+    }
+
+    span {
+      font-size: var(--fz-lg-4);
+      font-family: var(--logo-font);
       font-weight: var(--fw-800);
-      font-family: var(--secondary-font);
       letter-spacing: var(--let-space-sm);
-      font-size: clamp(var(--fz-xl-2), 5vw, var(--fz-xl-4));
-      color: var(--d-secondary-color);
-      /* color: var(--d-primary-color); */
-      background-image: var(--text-gradient);
-
-      @supports (-webkit-text-fill-color: transparent) or
-        (-webkit-background-clip: none) {
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-      }
     }
   `,
 
-  accent__line: css`
-    background: var(--text-gradient);
+  themeButton: css`
+    background: var(--d-third-color-tint);
+    // Custom Border
+    border: 3px solid transparent;
+    backdrop-filter: var(--filter);
+
+    &:focus-visible {
+      border: var(--d-focus-border);
+    }
+    .handle__Color {
+      /* background-image: var(--text-gradient); */
+      background: var(--primary-color);
+    }
   `,
 
-  // =========================================================
-  //   NAVIGATION
   progressBar: css`
     background-image: var(--text-gradient);
     svg {
@@ -83,6 +93,8 @@ export const darkTheme = {
     }
   `,
 
+  //                  NAVIGATION
+  // ==========================================================
   navLogo: css`
     span {
       color: var(--d-secondary-color);
@@ -144,45 +156,50 @@ export const darkTheme = {
     background: var(--d-secondary-color);
   `,
 
-  // =========================================================
-  //   COMPONENTS
-  loader: css`
-    color: var(--d-secondary-color);
-    background: var(--d-primary-color);
+  // ==========================================================
+  //                    CLASSES
+  // ==========================================================
+  header__title: css`
+    background-color: var(--d-primary-color-tint);
 
-    svg {
-      stroke: var(--d-secondary-color);
-    }
+    h1 {
+      color: var(--d-secondary-color);
+      background-image: var(--text-gradient);
 
-    span {
-      font-size: var(--fz-lg-4);
-      font-family: var(--logo-font);
-      font-weight: var(--fw-800);
-      letter-spacing: var(--let-space-sm);
-    }
-  `,
-
-  themeButton: css`
-    background: var(--d-third-color-tint);
-    // Custom Border
-    border: 3px solid transparent;
-    backdrop-filter: var(--filter);
-
-    &:focus-visible {
-      border: var(--d-focus-border);
-    }
-    .handle__Color {
-      /* background-image: var(--text-gradient); */
-      background: var(--primary-color);
+      @supports (-webkit-text-fill-color: transparent) or
+        (-webkit-background-clip: none) {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
     }
   `,
 
-  tab__image: css`
-    /* border: var(--d-md-border); */
+  accent__line: css`
+    background: var(--text-gradient);
   `,
 
-  // REUSED COMPONENTS
-  // =========================================================
+  track__img: css`
+    border-radius: var(--xs-radius);
+  `,
+
+  tab__img: css``,
+
+  // ==========================================================
+  //                  COMPONENTS
+  // ==========================================================
+
+  //                  TRACKLIST & TRACK
+  // ==========================================================
+  // numberList: css`
+  //   background-image: var(--text-gradient);
+  //   background-size: cover;
+
+  //   @supports (-webkit-text-fill-color: transparent) or
+  //     (-webkit-background-clip: none) {
+  //     -webkit-text-fill-color: transparent;
+  //     -webkit-background-clip: text;
+  //   }
+  // `,
 
   trackList: css`
     h2 {
@@ -202,10 +219,10 @@ export const darkTheme = {
   track: css`
     a {
       border-bottom: var(--sm-border);
-      h3 {
+      h5 {
         color: var(--d-secondary-color);
       }
-      h5 {
+      h6 {
         color: var(--d-secondary-color);
         opacity: 0.6;
       }
@@ -220,10 +237,10 @@ export const darkTheme = {
         transform: scale(1.01);
         transition: var(--transition);
         border-radius: var(--md-radius);
-        h3 {
+        h5 {
           color: var(--d-secondary-color);
         }
-        h5 {
+        h6 {
           color: var(--d-secondary-color);
         }
         svg {
@@ -238,10 +255,10 @@ export const darkTheme = {
         }
       }
       &:focus-visible {
-        h3 {
+        h5 {
           color: var(--d-secondary-color);
         }
-        h5 {
+        h6 {
           color: var(--d-secondary-color);
         }
         svg {
@@ -251,12 +268,17 @@ export const darkTheme = {
     }
   `,
 
-  // =========================================================
-  //   CHARTS ROUTE
+  // ==========================================================
+  //                  ROUTES
+  // ==========================================================
+
+  //                  CHARTS
+  // ==========================================================
+  chartsContainer: css``,
+
   ChartsHeader: css`
     /* background: var(--secondary-color-tint); */
     h1 {
-      font-size: clamp(var(--fz-md-2), 5vw, var(--fz-xl-4));
       color: var(--d-secondary-color);
       background-image: var(--text-gradient);
 
@@ -274,14 +296,17 @@ export const darkTheme = {
 // ========================================================= //
 
 export const lightTheme = {
-  // =========================================================
-  //   GLOBALS
   mixins,
 
+  // ==========================================================
+  //                  GLOBALS
+  // ==========================================================
   body: css`
     background: var(--off-white-tint);
   `,
 
+  //                  SCROLL BAR
+  // ==========================================================
   scrollbarThumb: css`
     background: var(--secondary-color);
   `,
@@ -300,45 +325,40 @@ export const lightTheme = {
     }
   `,
 
-  select: css`
-    border: 2px solid var(--secondary-color);
+  // ==========================================================
+  //                  GLOBAL COMPONENTS
+  // ==========================================================
+  loader: css`
     color: var(--secondary-color);
     background: var(--primary-color);
-    font-size: var(--fz-sm-4);
-  `,
 
-  // =========================================================
-  //   GLOBAL CLASSES
+    svg {
+      stroke: var(--secondary-color);
+    }
 
-  header__title: css`
-    h1 {
-      font-weight: var(--fw-600);
-      font-family: var(--secondary-font);
+    span {
+      font-size: var(--fz-lg-4);
+      font-family: var(--logo-font);
+      font-weight: var(--fw-800);
       letter-spacing: var(--let-space-sm);
-      font-size: clamp(var(--fz-xl-2), 5vw, var(--fz-xl-4));
-      color: var(--secondary-color-tint);
-      /* background-image: var(--text-gradient);
-
-      @supports (-webkit-text-fill-color: transparent) or
-        (-webkit-background-clip: none) {
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-      } */
     }
   `,
 
-  accent__line: css`
-    background: var(--text-gradient);
+  themeButton: css`
+    // Custom Border
+    border: 4px solid transparent;
+    background: var(--secondary-color-tint);
+    backdrop-filter: var(--filter);
+    background-position: 100%;
+
+    &:focus-visible {
+      border: var(--focus-border);
+    }
+    .handle__Color {
+      background: var(--primary-color);
+    }
   `,
 
-  track__img: css`
-    border-radius: var(--xs-radius);
-  `,
-
-  tab__img: css``,
-
-  // =========================================================
-  //   NAVIGATION
   progressBar: css`
     background-image: var(--text-gradient);
     svg {
@@ -346,6 +366,8 @@ export const lightTheme = {
     }
   `,
 
+  //                  NAVIGATION
+  // ==========================================================
   navLogo: css`
     span {
       color: var(--primary-color);
@@ -392,59 +414,55 @@ export const lightTheme = {
     background: var(--primary-color);
   `,
 
-  // =========================================================
-  //   COMPONENTS
-  loader: css`
-    color: var(--secondary-color);
-    background: var(--primary-color);
-
-    svg {
-      stroke: var(--secondary-color);
-    }
-
-    span {
-      font-size: var(--fz-lg-4);
-      font-family: var(--logo-font);
-      font-weight: var(--fw-800);
+  // ==========================================================
+  //                    CLASSES
+  // ==========================================================
+  header__title: css`
+    h1 {
+      font-weight: var(--fw-600);
+      font-family: var(--secondary-font);
       letter-spacing: var(--let-space-sm);
+      font-size: clamp(var(--fz-xl-2), 5vw, var(--fz-xl-4));
+      color: var(--secondary-color-tint);
+      /* background-image: var(--text-gradient);
+      
+      @supports (-webkit-text-fill-color: transparent) or
+        (-webkit-background-clip: none) {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      } */
     }
   `,
 
-  themeButton: css`
-    // Custom Border
-    border: 4px solid transparent;
-    background: var(--secondary-color-tint);
-    backdrop-filter: var(--filter);
-    background-position: 100%;
-
-    &:focus-visible {
-      border: var(--focus-border);
-    }
-    .handle__Color {
-      background: var(--primary-color);
-    }
+  accent__line: css`
+    background: var(--text-gradient);
   `,
 
-  tab__image: css`
-    border: var(--md-border);
+  track__img: css`
+    border-radius: var(--xs-radius);
   `,
 
-  // =========================================================
-  //   TRACK COMPONENT
-  // =========================================================
-  numberList: css`
-    /* background-image: var(--text-gradient);
-    background-size: cover;
+  tab__img: css``,
 
-    @supports (-webkit-text-fill-color: transparent) or
-      (-webkit-background-clip: none) {
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-    } */
-  `,
+  // ==========================================================
+  //                  COMPONENTS
+  // ==========================================================
+
+  //                  TRACKLIST & TRACK
+  // ==========================================================
+  // numberList: css`
+  //   background-image: var(--text-gradient);
+  //   background-size: cover;
+
+  //   @supports (-webkit-text-fill-color: transparent) or
+  //     (-webkit-background-clip: none) {
+  //     -webkit-text-fill-color: transparent;
+  //     -webkit-background-clip: text;
+  //   }
+  // `,
 
   trackList: css`
-    h2 {
+    h4 {
       color: var(--secondary-color);
 
       @media (max-width: 1600px) {
@@ -461,10 +479,10 @@ export const lightTheme = {
   track: css`
     a {
       border-bottom: var(--sm-border);
-      h3 {
+      h5 {
         color: var(--secondary-color);
       }
-      h5 {
+      p {
         color: var(--secondary-color-tint);
       }
       svg {
@@ -479,17 +497,17 @@ export const lightTheme = {
         transform: scale(1.01);
         transition: var(--transition);
         border-radius: var(--md-radius);
-        h3 {
+        h5 {
           color: var(--primary-color);
         }
-        h5 {
+        p {
           color: var(--primary-color);
         }
         svg {
           color: var(--primary-color);
           filter: none;
         }
-        
+
         @media (max-width: 768px) {
           border-radius: var(--sm-radius);
         }
@@ -500,11 +518,11 @@ export const lightTheme = {
 
       &:focus-visible {
         background: var(--secondary-color-tint);
-        h3 {
+        h5 {
           color: var(--primary-color);
           text-shadow: none;
         }
-        h5 {
+        p {
           color: var(--primary-color);
           text-shadow: none;
         }
@@ -528,26 +546,18 @@ export const lightTheme = {
     }
   `,
 
-  // =========================================================
-  //   ROUTES
+  // ==========================================================
+  //                  ROUTES
+  // ==========================================================
+
+  //                  CHARTS
+  // ==========================================================
   chartsContainer: css``,
 
   ChartsHeader: css`
-    /* background-image: var(--section-header-gradient); */
     h1 {
       font-size: clamp(var(--fz-sm-4), 5vw, var(--fz-xl-4));
       color: var(--secondary-color-tint);
     }
   `,
 };
-
-// background: linear-gradient(
-//   to left,
-//   var(--gray-tint) 0%,
-//   var(--off-white) 100%
-// );
-
-// var(--w-accent-gradient)
-// var(--accent-gradient)
-// background: var(--d-accent-gradient);
-// background: var(--accent-gradient);

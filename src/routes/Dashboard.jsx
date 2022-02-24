@@ -11,20 +11,22 @@ const Dashboard = () => {
       <Container>
         <Inner>
           <Examples>
-            <a>Germany</a><br />
+            {/* Logos */}
             <span>Example SPAN</span>
-            {/* For Track Titles & Artists */}
+
+            {/* Headers */}
             <h1>Example HEADER H1</h1>
             <h2>Example HEADER H2</h2>
-            <h4>Example HEADER H4</h4>
-
-            {/* For Track Titles & Artists */}
             <h3>Example HEADER H3</h3>
+            <h4>Example HEADER H4</h4>
             <h5>Example HEADER H5</h5>
+            <h6>Example HEADER H6</h6>
 
             {/* Regular Text */}
             <p>Example Paragraph TAG</p>
 
+            {/* Links */}
+            <a>Germany</a><br />
           </Examples>
         </Inner>
       </Container>
@@ -33,17 +35,16 @@ const Dashboard = () => {
 };
 
 const Container = styled.section`
+width: 100%;
 `;
 
 const Inner = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   flex-direction: column;
   justify-content: flex-start;
-  width: 100%;
 `;
 
 const Examples = styled.div`
-  width: 100%;
 `;
 
 export default Dashboard;

@@ -33,11 +33,11 @@ const Track = ({
             <img className="track__img" src={album.cover_medium} alt={album.title} />
 
             <SongTitle>
-              <h3>{title_short}</h3>
+              <h5>{title_short}</h5>
             </SongTitle>
 
             <Artist>
-              <h5>{artist.name}</h5>
+              <p>{artist.name}</p>
             </Artist>
 
             <Explicit>
@@ -132,17 +132,9 @@ const SongTitle = styled.div`
   justify-self: start;
   width: 98%;
 
-  h3 {
+  h5 {
     width: 98%;
-    height: 40%;
-    line-height: 1.4;
     margin-left: 25px;
-    text-decoration: none;
-    text-decoration-color: none;
-    text-overflow: ellipsis;
-    background-clip: text;
-    white-space: nowrap;
-    overflow: hidden;
 
     @supports (-webkit-background-clip: none) {
       -webkit-background-clip: text;
@@ -171,17 +163,9 @@ const Artist = styled.div`
   justify-self: start;
   width: 98%;
 
-  h5 {
+  p {
     width: 98%;
-    height: 60%;
-    line-height: 1.2;
     margin-left: 25px;
-    text-decoration: none;
-    text-decoration-color: none;
-    text-overflow: ellipsis;
-    background-clip: text;
-    white-space: nowrap;
-    overflow: hidden;
 
     @supports (-webkit-background-clip: none) {
       -webkit-background-clip: text;

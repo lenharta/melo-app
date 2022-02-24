@@ -22,13 +22,13 @@ const Charts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(chartRequests.fetchTopBrazil);
+      const response = await axios.get(chartRequests.fetchTopWorld);
       setTracks(response.data.tracks.data);
       setTitled(response.data);
       console.log(response.data);
       return response;
     };
-    
+
     fetchData();
   }, []);
 

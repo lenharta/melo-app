@@ -38,7 +38,7 @@ const Charts = () => {
       <Container>
         <Inner>
           <ChartsHeader transition={spring}>
-            <h1>{titled.title}</h1>
+            <h2>{titled.title}</h2>
             <img className="tab__img" src={titled.picture_xl} />
             {/* <Dropdown>
               <DropItem></DropItem>
@@ -96,7 +96,7 @@ const ChartsHeader = styled.div`
   align-items: flex-end;
   width: 100%;
   
-  h1 {
+  h2 {
     padding: 25px 0px;
     
     @media (max-width: 1600px) {

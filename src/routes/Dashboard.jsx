@@ -13,8 +13,11 @@ const Dashboard = () => {
           <Examples>
             {/* Logos */}
             <span>Example SPAN</span>
-
             {/* Headers */}
+            <br />
+            <br />
+            <br />
+            <br />
             <h1>Example HEADER H1</h1>
             <h2>Example HEADER H2</h2>
             <h3>Example HEADER H3</h3>
@@ -22,6 +25,10 @@ const Dashboard = () => {
             <h5>Example HEADER H5</h5>
             <h6>Example HEADER H6</h6>
 
+            <br />
+            <br />
+            <br />
+            <br />
             {/* Regular Text */}
             <p>Example Paragraph TAG</p>
 

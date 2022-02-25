@@ -97,9 +97,10 @@ const GlobalStyle = createGlobalStyle`
   // ==========================================================  
   select {
     ${(props) => props.theme.select}
-    font-size: clamp(var(--fz-sm-1), 4vw, var(--fz-md-2));
+    font-size: clamp(var(--fz-sm-1), 1vw, var(--fz-md-2));
     font-family: var(--secondary-font);
     font-weight: var(--fw-800);
+
     cursor: pointer;
   }
 
@@ -109,91 +110,89 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(var(--fz-sm-1), 4vw, var(--fz-md-2));
     font-family: var(--secondary-font);
     font-weight: var(--fw-600);
-
-    text-decoration-color: none;
-    text-decoration: none;
   }
 
   //                  HEADERS
   // ==========================================================
-  h1, h2, h3, h4, h5, h6 {
-    text-decoration: none;
+  h1, h2, h3, h4, h5, h6, a, p {
+    letter-spacing: var(--let-space-xs);
+    font-family: var(--primary-font);
+
     text-decoration-color: none;
-    text-overflow: ellipsis;
-    background-clip: text;
-    white-space: nowrap;
-    overflow: hidden;
+    text-decoration: none;
   }
 
   h1 {
     ${(props) => props.theme.h1}
-    font-size: clamp(var(--fz-md-2), 4vw, var(--fz-xxxl-2));
-    letter-spacing: var(--let-space-xs);
-    font-family: var(--primary-font);
-    font-weight: var(--fw-700);
+    font-size: clamp(var(--fz-md-2), 5vw, var(--fz-xxxl-2));
+    font-weight: var(--fw-900);
   }
   
   h2 {
     ${(props) => props.theme.h2}
-    font-size: clamp(var(--fz-md-2), 4vw, var(--fz-xxxl-1));
-    letter-spacing: var(--let-space-xs);
-    font-family: var(--primary-font);
-    font-weight: var(--fw-300);
+    font-size: clamp(var(--fz-md-2), 4vw, var(--fz-xxxl-2));
+    font-weight: var(--fw-400);
   }
   
   h3 {
     ${(props) => props.theme.h3}
-    font-size: clamp(var(--fz-md-1), 4vw, var(--fz-xxl-2));
-    letter-spacing: var(--let-space-xs);
-    font-family: var(--primary-font);
-    font-weight: var(--fw-700);
+    font-size: clamp(var(--fz-md-1), 4vw, var(--fz-xxl-1));
+    font-weight: var(--fw-900);
   }
   
   h4 {
     ${(props) => props.theme.h4}
     font-size: clamp(var(--fz-md-1), 4vw, var(--fz-xxl-1));
-    font-family: var(--primary-font);
-    font-weight: var(--fw-300);
+    font-weight: var(--fw-400);
   }
-  
+
+  // TRACKS TEMPLATE
   h5 {
     ${(props) => props.theme.h5}
-    font-size: clamp(var(--fz-sm-2), 4vw, var(--fz-lg-2));
-    letter-spacing: var(--let-space-xs);
-    font-family: var(--primary-font);
+    font-size: clamp(var(--fz-sm-2), 3vw, var(--fz-lg-1));
     font-weight: var(--fw-900);
   }
 
   h6 {
     ${(props) => props.theme.h6}
-    font-size: clamp(var(--fz-sm-2), 4vw, var(--fz-lg-1));
-    letter-spacing: var(--let-space-xs);
-    font-family: var(--primary-font);
+    font-size: clamp(var(--fz-sm-1), 3vw, var(--fz-md-2));
     font-weight: var(--fw-400);
   }
-  
   
   //                  TEXT ELEMENTS
   // ==========================================================  
   
   p {
-    font-size: clamp(var(--fz-sm-1), 2vw, var(--fz-md-2));
+    font-size: clamp(var(--fz-xs-2), 3vw, var(--fz-sm-2));
     font-family: var(--secondary-font);
     font-weight: var(--fw-600);
   }
-  
-  // Use with H1 or H2
+
   span {
-    font-weight: var(--fw-300);
-    font-family: var(--logo-font);
+    font-size: clamp(var(--fz-lg-2), 3vw, var(--fz-xxl-2));
     letter-spacing: var(--let-space-sm);
-    font-size: clamp(var(--fz-lg-2), 4vw, var(--fz-xl-2));
+    font-family: var(--logo-font);
+    font-weight: var(--fw-300);
   }
   
-  //                  LIST
+  //                  LISTS
   // ==========================================================  
   ul {
     list-style-type: none;
+  }
+  
+  //                  GRAPHICS
+  // ==========================================================
+  svg {
+    
+    @media (max-width: 1600px) {
+    }
+    @media (max-width: 1080px) {
+    }
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 480px) {
+    }
   }
 
   // ==========================================================
@@ -227,22 +226,35 @@ const GlobalStyle = createGlobalStyle`
   .track__img {
     ${(props) => props.theme.track__img};
     border-radius: var(--xs-radius);
-    height: 95px;
-    width: 95px;
+    height: 110px;
+    width: 110px;
     
     @media (max-width: 1600px) {
-      height: 85px;
-      width: 85px;
+      height: 100px;
+      width: 100px;
     }
+    
     @media (max-width: 1080px) {
-      height: 75px;
-      width: 75px;
+      height: 90px;
+      width: 90px;
     }
     @media (max-width: 768px) {
+      height: 80px;
+      width: 80px;
     }
     @media (max-width: 480px) {
       height: 70px;
       width: 70px;
+    }
+  }
+
+  .ellipsis__titlebox {
+    h5, h6 {
+      width: 97%;
+      background-clip: text;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 

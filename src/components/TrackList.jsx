@@ -18,24 +18,21 @@ const TrackList = ({ tracks, id, countEnd, isNumbered }) => {
     <>
       <Container id={id}>
         <Inner>
-        {numberedList === true ? (
-          <NumberList>
-            {count.map((number) => (
-              <TrackNumber key={number}>
-                <h4>
-                  {number}
-                  .
-                </h4>
-                <div className="accent__line"></div>
-              </TrackNumber>
-            ))}
-          </NumberList>
-        ) : null}
-        <TrackWrapper>
-          {tracks.map((data, i) => {
-            return <Track key={i} {...data} />;
-          })}
-        </TrackWrapper>
+          {numberedList === true ? (
+            <NumberList>
+              {count.map((number) => (
+                <TrackNumber key={number}>
+                  <h4>{number}.</h4>
+                  <div className="accent__line"></div>
+                </TrackNumber>
+              ))}
+            </NumberList>
+          ) : null}
+          <TrackWrapper>
+            {tracks.map((data, i) => {
+              return <Track key={i} {...data} />;
+            })}
+          </TrackWrapper>
         </Inner>
       </Container>
     </>
@@ -47,7 +44,7 @@ const Container = styled.div`
   ${(props) => props.theme.trackList}
   flex-direction: column;
   width: 100%;
-  `;
+`;
 
 const Inner = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
@@ -55,24 +52,24 @@ const Inner = styled.div`
   flex-direction: row;
   width: 100%;
   height: 100%;
-  `;
+`;
 
 const NumberList = styled.div`
-  height: 125px;
   margin-right: 15px;
   width: 10%;
+  height: 140px;
   
   @media (max-width: 1600px) {
-    height: 105px;
   }
   @media (max-width: 1080px) {
-    height: 95px;
+    margin-right: 10px;
+    height: 110px;
   }
   @media (max-width: 768px) {
-    margin-right: 10px;
+    height: 95px;
   }
   @media (max-width: 480px) {
-    height: 85px;
+    height: 80px;
   }
 `;
 
@@ -84,10 +81,10 @@ const TrackNumber = styled.div`
   /* text-align: center; */
   height: 100%;
   width: 100%;
-  
+
   h4 {
     width: 100%;
-    
+
     @media (max-width: 1600px) {
     }
     @media (max-width: 1080px) {
@@ -97,12 +94,12 @@ const TrackNumber = styled.div`
     @media (max-width: 480px) {
     }
   }
-  `;
+`;
 
 const TrackWrapper = styled.div`
   ${({ theme }) => theme.mixins.flexCenter}
   flex-direction: column;
   width: 100%;
-  `;
+`;
 
 export default TrackList;

@@ -17,7 +17,6 @@ const Track = ({
   preview,
   id,
 }) => {
-
   return (
     <>
       <Container
@@ -30,14 +29,18 @@ const Track = ({
           aria-label={"Play " + title_short + " Song Artist: " + artist.name}
         >
           <Inner>
-            <img className="track__img" src={album.cover_medium} alt={album.title} />
+            <img
+              className="track__img"
+              src={album.cover_medium}
+              alt={album.title}
+            />
 
-            <SongTitle>
+            <SongTitle className="ellipsis__titlebox">
               <h5>{title_short}</h5>
             </SongTitle>
 
-            <Artist>
-              <p>{artist.name}</p>
+            <Artist className="ellipsis__titlebox">
+              <h6>{artist.name}</h6>
             </Artist>
 
             <Explicit>
@@ -58,51 +61,44 @@ const Container = styled.li`
   ${(props) => props.theme.track}
   ${({ theme }) => theme.mixins.flexCenter}
   list-style-type: none;
-  height: 125px;
   width: 100%;
-
+  height: 100%;
+  /* height: 110px;
+  
   @media (max-width: 1600px) {
-    height: 105px;
+    height: 100px;
   }
   @media (max-width: 1080px) {
-    height: 95px;
+    height: 90px;
   }
   @media (max-width: 768px) {
+    height: 80px;
   }
   @media (max-width: 480px) {
-    height: 85px;
-  }
+    height: 70px;
+  } */
 
   // Router Link
   a {
-    border-radius: 0px;
-    padding: 10px 20px;
+    ${({ theme }) => theme.mixins.flexCenter}
     width: 100%;
     height: 100%;
+    padding: 15px;
+
     &:hover,
     &:focus-visible {
-      background: ${(props) => props.randomColor};
-      border-radius: 15px;
-
-      @media (max-width: 1080px) {
-        border-radius: 10px;
-      }
     }
     @media (max-width: 1600px) {
     }
     @media (max-width: 1080px) {
+      padding: 10px;
     }
     @media (max-width: 768px) {
-      padding: 7.5px 7.5px;
+      padding: 7.5px;
     }
     @media (max-width: 480px) {
+      padding: 5px;
     }
-  }
-
-  img {
-    grid-area: a;
-    align-self: center;
-    justify-self: center;
   }
 `;
 
@@ -113,8 +109,14 @@ const Inner = styled.div`
     "a c c c c c c c c c d e";
   column-gap: 5px;
   display: grid;
-  height: 100%;
   width: 100%;
+  height: 100%;
+
+  img {
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+  }
 
   @media (max-width: 1600px) {
   }
@@ -123,6 +125,10 @@ const Inner = styled.div`
   @media (max-width: 768px) {
   }
   @media (max-width: 480px) {
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-areas:
+      "a b b b b b b b b b d"
+      "a c c c c c c c c c d";
   }
 `;
 
@@ -130,10 +136,15 @@ const SongTitle = styled.div`
   grid-area: b;
   align-self: end;
   justify-self: start;
-  width: 98%;
+  width: 97%;
+  height: 100%;
 
   h5 {
-    width: 98%;
+    ${({ theme }) => theme.mixins.flexCenter}
+    justify-content: flex-start;
+    align-items: flex-end;
+    line-height: 1.4;
+    height: 100%;
     margin-left: 25px;
 
     @supports (-webkit-background-clip: none) {
@@ -142,29 +153,30 @@ const SongTitle = styled.div`
 
     @media (max-width: 1600px) {
       margin-left: 20px;
-      line-height: 1.3;
     }
     @media (max-width: 1080px) {
       margin-left: 15px;
-      line-height: 1.3;
     }
     @media (max-width: 768px) {
       margin-left: 10px;
     }
     @media (max-width: 480px) {
-      line-height: 1.2;
     }
   }
 `;
 
 const Artist = styled.div`
   grid-area: c;
-  align-self: start;
   justify-self: start;
-  width: 98%;
+  align-self: center;
+  width: 97%;
+  height: 100%;
 
-  p {
-    width: 98%;
+  h6 {
+    ${({ theme }) => theme.mixins.flexCenter}
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
     margin-left: 25px;
 
     @supports (-webkit-background-clip: none) {
@@ -200,9 +212,9 @@ const Explicit = styled.div`
       height: 25px;
     }
     @media (max-width: 480px) {
-      justify-self: start;
+      justify-self: end;
       align-self: start;
-      text-align: left;
+      text-align: right;
       width: 18px;
       height: 18px;
     }
@@ -233,6 +245,7 @@ const PlayPause = styled.div`
       height: 40px;
     }
     @media (max-width: 480px) {
+      display: none;
     }
   }
 `;

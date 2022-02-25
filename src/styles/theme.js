@@ -159,21 +159,6 @@ export const darkTheme = {
   // ==========================================================
   //                    CLASSES
   // ==========================================================
-  header__title: css`
-    background-color: var(--d-primary-color-tint);
-
-    h1 {
-      color: var(--d-secondary-color);
-      background-image: var(--text-gradient);
-
-      @supports (-webkit-text-fill-color: transparent) or
-        (-webkit-background-clip: none) {
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-      }
-    }
-  `,
-
   accent__line: css`
     background: var(--text-gradient);
   `,
@@ -278,7 +263,7 @@ export const darkTheme = {
 
   ChartsHeader: css`
     /* background: var(--secondary-color-tint); */
-    h1 {
+    h2 {
       color: var(--d-secondary-color);
       background-image: var(--text-gradient);
 
@@ -295,6 +280,7 @@ export const darkTheme = {
 // ============= L I G H T ====== T H E M E ================ //
 // ========================================================= //
 
+// COLORS / BORDERS / BACKGROUNDS / FILTERS /
 export const lightTheme = {
   mixins,
 
@@ -334,13 +320,7 @@ export const lightTheme = {
 
     svg {
       stroke: var(--secondary-color);
-    }
-
-    span {
-      font-size: var(--fz-lg-4);
-      font-family: var(--logo-font);
-      font-weight: var(--fw-800);
-      letter-spacing: var(--let-space-sm);
+      filter: none;
     }
   `,
 
@@ -362,7 +342,8 @@ export const lightTheme = {
   progressBar: css`
     background-image: var(--text-gradient);
     svg {
-      stroke: var(--secondary-color-tint);
+      stroke: var(--secondary-color);
+      filter: none;
     }
   `,
 
@@ -377,16 +358,6 @@ export const lightTheme = {
   navList: css`
     background-image: var(--text-gradient);
     a {
-      font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
-      font-family: var(--secondary-font);
-      font-weight: var(--fw-800);
-
-      text-transform: uppercase;
-      text-align: center;
-      text-decoration: none;
-      letter-spacing: var(--let-space-md);
-      cursor: pointer;
-
       &:hover {
         color: var(--secondary-color-tint);
       }
@@ -399,14 +370,16 @@ export const lightTheme = {
     }
 
     svg {
+      text-align: center;
       color: var(--secondary-color);
-      path {
+      filter: none;
+      /* path {
         &:nth-child(2) {
           stroke: var(--secondary-color-tint);
           stroke-width: 0.5px;
           stroke-linejoin: round;
         }
-      }
+      } */
     }
   `,
 
@@ -417,23 +390,6 @@ export const lightTheme = {
   // ==========================================================
   //                    CLASSES
   // ==========================================================
-  header__title: css`
-    h1 {
-      font-weight: var(--fw-600);
-      font-family: var(--secondary-font);
-      letter-spacing: var(--let-space-sm);
-      font-size: clamp(var(--fz-xl-2), 5vw, var(--fz-xl-4));
-      color: var(--secondary-color-tint);
-      /* background-image: var(--text-gradient);
-      
-      @supports (-webkit-text-fill-color: transparent) or
-        (-webkit-background-clip: none) {
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-      } */
-    }
-  `,
-
   accent__line: css`
     background: var(--text-gradient);
   `,
@@ -450,69 +406,70 @@ export const lightTheme = {
 
   //                  TRACKLIST & TRACK
   // ==========================================================
-  // numberList: css`
-  //   background-image: var(--text-gradient);
-  //   background-size: cover;
+  numberList: css`
+    /* background-image: var(--text-gradient); */
+    /* background-size: cover; */
+    /* background-clip: text; */
 
-  //   @supports (-webkit-text-fill-color: transparent) or
-  //     (-webkit-background-clip: none) {
-  //     -webkit-text-fill-color: transparent;
-  //     -webkit-background-clip: text;
-  //   }
-  // `,
+    /* @supports (-webkit-text-fill-color: transparent) or
+    (-webkit-background-clip: none) {
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    } */
+  `,
 
   trackList: css`
     h4 {
       color: var(--secondary-color);
-
-      @media (max-width: 1600px) {
-      }
-      @media (max-width: 1080px) {
-      }
-      @media (max-width: 768px) {
-      }
-      @media (max-width: 480px) {
-      }
     }
   `,
 
   track: css`
+    border-bottom: var(--xs-border);
     a {
-      border-bottom: var(--sm-border);
       h5 {
         color: var(--secondary-color);
       }
-      p {
+      h6 {
         color: var(--secondary-color-tint);
       }
       svg {
         color: var(--secondary-color);
         filter: drop-shadow(4px 4px 1px var(--third-color));
+
+        @media (max-width: 768px) {
+          filter: drop-shadow(3px 3px 1px var(--third-color));
+        }
       }
 
       // Link Overlay
       &:hover {
         background: var(--secondary-color-tint);
-        border-bottom: none;
-        transform: scale(1.01);
         transition: var(--transition);
-        border-radius: var(--md-radius);
+        transform: scale(1.01);
+        border-radius: var(--lg-radius);
+        border-bottom: none;
+        
         h5 {
           color: var(--primary-color);
         }
-        p {
+        h6 {
           color: var(--primary-color);
         }
         svg {
           color: var(--primary-color);
           filter: none;
         }
-
+        
+        @media (max-width: 1600px) {
+        }
+        @media (max-width: 1080px) {
+          border-radius: var(--md-radius);
+        }
         @media (max-width: 768px) {
           border-radius: var(--sm-radius);
         }
         @media (max-width: 480px) {
-          border-radius: none;
         }
       }
 
@@ -520,28 +477,14 @@ export const lightTheme = {
         background: var(--secondary-color-tint);
         h5 {
           color: var(--primary-color);
-          text-shadow: none;
         }
-        p {
+        h6 {
           color: var(--primary-color);
-          text-shadow: none;
         }
         svg {
           color: var(--primary-color);
           filter: none;
         }
-      }
-
-      @media (max-width: 1600px) {
-      }
-      @media (max-width: 1080px) {
-      }
-      @media (max-width: 768px) {
-        svg {
-          filter: drop-shadow(2px 2px 1px var(--third-color));
-        }
-      }
-      @media (max-width: 480px) {
       }
     }
   `,
@@ -555,8 +498,7 @@ export const lightTheme = {
   chartsContainer: css``,
 
   ChartsHeader: css`
-    h1 {
-      font-size: clamp(var(--fz-sm-4), 5vw, var(--fz-xl-4));
+    h2 {
       color: var(--secondary-color-tint);
     }
   `,

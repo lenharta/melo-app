@@ -149,13 +149,13 @@ const GlobalStyle = createGlobalStyle`
   // TRACKS TEMPLATE
   h5 {
     ${(props) => props.theme.h5}
-    font-size: clamp(var(--fz-sm-2), 3vw, var(--fz-lg-1));
+    font-size: clamp(var(--fz-md-1), 4vw, var(--fz-lg-1));
     font-weight: var(--fw-900);
   }
 
   h6 {
     ${(props) => props.theme.h6}
-    font-size: clamp(var(--fz-sm-1), 3vw, var(--fz-md-2));
+    font-size: clamp(var(--fz-sm-1), 4vw, var(--fz-md-2));
     font-weight: var(--fw-400);
   }
   

@@ -57,19 +57,20 @@ const Inner = styled.div`
 const NumberList = styled.div`
   margin-right: 15px;
   width: 10%;
-  height: 140px;
+  height: 142px;
   
   @media (max-width: 1600px) {
+    height: 132px;
   }
   @media (max-width: 1080px) {
     margin-right: 10px;
-    height: 110px;
+    height: 112px;
   }
   @media (max-width: 768px) {
-    height: 95px;
+    height: 97px;
   }
   @media (max-width: 480px) {
-    height: 80px;
+    height: 82px;
   }
 `;
 

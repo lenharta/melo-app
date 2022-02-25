@@ -35,6 +35,40 @@ export const darkTheme = {
     }
   `,
 
+  a: css`
+    color: var(--d-secondary-color);
+  `,
+  h1: css`
+    color: var(--d-secondary-color);
+  `,
+  h2: css`
+    color: var(--d-secondary-color);
+  `,
+  h3: css`
+    color: var(--d-secondary-color);
+  `,
+  h4: css`
+    color: var(--d-secondary-color);
+  `,
+  h5: css`
+    color: var(--d-secondary-color);
+  `,
+  h6: css`
+    color: var(--d-secondary-color);
+  `,
+  p: css`
+    color: var(--d-secondary-color);
+  `,
+  span: css`
+    color: var(--d-secondary-color);
+  `,
+  ul: css`
+    color: var(--d-secondary-color);
+  `,
+  svg: css`
+    color: var(--d-secondary-color);
+  `,
+
   //                  INPUTS & MENUS
   // ==========================================================
 
@@ -117,18 +151,7 @@ export const darkTheme = {
 
   navList: css`
     background-image: var(--text-gradient);
-    border-radius: 0px;
     a {
-      font-size: clamp(var(--fz-sm-1), 5vw, var(--fz-sm-4));
-      font-family: var(--d-secondary-font);
-      font-weight: var(--fw-800);
-
-      text-transform: uppercase;
-      text-align: center;
-      text-decoration: none;
-      letter-spacing: var(--let-space-md);
-      cursor: pointer;
-
       &:hover {
         color: var(--d-secondary-color-tint);
       }
@@ -311,6 +334,41 @@ export const lightTheme = {
     }
   `,
 
+  a: css`
+    color: var(--secondary-color);
+    
+  `,
+  h1: css`
+    color: var(--secondary-color);
+  `,
+  h2: css`
+    color: var(--secondary-color-tint);
+  `,
+  h3: css`
+    color: var(--secondary-color);
+  `,
+  h4: css`
+    color: var(--secondary-color-tint);
+  `,
+  h5: css`
+    color: var(--secondary-color);
+  `,
+  h6: css`
+    color: var(--secondary-color-tint);
+  `,
+  p: css`
+    color: var(--secondary-color);
+  `,
+  span: css`
+    color: var(--secondary-color);
+  `,
+  ul: css`
+    color: var(--secondary-color);
+  `,
+  svg: css`
+    color: var(--primary-color);
+  `,
+
   // ==========================================================
   //                  GLOBAL COMPONENTS
   // ==========================================================
@@ -358,9 +416,6 @@ export const lightTheme = {
   navList: css`
     background-image: var(--text-gradient);
     a {
-      &:hover {
-        color: var(--secondary-color-tint);
-      }
       &:active {
         color: var(--primary-color);
       }
@@ -371,15 +426,14 @@ export const lightTheme = {
 
     svg {
       text-align: center;
-      color: var(--secondary-color);
       filter: none;
-      /* path {
+      path {
         &:nth-child(2) {
           stroke: var(--secondary-color-tint);
           stroke-width: 0.5px;
           stroke-linejoin: round;
         }
-      } */
+      }
     }
   `,
 
@@ -425,14 +479,8 @@ export const lightTheme = {
   `,
 
   track: css`
-    border-bottom: var(--xs-border);
+    border-bottom: var(--sm-border);
     a {
-      h5 {
-        color: var(--secondary-color);
-      }
-      h6 {
-        color: var(--secondary-color-tint);
-      }
       svg {
         color: var(--secondary-color);
         filter: drop-shadow(4px 4px 1px var(--third-color));
@@ -445,11 +493,11 @@ export const lightTheme = {
       // Link Overlay
       &:hover {
         background: var(--secondary-color-tint);
+        border-radius: var(--lg-radius);
         transition: var(--transition);
         transform: scale(1.01);
-        border-radius: var(--lg-radius);
         border-bottom: none;
-        
+
         h5 {
           color: var(--primary-color);
         }
@@ -460,7 +508,7 @@ export const lightTheme = {
           color: var(--primary-color);
           filter: none;
         }
-        
+
         @media (max-width: 1600px) {
         }
         @media (max-width: 1080px) {
@@ -470,6 +518,7 @@ export const lightTheme = {
           border-radius: var(--sm-radius);
         }
         @media (max-width: 480px) {
+          border-radius: var(--xs-radius);
         }
       }
 

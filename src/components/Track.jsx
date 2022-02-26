@@ -81,6 +81,9 @@ const Container = styled.li`
   // Router Link
   a {
     ${({ theme }) => theme.mixins.flexCenter}
+    ${({ theme }) => theme.mixins.tabOverlayRadius}
+    ${({ theme }) => theme.mixins.scaleCubicSmall}
+
     width: 100%;
     height: 100%;
     padding: 15px;

@@ -3,9 +3,9 @@ import { mixins } from ".";
 
 export const darkTheme = {
   // ======================================================================
-  // =======---------------------------------------------------------------
+  // ======================================================================
   // ==[D]==  D - A - R - K --- T - H - E - M - E
-  // =======---------------------------------------------------------------
+  // ======================================================================
   // ======================================================================
   mixins,
 
@@ -18,7 +18,7 @@ export const darkTheme = {
 
   // __________________________________________________
   // ==[D]==  S C R O L L - B A R
-  // ``````````````````````````````````````````````````
+  // **************************************************
   scrollbarThumb: css`
     background: var(--d-secondary-color);
   `,
@@ -39,14 +39,13 @@ export const darkTheme = {
   span: css`
     color: var(--d-secondary-color);
   `,
-
   ul: css`
     color: var(--d-secondary-color);
   `,
 
   // __________________________________________________
   // ==[D]==  H E A D E R - T A G S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   h1: css`
     color: var(--d-secondary-color);
   `,
@@ -68,7 +67,7 @@ export const darkTheme = {
 
   // __________________________________________________
   // ==[D]==  G R A P H I C S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   svg: css`
     color: var(--d-secondary-color);
   `,
@@ -82,14 +81,12 @@ export const darkTheme = {
 
   // __________________________________________________
   // ==[D]==  C U S T O M - C L A S S E S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   accent__line: css`
     background: var(--text-gradient);
   `,
 
-  track__img: css`
-    border-radius: var(--xs-radius);
-  `,
+  track__img: css``,
 
   tab__img: css``,
 
@@ -99,7 +96,7 @@ export const darkTheme = {
 
   // __________________________________________________
   // ==[D]==  L O A D E R
-  // ``````````````````````````````````````````````````
+  // **************************************************
   loader: css`
     color: var(--d-secondary-color);
     background: var(--d-primary-color);
@@ -108,26 +105,27 @@ export const darkTheme = {
       stroke: var(--d-secondary-color);
     }
 
-    span {
+    /* span {
       font-size: var(--fz-lg-4);
       font-family: var(--logo-font);
       font-weight: var(--fw-800);
       letter-spacing: var(--let-space-sm);
-    }
+    } */
   `,
 
   // __________________________________________________
   // ==[D]==  T H E M E - B U T T O N
-  // ``````````````````````````````````````````````````
+  // **************************************************
   themeButton: css`
     background: var(--d-third-color-tint);
+
     // Custom Border
     border: 3px solid transparent;
-    backdrop-filter: var(--filter);
-
     &:focus-visible {
       border: var(--d-focus-border);
     }
+
+    // targeted class for handle div
     .handle__Color {
       background: var(--primary-color);
     }
@@ -135,7 +133,7 @@ export const darkTheme = {
 
   // __________________________________________________
   // ==[D]==  P R O G R E S S - B A R
-  // ``````````````````````````````````````````````````
+  // **************************************************
   progressBar: css`
     background-image: var(--text-gradient);
     svg {
@@ -145,34 +143,13 @@ export const darkTheme = {
 
   // __________________________________________________
   // ==[D]==  N A V
-  // ``````````````````````````````````````````````````
+  // **************************************************
   header: css`
     background: var(--d-primary-color-tint);
-    backdrop-filter: var(--filter);
-    -webkit-backdrop-filter: blur(30px);
-
-    @supports (-webkit-backdrop-filter: none) {
-      -webkit-backdrop-filter: none;
-    }
   `,
 
   navLogo: css`
-    span {
-      color: var(--d-secondary-color);
-      span {
-        font-weight: var(--fw-800);
-        font-family: var(--logo-font);
-        letter-spacing: var(--let-space-sm);
-        font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-1));
-        background-image: var(--text-gradient);
-
-        @supports (-webkit-text-fill-color: transparent) or
-          (-webkit-background-clip: none) {
-          -webkit-text-fill-color: transparent;
-          -webkit-background-clip: text;
-        }
-      }
-    }
+    // not yet used (used in light)
   `,
 
   navList: css`
@@ -207,7 +184,7 @@ export const darkTheme = {
 
   // __________________________________________________
   // ==[D]==  T R A C K L I S T - & - T R A C K
-  // ``````````````````````````````````````````````````
+  // **************************************************
   numberList: css`
     /* background-image: var(--text-gradient);
     background-size: cover;
@@ -220,17 +197,10 @@ export const darkTheme = {
   `,
 
   trackList: css`
-    h4 {
-      color: var(--d-secondary-color);
-
-      @media (max-width: 1600px) {
-      }
-      @media (max-width: 1080px) {
-      }
-      @media (max-width: 768px) {
-      }
-      @media (max-width: 480px) {
-      }
+    span {
+      // Non-Default Font
+      font-size: clamp(var(--fz-sm-2), 3vw, var(--fz-xl-2));
+      font-weight: var(--fw-400);
     }
   `,
 
@@ -252,9 +222,6 @@ export const darkTheme = {
       &:hover {
         background: var(--d-third-color-tint);
         border-bottom: none;
-        transform: scale(1.01);
-        transition: var(--transition);
-        border-radius: var(--md-radius);
         h5 {
           color: var(--d-secondary-color);
         }
@@ -292,7 +259,7 @@ export const darkTheme = {
 
   // __________________________________________________
   // ==[D]==  C H A R T S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   ChartsHeader: css`
     h2 {
       color: var(--d-secondary-color);
@@ -309,9 +276,9 @@ export const darkTheme = {
 
 export const lightTheme = {
   // ======================================================================
-  // =======---------------------------------------------------------------
+  // ======================================================================
   // ==[L]==  L - I - G - H - T --- T - H - E - M - E
-  // =======---------------------------------------------------------------
+  // ======================================================================
   // ======================================================================
   mixins,
 
@@ -324,7 +291,7 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  S C R O L L - B A R
-  // ``````````````````````````````````````````````````
+  // **************************************************
   scrollbarThumb: css`
     background: var(--secondary-color);
   `,
@@ -335,7 +302,7 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  T E X T - T A G S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   a: css`
     color: var(--secondary-color);
   `,
@@ -351,7 +318,7 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  H E A D E R - T A G S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   h1: css`
     color: var(--secondary-color);
   `,
@@ -373,13 +340,13 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  G R A P H I C S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   svg: css`
     color: var(--secondary-color);
   `,
 
   // ________________________________________________
-  // ==[L]==  I N P U T S  &  M E N U S
+  // ==[L]==  I N P U T S - & - M E N U S
   // ````````````````````````````````````````````````
   select: css`
     color: var(--d-secondary-color);
@@ -387,14 +354,12 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  C U S T O M - C L A S S E S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   accent__line: css`
     background: var(--text-gradient);
   `,
 
-  track__img: css`
-    border-radius: var(--xs-radius);
-  `,
+  track__img: css``,
 
   tab__img: css``,
 
@@ -404,11 +369,11 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  L O A D E R
-  // ``````````````````````````````````````````````````
+  // **************************************************
   loader: css`
-    color: var(--secondary-color);
     background: var(--primary-color);
 
+    // Non-Default SVG
     svg {
       stroke: var(--secondary-color);
       filter: none;
@@ -417,17 +382,14 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  T H E M E - B U T T O N
-  // ``````````````````````````````````````````````````
+  // **************************************************
   themeButton: css`
-    // Custom Border
-    border: 4px solid transparent;
     background: var(--secondary-color-tint);
-    backdrop-filter: var(--filter);
     background-position: 100%;
 
-    &:focus-visible {
-      border: var(--focus-border);
-    }
+    // Custom Border
+
+    // Targeted class for handle div
     .handle__Color {
       background: var(--primary-color);
     }
@@ -435,11 +397,12 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  P R O G R E S S - B A R
-  // ``````````````````````````````````````````````````
+  // **************************************************
   progressBar: css`
     background-image: var(--text-gradient);
+
+    // Non-Default SVG
     svg {
-      // Non-Default SVG
       stroke: var(--secondary-color);
       filter: none;
     }
@@ -447,18 +410,13 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  N A V
-  // ``````````````````````````````````````````````````
+  // **************************************************
   header: css`
     background: var(--secondary-color-tint);
-    backdrop-filter: var(--filter);
-    -webkit-backdrop-filter: blur(30px);
-
-    @supports (-webkit-backdrop-filter: none) {
-      -webkit-backdrop-filter: none;
-    }
   `,
 
   navLogo: css`
+    // Non-Default span
     span {
       color: var(--primary-color);
     }
@@ -467,25 +425,14 @@ export const lightTheme = {
   navList: css`
     background-image: var(--text-gradient);
     a {
-      &:active {
-        color: var(--primary-color);
-      }
       &:focus-visible {
         border: var(--focus-border);
       }
     }
 
     svg {
-      color: var(--secondary-color);
       text-align: center;
       filter: none;
-      path {
-        &:nth-child(2) {
-          stroke: var(--secondary-color);
-          stroke-width: 0.5px;
-          stroke-linejoin: round;
-        }
-      }
     }
   `,
 
@@ -495,7 +442,7 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  T R A C K L I S T - & - T R A C K
-  // ``````````````````````````````````````````````````
+  // **************************************************
   numberList: css`
     /* background-image: var(--text-gradient); */
     /* background-size: cover; */
@@ -511,6 +458,7 @@ export const lightTheme = {
   trackList: css`
     span {
       color: var(--secondary-color);
+      
       // Non-Default Font
       font-size: clamp(var(--fz-sm-2), 3vw, var(--fz-xl-2));
       font-weight: var(--fw-400);
@@ -521,7 +469,6 @@ export const lightTheme = {
     border-bottom: var(--sm-border);
     a {
       svg {
-        color: var(--secondary-color);
         filter: drop-shadow(4px 4px 1px var(--third-color));
 
         @media (max-width: 768px) {
@@ -532,32 +479,19 @@ export const lightTheme = {
       // Link Overlay
       &:hover {
         background: var(--secondary-color-tint);
-        border-radius: var(--lg-radius);
-        transition: var(--transition);
-        transform: scale(1.01);
         border-bottom: none;
-
+        
         h5 {
           color: var(--primary-color);
         }
         h6 {
           color: var(--primary-color);
         }
+        
+        // Non-Default SVG
         svg {
           color: var(--primary-color);
           filter: none;
-        }
-
-        @media (max-width: 1600px) {
-        }
-        @media (max-width: 1080px) {
-          border-radius: var(--md-radius);
-        }
-        @media (max-width: 768px) {
-          border-radius: var(--sm-radius);
-        }
-        @media (max-width: 480px) {
-          border-radius: var(--xs-radius);
         }
       }
 
@@ -583,7 +517,7 @@ export const lightTheme = {
 
   // __________________________________________________
   // ==[L]==  C H A R T S
-  // ``````````````````````````````````````````````````
+  // **************************************************
   chartsContainer: css``,
 
   ChartsHeader: css`

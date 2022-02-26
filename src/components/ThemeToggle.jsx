@@ -18,6 +18,7 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
 };
 const HandleContainer = styled(motion.button)`
   ${(props) => props.theme.themeButton};
+  ${({ theme }) => theme.mixins.backdropFilter}
   ${({ theme }) => theme.mixins.flexCenter}
   justify-content: flex-start;
   position: fixed;

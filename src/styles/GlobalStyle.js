@@ -1,13 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 import variables from "./variables";
 
+
 const GlobalStyle = createGlobalStyle`
-  ${variables}
+  ${variables};
 
   // ======================================================================
-  // =======---------------------------------------------------------------
+  // ======================================================================
   // =======  G - L - O - B - A - L  
-  // =======---------------------------------------------------------------
+  // ======================================================================
   // ======================================================================
   *,
   *:before,
@@ -103,18 +104,21 @@ const GlobalStyle = createGlobalStyle`
   // ======  T E X T - T A G S
   // ============================================================  
   a {
+    ${(props) => props.theme.a}
     font-size: clamp(var(--fz-sm-1), 4vw, var(--fz-md-2));
     font-family: var(--secondary-font);
     font-weight: var(--fw-600);
   }
-
+  
   p {
+    ${(props) => props.theme.p}
     font-size: clamp(var(--fz-xs-2), 3vw, var(--fz-sm-2));
     font-family: var(--secondary-font);
     font-weight: var(--fw-600);
   }
-
+  
   span {
+    ${(props) => props.theme.span}
     font-size: clamp(var(--fz-lg-2), 3vw, var(--fz-xxl-2));
     letter-spacing: var(--let-space-sm);
     font-family: var(--logo-font);
@@ -123,6 +127,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   ul {
+    ${(props) => props.theme.ul}
     list-style-type: none;
   }
 
@@ -179,34 +184,30 @@ const GlobalStyle = createGlobalStyle`
   // ======  G R A P H I C S
   // ============================================================
   svg {
+    ${(props) => props.theme.svg}
     text-decoration-color: none;
     text-decoration: none;
-
-    @media (max-width: 1600px) {
-    }
-    @media (max-width: 1080px) {
-    }
-    @media (max-width: 768px) {
-    }
-    @media (max-width: 480px) {
-    }
   }
 
   // ============================================================
-  // ======  I N P U T S  &  M E N U S
+  // ======  I N P U T S - & - M E N U S
   // ============================================================
   select {
     ${(props) => props.theme.select}
     font-size: clamp(var(--fz-sm-1), 1vw, var(--fz-md-2));
     font-family: var(--secondary-font);
     font-weight: var(--fw-800);
-    
+
     cursor: pointer;
   }
   
   // ============================================================
   // ======  C U S T O M - C L A S S E S
   // ============================================================
+
+  // __________________________________________________
+  // ======  I M A G E
+  // **************************************************
   .tab__img {
     ${(props) => props.theme.tab__img};
     width: 250px;

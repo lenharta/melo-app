@@ -74,6 +74,7 @@ const Nav = () => {
 // Nav Styles
 const Header = styled.header`
   ${({ theme }) => theme.mixins.flexCenter}
+  ${({ theme }) => theme.mixins.backdropFilter}
   ${(props) => props.theme.header}
   position: fixed;
   width: 100%;
@@ -96,7 +97,7 @@ const Header = styled.header`
 const Inner = styled.div`
   ${({ theme }) => theme.mixins.flexBetween}
   max-width: 1600px;
-  height: 90%;
+  height: 100%;
   width: 100%;
   padding: 0px 100px;
 
@@ -132,7 +133,6 @@ const NavBar = styled.nav`
   ${({ theme }) => theme.mixins.flexCenter}
   height: 55%;
   z-index: 151;
-  /* background-color: orange; */
 
   @media (max-width: 1600px) {
   }
@@ -151,9 +151,6 @@ const NavLinks = styled.ul`
   height: 100%;
   z-index: 152;
   list-style-type: none;
-
-  // add to theme styles
-  /* background-color: yellow; */
   border-radius: 50px;
 
   @media (max-width: 1600px) {
@@ -173,9 +170,7 @@ const NavLinks = styled.ul`
     height: 100%;
     width: 120px;
     overflow: visible;
-    /* margin: 10px; */
     z-index: 153;
-    /* background-color: blue; */
 
     @media (max-width: 1600px) {
       width: 100px;
@@ -188,6 +183,7 @@ const NavLinks = styled.ul`
     }
 
     svg {
+      ${({ theme }) => theme.mixins.flexCenter}
       z-index: 155;
       width: 45px;
       height: 45px;

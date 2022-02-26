@@ -22,7 +22,7 @@ const Charts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(chartRequests.fetchTopGermany);
+      const response = await axios.get(chartRequests.fetchTopUS);
       setTracks(response.data.tracks.data);
       setTitled(response.data);
       console.log(response.data);
@@ -38,8 +38,8 @@ const Charts = () => {
       <Container>
         <Inner>
           <ChartsHeader transition={spring}>
-            <h2>{titled.title}</h2>
             <img className="tab__img" src={titled.picture_xl} />
+            <h2>{titled.title}</h2>
             {/* <Dropdown>
               <DropItem></DropItem>
             </Dropdown> */}

@@ -22,7 +22,7 @@ const Charts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(chartRequests.fetchTopWorld);
+      const response = await axios.get(chartRequests.fetchTopGermany);
       setTracks(response.data.tracks.data);
       setTitled(response.data);
       console.log(response.data);
@@ -62,8 +62,7 @@ const Charts = () => {
 };
 
 const Container = styled.section`
-  ${(props) =>
-    props.theme.chartsContainer}// Custom Section Class in Global Styles
+  // SECTION TEMPLATE CLASS
 `;
 
 const Inner = styled.div`
@@ -71,11 +70,6 @@ const Inner = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  
-`;
-
-const ChartTitle = styled.div`
-  // Custom Class header__title
 `;
 
 const ChartTracks = styled.div`

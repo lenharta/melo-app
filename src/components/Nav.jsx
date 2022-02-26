@@ -74,7 +74,7 @@ const Nav = () => {
 // Nav Styles
 const Header = styled.header`
   ${({ theme }) => theme.mixins.flexCenter}
-  ${(props) => props.theme.styledHeader}
+  ${(props) => props.theme.header}
   position: fixed;
   width: 100%;
   top: 0;

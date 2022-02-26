@@ -1,22 +1,24 @@
 import { css } from "styled-components";
 import { mixins } from ".";
 
-// ========================================================= //
-// ============== D A R K ====== T H E M E ================= //
-// ========================================================= //
-
 export const darkTheme = {
+  // ======================================================================
+  // =======---------------------------------------------------------------
+  // ==[D]==  D - A - R - K --- T - H - E - M - E
+  // =======---------------------------------------------------------------
+  // ======================================================================
   mixins,
 
-  // ==========================================================
-  //                  GLOBALS
-  // ==========================================================
+  // ============================================================
+  // ==[D]==  G L O B A L S
+  // ============================================================
   body: css`
     background: var(--d-primary-color);
   `,
 
-  //                  SCROLLBAR
-  // ==========================================================
+  // __________________________________________________
+  // ==[D]==  S C R O L L - B A R
+  // ``````````````````````````````````````````````````
   scrollbarThumb: css`
     background: var(--d-secondary-color);
   `,
@@ -25,19 +27,26 @@ export const darkTheme = {
     background: var(--d-third-color);
   `,
 
-  styledHeader: css`
-    background: var(--d-primary-color-tint);
-    backdrop-filter: var(--filter);
-    -webkit-backdrop-filter: blur(30px);
-
-    @supports (-webkit-backdrop-filter: none) {
-      -webkit-backdrop-filter: none;
-    }
-  `,
-
+  // __________________________________________________
+  // ==[D]==  T E X T - T A G S
+  // ``````````````````````````````````````````````````
   a: css`
     color: var(--d-secondary-color);
   `,
+  p: css`
+    color: var(--d-secondary-color);
+  `,
+  span: css`
+    color: var(--d-secondary-color);
+  `,
+
+  ul: css`
+    color: var(--d-secondary-color);
+  `,
+
+  // __________________________________________________
+  // ==[D]==  H E A D E R - T A G S
+  // ``````````````````````````````````````````````````
   h1: css`
     color: var(--d-secondary-color);
   `,
@@ -56,33 +65,41 @@ export const darkTheme = {
   h6: css`
     color: var(--d-secondary-color);
   `,
-  p: css`
-    color: var(--d-secondary-color);
-  `,
-  span: css`
-    color: var(--d-secondary-color);
-  `,
-  ul: css`
-    color: var(--d-secondary-color);
-  `,
+
+  // __________________________________________________
+  // ==[D]==  G R A P H I C S
+  // ``````````````````````````````````````````````````
   svg: css`
     color: var(--d-secondary-color);
   `,
 
-  //                  INPUTS & MENUS
-  // ==========================================================
-
+  // ________________________________________________
+  // ==[D]==  I N P U T S  &  M E N U S
+  // ````````````````````````````````````````````````
   select: css`
-    border: var(--d-sm-border);
     color: var(--d-secondary-color);
-    background: var(--d-primary-color);
-    font-size: var(--fz-sm-4);
   `,
 
-  // ==========================================================
-  //                  GLOBAL COMPONENTS
-  // ==========================================================
+  // __________________________________________________
+  // ==[D]==  C U S T O M - C L A S S E S
+  // ``````````````````````````````````````````````````
+  accent__line: css`
+    background: var(--text-gradient);
+  `,
 
+  track__img: css`
+    border-radius: var(--xs-radius);
+  `,
+
+  tab__img: css``,
+
+  // ============================================================
+  // ==[D]==  C O M P O N E N T S
+  // ============================================================
+
+  // __________________________________________________
+  // ==[D]==  L O A D E R
+  // ``````````````````````````````````````````````````
   loader: css`
     color: var(--d-secondary-color);
     background: var(--d-primary-color);
@@ -99,6 +116,9 @@ export const darkTheme = {
     }
   `,
 
+  // __________________________________________________
+  // ==[D]==  T H E M E - B U T T O N
+  // ``````````````````````````````````````````````````
   themeButton: css`
     background: var(--d-third-color-tint);
     // Custom Border
@@ -109,26 +129,33 @@ export const darkTheme = {
       border: var(--d-focus-border);
     }
     .handle__Color {
-      /* background-image: var(--text-gradient); */
       background: var(--primary-color);
     }
   `,
 
+  // __________________________________________________
+  // ==[D]==  P R O G R E S S - B A R
+  // ``````````````````````````````````````````````````
   progressBar: css`
     background-image: var(--text-gradient);
     svg {
       stroke: var(--d-primary-color);
-
-      /* @supports (-webkit-text-fill-color: transparent) or
-        (-webkit-background-clip: none) {
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-      } */
     }
   `,
 
-  //                  NAVIGATION
-  // ==========================================================
+  // __________________________________________________
+  // ==[D]==  N A V
+  // ``````````````````````````````````````````````````
+  header: css`
+    background: var(--d-primary-color-tint);
+    backdrop-filter: var(--filter);
+    -webkit-backdrop-filter: blur(30px);
+
+    @supports (-webkit-backdrop-filter: none) {
+      -webkit-backdrop-filter: none;
+    }
+  `,
+
   navLogo: css`
     span {
       color: var(--d-secondary-color);
@@ -138,7 +165,6 @@ export const darkTheme = {
         letter-spacing: var(--let-space-sm);
         font-size: clamp(var(--fz-lg-4), 5vw, var(--fz-xl-1));
         background-image: var(--text-gradient);
-        /* color: var(--d-secondary-color); */
 
         @supports (-webkit-text-fill-color: transparent) or
           (-webkit-background-clip: none) {
@@ -179,38 +205,22 @@ export const darkTheme = {
     background: var(--d-secondary-color);
   `,
 
-  // ==========================================================
-  //                    CLASSES
-  // ==========================================================
-  accent__line: css`
-    background: var(--text-gradient);
+  // __________________________________________________
+  // ==[D]==  T R A C K L I S T - & - T R A C K
+  // ``````````````````````````````````````````````````
+  numberList: css`
+    /* background-image: var(--text-gradient);
+    background-size: cover;
+
+    @supports (-webkit-text-fill-color: transparent) or
+      (-webkit-background-clip: none) {
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    } */
   `,
-
-  track__img: css`
-    border-radius: var(--xs-radius);
-  `,
-
-  tab__img: css``,
-
-  // ==========================================================
-  //                  COMPONENTS
-  // ==========================================================
-
-  //                  TRACKLIST & TRACK
-  // ==========================================================
-  // numberList: css`
-  //   background-image: var(--text-gradient);
-  //   background-size: cover;
-
-  //   @supports (-webkit-text-fill-color: transparent) or
-  //     (-webkit-background-clip: none) {
-  //     -webkit-text-fill-color: transparent;
-  //     -webkit-background-clip: text;
-  //   }
-  // `,
 
   trackList: css`
-    h2 {
+    h4 {
       color: var(--d-secondary-color);
 
       @media (max-width: 1600px) {
@@ -276,16 +286,14 @@ export const darkTheme = {
     }
   `,
 
-  // ==========================================================
-  //                  ROUTES
-  // ==========================================================
+  // ============================================================
+  // ==[D]==  R O U T E S
+  // ============================================================
 
-  //                  CHARTS
-  // ==========================================================
-  chartsContainer: css``,
-
+  // __________________________________________________
+  // ==[D]==  C H A R T S
+  // ``````````````````````````````````````````````````
   ChartsHeader: css`
-    /* background: var(--secondary-color-tint); */
     h2 {
       color: var(--d-secondary-color);
       background-image: var(--text-gradient);
@@ -299,23 +307,24 @@ export const darkTheme = {
   `,
 };
 
-// ========================================================= //
-// ============= L I G H T ====== T H E M E ================ //
-// ========================================================= //
-
-// COLORS / BORDERS / BACKGROUNDS / FILTERS /
 export const lightTheme = {
+  // ======================================================================
+  // =======---------------------------------------------------------------
+  // ==[L]==  L - I - G - H - T --- T - H - E - M - E
+  // =======---------------------------------------------------------------
+  // ======================================================================
   mixins,
 
-  // ==========================================================
-  //                  GLOBALS
-  // ==========================================================
+  // ============================================================
+  // ==[L]==  G L O B A L S
+  // ============================================================
   body: css`
     background: var(--off-white-tint);
   `,
 
-  //                  SCROLL BAR
-  // ==========================================================
+  // __________________________________________________
+  // ==[L]==  S C R O L L - B A R
+  // ``````````````````````````````````````````````````
   scrollbarThumb: css`
     background: var(--secondary-color);
   `,
@@ -324,20 +333,25 @@ export const lightTheme = {
     background: var(--third-color);
   `,
 
-  styledHeader: css`
-    background: var(--secondary-color-tint);
-    backdrop-filter: var(--filter);
-    -webkit-backdrop-filter: blur(30px);
-
-    @supports (-webkit-backdrop-filter: none) {
-      -webkit-backdrop-filter: none;
-    }
-  `,
-
+  // __________________________________________________
+  // ==[L]==  T E X T - T A G S
+  // ``````````````````````````````````````````````````
   a: css`
     color: var(--secondary-color);
-    
   `,
+  p: css`
+    color: var(--secondary-color);
+  `,
+  span: css`
+    color: var(--secondary-color);
+  `,
+  ul: css`
+    color: var(--secondary-color);
+  `,
+
+  // __________________________________________________
+  // ==[L]==  H E A D E R - T A G S
+  // ``````````````````````````````````````````````````
   h1: css`
     color: var(--secondary-color);
   `,
@@ -356,22 +370,41 @@ export const lightTheme = {
   h6: css`
     color: var(--secondary-color-tint);
   `,
-  p: css`
-    color: var(--secondary-color);
-  `,
-  span: css`
-    color: var(--secondary-color);
-  `,
-  ul: css`
-    color: var(--secondary-color);
-  `,
+
+  // __________________________________________________
+  // ==[L]==  G R A P H I C S
+  // ``````````````````````````````````````````````````
   svg: css`
-    color: var(--primary-color);
+    color: var(--secondary-color);
   `,
 
-  // ==========================================================
-  //                  GLOBAL COMPONENTS
-  // ==========================================================
+  // ________________________________________________
+  // ==[L]==  I N P U T S  &  M E N U S
+  // ````````````````````````````````````````````````
+  select: css`
+    color: var(--d-secondary-color);
+  `,
+
+  // __________________________________________________
+  // ==[L]==  C U S T O M - C L A S S E S
+  // ``````````````````````````````````````````````````
+  accent__line: css`
+    background: var(--text-gradient);
+  `,
+
+  track__img: css`
+    border-radius: var(--xs-radius);
+  `,
+
+  tab__img: css``,
+
+  // ============================================================
+  // ==[L]==  C O M P O N E N T S
+  // ============================================================
+
+  // __________________________________________________
+  // ==[L]==  L O A D E R
+  // ``````````````````````````````````````````````````
   loader: css`
     color: var(--secondary-color);
     background: var(--primary-color);
@@ -382,6 +415,9 @@ export const lightTheme = {
     }
   `,
 
+  // __________________________________________________
+  // ==[L]==  T H E M E - B U T T O N
+  // ``````````````````````````````````````````````````
   themeButton: css`
     // Custom Border
     border: 4px solid transparent;
@@ -397,16 +433,31 @@ export const lightTheme = {
     }
   `,
 
+  // __________________________________________________
+  // ==[L]==  P R O G R E S S - B A R
+  // ``````````````````````````````````````````````````
   progressBar: css`
     background-image: var(--text-gradient);
     svg {
+      // Non-Default SVG
       stroke: var(--secondary-color);
       filter: none;
     }
   `,
 
-  //                  NAVIGATION
-  // ==========================================================
+  // __________________________________________________
+  // ==[L]==  N A V
+  // ``````````````````````````````````````````````````
+  header: css`
+    background: var(--secondary-color-tint);
+    backdrop-filter: var(--filter);
+    -webkit-backdrop-filter: blur(30px);
+
+    @supports (-webkit-backdrop-filter: none) {
+      -webkit-backdrop-filter: none;
+    }
+  `,
+
   navLogo: css`
     span {
       color: var(--primary-color);
@@ -425,11 +476,12 @@ export const lightTheme = {
     }
 
     svg {
+      color: var(--secondary-color);
       text-align: center;
       filter: none;
       path {
         &:nth-child(2) {
-          stroke: var(--secondary-color-tint);
+          stroke: var(--secondary-color);
           stroke-width: 0.5px;
           stroke-linejoin: round;
         }
@@ -441,40 +493,27 @@ export const lightTheme = {
     background: var(--primary-color);
   `,
 
-  // ==========================================================
-  //                    CLASSES
-  // ==========================================================
-  accent__line: css`
-    background: var(--text-gradient);
-  `,
-
-  track__img: css`
-    border-radius: var(--xs-radius);
-  `,
-
-  tab__img: css``,
-
-  // ==========================================================
-  //                  COMPONENTS
-  // ==========================================================
-
-  //                  TRACKLIST & TRACK
-  // ==========================================================
+  // __________________________________________________
+  // ==[L]==  T R A C K L I S T - & - T R A C K
+  // ``````````````````````````````````````````````````
   numberList: css`
     /* background-image: var(--text-gradient); */
     /* background-size: cover; */
     /* background-clip: text; */
 
     /* @supports (-webkit-text-fill-color: transparent) or
-    (-webkit-background-clip: none) {
+    (-webkit-background-clip: text) {
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
     } */
   `,
 
   trackList: css`
-    h4 {
+    span {
       color: var(--secondary-color);
+      // Non-Default Font
+      font-size: clamp(var(--fz-sm-2), 3vw, var(--fz-xl-2));
+      font-weight: var(--fw-400);
     }
   `,
 
@@ -538,12 +577,13 @@ export const lightTheme = {
     }
   `,
 
-  // ==========================================================
-  //                  ROUTES
-  // ==========================================================
+  // ============================================================
+  // ==[L]==  R O U T E S
+  // ============================================================
 
-  //                  CHARTS
-  // ==========================================================
+  // __________________________________________________
+  // ==[L]==  C H A R T S
+  // ``````````````````````````````````````````````````
   chartsContainer: css``,
 
   ChartsHeader: css`

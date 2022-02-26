@@ -4,6 +4,11 @@ import variables from "./variables";
 const GlobalStyle = createGlobalStyle`
   ${variables}
 
+  // ======================================================================
+  // =======---------------------------------------------------------------
+  // =======  G - L - O - B - A - L  
+  // =======---------------------------------------------------------------
+  // ======================================================================
   *,
   *:before,
   *:after {
@@ -19,9 +24,6 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  // ==========================================================
-  //                  GLOBALS
-  // ==========================================================
   body {
     ${(props) => props.theme.body}
     width: 100%;
@@ -34,22 +36,26 @@ const GlobalStyle = createGlobalStyle`
     scrollbar-color: gray;
   }
 
-  //                  SCROLL BAR
-  // ==========================================================
+  // ============================================================
+  // ======  S C R O L L - B A R
+  // ============================================================  
   body::-webkit-scrollbar {
     display: none;
     width: 8px;
   }
+
   body::-webkit-scrollbar-track {
     ${(props) => props.theme.scrollbarTrack}
   }
+
   body::-webkit-scrollbar-thumb {
     ${(props) => props.theme.scrollbarThumb}
     border-radius: 5px;
   }
-  
-  //                  CONTAINERS
-  // ==========================================================
+
+  // ============================================================
+  // ======  C O N T A I N E R S
+  // ============================================================
   main {
     max-width: 1800px;
     margin: 0px auto;
@@ -93,27 +99,36 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  //                  INPUTS & MENUS
-  // ==========================================================  
-  select {
-    ${(props) => props.theme.select}
-    font-size: clamp(var(--fz-sm-1), 1vw, var(--fz-md-2));
-    font-family: var(--secondary-font);
-    font-weight: var(--fw-800);
-
-    cursor: pointer;
-  }
-
-  //                  LINKS
-  // ==========================================================
+  // ============================================================
+  // ======  T E X T - T A G S
+  // ============================================================  
   a {
     font-size: clamp(var(--fz-sm-1), 4vw, var(--fz-md-2));
     font-family: var(--secondary-font);
     font-weight: var(--fw-600);
   }
 
-  //                  HEADERS
-  // ==========================================================
+  p {
+    font-size: clamp(var(--fz-xs-2), 3vw, var(--fz-sm-2));
+    font-family: var(--secondary-font);
+    font-weight: var(--fw-600);
+  }
+
+  span {
+    font-size: clamp(var(--fz-lg-2), 3vw, var(--fz-xxl-2));
+    letter-spacing: var(--let-space-sm);
+    font-family: var(--logo-font);
+    font-weight: var(--fw-400);
+    letter-spacing: var(--let-space-xs);
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+
+  // ============================================================
+  // ======  H E A D E R - T A G S
+  // ============================================================
   h1, h2, h3, h4, h5, h6, a, p {
     letter-spacing: var(--let-space-xs);
     font-family: var(--primary-font);
@@ -158,33 +173,15 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(var(--fz-sm-1), 4vw, var(--fz-md-2));
     font-weight: var(--fw-400);
   }
-  
-  //                  TEXT ELEMENTS
-  // ==========================================================  
-  
-  p {
-    font-size: clamp(var(--fz-xs-2), 3vw, var(--fz-sm-2));
-    font-family: var(--secondary-font);
-    font-weight: var(--fw-600);
-  }
 
-  span {
-    font-size: clamp(var(--fz-lg-2), 3vw, var(--fz-xxl-2));
-    letter-spacing: var(--let-space-sm);
-    font-family: var(--logo-font);
-    font-weight: var(--fw-300);
-  }
   
-  //                  LISTS
-  // ==========================================================  
-  ul {
-    list-style-type: none;
-  }
-  
-  //                  GRAPHICS
-  // ==========================================================
+  // ============================================================
+  // ======  G R A P H I C S
+  // ============================================================
   svg {
-    
+    text-decoration-color: none;
+    text-decoration: none;
+
     @media (max-width: 1600px) {
     }
     @media (max-width: 1080px) {
@@ -195,10 +192,21 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  // ==========================================================
-  //                    CLASSES
-  // ==========================================================
-
+  // ============================================================
+  // ======  I N P U T S  &  M E N U S
+  // ============================================================
+  select {
+    ${(props) => props.theme.select}
+    font-size: clamp(var(--fz-sm-1), 1vw, var(--fz-md-2));
+    font-family: var(--secondary-font);
+    font-weight: var(--fw-800);
+    
+    cursor: pointer;
+  }
+  
+  // ============================================================
+  // ======  C U S T O M - C L A S S E S
+  // ============================================================
   .tab__img {
     ${(props) => props.theme.tab__img};
     width: 250px;
@@ -225,7 +233,7 @@ const GlobalStyle = createGlobalStyle`
   
   .track__img {
     ${(props) => props.theme.track__img};
-    border-radius: var(--xs-radius);
+    border-radius: var(--sm-radius);
     height: 110px;
     width: 110px;
     
@@ -239,6 +247,7 @@ const GlobalStyle = createGlobalStyle`
       width: 90px;
     }
     @media (max-width: 768px) {
+      border-radius: var(--xs-radius);
       height: 80px;
       width: 80px;
     }

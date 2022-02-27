@@ -257,7 +257,8 @@ const GlobalStyle = createGlobalStyle`
       width: 70px;
     }
   }
-
+  
+    // ( TASK ) - Move to Mixins
   .ellipsis__titlebox {
     h5, h6 {
       width: 97%;
@@ -268,6 +269,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+    // ( TASK ) - Move to Mixins
   .gradient__font {
     ${(props) => props.theme.gradient__font}
     display: inline-block;
@@ -285,7 +287,7 @@ const GlobalStyle = createGlobalStyle`
     @media (max-width: 1080px) {
     }
     @media (max-width: 768px) {
-      height: 4px;
+      height: 3px;
     }
     @media (max-width: 480px) {
     }

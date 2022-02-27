@@ -13,6 +13,18 @@ const mixins = {
     align-items: center;
   `,
 
+  flexStart: css`
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  `,
+
+  flexEnd: css`
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  `,
+
   flexBetween: css`
     display: flex;
     justify-content: space-between;
@@ -30,18 +42,19 @@ const mixins = {
     justify-content: space-evenly;
     align-items: center;
   `,
+
+  flexText: css`
+    display: flex;
+  `,
   // ============================================================
-  // ======  C S S - S U P P O R T
+  // ======  C S S - B R O W S E R - S U P P O R T
   // ============================================================
   // var(--filter)
   backdropFilter: css`
-    -webkit-backdrop-filter: 30px;
-    backdrop-filter: 30px;
-    
-    @supports (-webkit-backdrop-filter: 30px) {
-      -webkit-backdrop-filter: 30px;
-      backdrop-filter: 30px;
+    @supports (-webkit-backdrop-filter: var(--filter)) {
+      -webkit-backdrop-filter: var(--filter);
     }
+    backdrop-filter: var(--filter);
   `,
 
   // ============================================================

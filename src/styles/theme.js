@@ -62,7 +62,8 @@ export const darkTheme = {
     color: var(--d-secondary-color);
   `,
   h6: css`
-    color: var(--d-secondary-color);
+    color: var(--d-third-color-tint);
+    opacity: 0.6;
   `,
 
   // __________________________________________________
@@ -205,14 +206,13 @@ export const darkTheme = {
   `,
 
   track: css`
-    a {
       border-bottom: var(--sm-border);
+    a {
       h5 {
         color: var(--d-secondary-color);
       }
       h6 {
         color: var(--d-secondary-color);
-        opacity: 0.6;
       }
       svg {
         color: var(--d-secondary-color);
@@ -230,13 +230,6 @@ export const darkTheme = {
         }
         svg {
           color: var(--d-secondary-color);
-        }
-
-        @media (max-width: 768px) {
-          border-radius: var(--sm-radius);
-        }
-        @media (max-width: 480px) {
-          border-radius: var(--xs-radius);
         }
       }
       &:focus-visible {

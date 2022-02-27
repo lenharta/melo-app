@@ -81,15 +81,15 @@ const Container = styled.li`
   // Router Link
   a {
     ${({ theme }) => theme.mixins.flexCenter}
-    ${({ theme }) => theme.mixins.tabOverlayRadius}
     ${({ theme }) => theme.mixins.scaleCubicSmall}
-
+    
     width: 100%;
     height: 100%;
     padding: 15px;
-
+    
     &:hover,
     &:focus-visible {
+    ${({ theme }) => theme.mixins.tabOverlayRadius}
     }
     @media (max-width: 1600px) {
     }
@@ -128,32 +128,32 @@ const Inner = styled.div`
   @media (max-width: 768px) {
   }
   @media (max-width: 480px) {
-    grid-template-columns: repeat(11, 1fr);
     grid-template-areas:
-      "a b b b b b b b b b d"
-      "a c c c c c c c c c d";
+      "a b b b b b b b b b d d"
+      "a c c c c c c c c c d d";
   }
 `;
 
 const SongTitle = styled.div`
+  /* ${({ theme }) => theme.mixins.flexStart} */
+  /* position: relative; */
   grid-area: b;
   align-self: end;
   justify-self: start;
-  width: 97%;
+  width: 100%;
   height: 100%;
-
+  
   h5 {
-    ${({ theme }) => theme.mixins.flexCenter}
-    justify-content: flex-start;
-    align-items: flex-end;
+    ${({ theme }) => theme.mixins.flexStart}
+    align-items: end;
     line-height: 1.4;
     height: 100%;
     margin-left: 25px;
-
+    
     @supports (-webkit-background-clip: none) {
       -webkit-background-clip: text;
     }
-
+    
     @media (max-width: 1600px) {
       margin-left: 20px;
     }
@@ -166,17 +166,17 @@ const SongTitle = styled.div`
     @media (max-width: 480px) {
     }
   }
-`;
+  `;
 
 const Artist = styled.div`
   grid-area: c;
   justify-self: start;
   align-self: center;
-  width: 97%;
+  width: 100%;
   height: 100%;
-
+  
   h6 {
-    ${({ theme }) => theme.mixins.flexCenter}
+    ${({ theme }) => theme.mixins.flexStart}
     justify-content: flex-start;
     align-items: flex-start;
     height: 100%;
@@ -201,12 +201,14 @@ const Artist = styled.div`
 `;
 
 const Explicit = styled.div`
+  /* ${({ theme }) => theme.mixins.flexCenter} */
   grid-area: d;
   justify-self: center;
   align-self: center;
   svg {
-    justify-self: center;
-    align-self: center;
+    ${({ theme }) => theme.mixins.flexCenter}
+    /* justify-self: center; */
+    /* align-self: center; */
     width: 30px;
     height: 30px;
 
@@ -215,11 +217,11 @@ const Explicit = styled.div`
       height: 25px;
     }
     @media (max-width: 480px) {
-      justify-self: end;
-      align-self: start;
-      text-align: right;
-      width: 18px;
-      height: 18px;
+      /* justify-self: end; */
+      /* align-self: start; */
+      /* text-align: right; */
+      width: 15px;
+      height: 15px;
     }
   }
 
@@ -238,6 +240,7 @@ const PlayPause = styled.div`
   justify-self: center;
   align-self: center;
   svg {
+    ${({ theme }) => theme.mixins.flexCenter}
     width: 50px;
     height: 50px;
 
